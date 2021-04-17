@@ -1,12 +1,178 @@
 <a href="../modul-3/index.html"><h1>Модуль - 03</h1></a>
-<h2>Задача - 25. .</h2>
+<h2>Задача - 25. Глубокая деструктуризация.</h2>
 <a href="../modul-3/zad_24.html">&lt; &lt;Предыдущая задача</a>
 <a href="../modul-3/zad_26.html">Cледующая задача&gt;&gt;</a>
 
 <details closed="">
   <summary style="color: teal">Решение</summary>
   <pre><code>
+  const forecast = {
+    today: {
+      low: 28,
+      high: 32,
+      icon: "https://www.flaticon.com/svg/static/icons/svg/861/861059.svg",
+    },
+    tomorrow: {
+      low: 27,
+      high: 31,
+    },
+  };
+  // Пиши код ниже этой строки
+  const {
+    today: {
+      low: lowToday,
+      high: highToday,
+      icon: todayIcon = "https://www.flaticon.com/svg/static/icons/svg/2204/2204346.svg",
+    },
+    tomorrow: {
+      low: lowTomorrow,
+      high: highTomorrow,
+      icon: tomorrowIcon = "https://www.flaticon.com/svg/static/icons/svg/2204/2204346.svg",
+    },
+  } = forecast;
 
+  console.log(highToday);
+  console.log(lowToday);
+  console.log(todayIcon);
+  console.log(highTomorrow);
+  console.log(lowTomorrow);
+  console.log(tomorrowIcon);
 </code></pre>
 </details>
-<script></script>
+<script>
+  const forecast = {
+    today: {
+      low: 28,
+      high: 32,
+      icon: "https://www.flaticon.com/svg/static/icons/svg/861/861059.svg",
+    },
+    tomorrow: {
+      low: 27,
+      high: 31,
+    },
+  };
+  // Пиши код ниже этой строки
+  const {
+    today: {
+      low: lowToday,
+      high: highToday,
+      icon: todayIcon = "https://www.flaticon.com/svg/static/icons/svg/2204/2204346.svg",
+    },
+    tomorrow: {
+      low: lowTomorrow,
+      high: highTomorrow,
+      icon: tomorrowIcon = "https://www.flaticon.com/svg/static/icons/svg/2204/2204346.svg",
+    },
+  } = forecast;
+
+  console.log(highToday);
+  console.log(lowToday);
+  console.log(todayIcon);
+  console.log(highTomorrow);
+  console.log(lowTomorrow);
+  console.log(tomorrowIcon);
+</script>
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <details closed="">
+        <summary>Теория</summary>
+        <p>
+          Для деструктуризации свойств вложенных объектов используются те же
+          принципы, что и в трёх предыдущих упражнениях.
+        </p>
+        <pre><code class="language-js hljs javascript"><span class="hljs-keyword"><span class="hljs-keyword">const</span></span> user = {
+  <span class="hljs-attr"><span class="hljs-attr">name</span></span>: <span class="hljs-string"><span class="hljs-string">'Jacques Gluke'</span></span>,
+  <span class="hljs-attr"><span class="hljs-attr">tag</span></span>: <span class="hljs-string"><span class="hljs-string">'jgluke'</span></span>,
+  <span class="hljs-attr"><span class="hljs-attr">stats</span></span>: {
+    <span class="hljs-attr"><span class="hljs-attr">followers</span></span>: <span class="hljs-number"><span class="hljs-number">5603</span></span>,
+    <span class="hljs-attr"><span class="hljs-attr">views</span></span>: <span class="hljs-number"><span class="hljs-number">4827</span></span>,
+    <span class="hljs-attr"><span class="hljs-attr">likes</span></span>: <span class="hljs-number"><span class="hljs-number">1308</span></span>,
+  },
+};
+
+<span class="hljs-keyword"><span class="hljs-keyword">const</span></span> {
+  name,
+  tag,
+  <span class="hljs-attr"><span class="hljs-attr">stats</span></span>: { followers, <span class="hljs-attr"><span class="hljs-attr">views</span></span>: userViews, <span class="hljs-attr"><span class="hljs-attr">likes</span></span>: userLikes = <span class="hljs-number"><span class="hljs-number">0</span></span> },
+} = user;
+
+<span class="hljs-built_in"><span class="hljs-built_in">console</span></span>.log(name); <span class="hljs-comment"><span class="hljs-comment">// Jacques Gluke</span></span>
+<span class="hljs-built_in"><span class="hljs-built_in">console</span></span>.log(tag); <span class="hljs-comment"><span class="hljs-comment">// jgluke</span></span>
+<span class="hljs-built_in"><span class="hljs-built_in">console</span></span>.log(followers); <span class="hljs-comment"><span class="hljs-comment">// 5603</span></span>
+<span class="hljs-built_in"><span class="hljs-built_in">console</span></span>.log(userViews); <span class="hljs-comment"><span class="hljs-comment">// 4827</span></span>
+<span class="hljs-built_in"><span class="hljs-built_in">console</span></span>.log(userLikes); <span class="hljs-comment"><span class="hljs-comment">// 1308</span></span>
+</code></pre>
+      </details>
+      <h3 class="task">Задание</h3>
+      <p>
+        Мы получили прогноз погоды на два дня, с минимальными и максимальными
+        температурами, а также необязательными иконками. Замени объявления всех
+        переменных одной операцией деструктуризации свойств объекта
+        <code>forecast</code>. Задай значение по умолчанию для иконок,
+        переменных <code>todayIcon</code> и <code>tomorrowIcon</code> - строку
+        <code
+          >'https://www.flaticon.com/svg/static/icons/svg/2204/2204346.svg'</code
+        >.
+      </p>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>Объявлена переменная <code>forecast</code>.</li>
+        <li>Значение переменной <code>forecast</code> это объект.</li>
+        <li>
+          Объявлена переменная
+          <code>highToday с помощью деструктуризации</code>.
+        </li>
+        <li>
+          Значение переменной <code>highToday</code> это число <code>32</code>.
+        </li>
+        <li>
+          Объявлена переменная <code>lowToday</code> с помощью деструктуризации.
+        </li>
+        <li>
+          Значение переменной <code>lowToday</code> это число <code>28</code>.
+        </li>
+        <li>
+          Объявлена переменная <code>todayIcon</code> с помощью
+          деструктуризации.
+        </li>
+        <li>
+          Значение переменной <code>todayIcon</code> это строка
+          <code
+            >'https://www.flaticon.com/svg/static/icons/svg/861/861059.svg'</code
+          >.
+        </li>
+        <li>
+          Объявлена переменная <code>highTomorrow</code> с помощью
+          деструктуризации.
+        </li>
+        <li>
+          Значение переменной <code>highTomorrow</code> это число
+          <code>31</code>.
+        </li>
+        <li>
+          Объявлена переменная <code>lowTomorrow</code> с помощью
+          деструктуризации.
+        </li>
+        <li>
+          Значение переменной <code>lowTomorrow</code> это число
+          <code>27</code>.
+        </li>
+        <li>
+          Объявлена переменная <code>tomorrowIcon</code> с помощью
+          деструктуризации.
+        </li>
+        <li>
+          Значение переменной <code>tomorrowIcon</code> это строка
+          <code
+            >'https://www.flaticon.com/svg/static/icons/svg/2204/2204346.svg'</code
+          >.
+        </li>
+        <li>
+          Используется синтаксис деструктуризации объекта
+          <code>highTemperatures</code>.
+        </li>
+      </ul>
+    </div>
+  </section>
+</section>
