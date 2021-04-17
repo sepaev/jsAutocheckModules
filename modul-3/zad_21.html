@@ -1,12 +1,135 @@
 <a href="../modul-3/index.html"><h1>Модуль - 03</h1></a>
-<h2>Задача - 21. .</h2>
+<h2>Задача - 21. Деструктуризация объектов.</h2>
 <a href="../modul-3/zad_20.html">&lt; &lt;Предыдущая задача</a>
 <a href="../modul-3/zad_22.html">Cледующая задача&gt;&gt;</a>
 
 <details closed="">
   <summary style="color: teal">Решение</summary>
   <pre><code>
+  const highTemperatures = {
+    yesterday: 28,
+    today: 26,
+    tomorrow: 33,
+  };
+  // Пиши код ниже этой строки
 
+  const { yesterday, today, tomorrow } = highTemperatures;
+
+  // Пиши код выше этой строки
+  const meanTemperature = (yesterday + today + tomorrow) / 3;
+  console.log(yesterday);
+  console.log(today);
+  console.log(tomorrow);
+  console.log(meanTemperature);
 </code></pre>
 </details>
-<script></script>
+<script>
+  const highTemperatures = {
+    yesterday: 28,
+    today: 26,
+    tomorrow: 33,
+  };
+  // Пиши код ниже этой строки
+
+  const { yesterday, today, tomorrow } = highTemperatures;
+
+  // Пиши код выше этой строки
+  const meanTemperature = (yesterday + today + tomorrow) / 3;
+  console.log(yesterday);
+  console.log(today);
+  console.log(tomorrow);
+  console.log(meanTemperature);
+</script>
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <details closed="">
+        <summary>Теория</summary>
+        <p>
+          Сложные данные всегда представлены объектом. Множественные обращения к
+          свойствам объекта визуально загрязняют код.
+        </p>
+        <pre><code class="language-js hljs javascript"><span class="hljs-keyword">const</span> book = {
+  <span class="hljs-attr">title</span>: <span class="hljs-string">'Последнее королевство'</span>,
+  <span class="hljs-attr">author</span>: <span class="hljs-string">'Бернард Корнуэлл'</span>,
+  <span class="hljs-attr">genres</span>: [<span class="hljs-string">'историческая проза'</span>, <span class="hljs-string">'приключения'</span>],
+  <span class="hljs-attr">public</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">rating</span>: <span class="hljs-number">8.38</span>,
+};
+
+<span class="hljs-keyword">const</span> accessType = book.public ? <span class="hljs-string">'публичном'</span> : <span class="hljs-string">'закрытом'</span>;
+<span class="hljs-keyword">const</span> message = <span class="hljs-string">`Книга <span class="hljs-subst">${book.title}</span> автора <span class="hljs-subst">${book.author}</span> с рейтингом <span class="hljs-subst">${book.rating}</span> находится в <span class="hljs-subst">${accessType}</span> доступе.`</span>;
+</code></pre>
+        <p>
+          Деструктуризация позволяет «распаковать» значения свойств объекта в
+          локальные переменные. Это делает код в месте их использования менее
+          «шумным».
+        </p>
+        <pre><code class="language-js hljs javascript"><span class="hljs-keyword">const</span> book = {
+  <span class="hljs-attr">title</span>: <span class="hljs-string">'Последнее королевство'</span>,
+  <span class="hljs-attr">author</span>: <span class="hljs-string">'Бернард Корнуэлл'</span>,
+  <span class="hljs-attr">genres</span>: [<span class="hljs-string">'историческая проза'</span>, <span class="hljs-string">'приключения'</span>],
+  <span class="hljs-attr">public</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">rating</span>: <span class="hljs-number">8.38</span>,
+};
+
+<span class="hljs-comment">// Деструктуризируем</span>
+<span class="hljs-keyword">const</span> { title, author, public, rating, coverImage } = book;
+<span class="hljs-built_in">console</span>.log(coverImage); <span class="hljs-comment">// undefined</span>
+
+<span class="hljs-keyword">const</span> accessType = public ? <span class="hljs-string">'публичном'</span> : <span class="hljs-string">'закрытом'</span>;
+<span class="hljs-keyword">const</span> message = <span class="hljs-string">`Книга <span class="hljs-subst">${title}</span> автора <span class="hljs-subst">${author}</span> с рейтингом <span class="hljs-subst">${rating}</span> находится в <span class="hljs-subst">${accessType}</span> доступе.`</span>;
+</code></pre>
+        <p>
+          Деструктуризация всегда находится в левой части операции присвоения.
+          Переменным внутри фигурных скобок присваиваются значения свойств
+          объекта. Если имя переменной и имя свойства совпадают, то происходит
+          присваивание, в противном случае ей будет присвоено
+          <code>undefined</code>. Порядок объявления переменных в фигурных
+          скобках не важен.
+        </p>
+      </details>
+      <h3 class="task">Задание</h3>
+      <p>
+        Пришел трёхдневный прогноз максимальных температур и мы считаем среднюю
+        температуру за три дня (<code>meanTemperature</code>). Замени объявления
+        переменных <code>yesterday</code>, <code>today</code> и
+        <code>tomorrow</code> одной операцией деструктуризации свойств объекта
+        <code>highTemperatures</code>.
+      </p>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>Объявлена переменная <code>highTemperatures</code>.</li>
+        <li>Значение переменной <code>highTemperatures</code> это объект.</li>
+        <li>
+          Объявлена переменная <code>yesterday</code> с помощью
+          деструктуризации.
+        </li>
+        <li>
+          Значение переменной <code>yesterday</code> это число <code>28</code>.
+        </li>
+        <li>
+          Объявлена переменная <code>today</code> с помощью деструктуризации.
+        </li>
+        <li>
+          Значение переменной <code>today</code> это число <code>26</code>.
+        </li>
+        <li>
+          Объявлена переменная <code>tomorrow</code> с помощью деструктуризации.
+        </li>
+        <li>
+          Значение переменной <code>tomorrow</code> это число <code>33</code>.
+        </li>
+        <li>Объявлена переменная <code>meanTemperature</code>.</li>
+        <li>
+          Значение переменной <code>meanTemperature</code> это число
+          <code>29</code>.
+        </li>
+        <li>
+          Используется синтаксис деструктуризации объекта
+          <code>highTemperatures</code>.
+        </li>
+      </ul>
+    </div>
+  </section>
+</section>
