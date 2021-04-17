@@ -1,12 +1,110 @@
 <a href="../modul-3/index.html"><h1>Модуль - 03</h1></a>
-<h2>Задача - 19. .</h2>
+<h2>Задача - 19. Коллекция значений свойства.</h2>
 <a href="../modul-3/zad_18.html">&lt; &lt;Предыдущая задача</a>
 <a href="../modul-3/zad_20.html">Cледующая задача&gt;&gt;</a>
 
 <details closed="">
   <summary style="color: teal">Решение</summary>
   <pre><code>
+  const products = [
+    { name: "Радар", price: 1300, quantity: 4 },
+    { name: "Сканер", price: 2700, quantity: 3 },
+    { name: "Дроид", price: 400, quantity: 7 },
+    { name: "Захват", price: 1200, quantity: 9 },
+  ];
 
+  function getAllPropValues(propName) {
+    // Пиши код ниже этой строки
+    let returnArray = [];
+    for (const item of products) {
+      switch (propName) {
+        case "name":
+          returnArray.push(item.name);
+          break;
+        case "quantity":
+          returnArray.push(item.quantity);
+          break;
+        case "price":
+          returnArray.push(item.price);
+          break;
+        default:
+      }
+    }
+    return returnArray;
+
+    // Пиши код выше этой строки
+  }
+  console.log(getAllPropValues("name"));
+  console.log(getAllPropValues("quantity"));
+  console.log(getAllPropValues("price"));
+  console.log(getAllPropValues("category"));
 </code></pre>
 </details>
-<script></script>
+<script>
+  const products = [
+    { name: "Радар", price: 1300, quantity: 4 },
+    { name: "Сканер", price: 2700, quantity: 3 },
+    { name: "Дроид", price: 400, quantity: 7 },
+    { name: "Захват", price: 1200, quantity: 9 },
+  ];
+
+  function getAllPropValues(propName) {
+    // Пиши код ниже этой строки
+    let returnArray = [];
+    for (const item of products) {
+      switch (propName) {
+        case "name":
+          returnArray.push(item.name);
+          break;
+        case "quantity":
+          returnArray.push(item.quantity);
+          break;
+        case "price":
+          returnArray.push(item.price);
+          break;
+        default:
+      }
+    }
+    return returnArray;
+
+    // Пиши код выше этой строки
+  }
+  console.log(getAllPropValues("name"));
+  console.log(getAllPropValues("quantity"));
+  console.log(getAllPropValues("price"));
+  console.log(getAllPropValues("category"));
+</script>
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <h3 class="task">Задание</h3>
+      <p>
+        Напиши функцию <code>getAllPropValues(propName)</code> которая принимает
+        один параметр <code>propName</code> - имя (ключ) свойства. Функция
+        должна вернуть массив всех значений свойства с таким именем из каждого
+        объекта в массиве <code>products</code>. Если в объектах нет свойства с
+        таким именем, функция должна вернуть пустой массив.
+      </p>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>Объявлена функция <code>getAllPropValues(propName)</code>.</li>
+        <li>
+          Вызов <code>getAllPropValues('name')</code> возвращает
+          <code>['Радар', 'Сканер', 'Дроид', 'Захват']</code>.
+        </li>
+        <li>
+          Вызов <code>getAllPropValues('quantity')</code> возвращает
+          <code>[4, 3, 7, 9]</code>.
+        </li>
+        <li>
+          Вызов <code>getAllPropValues('price')</code> возвращает
+          <code>[1300, 2700, 400, 1200]</code>.
+        </li>
+        <li>
+          Вызов <code>getAllPropValues('category')</code> возвращает
+          <code>[]</code>.
+        </li>
+      </ul>
+    </div>
+  </section>
+</section>
