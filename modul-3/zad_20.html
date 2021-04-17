@@ -1,12 +1,99 @@
 <a href="../modul-3/index.html"><h1>Модуль - 03</h1></a>
-<h2>Задача - 20. .</h2>
+<h2>Задача - 20. Общая стоимость товара.</h2>
 <a href="../modul-3/zad_19.html">&lt; &lt;Предыдущая задача</a>
 <a href="../modul-3/zad_21.html">Cледующая задача&gt;&gt;</a>
 
 <details closed="">
   <summary style="color: teal">Решение</summary>
   <pre><code>
+  const products = [
+    { name: "Радар", price: 1300, quantity: 4 },
+    { name: "Сканер", price: 2700, quantity: 3 },
+    { name: "Дроид", price: 400, quantity: 7 },
+    { name: "Захват", price: 1200, quantity: 9 },
+  ];
 
+  function calculateTotalPrice(productName) {
+    // Пиши код ниже этой строки
+    let totalPrice = 0;
+    for (const index of products) {
+      if (index.name.toLowerCase() === productName.toLowerCase()) {
+        totalPrice = index.price * index.quantity;
+      }
+    }
+
+    return totalPrice;
+    // Пиши код выше этой строки
+  }
+  console.log(calculateTotalPrice("Бластер"));
+  console.log(calculateTotalPrice("Радар"));
+  console.log(calculateTotalPrice("Дроид"));
+  console.log(calculateTotalPrice("Захват"));
+  console.log(calculateTotalPrice("Сканер"));
 </code></pre>
 </details>
-<script></script>
+<script>
+  const products = [
+    { name: "Радар", price: 1300, quantity: 4 },
+    { name: "Сканер", price: 2700, quantity: 3 },
+    { name: "Дроид", price: 400, quantity: 7 },
+    { name: "Захват", price: 1200, quantity: 9 },
+  ];
+
+  function calculateTotalPrice(productName) {
+    // Пиши код ниже этой строки
+    let totalPrice = 0;
+    for (const index of products) {
+      if (index.name.toLowerCase() === productName.toLowerCase()) {
+        totalPrice = index.price * index.quantity;
+      }
+    }
+
+    return totalPrice;
+    // Пиши код выше этой строки
+  }
+  console.log(calculateTotalPrice("Бластер"));
+  console.log(calculateTotalPrice("Радар"));
+  console.log(calculateTotalPrice("Дроид"));
+  console.log(calculateTotalPrice("Захват"));
+  console.log(calculateTotalPrice("Сканер"));
+</script>
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <h3 class="task">Задание</h3>
+      <p>
+        Напиши функцию <code>calculateTotalPrice(productName)</code> которая
+        принимает один параметр <code>productName</code> - название товара.
+        Функция должна вернуть общую стоимость (цена * количество) товара с
+        таким именем из массива <code>products</code>.
+      </p>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>
+          Объявлена функция <code>calculateTotalPrice(productName)</code>.
+        </li>
+        <li>
+          Вызов <code>calculateTotalPrice('Бластер')</code> возвращает
+          <code>0</code>.
+        </li>
+        <li>
+          Вызов <code>calculateTotalPrice('Радар')</code> возвращает
+          <code>5200</code>.
+        </li>
+        <li>
+          Вызов <code>calculateTotalPrice('Дроид')</code> возвращает
+          <code>2800</code>.
+        </li>
+        <li>
+          Вызов <code>calculateTotalPrice('Захват')</code> возвращает
+          <code>10800</code>.
+        </li>
+        <li>
+          Вызов <code>calculateTotalPrice('Сканер')</code> возвращает
+          <code>8100</code>.
+        </li>
+      </ul>
+    </div>
+  </section>
+</section>
