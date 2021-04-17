@@ -1,0 +1,109 @@
+<a href="/modul-1/index.html"><h1>Модуль - 01</h1></a>
+<h2>Задача - 23. Логическое «НЕ» (оператор <code>!</code>).</h2>
+<a href="/modul-1/zad_22.html">&lt; &lt;Предыдущая задача</a>
+<a href="/modul-1/zad_24.html">Cледующая задача&gt;&gt;</a>
+
+<details closed=""><summary style="color: teal">Решение</summary>
+<pre><code>
+  function isNumberNotInRange(start, end, number) {
+    const isInRange = number >= start && number <= end;
+    const isNotInRange = !isInRange; // Дополни эту строку
+    console.log(isNotInRange);
+    return isNotInRange;
+  }
+  isNumberNotInRange(10, 30, 17);
+  isNumberNotInRange(10, 30, 5);
+  isNumberNotInRange(20, 50, 24);
+  isNumberNotInRange(20, 50, 76);
+</code></pre>
+</details>
+
+<script>
+  function isNumberNotInRange(start, end, number) {
+    const isInRange = number >= start && number <= end;
+    const isNotInRange = !isInRange; // Дополни эту строку
+    console.log(isNotInRange);
+    return isNotInRange;
+  }
+  isNumberNotInRange(10, 30, 17);
+  isNumberNotInRange(10, 30, 5);
+  isNumberNotInRange(20, 50, 24);
+  isNumberNotInRange(20, 50, 76);
+</script>
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <details closed="">
+        <summary>Теория</summary>
+        <p>
+          Все операторы, которые мы рассматривали до этого, были
+          <strong>бинарными</strong>. Т.е. они содержали два операнда: левый и
+          правый. Логическое «НЕ» - это <strong>унарный</strong> оператор,
+          выполняющий операцию над одним операндом справа.
+        </p>
+        <pre><code class="language-shell hljs">!выражение
+</code></pre>
+        <p>
+          Оператор <code>!</code> приводит операнд к булю, если необходимо, а
+          затем делает инверсию - заменяет его на противоположный
+          <code>true -&gt; false</code> или <code>false -&gt; true</code>.
+        </p>
+        <pre><code class="language-js hljs javascript"><span class="hljs-built_in">console</span>.log(!<span class="hljs-literal">true</span>); <span class="hljs-comment">// false</span>
+<span class="hljs-built_in">console</span>.log(!<span class="hljs-literal">false</span>); <span class="hljs-comment">// true</span>
+<span class="hljs-built_in">console</span>.log(!<span class="hljs-number">3</span>); <span class="hljs-comment">// !3 -&gt; !true -&gt; false</span>
+<span class="hljs-built_in">console</span>.log(!<span class="hljs-string">'Манго'</span>); <span class="hljs-comment">// !'Манго' -&gt; !true -&gt; false</span>
+<span class="hljs-built_in">console</span>.log(!<span class="hljs-number">0</span>); <span class="hljs-comment">// !0 -&gt; !false -&gt; true</span>
+<span class="hljs-built_in">console</span>.log(!<span class="hljs-string">''</span>); <span class="hljs-comment">// !'' -&gt; !false -&gt; true</span>
+
+<span class="hljs-keyword">const</span> isOnline = <span class="hljs-literal">true</span>;
+<span class="hljs-keyword">const</span> isNotOnline = !isOnline; <span class="hljs-comment">// !isOnline -&gt; !true -&gt; false</span>
+</code></pre>
+</details>
+      </details>
+      <h3 class="task">Задание</h3>
+      <p>
+        Функция <code>isNumberNotInRange(start, end, number)</code> проверяет,
+        не входит ли число в промежуток. То есть число должно быть меньше либо
+        равно <code>start</code> и больше либо равно <code>end</code>.
+        Результатом выражения проверки будет буль <code>true</code> или
+        <code>false</code>.
+      </p>
+      <p>
+        Она объявляет три параметра, значения которых будут задаваться во время
+        её вызова:
+      </p>
+      <ul>
+        <li><code>number</code> - число, не вхождение которого проверяется</li>
+        <li><code>start</code> - начало числового промежутка</li>
+        <li><code>end</code> - конец числового промежутка</li>
+      </ul>
+      <p>
+        Присвой переменной <code>isNotInRange</code> выражение инверсии значения
+        переменной <code>isInRange</code> используя оператор <code>!</code>.
+      </p>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>
+          Объявлена функция <code>isNumberNotInRange(start, end, number)</code>.
+        </li>
+        <li>В выражении использован оператор <code>!</code>.</li>
+        <li>
+          Вызов <code>isNumberNotInRange(10, 30, 17)</code> возвращает
+          <code>false</code>.
+        </li>
+        <li>
+          Вызов <code>isNumberNotInRange(10, 30, 5)</code> возвращает
+          <code>true</code>.
+        </li>
+        <li>
+          Вызов <code>isNumberNotInRange(20, 50, 24)</code> возвращает
+          <code>false</code>.
+        </li>
+        <li>
+          Вызов <code>isNumberNotInRange(20, 50, 76)</code> возвращает
+          <code>true</code>.
+        </li>
+      </ul>
+    </div>
+  </section>
+</section>

@@ -1,0 +1,99 @@
+<a href="/modul-1/index.html"><h1>Модуль - 01</h1></a>
+<h2>Задача - 06. Заказ продукта.</h2>
+<a href="/modul-1/zad_05.html">&lt; &lt;Предыдущая задача</a>
+<a href="/modul-1/zad_07.html">Cледующая задача&gt;&gt;</a>
+
+<details closed="">
+  <summary style="color: teal">Решение</summary>
+  <pre><code>
+  const pricePerDroid = 800;
+  const orderedQuantity = 6;
+  const deliveryFee = 50;
+  const totalPrice = pricePerDroid * orderedQuantity + deliveryFee;
+  const message = `Вы заказали дроидов на сумму ${totalPrice} кредитов. Доставка (${deliveryFee} кредитов) включена в сумму заказа.`;
+  console.log(message);
+</code></pre>
+</details>
+
+<script>
+  const pricePerDroid = 800;
+  const orderedQuantity = 6;
+  const deliveryFee = 50;
+  const totalPrice = pricePerDroid * orderedQuantity + deliveryFee;
+  const message = `Вы заказали дроидов на сумму ${totalPrice} кредитов. Доставка (${deliveryFee} кредитов) включена в сумму заказа.`;
+  console.log(message);
+</script>
+
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <h3 class="task">Задание</h3>
+      Магазин по продаже ремонтных дроидов готов к открытию, осталось написать
+      скрипт для их заказа. Объяви переменные и присвой им соответствующие
+      значения:
+      <ul>
+        <li>
+          <code>pricePerDroid</code> - цена одного дроида, значение
+          <code>800</code>;
+        </li>
+        <li>
+          <code>orderedQuantity</code> - количество дроидов в заказе, значение
+          <code>6</code>;
+        </li>
+        <li>
+          <code>deliveryFee</code> - стоимость доставки, значение
+          <code>50</code>;
+        </li>
+        <li>
+          <code>totalPrice</code> - общая сумма заказа к оплате, не забудь о
+          стоимости доставки;
+        </li>
+        <li>
+          <code>message</code> - сообщение о состоянии заказа в формате;
+          <code
+            >Вы заказали дроидов на сумму &lt;сумма заказа&gt; кредитов.
+            Доставка (&lt;цена доставки&gt; кредитов) включена в сумму
+            заказа.</code
+          >
+        </li>
+      </ul>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>Объявлена переменная <code>orderedQuantity</code>.</li>
+        <li>
+          Значение переменной <code>orderedQuantity</code> это число
+          <code>6</code>.
+        </li>
+        <li>Объявлена переменная <code>pricePerDroid</code>.</li>
+        <li>
+          Значение переменной <code>pricePerDroid</code> это число
+          <code>800</code>.
+        </li>
+        <li>Объявлена переменная <code>deliveryFee</code>.</li>
+        <li>
+          Значение переменной <code>deliveryFee</code> это число
+          <code>50</code>.
+        </li>
+        <li>Объявлена переменная <code>totalPrice</code>.</li>
+        <li>
+          Значение переменной <code>totalPrice</code> это число
+          <code>4850</code>.
+        </li>
+        <li>Объявлена переменная <code>message</code>.</li>
+        <li>
+          Значение переменной <code>message</code> это строка
+          <code
+            >'Вы заказали дроидов на сумму 4850 кредитов. Доставка (50 кредитов)
+            включена в сумму заказа.'</code
+          >
+        </li>
+      </ul>
+      <div class="useful">
+        <h5>Полезно</h5>
+        <p>
+          В строке <code>message</code> должна быть точка в конце предложения!
+        </p>
+      </div>
+    </div>
+  </section>
+</section>

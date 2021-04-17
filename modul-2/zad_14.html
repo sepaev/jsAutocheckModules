@@ -1,0 +1,109 @@
+<a href="/modul-2/index.html"><h1>Модуль - 02</h1></a>
+<h2>Задача - 14. Метод slice().</h2>
+<a href="/modul-2/zad_13.html">&lt; &lt;Предыдущая задача</a>
+<a href="/modul-2/zad_15.html">Cледующая задача&gt;&gt;</a>
+
+<details closed=""><summary style="color: teal">Решение</summary>
+<pre><code>
+  const fruits = ["яблоко", "слива", "груша", "апельсин", "банан"];
+  // Пиши код ниже этой строки
+  const firstTwoEls = fruits.slice(0, 2);
+  const nonExtremeEls = fruits.slice(1, fruits.length - 1);
+  const lastThreeEls = fruits.slice(-3);
+
+  console.log(firstTwoEls);
+  console.log(nonExtremeEls);
+  console.log(lastThreeEls);
+</code></pre>
+</details>
+<script>
+  const fruits = ["яблоко", "слива", "груша", "апельсин", "банан"];
+  // Пиши код ниже этой строки
+  const firstTwoEls = fruits.slice(0, 2);
+  const nonExtremeEls = fruits.slice(1, fruits.length - 1);
+  const lastThreeEls = fruits.slice(-3);
+
+  console.log(firstTwoEls);
+  console.log(nonExtremeEls);
+  console.log(lastThreeEls);
+</script>
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <details closed="">
+        <summary>Теория</summary>
+        <p>
+          Метод <code>slice(begin, end)</code> возвращает новый массив,
+          содержащий копию части исходного массива, не изменяя его. Копия
+          делается от <code>begin</code> и до, но не включая, <code>end</code> -
+          индексы элементов исходного массива.
+        </p>
+        <ul>
+          <li>
+            Если <code>begin</code> и <code>end</code> не указаны, будет создана
+            полная копия исходного массива.
+          </li>
+          <li>
+            Если не указан <code>end</code>, копирование будет от
+            <code>start</code> и до конца исходного массива.
+          </li>
+          <li>
+            Если значение <code>start</code> отрицательное, а
+            <code>end</code> не указан, то будут скопированы последние
+            <code>N элементов</code>.
+          </li>
+        </ul>
+        <pre><code class="language-js hljs javascript"><span class="hljs-keyword">const</span> planets = [<span class="hljs-string">'Земля'</span>, <span class="hljs-string">'Марс'</span>, <span class="hljs-string">'Венера'</span>, <span class="hljs-string">'Юпитер'</span>, <span class="hljs-string">'Сатурн'</span>];
+
+<span class="hljs-built_in">console</span>.log(planets.slice(<span class="hljs-number">0</span>, <span class="hljs-number">2</span>)); <span class="hljs-comment">// ['Земля', 'Марс']</span>
+<span class="hljs-built_in">console</span>.log(planets.slice(<span class="hljs-number">0</span>, <span class="hljs-number">4</span>)); <span class="hljs-comment">// ['Земля', 'Марс', 'Венера', 'Юпитер']</span>
+<span class="hljs-built_in">console</span>.log(planets.slice(<span class="hljs-number">1</span>, <span class="hljs-number">3</span>)); <span class="hljs-comment">// ['Марс', 'Венера']</span>
+<span class="hljs-built_in">console</span>.log(planets.slice(<span class="hljs-number">-2</span>)); <span class="hljs-comment">// ['Юпитер', 'Сатурн']</span>
+<span class="hljs-built_in">console</span>.log(planets.slice()); <span class="hljs-comment">// ['Земля', 'Марс', 'Венера', 'Юпитер', 'Сатурн']</span>
+</code></pre>
+</details>
+      </details>
+      <h3 class="task">Задание</h3>
+      <p>
+        Дополни код так, чтобы переменные содержали частичные копии исходного
+        массива <code>fruits</code>.
+      </p>
+      <ul>
+        <li><code>firstTwoEls</code> - массив из первых двух элементов.</li>
+        <li>
+          <code>nonExtremeEls</code> - массив из всех элементов кроме первого и
+          последнего.
+        </li>
+        <li><code>lastThreeEls</code> - массив из трёх последних элементов.</li>
+      </ul>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>Объявлена переменная <code>fruits</code></li>
+        <li>
+          Значение переменной <code>fruits</code> это массив
+          <code>['яблоко', 'слива', 'груша', 'апельсин', 'банан']</code>.
+        </li>
+        <li>Объявлена переменная <code>firstTwoEls</code></li>
+        <li>
+          Значение переменной <code>firstTwoEls</code> это массив
+          <code>['яблоко', 'слива']</code>.
+        </li>
+        <li>Объявлена переменная <code>nonExtremeEls</code></li>
+        <li>
+          Значение переменной <code>nonExtremeEls</code> это массив
+          <code>['слива', 'груша', 'апельсин']</code>.
+        </li>
+        <li>Объявлена переменная <code>lastThreeEls</code>.</li>
+        <li>
+          Значение переменной <code>lastThreeEls</code> это массив
+          <code>['груша', 'апельсин', 'банан']</code>.
+        </li>
+        <li>
+          Переменной <code>lastThreeEls</code> присвоена копия части массива
+          <code>fruits</code> после применения метода <code>slice</code> с
+          правильными аргументами.
+        </li>
+      </ul>
+    </div>
+  </section>
+</section>

@@ -1,0 +1,93 @@
+<a href="/modul-2/index.html"><h1>Модуль - 02</h1></a>
+<h2>Задача - 24. Метод includes().</h2>
+<a href="/modul-2/zad_23.html">&lt; &lt;Предыдущая задача</a>
+<a href="/modul-2/zad_25.html">Cледующая задача&gt;&gt;</a>
+
+<details closed=""><summary style="color: teal">Решение</summary>
+<pre><code>
+  function checkFruit(fruit) {
+    const fruits = ["яблоко", "слива", "груша", "апельсин"];
+
+    return fruits.includes(fruit) ? true : false; // Дополни эту строку
+  }
+
+  console.log(checkFruit("слива"));
+  console.log(checkFruit("мандарин"));
+  console.log(checkFruit("груша"));
+  console.log(checkFruit("Груша"));
+  console.log(checkFruit("яблоко"));
+</code></pre>
+</details>
+<script>
+  function checkFruit(fruit) {
+    const fruits = ["яблоко", "слива", "груша", "апельсин"];
+
+    return fruits.includes(fruit) ? true : false; // Дополни эту строку
+  }
+
+  console.log(checkFruit("слива"));
+  console.log(checkFruit("мандарин"));
+  console.log(checkFruit("груша"));
+  console.log(checkFruit("Груша"));
+  console.log(checkFruit("яблоко"));
+</script>
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <details closed="">
+        <summary>Теория</summary>
+        <p>
+          Метод <code>includes(value)</code> проверяет есть ли в массиве элемент
+          со значением <code>value</code> и возвращает <code>true</code> или
+          <code>false</code> соответственно. Область применения этого метода
+          сводится к ситуациям, когда необходимо проверить есть ли элемент в
+          массиве и не важна его позиция (индекс).
+        </p>
+        <pre><code class="language-js hljs javascript"><span class="hljs-keyword">const</span> planets = [<span class="hljs-string">'Земля'</span>, <span class="hljs-string">'Марс'</span>, <span class="hljs-string">'Венера'</span>];
+
+<span class="hljs-built_in">console</span>.log(planets.includes(<span class="hljs-string">'Земля'</span>)); <span class="hljs-comment">// true</span>
+<span class="hljs-built_in">console</span>.log(planets.includes(<span class="hljs-string">'земля'</span>)); <span class="hljs-comment">// false</span>
+<span class="hljs-built_in">console</span>.log(planets.includes(<span class="hljs-string">'Венера'</span>)); <span class="hljs-comment">// true</span>
+<span class="hljs-built_in">console</span>.log(planets.includes(<span class="hljs-string">'Юпитер'</span>)); <span class="hljs-comment">// false</span>
+</code></pre>
+</details>
+      </details>
+      <h3 class="task">Задание</h3>
+      <p>
+        Функция <code>checkFruit(fruit)</code> принимает строку с названием
+        фрукта (параметр <code>fruit</code>), и проверяет есть ли такой фрукт в
+        массиве <code>fruits</code>.
+      </p>
+      <p>Дополни код функции так, что если:</p>
+      <ul>
+        <li>фрукт есть в массиве, то функция возвращает <code>true</code>;</li>
+        <li>фрукта нет в массиве, то функция возвращает <code>false</code>.</li>
+      </ul>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>Объявлена функция <code>checkFruit(fruit)</code>.</li>
+        <li>
+          Вызов <code>checkFruit('слива')</code> возвращает <code>true</code>.
+        </li>
+        <li>
+          Вызов <code>checkFruit('мандарин')</code> возвращает
+          <code>false</code>.
+        </li>
+        <li>
+          Вызов <code>checkFruit('груша')</code> возвращает <code>true</code>.
+        </li>
+        <li>
+          Вызов <code>checkFruit('Груша')</code> возвращает <code>false</code>.
+        </li>
+        <li>
+          Вызов <code>checkFruit('яблоко')</code> возвращает <code>true</code>.
+        </li>
+        <li>
+          Вызов функции <code>checkFruit()</code> со случайным словом возвращает
+          правильное значение <code>boolean</code>.
+        </li>
+        <li>В функции использовался метод <code>includes</code>.</li>
+      </ul>
+    </div>
+  </section>
+</section>

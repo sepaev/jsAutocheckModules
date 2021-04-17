@@ -1,0 +1,135 @@
+<a href="/modul-1/index.html"><h1>Модуль - 01</h1></a>
+<h2>Задача - 29. Доставка товара.</h2>
+<a href="/modul-1/zad_28.html">&lt; &lt;Предыдущая задача</a>
+<a href="/modul-1/zad_30.html">Cледующая задача&gt;&gt;</a>
+
+<details closed="">
+  <summary style="color: teal">Решение</summary>
+  <pre><code>
+  function getShippingCost(country) {
+    let message;
+    // Пиши код ниже этой строки
+    switch (country) {
+      case "Китай":
+        message = `Доставка в ${country} будет стоить 100 кредитов`;
+        break;
+      case "Чили":
+        message = `Доставка в ${country} будет стоить 250 кредитов`;
+        break;
+      case "Австралия":
+        message = `Доставка в ${country} будет стоить 170 кредитов`;
+        break;
+      case "Ямайка":
+        message = `Доставка в ${country} будет стоить 120 кредитов`;
+        break;
+      default:
+        message = `Извините, в вашу страну доставки нет`;
+        break;
+    }
+    // Пиши код выше этой строки
+    console.log(message);
+    return message;
+  }
+
+  getShippingCost("Германия");
+  getShippingCost("Китай");
+  getShippingCost("Чили");
+  getShippingCost("Ямайка");
+  getShippingCost("Швеция");
+</code></pre>
+</details>
+
+<script>
+  function getShippingCost(country) {
+    let message;
+    // Пиши код ниже этой строки
+    switch (country) {
+      case "Китай":
+        message = `Доставка в ${country} будет стоить 100 кредитов`;
+        break;
+      case "Чили":
+        message = `Доставка в ${country} будет стоить 250 кредитов`;
+        break;
+      case "Австралия":
+        message = `Доставка в ${country} будет стоить 170 кредитов`;
+        break;
+      case "Ямайка":
+        message = `Доставка в ${country} будет стоить 120 кредитов`;
+        break;
+      default:
+        message = `Извините, в вашу страну доставки нет`;
+        break;
+    }
+    // Пиши код выше этой строки
+    console.log(message);
+    return message;
+  }
+
+  getShippingCost("Германия");
+  getShippingCost("Китай");
+  getShippingCost("Чили");
+  getShippingCost("Ямайка");
+  getShippingCost("Швеция");
+</script>
+
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <h3 class="task">Задание</h3>
+      <p>
+        Функция <code>getShippingCost(country)</code> должна проверять
+        возможность доставки товара в страну пользователя (параметр country) и
+        возвращать сообщение о результате хранящееся в переменной
+        <code>message</code>. Обязательно используй инструкцию
+        <code>switch</code>.
+      </p>
+      <p>
+        Формат возвращаемой строки
+        <code>Доставка в &lt;страна&gt; будет стоить &lt;цена&gt; кредитов</code
+        >, где вместо <code>&lt;страна&gt;</code> и
+        <code>&lt;цена&gt;</code> необходимо подставить соотвествующие значения.
+      </p>
+      <p>Список стран и стоимость доставки:</p>
+      <ul>
+        <li>Китай - 100 кредитов</li>
+        <li>Чили - 250 кредитов</li>
+        <li>Австралия - 170 кредитов</li>
+        <li>Ямайка - 120 кредитов</li>
+      </ul>
+      <p>
+        Из списка видно, что доставка есть не везде. Если указанной страны нет в
+        списке, то функция должна вернуть строку
+        <code>'Извините, в вашу страну доставки нет'</code>
+      </p>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>Объявлена функция <code>getShippingCost(country)</code>.</li>
+        <li>В теле функции использована инструкция <code>switch</code>.</li>
+        <li>
+          Вызов <code>getShippingCost('Австралия')</code> возвращает
+          <code>'Доставка в Австралия будет стоить 170 кредитов'</code>.
+        </li>
+        <li>
+          Вызов <code>getShippingCost('Германия')</code> возвращает
+          <code>'Извините, в вашу страну доставки нет'</code>.
+        </li>
+        <li>
+          Вызов <code>getShippingCost('Китай')</code> возвращает
+          <code>'Доставка в Китай будет стоить 100 кредитов'</code>.
+        </li>
+        <li>
+          Вызов <code>getShippingCost('Чили')</code> возвращает
+          <code>'Доставка в Чили будет стоить 250 кредитов'</code>.
+        </li>
+        <li>
+          Вызов <code>getShippingCost('Ямайка')</code> возвращает
+          <code>'Доставка в Ямайка будет стоить 120 кредитов'</code>.
+        </li>
+        <li>
+          Вызов <code>getShippingCost('Швеция')</code> возвращает
+          <code>'Извините, в вашу страну доставки нет'</code>.
+        </li>
+      </ul>
+    </div>
+  </section>
+</section>

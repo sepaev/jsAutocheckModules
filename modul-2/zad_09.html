@@ -1,0 +1,65 @@
+<a href="/modul-2/index.html"><h1>Модуль - 02</h1></a>
+<h2>Задача - 09. Крайние элементы массива.</h2>
+<a href="/modul-2/zad_08.html">&lt; &lt;Предыдущая задача</a>
+<a href="/modul-2/zad_10.html">Cледующая задача&gt;&gt;</a>
+
+<details closed="">
+  <summary style="color: teal">Решение</summary>
+  <pre><code>
+  function getExtremeElements(array) {
+    // Пиши код ниже этой строки
+    const lastElementIndex = array.length - 1;
+    return [array[0], array[lastElementIndex]];
+
+    // Пиши код выше этой строки
+  }
+  console.log(getExtremeElements([1, 2, 3, 4, 5]));
+  console.log(getExtremeElements(["Земля", "Марс", "Венера"]));
+  console.log(getExtremeElements(["яблоко", "персик", "груша", "банан"]));
+</code></pre>
+</details>
+<script>
+  function getExtremeElements(array) {
+    // Пиши код ниже этой строки
+    const lastElementIndex = array.length - 1;
+    return [array[0], array[lastElementIndex]];
+
+    // Пиши код выше этой строки
+  }
+  console.log(getExtremeElements([1, 2, 3, 4, 5]));
+  console.log(getExtremeElements(["Земля", "Марс", "Венера"]));
+  console.log(getExtremeElements(["яблоко", "персик", "груша", "банан"]));
+</script>
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <h3 class="task">Задание</h3>
+      <p>
+        Напиши функцию <code>getExtremeElements(array)</code> которая принимает
+        один параметр <code>array</code> - массив элементов произвольной длины.
+        Функция должна возвращать массив из двух элементов - первого и
+        последнего элемента параметра <code>array</code>.
+      </p>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>Объявлена функция <code>getExtremeElements(array)</code>.</li>
+        <li>
+          Вызов <code>getExtremeElements([1, 2, 3, 4, 5])</code> возвращает
+          <code>[1, 5]</code>.
+        </li>
+        <li>
+          Вызов
+          <code>getExtremeElements(['Земля', 'Марс', 'Венера'])</code>
+          возвращает <code>['Земля', 'Венера']</code>.
+        </li>
+        <li>
+          Вызов
+          <code
+            >getExtremeElements(['яблоко', 'персик', 'груша', 'банан'])</code
+          >
+          возвращает <code>['яблоко', 'банан']</code>.
+        </li>
+      </ul>
+    </div>
+  </section>
+</section>

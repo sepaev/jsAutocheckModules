@@ -1,0 +1,82 @@
+<a href="/modul-2/index.html"><h1>Модуль - 02</h1></a>
+<h2>Задача - 02. Проверка пароля (ранний возврат).</h2>
+<a href="/modul-2/zad_01.html">&lt; &lt;Предыдущая задача</a>
+<a href="/modul-2/zad_03.html">Cледующая задача&gt;&gt;</a>
+
+<details closed="">
+  <summary style="color: teal">Решение</summary>
+  <pre><code>
+  function checkPassword(password) {
+    const ADMIN_PASSWORD = "jqueryismyjam";
+    // Пиши код ниже этой строки
+
+    if (password === ADMIN_PASSWORD) {
+      return "Добро пожаловать!";
+    }
+
+    return "Доступ запрещен, неверный пароль!";
+    // Пиши код выше этой строки
+  }
+
+  console.log(checkPassword("mangohackzor"));
+  console.log(checkPassword("polyhax"));
+  console.log(checkPassword("jqueryismyjam"));
+</code></pre>
+</details>
+<script>
+  function checkPassword(password) {
+    const ADMIN_PASSWORD = "jqueryismyjam";
+    // Пиши код ниже этой строки
+
+    if (password === ADMIN_PASSWORD) {
+      return "Добро пожаловать!";
+    }
+
+    return "Доступ запрещен, неверный пароль!";
+    // Пиши код выше этой строки
+  }
+
+  console.log(checkPassword("mangohackzor"));
+  console.log(checkPassword("polyhax"));
+  console.log(checkPassword("jqueryismyjam"));
+</script>
+
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <h3 class="task">Задание</h3>
+      <p>
+        Функция <code>checkPassword</code> получает пароль пользователя в
+        параметр <code>password</code>, проверяет его на совпадение с паролем
+        администратора в переменной <code>ADMIN_PASSWORD</code> и возвращает
+        сообщение о результате сравнения.
+      </p>
+      <p>
+        Проведи рефакторинг кода функции <code>checkStorage</code> используя
+        паттерн «ранний возврат»:
+      </p>
+      <ul>
+        <li>удали переменную <code>message</code>;</li>
+        <li>удали <code>else</code>;</li>
+        <li>код должен работать так же, как и до оптимизации.</li>
+      </ul>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>Объявлена функция <code>checkPassword(password)</code>.</li>
+        <li>
+          Вызов <code>checkPassword('mangohackzor')</code> возвращает '<code
+            >Доступ запрещен, неверный пароль!'</code
+          >.
+        </li>
+        <li>
+          Вызов <code>checkPassword('polyhax')</code> возвращает
+          <code>'Доступ запрещен, неверный пароль!'</code>.
+        </li>
+        <li>
+          Вызов <code>checkPassword('jqueryismyjam')</code> возвращает
+          <code>'Добро пожаловать!'</code>.
+        </li>
+      </ul>
+    </div>
+  </section>
+</section>

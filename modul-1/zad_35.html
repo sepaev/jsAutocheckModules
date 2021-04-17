@@ -1,0 +1,112 @@
+<a href="/modul-1/index.html"><h1>Модуль - 01</h1></a>
+<h2>Задача - 35. Метод includes().</h2>
+<a href="/modul-1/zad_34.html">&lt; &lt;Предыдущая задача</a>
+<a href="/modul-1/zad_36.html">Cледующая задача&gt;&gt;</a>
+
+<details closed=""><summary style="color: teal">Решение</summary>
+<pre><code>
+  function checkForName(fullName, name) {
+    const result = fullName.includes(name); // Дополни эту строку
+    console.log(result);
+    return result;
+  }
+  checkForName("Егор Колбасов", "Егор");
+  checkForName("Егор Колбасов", "егор");
+</code></pre>
+</details>
+
+<script>
+  function checkForName(fullName, name) {
+    const result = fullName.includes(name); // Дополни эту строку
+    console.log(result);
+    return result;
+  }
+  checkForName("Егор Колбасов", "Егор");
+  checkForName("Егор Колбасов", "егор");
+</script>
+
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <details closed="">
+        <summary>Теория</summary>
+        <p>
+          Метод строк <code>includes(substring)</code> проверяет входит ли
+          подстрока <code>substring</code> в строку, возвращает буль -
+          <code>true</code> если входит и <code>false</code> в противном случае.
+          Регистр символов в строке и подстроке имеет значение, так как например
+          буква <code>'a'</code> не равна букве <code>'А'</code>.
+        </p>
+        <pre><code class="language-js hljs javascript"><span class="hljs-keyword">const</span> productName = <span class="hljs-string">'Ремонтный дроид'</span>;
+
+<span class="hljs-built_in">console</span>.log(productName.includes(<span class="hljs-string">'н'</span>)); <span class="hljs-comment">// true</span>
+<span class="hljs-built_in">console</span>.log(productName.includes(<span class="hljs-string">'Н'</span>)); <span class="hljs-comment">// false</span>
+<span class="hljs-built_in">console</span>.log(productName.includes(<span class="hljs-string">'дроид'</span>)); <span class="hljs-comment">// true</span>
+<span class="hljs-built_in">console</span>.log(productName.includes(<span class="hljs-string">'Дроид'</span>)); <span class="hljs-comment">// false</span>
+<span class="hljs-built_in">console</span>.log(productName.includes(<span class="hljs-string">'Ремонтный'</span>)); <span class="hljs-comment">// true</span>
+<span class="hljs-built_in">console</span>.log(productName.includes(<span class="hljs-string">'ремонтный'</span>)); <span class="hljs-comment">// false</span>
+</code></pre>
+</details>
+      </details>
+      <h3 class="task">Задание</h3>
+      <p>
+        Функция <code>checkName(fullname, name)</code> принимает два параметра и
+        возвращает буль <code>true</code> или <code>false</code> - результат
+        проверки вхождения подстроки <code>name</code> в строку
+        <code>fullname</code>.
+      </p>
+      <ul>
+        <li>
+          <code>fullname</code> - полное имя состоящее из двух слов (имени и
+          фамилии) разделённых пробелом.
+        </li>
+        <li><code>name</code> - имя для проверки вхождения в полное имя.</li>
+      </ul>
+      <p>
+        Присвой переменной <code>result</code> выражение проверки вхождения
+        имени (параметр <code>name</code>), в полное имя (параметр
+        <code>fullname</code>). Пусть функция строго относится к регистру букв,
+        то есть «Петя» и «петя» для неё разные имена.
+      </p>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>Объявлена функция <code>checkForName(fullname, name)</code>.</li>
+        <li>
+          Вызов функции
+          <code>checkForName('Егор Колбасов', 'Егор')</code> возвращает
+          <code>true</code>.
+        </li>
+        <li>
+          Вызов функции
+          <code>checkForName('Егор Колбасов', 'егор')</code> возвращает
+          <code>false</code>.
+        </li>
+        <li>
+          Вызов функции
+          <code>checkForName('Егор Колбасов', 'егОр')</code> возвращает
+          <code>false</code>.
+        </li>
+        <li>
+          Вызов функции
+          <code>checkForName('Егор Колбасов', 'Женя')</code> возвращает
+          <code>false</code>.
+        </li>
+        <li>
+          Вызов функции
+          <code>checkForName('Вадим Некрасов', 'Вадим')</code> возвращает
+          <code>true</code>.
+        </li>
+        <li>
+          Вызов функции
+          <code>checkForName('Вадим Некрасов', 'вадим')</code> возвращает
+          <code>false</code>.
+        </li>
+        <li>
+          Вызов функции
+          <code>checkForName('Вадим Некрасов', 'Дима')</code> возвращает
+          <code>false</code>.
+        </li>
+      </ul>
+    </div>
+  </section>
+</section>

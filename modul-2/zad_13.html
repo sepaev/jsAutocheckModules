@@ -1,0 +1,99 @@
+<a href="/modul-2/index.html"><h1>Модуль - 02</h1></a>
+<h2>Задача - 13. Генератор slug.</h2>
+<a href="/modul-2/zad_12.html">&lt; &lt;Предыдущая задача</a>
+<a href="/modul-2/zad_14.html">Cледующая задача&gt;&gt;</a>
+
+<details closed="">
+  <summary style="color: teal">Решение</summary>
+  <pre><code>
+  function slugify(title) {
+    // Пиши код ниже этой строки
+    const arraySplit = title.split(" ");
+
+    return arraySplit.join("-").toLowerCase();
+
+    // Пиши код выше этой строки
+  }
+
+  console.log(slugify("Массивы для новичков"));
+  console.log(slugify("Английский для разработчика"));
+  console.log(slugify("Десять секретов JavaScript"));
+  console.log(slugify("Как стать JUNIOR разработчиком за ДВЕ НЕДЕЛИ"));
+</code></pre>
+</details>
+<script>
+  function slugify(title) {
+    // Пиши код ниже этой строки
+    const arraySplit = title.split(" ");
+
+    return arraySplit.join("-").toLowerCase();
+
+    // Пиши код выше этой строки
+  }
+
+  console.log(slugify("Массивы для новичков"));
+  console.log(slugify("Английский для разработчика"));
+  console.log(slugify("Десять секретов JavaScript"));
+  console.log(slugify("Как стать JUNIOR разработчиком за ДВЕ НЕДЕЛИ"));
+</script>
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <h3 class="task">Задание</h3>
+      <p>
+        Термин <code>slug</code> - это человеко-понятный уникальный
+        идентификатор, который используется в веб-разработке для создания
+        читабельных URL-адесов.
+      </p>
+      <p>
+        Например, вместо того чтобы пользователь увидел в адресной строке
+        <code>mysite.com/posts/1q8fh74tx</code>, можно сделать
+        <code>slug</code> из названия статьи. В результате адрес получится более
+        приятным для восприятия:
+        <code>mysite.com/posts/массивы-для-новичков</code>.
+      </p>
+      <div class="attention">
+        <h5 style="color: tomato">Внимание</h5>
+        <p style="color: tomato">
+          Slug это всегда строка в нижнем регистре, слова которой разделены
+          тире.
+        </p>
+      </div>
+      <p>
+        Напиши функцию <code>slugify(title)</code> которая принимает заголовок
+        статьи, параметр <code>title</code>, и возвращает <code>slug</code>,
+        созданный из этой строки.
+      </p>
+      <ul>
+        <li>
+          Значением параметра <code>title</code> будут строки, слова которых
+          разделены только пробелами.
+        </li>
+        <li>Все символы <code>slug</code> должны быть в нижнем регистре.</li>
+        <li>Все слова <code>slug</code> должна быть разделены тире.</li>
+      </ul>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>Объявлена функция <code>slugify(title)</code>.</li>
+        <li>
+          Вызов <code>slugify('Массивы для новичков')</code> возвращает
+          <code>'массивы-для-новичков'</code>.
+        </li>
+        <li>
+          Вызов <code>slugify('Английский для разработчика')</code> возвращает
+          <code>'английский-для-разработчика'</code>.
+        </li>
+        <li>
+          Вызов <code>slugify('Десять секретов JavaScript')</code> возвращает
+          <code>'десять-секретов-javascript'</code>.
+        </li>
+        <li>
+          Вызов
+          <code>slugify('Как стать JUNIOR разработчиком за ДВЕ НЕДЕЛИ')</code>
+          возвращает
+          <code>'как-стать-junior-разработчиком-за-две-недели'</code>.
+        </li>
+      </ul>
+    </div>
+  </section>
+</section>

@@ -1,0 +1,79 @@
+<a href="/modul-1/index.html"><h1>Модуль - 01</h1></a>
+<h2>Задача - 07. Объявление и вызов функции.</h2>
+<a href="/modul-1/zad_06.html">&lt; &lt;Предыдущая задача</a>
+<a href="/modul-1/zad_08.html">Cледующая задача&gt;&gt;</a>
+
+<details closed="">
+  <summary style="color: teal">Решение</summary>
+  <pre><code>
+  // 1. Объявление функции sayHi
+  function sayHi() {
+    // Тело функции
+    console.log("Привет, это моя первая функция!");
+  }
+  sayHi(); // 'Это лог при вызове функции sayHi'
+</code></pre>
+</details>
+
+<script>
+  // 1. Объявление функции sayHi
+  function sayHi() {
+    // Тело функции
+    console.log("Привет, это моя первая функция!");
+  }
+  sayHi(); // 'Это лог при вызове функции sayHi'
+</script>
+
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <details closed="">
+        <summary>Теория</summary>
+        Функция - это подпрограмма, независимая часть кода, предназначенная для
+        многократного выполнения конкретной задачи с разными начальными
+        значениями.
+        <p>
+          Функцию можно представить как чёрный ящик, она получает что-то на
+          входе (данные), и возвращает что-то на выходе (результат выполнения
+          кода внутри неё).
+        </p>
+        <pre><code class="language-js hljs javascript"><span class="hljs-comment">// 1. Объявление функции multiply</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">multiply</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-comment">// Тело функции</span>
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Это лог при вызове функции multiply'</span>);
+}
+
+<span class="hljs-comment">// 2. Вызовы функции multiply</span>
+multiply(); <span class="hljs-comment">// 'Это лог при вызове функции multiply'</span>
+multiply(); <span class="hljs-comment">// 'Это лог при вызове функции multiply'</span>
+multiply(); <span class="hljs-comment">// 'Это лог при вызове функции multiply'</span>
+</code></pre>
+        <p>
+          Объявление функции начинается с ключевого слова <code>function</code>,
+          за которым идёт её имя - глагол отвечающий на вопрос «Что сделать?» и
+          пара круглых скобок. Тело функции заключено в фигурные скобки
+          <code>{}</code> и содержит инструкции, которые необходимо выполнить
+          при её вызове. Затем, когда необходимо, функция вызывается с помощью
+          имени и пары круглых скобок.
+        </p>
+      </details>
+      <h3 class="task">Задание</h3>
+      <p>
+        Объяви функцию <code>sayHi</code>, внутри которой добавь
+        <code>console.log()</code> со строкой
+        <code>'Привет, это моя первая функция!'</code>.
+      </p>
+      <p>После объявления вызови функцию <code>sayHi</code>.</p>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>Ожидается объявление <code>Function Declaration</code>.</li>
+        <li>Функции присвоено имя <code>sayHi</code>.</li>
+        <li>
+          В теле функции <code>sayHi</code> есть
+          <code>console.log('Привет, это моя первая функция!')</code>.
+        </li>
+        <li>После объявления есть вызов функции <code>sayHi</code>.</li>
+      </ul>
+    </div>
+  </section>
+</section>

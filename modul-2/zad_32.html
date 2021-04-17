@@ -1,0 +1,131 @@
+<a href="/modul-2/index.html"><h1>Модуль - 02</h1></a>
+<h2>Задача - 32. Функция includes().</h2>
+<a href="/modul-2/zad_31.html">&lt; &lt;Предыдущая задача</a>
+<a href="/modul-3/zad_01.html">Cледующая задача&gt;&gt;</a>
+
+<details closed="">
+  <summary style="color: teal">Решение</summary>
+  <pre><code>
+  function includes(array, value) {
+    // Пиши код ниже этой строки
+
+    for (const key of array) {
+      if (key === value) {
+        return true;
+      }
+    }
+    return false;
+
+    // Пиши код выше этой строки
+  }
+</code></pre>
+</details>
+<script>
+  function includes(array, value) {
+    // Пиши код ниже этой строки
+
+    for (const key of array) {
+      if (key === value) {
+        return true;
+      }
+    }
+    return false;
+
+    // Пиши код выше этой строки
+  }
+
+  console.log(includes([1, 2, 3, 4, 5], 3));
+  console.log(includes([1, 2, 3, 4, 5], 17));
+  console.log(
+    includes(["Земля", "Марс", "Венера", "Юпитер", "Сатурн"], "Юпитер")
+  );
+  console.log(
+    includes(["Земля", "Марс", "Венера", "Юпитер", "Сатурн"], "Уран")
+  );
+  console.log(includes(["яблоко", "слива", "груша", "апельсин"], "слива"));
+  console.log(includes(["яблоко", "слива", "груша", "апельсин"], "киви"));
+</script>
+
+<script>
+  //   function includes(array, value) {
+  //     // Пиши код ниже этой строки
+
+  //     for (let i = 0; i < array.length; i += 1) {
+  //       if (array[i] === value) {
+  //         return true;
+  //       }
+  //     }
+
+  //     return false;
+
+  //     // Пиши код выше этой строки
+  //   }
+</script>
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <h3 class="task">Задание</h3>
+      <p>
+        Напиши функцию <code>includes(array, value)</code>, которая делает тоже
+        самое, что и метод массива <code>массив.includes(значение)</code> -
+        проверяет, есть ли в массиве <code>array</code> значение
+        <code>value</code>, возвращая <code>true</code> если есть и
+        <code>false</code> в противном случае.
+      </p>
+      <p>
+        При выполнении этой задачи в теле функции <code>includes()</code> нельзя
+        использовать метод <code>массив.includes(значение)</code>.
+      </p>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>Объявлена функция <code>includes(array, value)</code>.</li>
+        <li>
+          Вызов <code>includes([1, 2, 3, 4, 5], 3)</code> возвращает
+          <code>true</code>.
+        </li>
+        <li>
+          Вызов <code>includes([1, 2, 3, 4, 5], 17)</code> возвращает
+          <code>false</code>.
+        </li>
+        <li>
+          Вызов
+          <code
+            >includes(['Земля', 'Марс', 'Венера', 'Юпитер', 'Сатурн'],
+            'Юпитер')</code
+          >
+          возвращает <code>true</code>.
+        </li>
+        <li>
+          Вызов
+          <code
+            >includes(['Земля', 'Марс', 'Венера', 'Юпитер', 'Сатурн'],
+            'Уран')</code
+          >
+          возвращает <code>false</code>.
+        </li>
+        <li>
+          Вызов
+          <code
+            >includes(['яблоко', 'слива', 'груша', 'апельсин'], 'слива')</code
+          >
+          возвращает <code>true</code>.
+        </li>
+        <li>
+          Вызов
+          <code
+            >includes(['яблоко', 'слива', 'груша', 'апельсин'], 'киви')</code
+          >
+          возвращает <code>false</code>.
+        </li>
+        <li>
+          Вызов <code>includes()</code> для случайного массива со случайным
+          <code>value </code> возвращает верный boolean.
+        </li>
+        <li>
+          В функции <code>includes</code> используется <code>for</code>,
+          <code>return</code>, но не метод массива <code>includes</code>.
+        </li>
+      </ul>
+    </div>
+  </section>
+</section>

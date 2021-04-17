@@ -1,0 +1,84 @@
+<a href="/modul-1/index.html"><h1>Модуль - 01</h1></a>
+<h2>Задача - 30. Длина строки.</h2>
+<a href="/modul-1/zad_29.html">&lt; &lt;Предыдущая задача</a>
+<a href="/modul-1/zad_31.html">Cледующая задача&gt;&gt;</a>
+
+<details closed=""><summary style="color: teal">Решение</summary>
+<pre><code>
+  function getNameLength(name) {
+    const message = `Длина вашего имени ${name.length} символа(ов)`; // Дополни эту строку
+    console.log(message);
+    return message;
+  }
+
+  getNameLength("Poly");
+  getNameLength("Harambe");
+  getNameLength("Billy");
+  getNameLength("Joe");
+</code></pre>
+</details>
+
+<script>
+  function getNameLength(name) {
+    const message = `Длина вашего имени ${name.length} символа(ов)`; // Дополни эту строку
+    console.log(message);
+    return message;
+  }
+
+  getNameLength("Poly");
+  getNameLength("Harambe");
+  getNameLength("Billy");
+  getNameLength("Joe");
+</script>
+
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <details closed="">
+        <summary>Теория</summary>
+        <p>
+          Для того чтобы узнать длину строки, то есть количество её символов, у
+          всех строк есть встроенное свойство <code>length</code>, значение
+          которого можно получить обратившить к нему через точку после имени
+          переменной или строкового литерала.
+        </p>
+        <pre><code class="language-js hljs javascript"><span class="hljs-keyword">const</span> productName = <span class="hljs-string">'Ремонтный дроид'</span>;
+
+<span class="hljs-comment">// Если в переменной хранится строка</span>
+<span class="hljs-built_in">console</span>.log(productName.length); <span class="hljs-comment">// 15</span>
+
+<span class="hljs-comment">// Если строковый литерал</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Ремонтный дроид'</span>.length); <span class="hljs-comment">// 15</span>
+</code></pre>
+</details>
+      </details>
+      <h3 class="task">Задание</h3>
+      <p>
+        Функция <code>getNameLength(name)</code> принимает имя (параметр name) и
+        возвращает строку, в которой указана его длина. Дополни шаблонную строку
+        в переменной <code>message</code> длиной строки из параметра
+        <code>name</code>.
+      </p>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>Объявлена функция <code>getNameLength(name)</code>.</li>
+        <li>
+          Вызов функции <code>getNameLength('Poly')</code> возвращает
+          <code>'Длина вашего имени 4 символа(ов)'</code>.
+        </li>
+        <li>
+          Вызов функции <code>getNameLength('Harambe')</code> возвращает
+          <code>'Длина вашего имени 6 символа(ов)'</code>.
+        </li>
+        <li>
+          Вызов функции <code>getNameLength('Billy')</code> возвращает
+          <code>'Длина вашего имени 5 символа(ов)'</code>.
+        </li>
+        <li>
+          Вызов функции <code>getNameLength('Joe')</code> возвращает
+          <code>'Длина вашего имени 3 символа(ов)'</code>.
+        </li>
+      </ul>
+    </div>
+  </section>
+</section>

@@ -1,0 +1,95 @@
+<a href="/modul-1/index.html"><h1>Модуль - 01</h1></a>
+<h2>Задача - 10. Шаблонные строки 2.0.</h2>
+<a href="/modul-1/zad_09.html">&lt; &lt;Предыдущая задача</a>
+<a href="/modul-1/zad_11.html">Cледующая задача&gt;&gt;</a>
+
+<details closed="">
+  <summary style="color: teal">Решение</summary>
+  <pre><code>
+  function makeMessage(name, price) {
+    // Пиши код ниже этой строки
+    const message = `Вы выбрали ${name}, цена за штуку ${price} кредитов`;
+    console.log(message);
+    // Пиши код выше этой строки
+    return message;
+  }
+
+  makeMessage("Радар", 6150);
+  makeMessage("Сканер", 3500);
+  makeMessage("Реактор", 8000);
+  makeMessage("Двигатель", 4070);
+</code></pre>
+</details>
+
+<script>
+  function makeMessage(name, price) {
+    // Пиши код ниже этой строки
+    const message = `Вы выбрали ${name}, цена за штуку ${price} кредитов`;
+    console.log(message);
+    // Пиши код выше этой строки
+    return message;
+  }
+
+  makeMessage("Радар", 6150);
+  makeMessage("Сканер", 3500);
+  makeMessage("Реактор", 8000);
+  makeMessage("Двигатель", 4070);
+</script>
+
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <h3 class="task">Задание</h3>
+      <p>
+        Функция <code>makeMessage(name, price)</code> составляет и возвращает
+        сообщение о покупке. Она объявляет два параметра, значения которых будут
+        задаваться во время её вызова.
+      </p>
+      <ul>
+        <li><code>name</code> - название товара</li>
+        <li><code>price</code> - цена товара</li>
+      </ul>
+      <p>
+        Дополни код функции так, чтобы в переменную
+        <code>message</code> записывалась строка
+        <code
+          >Вы выбрали &lt;имя товара&gt;, цена за штуку &lt;цена товара&gt;
+          кредитов</code
+        >, где <code>&lt;имя товара&gt;</code> и
+        <code>&lt;цена товара&gt;</code> это значения параметров
+        <code>name</code> и <code>price</code>. Используй синтаксис шаблонных
+        строк.
+      </p>
+      <div class="attention">
+        <h5 style="color: red">Внимание</h5>
+        <p style="color: red">
+          Обрати внимание на то, что в коде нет вызовов функции
+          <b>makeMessage</b>. С этого задания и дальше мы сами будем вызывать
+          твои функции и проверять то, как они работают. Результат наших
+          проверок ты увидишь в блоке <b>Результаты</b> под редактором кода.
+        </p>
+      </div>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>Объявлена функция <code>makeMessage(name, price)</code>.</li>
+        <li>
+          Вызов <code>makeMessage('Радар', 6150)</code> возвращает
+          <code>'Вы выбрали Радар, цена за штуку 6150 кредитов'</code>.
+        </li>
+        <li>
+          Вызов <code>makeMessage('Сканер', 3500)</code> возвращает
+          <code>'Вы выбрали Сканер, цена за штуку 3500 кредитов'</code>.
+        </li>
+        <li>
+          Вызов <code>makeMessage('Реактор', 8000)</code> возвращает
+          <code>'Вы выбрали Реактор, цена за штуку 8000 кредитов'</code>.
+        </li>
+        <li>
+          Вызов <code>makeMessage('Двигатель', 4070)</code> возвращает '<code
+            >Вы выбрали Двигатель, цена за штуку 4070 кредитов'</code
+          >.
+        </li>
+      </ul>
+    </div>
+  </section>
+</section>

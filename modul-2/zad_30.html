@@ -1,0 +1,89 @@
+<a href="/modul-2/index.html"><h1>Модуль - 02</h1></a>
+<h2>Задача - 30. Оператор break.</h2>
+<a href="/modul-2/zad_29.html">&lt; &lt;Предыдущая задача</a>
+<a href="/modul-2/zad_31.html">Cледующая задача&gt;&gt;</a>
+
+<details closed=""><summary style="color: teal">Решение</summary>
+<pre><code>
+  const start = 6;
+  const end = 27;
+  let number;
+
+  for (let i = start; i < end; i += 1) {
+    if (i % 5 === 0) {
+      number = i;
+
+      break;
+    }
+  }
+  console.log(number);
+</code></pre>
+</details>
+<script>
+  const start = 6;
+  const end = 27;
+  let number;
+
+  for (let i = start; i < end; i += 1) {
+    if (i % 5 === 0) {
+      number = i;
+
+      break;
+    }
+  }
+  console.log(number);
+</script>
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <details closed="">
+        <summary>Теория</summary>
+        <p>
+          Прервать выполнение цикла можно в любой момент. Для этого существует
+          оператор <code>break</code>, который полностью прекращает выполнение
+          цикла и передаёт управление на строку за его телом.
+        </p>
+        <p>
+          В примере ищем число <code>3</code>. Как только выполнится условие
+          <code>if</code>, цикл прекратит своё выполнение (будет прерван).
+        </p>
+        <pre><code class="language-js hljs javascript"><span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt;= <span class="hljs-number">5</span>; i += <span class="hljs-number">1</span>) {
+  <span class="hljs-built_in">console</span>.log(i);
+
+  <span class="hljs-keyword">if</span> (i === <span class="hljs-number">3</span>) {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Нашли число 3, прерываем выполнение цикла'</span>);
+    <span class="hljs-keyword">break</span>;
+  }
+}
+
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Лог после цикла'</span>);
+</code></pre>
+</details>
+      </details>
+      <h3 class="task">Задание</h3>
+      <p>
+        Дополни код так, чтобы в переменную <code>number</code> записывалось
+        первое число от <code>start</code> до <code>end</code>, которое делится
+        на <code>5</code> без остатка.
+      </p>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>
+          Объявлена переменная <code>start</code> со значением <code>6</code>.
+        </li>
+        <li>
+          Объявлена переменная <code>end</code> со значением <code>27</code>.
+        </li>
+        <li>Объявлена переменная <code>number</code> без инициализации.</li>
+        <li>
+          Итоговое значение переменной <code>number</code> равно
+          <code>10</code>.
+        </li>
+        <li>
+          В цикле <code>for</code> используется <code>break</code> для выхода до
+          завершения всех итераций цикла.
+        </li>
+      </ul>
+    </div>
+  </section>
+</section>

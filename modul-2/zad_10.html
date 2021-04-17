@@ -1,0 +1,79 @@
+<a href="/modul-2/index.html"><h1>Модуль - 02</h1></a>
+<h2>Задача - 10. Метод строк split().</h2>
+<a href="/modul-2/zad_09.html">&lt; &lt;Предыдущая задача</a>
+<a href="/modul-2/zad_11.html">Cледующая задача&gt;&gt;</a>
+
+<details closed=""><summary style="color: teal">Решение</summary>
+<pre><code>
+  function splitMessage(message, delimeter) {
+    let words;
+    // Пиши код ниже этой строки
+    return message.split(delimeter);
+
+    // Пиши код выше этой строки
+    return words;
+  }
+
+  console.log(splitMessage("Манго спешит на поезд", " "));
+</code></pre>
+</details>
+<script>
+  function splitMessage(message, delimeter) {
+    let words;
+    // Пиши код ниже этой строки
+    return message.split(delimeter);
+
+    // Пиши код выше этой строки
+    return words;
+  }
+
+  console.log(splitMessage("Манго спешит на поезд", " "));
+</script>
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <details closed="">
+        <summary>Теория</summary>
+        <p>
+          Метод <code>split(delimeter)</code> позволяет превратить строку в
+          массив, «разбив» его по разделителю <code>delimeter</code>. Если
+          разделитель это пустая строка, то получится массив отдельных символов.
+          Разделителем может быть один или несколько символов.
+        </p>
+        <pre><code class="language-js hljs javascript"><span class="hljs-keyword">const</span> name = <span class="hljs-string">'Манго'</span>;
+<span class="hljs-built_in">console</span>.log(name.split(<span class="hljs-string">''</span>)); <span class="hljs-comment">// ['M', 'a', 'н', 'г', 'о']</span>
+
+<span class="hljs-keyword">const</span> message = <span class="hljs-string">'JavaScript это интересно'</span>;
+<span class="hljs-built_in">console</span>.log(message.split(<span class="hljs-string">' '</span>)); <span class="hljs-comment">// ['JavaScript', 'это', 'интересно']</span>
+</code></pre>
+</details>
+      </details>
+      <h3 class="task">Задание</h3>
+      <p>
+        Дополни код функции <code>splitMessage(message, delimeter)</code> так,
+        чтобы она возвращала в переменной <code>words</code> результат
+        разделения строки <code>message</code> по разделителю
+        <code>delimeter</code> - массив строк.
+      </p>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>
+          Объявлена функция <code>splitMessage(message, delimeter)</code>.
+        </li>
+        <li>
+          Вызов
+          <code>splitMessage('Манго спешит на поезд', ' ')</code> возвращает
+          <code>['Манго', 'спешит', 'на', 'поезд']</code>.
+        </li>
+        <li>
+          Вызов <code>splitMessage('Манго', '')</code> возвращает
+          <code>['М', 'а', 'н', 'г', 'о']</code>.
+        </li>
+        <li>
+          Вызов <code>splitMessage('лучшее_за_неделю', '_')</code> возвращает
+          <code>['лучшее', 'за', 'неделю']</code>.
+        </li>
+      </ul>
+    </div>
+  </section>
+</section>

@@ -1,0 +1,102 @@
+<a href="/modul-2/index.html"><h1>Модуль - 02</h1></a>
+<h2>Задача - 03. Склад товаров 3.0.</h2>
+<a href="/modul-2/zad_02.html">&lt; &lt;Предыдущая задача</a>
+<a href="/modul-2/zad_04.html">Cледующая задача&gt;&gt;</a>
+
+<details closed="">
+  <summary style="color: teal">Решение</summary>
+  <pre><code>
+  function checkStorage(available, ordered) {
+    // Пиши код ниже этой строки
+    if (ordered === 0) {
+      return "В заказе еще нет товаров";
+    }
+
+    if (ordered > available) {
+      return "Слишком большой заказ, на складе недостаточно товаров!";
+    }
+    return "Заказ оформлен, с вами свяжется менеджер";
+    // Пиши код выше этой строки
+  }
+
+  console.log(checkStorage(100, 50));
+  console.log(checkStorage(100, 130));
+  console.log(checkStorage(70, 0));
+  console.log(checkStorage(200, 20));
+  console.log(checkStorage(200, 250));
+  console.log(checkStorage(150, 0));
+</code></pre>
+</details>
+<script>
+  function checkStorage(available, ordered) {
+    // Пиши код ниже этой строки
+    if (ordered === 0) {
+      return "В заказе еще нет товаров";
+    }
+
+    if (ordered > available) {
+      return "Слишком большой заказ, на складе недостаточно товаров!";
+    }
+    return "Заказ оформлен, с вами свяжется менеджер";
+    // Пиши код выше этой строки
+  }
+
+  console.log(checkStorage(100, 50));
+  console.log(checkStorage(100, 130));
+  console.log(checkStorage(70, 0));
+  console.log(checkStorage(200, 20));
+  console.log(checkStorage(200, 250));
+  console.log(checkStorage(150, 0));
+</script>
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <h3 class="task">Задание</h3>
+      <p>
+        Функция <code>checkStorage</code> проверяет возможность оформления
+        заказа и возвращает сообщение о результате. Она принимает два параметра,
+        значения которых будут задаваться во время её вызова.
+      </p>
+      <ul>
+        <li>
+          <code>available</code> - доступное количество товаров на складе;
+        </li>
+        <li><code>ordered</code> - количество единиц товара в заказе.</li>
+      </ul>
+      <p>
+        Проведи рефакторинг кода функции <code>checkStorage</code> используя
+        паттерн «ранний возврат».
+      </p>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>
+          Объявлена функция <code>checkStorage(available, ordered)</code>.
+        </li>
+        <li>
+          Вызов <code>checkStorage(100, 50)</code> возвращает
+          <code>'Заказ оформлен, с вами свяжется менеджер'</code>.
+        </li>
+        <li>
+          Вызов <code>checkStorage(100, 130)</code> возвращает
+          <code>'Слишком большой заказ, на складе недостаточно товаров!'</code>.
+        </li>
+        <li>
+          Вызов <code>checkStorage(70, 0)</code> возвращает
+          <code>'В заказе еще нет товаров'</code>.
+        </li>
+        <li>
+          Вызов <code>checkStorage(200, 20)</code> возвращает
+          <code>'Заказ оформлен, с вами свяжется менеджер'</code>.
+        </li>
+        <li>
+          Вызов <code>checkStorage(200, 250)</code> возвращает
+          <code>'Слишком большой заказ, на складе недостаточно товаров!'</code>.
+        </li>
+        <li>
+          Вызов <code>checkStorage(150, 0)</code> возвращает
+          <code>'В заказе еще нет товаров'</code>.
+        </li>
+      </ul>
+    </div>
+  </section>
+</section>

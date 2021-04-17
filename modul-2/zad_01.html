@@ -1,0 +1,117 @@
+<a href="/modul-2/index.html"><h1>Модуль - 02</h1></a>
+<h2>Задача - 01. Ранний возврат.</h2>
+<a href="/modul-1/zad_36.html">&lt; &lt;Предыдущая задача</a>
+<a href="/modul-2/zad_02.html">Cледующая задача&gt;&gt;</a>
+
+<details closed=""><summary style="color: teal">Решение</summary>
+<pre><code>
+  function checkAge(age) {
+    if (age >= 18) {
+      // Дополни эту строку
+      return "Вы совершеннолетний человек";
+    }
+
+    return "Вы не совершеннолетний человек";
+  }
+
+  console.log(checkAge(20));
+  console.log(checkAge(8));
+  console.log(checkAge(14));
+</code></pre>
+</details>
+<script>
+  function checkAge(age) {
+    if (age >= 18) {
+      // Дополни эту строку
+      return "Вы совершеннолетний человек";
+    }
+
+    return "Вы не совершеннолетний человек";
+  }
+
+  console.log(checkAge(20));
+  console.log(checkAge(8));
+  console.log(checkAge(14));
+</script>
+
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <details closed="">
+        <summary>Теория</summary>
+        <p>
+          В функции может быть больше одного оператора <code>return</code>.
+          Главное помнить, что выполнение функции прерывается когда
+          интерпретатор встречает возврат, и весь код после него будет
+          проигнорирован в текущем вызове функции.
+        </p>
+        <p>
+          Возьмём уже знакомую нам функцию проверки совершеннолетия. Она
+          работает, но здесь есть «лишний» код, то есть тело функции можно
+          оптимизировать. В данном случае подойдёт приём (паттерн) «ранний
+          возврат».
+        </p>
+        <pre><code class="language-js hljs javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">checkAge</span>(<span class="hljs-params">age</span>) </span>{
+  <span class="hljs-keyword">let</span> message;
+
+  <span class="hljs-keyword">if</span> (age &gt;= <span class="hljs-number">18</span>) {
+    message = <span class="hljs-string">'Вы совершеннолетний человек'</span>;
+  } <span class="hljs-keyword">else</span> {
+    message = <span class="hljs-string">'Вы не совершеннолетний человек'</span>;
+  }
+
+  <span class="hljs-keyword">return</span> message;
+}
+</code></pre>
+</details>
+        <ul>
+          <li>
+            Если условие в <code>if</code> выполняется, то есть приводится к
+            <code>true</code>, возвращаем строку
+            <code>'Вы совершеннолетний человек'</code> и код ниже уже не
+            исполнится.
+          </li>
+          <li>
+            Если условие в <code>if</code> не выполняется, то есть приводится к
+            <code>false</code>, возвращаем строку
+            <code>'Вы не совершеннолетний человек'</code>.
+          </li>
+        </ul>
+        <p>
+          Используя паттерн «ранний возврат» и то, что выполнение функции
+          прерывается на операторе <code>return</code>, мы избавляемся от лишней
+          переменной и блока <code>else</code>. То есть этот приём помогает
+          «разгладить» ветвления.
+        </p>
+      </details>
+      <h3 class="task">Задание</h3>
+      <p>
+        Запиши условие в инструкции <code>if</code> так, чтобы функция работала
+        правильно.
+      </p>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>Объявлена функция <code>checkAge(age)</code>.</li>
+        <li>
+          В выражении проверки возраста использован оператор <code>&gt;=</code>.
+        </li>
+        <li>
+          Вызов <code>checkAge(20)</code> возвращает
+          <code>'Вы совершеннолетний человек'</code>.
+        </li>
+        <li>
+          Вызов <code>checkAge(8)</code> возвращает
+          <code>'Вы не совершеннолетний человек'</code>.
+        </li>
+        <li>
+          Вызов <code>checkAge(14)</code> возвращает
+          <code>'Вы не совершеннолетний человек'</code>.
+        </li>
+        <li>
+          Вызов <code>checkAge(38)</code> возвращает
+          <code>'Вы совершеннолетний человек'</code>.
+        </li>
+      </ul>
+    </div>
+  </section>
+</section>

@@ -1,0 +1,98 @@
+<a href="/modul-2/index.html"><h1>Модуль - 02</h1></a>
+<h2>Задача - 11. Гравировка украшений.</h2>
+<a href="/modul-2/zad_10.html">&lt; &lt;Предыдущая задача</a>
+<a href="/modul-2/zad_12.html">Cледующая задача&gt;&gt;</a>
+
+<details closed="">
+  <summary style="color: teal">Решение</summary>
+  <pre><code>
+  function calculateEngravingPrice(message, pricePerWord) {
+    // Пиши код ниже этой строки
+    return message.split(" ").length * pricePerWord;
+
+    // Пиши код выше этой строки
+  }
+
+  console.log(calculateEngravingPrice("JavaScript у меня в крови", 10));
+  console.log(calculateEngravingPrice("JavaScript у меня в крови", 20));
+  console.log(
+    calculateEngravingPrice("Веб-разработка это творческая работа", 40)
+  );
+  console.log(
+    calculateEngravingPrice("Веб-разработка это творческая работа", 20)
+  );
+</code></pre>
+</details>
+<script>
+  function calculateEngravingPrice(message, pricePerWord) {
+    // Пиши код ниже этой строки
+    return message.split(" ").length * pricePerWord;
+
+    // Пиши код выше этой строки
+  }
+
+  console.log(calculateEngravingPrice("JavaScript у меня в крови", 10));
+  console.log(calculateEngravingPrice("JavaScript у меня в крови", 20));
+  console.log(
+    calculateEngravingPrice("Веб-разработка это творческая работа", 40)
+  );
+  console.log(
+    calculateEngravingPrice("Веб-разработка это творческая работа", 20)
+  );
+</script>
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <h3 class="task">Задание</h3>
+      <p>
+        Сервису гравировки украшений нужна функция, которая бы автоматически
+        считала цену гравировки, в зависимости от количества слов и цены за
+        слово.
+      </p>
+      <p>
+        Объявлена функция
+        <code>calculateEngravingPrice(message, pricePerWord)</code>. Эта функция
+        принимает строку, состоящую из слов разделённых только пробелами
+        (параметр <code>message</code>) и цену гравировки одного слова (параметр
+        <code>pricePerWord</code>).
+      </p>
+      <p>
+        Напиши тело функции, чтобы она возвращала общую стоимость гравировки
+        всех слов в строке.
+      </p>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>
+          Объявлена функция
+          <code>calculateEngravingPrice(message, pricePerWord)</code>.
+        </li>
+        <li>
+          Вызов
+          <code>calculateEngravingPrice('JavaScript у меня в крови', 10)</code>
+          возвращает <code>50</code>.
+        </li>
+        <li>
+          Вызов
+          <code>calculateEngravingPrice('JavaScript у меня в крови', 20)</code>
+          возвращает <code>100</code>.
+        </li>
+        <li>
+          Вызов
+          <code
+            >calculateEngravingPrice('Веб-разработка это творческая работа',
+            40)</code
+          >
+          возвращает <code>160</code>.
+        </li>
+        <li>
+          Вызов
+          <code
+            >calculateEngravingPrice('Веб-разработка это творческая работа',
+            20)</code
+          >
+          возвращает <code>80</code>.
+        </li>
+      </ul>
+    </div>
+  </section>
+</section>

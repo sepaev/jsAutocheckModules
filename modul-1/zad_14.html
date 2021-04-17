@@ -1,0 +1,102 @@
+<a href="/modul-1/index.html"><h1>Модуль - 01</h1></a>
+<h2>Задача - 14. Операторы сравнения <code>===</code> и <code>!==</code>.</h2>
+<a href="/modul-1/zad_13.html">&lt; &lt;Предыдущая задача</a>
+<a href="/modul-1/zad_15.html">Cледующая задача&gt;&gt;</a>
+
+<details closed=""><summary style="color: teal">Решение</summary>
+<pre><code>
+  function isValidPassword(password) {
+    const SAVED_PASSWORD = "jqueryismyjam";
+    // Пиши код ниже этой строки
+    const isMatch = password === SAVED_PASSWORD;
+    console.log(isMatch);
+    // Пиши код выше этой строки
+    return isMatch;
+  }
+
+  isValidPassword("mangodab3st");
+  isValidPassword("kiwirul3z");
+  isValidPassword("jqueryismyjam");
+</code></pre>
+</details>
+
+<script>
+  function isValidPassword(password) {
+    const SAVED_PASSWORD = "jqueryismyjam";
+    // Пиши код ниже этой строки
+    const isMatch = password === SAVED_PASSWORD;
+    console.log(isMatch);
+    // Пиши код выше этой строки
+    return isMatch;
+  }
+
+  isValidPassword("mangodab3st");
+  isValidPassword("kiwirul3z");
+  isValidPassword("jqueryismyjam");
+</script>
+
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <details closed="">
+        <summary>Теория</summary>
+        <p>
+          «Нестрогие» операторы <code>==</code> и <code>!=</code> выполняют
+          преобразование типов сравниваемых значений, что может привести к
+          ошибкам, особенно у начинающих.
+        </p>
+        <pre><code class="language-js hljs javascript"><span class="hljs-comment">// ❌ Плохо, выполняется приведение типов</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-number">5</span> == <span class="hljs-string">'5'</span>); <span class="hljs-comment">// true</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-number">5</span> != <span class="hljs-string">'5'</span>); <span class="hljs-comment">// false</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-number">1</span> == <span class="hljs-literal">true</span>); <span class="hljs-comment">// true</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-number">1</span> != <span class="hljs-literal">true</span>); <span class="hljs-comment">// false</span>
+</code></pre>
+        <p>
+          Поэтому для проверки равенства или неравенства двух значений
+          используются операторы <code>===</code> (строгое равенство) и
+          <code>!==</code> (строгое неравенство), которые не выполняют
+          приведение типов операндов.
+        </p>
+        <pre><code class="language-js hljs javascript"><span class="hljs-comment">// ✅ Хорошо, приведение типов не выполняется</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-number">5</span> === <span class="hljs-string">'5'</span>); <span class="hljs-comment">// false</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-number">5</span> === <span class="hljs-number">5</span>); <span class="hljs-comment">// true</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-number">5</span> !== <span class="hljs-string">'5'</span>); <span class="hljs-comment">// true</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-number">5</span> !== <span class="hljs-number">5</span>); <span class="hljs-comment">// false</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-number">1</span> === <span class="hljs-literal">true</span>); <span class="hljs-comment">// false</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-number">1</span> !== <span class="hljs-literal">true</span>); <span class="hljs-comment">// true</span>
+</code></pre>
+</details>
+      </details>
+      <h3 class="task">Задание</h3>
+      Функция `isValidPassword(password)` проверяет равенство сохранённого и
+      введённого паролей и возвращает результат проверки - буль `true` или
+      `false`. Переменная `SAVED_PASSWORD` хранит значение ранее сохраненного
+      пароля. Введённый пароль передаётся в параметр `password`.
+      <p>
+        Присвой переменной <code>isMatch</code> выражение проверки равенства
+        введённого и сохранённого ранее паролей. Результатом выражения проверки
+        должно быть <code>true</code>, если значения совпадают, и
+        <code>false</code>, если нет.
+      </p>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>Объявлена функция <code>isValidPassword(password)</code>.</li>
+        <li>
+          В выражении проверки паролей использован оператор <code>===</code>.
+        </li>
+        <li>
+          Вызов <code>isValidPassword('mangodab3st')</code> возвращает
+          <code>false</code>.
+        </li>
+        <li>
+          Вызов <code>isValidPassword('kiwirul3z')</code> возвращает
+          <code>false</code>.
+        </li>
+        <li>
+          Вызов <code>isValidPassword('jqueryismyjam')</code> возвращает
+          <code>true</code>.
+        </li>
+      </ul>
+    </div>
+  </section>
+</section>

@@ -1,0 +1,102 @@
+<a href="/modul-1/index.html"><h1>Модуль - 01</h1></a>
+<h2>Задача - 02. Переопределение значения переменной.</h2>
+<a href="/modul-1/zad_01.html">&lt; &lt;Предыдущая задача</a>
+<a href="/modul-1/zad_03.html">Cледующая задача&gt;&gt;</a>
+
+<details closed=""><summary style="color: teal">Решение</summary>
+<pre><code>
+  // Start code
+  let productName = "Droid";
+  let pricePerItem = 2000;
+
+  // Write your code under this line
+  productName = "Repair droid";
+  pricePerItem = pricePerItem + 1500;
+</code></pre>
+</details>
+
+<script>
+  // Start code
+  let productName = "Droid";
+  let pricePerItem = 2000;
+
+  // Write your code under this line
+  productName = "Repair droid";
+  pricePerItem = pricePerItem + 1500;
+</script>
+
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <details closed="">
+        <summary>Теория</summary>
+        <p>
+          Для того, чтобы объявить переменную, которой в будущем можно будет
+          присвоить новое значение, используется ключевое слово
+          <code>let</code>. Создание переменной без ключевого слова
+          <code>let</code> или <code>const</code> приведёт к ошибке.
+        </p>
+        <pre><code class="language-js hljs javascript"><span class="hljs-keyword">let</span> age = <span class="hljs-number">5</span>;
+age = <span class="hljs-number">10</span>;
+
+<span class="hljs-keyword">let</span> userName = <span class="hljs-string">'Манго'</span>;
+userName = <span class="hljs-string">'Поли;
+</span></code></pre>
+        <p>
+          Попытка обратиться к переменной по имени до её объявления вызовет
+          ошибку.
+        </p>
+        <p>
+          Например, нельзя пытаться прочитать или изменить значение переменой до
+          ее объявления:
+        </p>
+        <pre><code class="language-js hljs javascript"><span class="hljs-comment">// ❌ Неправильно, будет ошибка</span>
+age = <span class="hljs-number">15</span>; <span class="hljs-comment">// ReferenceError: Cannot access 'age' before initialization</span>
+<span class="hljs-built_in">console</span>.log(age); <span class="hljs-comment">// ReferenceError: age is not defined</span>
+
+<span class="hljs-comment">// Объявление переменной age</span>
+<span class="hljs-keyword">let</span> age = <span class="hljs-number">20</span>;
+
+<span class="hljs-comment">// ✅ Правильно, обращаемся после объявления</span>
+age = <span class="hljs-number">25</span>;
+<span class="hljs-built_in">console</span>.log(age); <span class="hljs-comment">// 25</span>
+</code></pre>
+</details>
+      </details>
+      <h3 class="task">Задание</h3>
+      <p>
+        Имя товара изменили на <code>'Repair droid'</code> и увеличили его цену
+        на <code>1500</code> кредитов. Переопредели значения переменных
+        <code>pricePerItem</code> и <code>productName</code> после их
+        объявления.
+      </p>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>
+          Переменная <code>pricePerItem</code> объявлена с помощью
+          <code>let</code>.
+        </li>
+        <li>
+          При объявлении переменной <code>pricePerItem</code> присвоено значение
+          число <code>2000</code>.
+        </li>
+        <li>
+          Переменной <code>pricePerItem</code> присвоено новое значение, больше
+          чем предыдущее на <code>1500</code>.
+        </li>
+        <li>
+          Переменная <code>productName</code> объявлена с помощью
+          <code>let</code>.
+        </li>
+        <li>
+          При объявлении переменной <code>productName</code> присвоено значение
+          - строка <code>'Droid'</code>.
+        </li>
+        <li>
+          Переменной <code>productName</code> присвоено новое значение - строка
+          <code>'Repair droid'</code>.
+        </li>
+      </ul>
+    </div>
+  </section>
+</section>

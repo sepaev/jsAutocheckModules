@@ -1,0 +1,125 @@
+<a href="/modul-2/index.html"><h1>Модуль - 02</h1></a>
+<h2>
+  Задача - 31. Оператор <code>break</code> vs <code>return</code> в функции<.
+</h2>
+<a href="/modul-2/zad_30.html">&lt; &lt;Предыдущая задача</a>
+<a href="/modul-2/zad_32.html">Cледующая задача&gt;&gt;</a>
+
+<details closed=""><summary style="color: teal">Решение</summary>
+<pre><code>
+  function findNumber(start, end, divisor) {
+    // Пиши код ниже этой строки
+    let number;
+
+    for (let i = start; i < end; i += 1) {
+      if (i % divisor === 0) {
+        number = i;
+        return number;
+      }
+    }
+
+    // Пиши код выше этой строки
+  }
+
+  console.log(findNumber(2, 6, 5));
+  console.log(findNumber(8, 17, 3));
+  console.log(findNumber(6, 9, 4));
+  console.log(findNumber(16, 35, 7));
+</code></pre>
+</details>
+<script>
+  function findNumber(start, end, divisor) {
+    // Пиши код ниже этой строки
+    let number;
+
+    for (let i = start; i < end; i += 1) {
+      if (i % divisor === 0) {
+        number = i;
+        return number;
+      }
+    }
+
+    // Пиши код выше этой строки
+  }
+
+  console.log(findNumber(2, 6, 5));
+  console.log(findNumber(8, 17, 3));
+  console.log(findNumber(6, 9, 4));
+  console.log(findNumber(16, 35, 7));
+</script>
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <details closed="">
+        <summary>Теория</summary>
+        <p>
+          Если цикл находится в теле функции, то оператор <code>break</code> не
+          прекращает выполнение функции, а только прервёт цикл. Для того чтобы
+          прерывать выполнение сразу цикла и функции есть оператор
+          <code>return</code>.
+        </p>
+        <p>
+          В примере ищем число <code>3</code>. Как только выполнится условие
+          <code>if</code>, делаем возврат, который прервёт выполнение цикла и
+          функции.
+        </p>
+        <pre><code class="language-js hljs javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fn</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt;= <span class="hljs-number">5</span>; i += <span class="hljs-number">1</span>) {
+    <span class="hljs-built_in">console</span>.log(i);
+
+    <span class="hljs-keyword">if</span> (i === <span class="hljs-number">3</span>) {
+      <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Нашли число 3, делаем возврат, прерывая цикл и функцию'</span>);
+      <span class="hljs-keyword">return</span> i;
+    }
+  }
+
+  <span class="hljs-comment">// Этот console.log не выполнится</span>
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Лог после цикла в теле функции'</span>);
+}
+
+<span class="hljs-keyword">const</span> result = fn();
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Лог после выхода из функции'</span>);
+<span class="hljs-built_in">console</span>.lof(<span class="hljs-string">`Результат выполнения функции <span class="hljs-subst">${result}</span>`</span>);
+</code></pre>
+</details>
+      </details>
+      <h3 class="task">Задание</h3>
+      <p>
+        Выполни рефакторинг функции
+        <code>findNumber(start, end, divisor)</code> так, чтобы она:
+      </p>
+      <ul>
+        <li>
+          возвращала первое число от <code>start</code> до <code>end</code>,
+          которое делится на <code>divisor</code> без остатка;
+        </li>
+        <li>не использовала оператор <code>break</code>;</li>
+        <li>не использовала переменную <code>number</code>.</li>
+      </ul>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>Объявлена функция <code>findNumber(start, end, divisor)</code>.</li>
+        <li>
+          Вызов <code>findNumber(2, 6, 5)</code> возвращает <code>5</code>.
+        </li>
+        <li>
+          Вызов <code>findNumber(8, 17, 3)</code> возвращает <code>9</code>.
+        </li>
+        <li>
+          Вызов <code>findNumber(6, 9, 4)</code> возвращает <code>8</code>.
+        </li>
+        <li>
+          Вызов <code>findNumber(16, 35, 7)</code> возвращает <code>21</code>.
+        </li>
+        <li>
+          Вызов <code>findNumber()</code> со случайным набором чисел возвращает
+          верный результат.
+        </li>
+        <li>
+          В цикле <code>for</code> не должен использоваться
+          <code>break</code> для выхода до завершения всех итераций цикла.
+        </li>
+      </ul>
+    </div>
+  </section>
+</section>

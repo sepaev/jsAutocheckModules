@@ -1,0 +1,101 @@
+<a href="/modul-1/index.html"><h1>Модуль - 01</h1></a>
+<h2>Задача - 32. Метод slice().</h2>
+<a href="/modul-1/zad_31.html">&lt; &lt;Предыдущая задача</a>
+<a href="/modul-1/zad_33.html">Cледующая задача&gt;&gt;</a>
+
+<details closed=""><summary style="color: teal">Решение</summary>
+<pre><code>
+  function getSubstring(string, length) {
+    const substring = string.slice(0, length); // Дополни эту строку
+
+    console.log(substring);
+    return substring;
+  }
+
+  getSubstring("Привет мир", 3);
+  getSubstring("Привет мир", 6);
+  getSubstring("Привет мир", 8);
+  getSubstring("Привет мир", 10);
+  getSubstring("Привет мир", 0);
+</code></pre>
+</details>
+
+<script>
+  function getSubstring(string, length) {
+    const substring = string.slice(0, length); // Дополни эту строку
+
+    console.log(substring);
+    return substring;
+  }
+
+  getSubstring("Привет мир", 3);
+  getSubstring("Привет мир", 6);
+  getSubstring("Привет мир", 8);
+  getSubstring("Привет мир", 10);
+  getSubstring("Привет мир", 0);
+</script>
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <details closed="">
+        <summary>Теория</summary>
+        <p>
+          Метод строк <code>slice(startIndex, endIndex)</code> используется для
+          создания копии части или всей строки. Он делает копию элементов строки
+          от <code>startIndex</code> и до, но не включая <code>endIndex</code> и
+          возвращает новую строку.
+        </p>
+        <pre><code class="language-js hljs javascript"><span class="hljs-keyword">const</span> productName = <span class="hljs-string">'Ремонтный дроид'</span>;
+<span class="hljs-built_in">console</span>.log(productName.slice(<span class="hljs-number">0</span>, <span class="hljs-number">4</span>)); <span class="hljs-comment">// 'Ремо'</span>
+<span class="hljs-built_in">console</span>.log(productName.slice(<span class="hljs-number">3</span>, <span class="hljs-number">9</span>)); <span class="hljs-comment">// 'онтный'</span>
+<span class="hljs-built_in">console</span>.log(productName.slice(<span class="hljs-number">0</span>, productName.length)); <span class="hljs-comment">// 'Ремонтный дроид'</span>
+<span class="hljs-built_in">console</span>.log(productName.slice(<span class="hljs-number">10</span>, productName.length)); <span class="hljs-comment">// 'дроид'</span>
+</code></pre>
+</details>
+      </details>
+      <h3 class="task">Задание</h3>
+      <p>
+        Функция <code>getSubstring(string, length)</code> принимает строку и
+        возвращает подстроку от начала и до <code>length</code> символов. Она
+        объявляет два параметра, значения которых будут задаваться во время её
+        вызова:
+      </p>
+      <ul>
+        <li><code>string</code> - оригинальная строка</li>
+        <li>
+          <code>length</code> - количество символов с начала строки для
+          подстроки
+        </li>
+      </ul>
+      <p>
+        Присвой переменной <code>substring</code> выражение создания подстроки
+        длинной <code>length</code> символов (от начала) из строки
+        <code>string</code>.
+      </p>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>Объявлена функция <code>getSubstring(string, length)</code>.</li>
+        <li>
+          Вызов функции <code>getSubstring('Привет мир', 3)</code> возвращает
+          <code>'При'</code>.
+        </li>
+        <li>
+          Вызов функции <code>getSubstring('Привет мир', 6)</code> возвращает
+          <code>'Привет'</code>.
+        </li>
+        <li>
+          Вызов функции <code>getSubstring('Привет мир', 8)</code> возвращает
+          <code>'Привет м'</code>.
+        </li>
+        <li>
+          Вызов функции <code>getSubstring('Привет мир', 10)</code> возвращает
+          <code>'Привет мир'</code>.
+        </li>
+        <li>
+          Вызов функции <code>getSubstring('Привет мир', 0)</code> возвращает
+          <code>''</code>.
+        </li>
+      </ul>
+    </div>
+  </section>
+</section>

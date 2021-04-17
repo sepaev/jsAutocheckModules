@@ -1,0 +1,120 @@
+<a href="/modul-3/index.html"><h1>Модуль - 03</h1></a>
+<h2>Задача - 02. Вложенные свойства.</h2>
+<a href="/modul-3/zad_01.html">&lt; &lt;Предыдущая задача</a>
+<a href="/modul-3/zad_03.html">Cледующая задача&gt;&gt;</a>
+
+<details closed=""><summary style="color: teal">Решение</summary>
+<pre><code>
+  const apartment = {
+    imgUrl: "https://via.placeholder.com/640x480",
+    descr: "Просторная квартира в центре",
+    rating: 4,
+    price: 2153,
+    tags: ["premium", "promoted", "top"],
+    owner: {
+      name: "Генри",
+      phone: "982-126-1588",
+      email: "henry.carter@aptmail.com",
+    },
+  };
+
+  console.log(apartment);
+</code></pre>
+</details>
+<script>
+  const apartment = {
+    imgUrl: "https://via.placeholder.com/640x480",
+    descr: "Просторная квартира в центре",
+    rating: 4,
+    price: 2153,
+    tags: ["premium", "promoted", "top"],
+    owner: {
+      name: "Генри",
+      phone: "982-126-1588",
+      email: "henry.carter@aptmail.com",
+    },
+  };
+
+  console.log(apartment);
+</script>
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <details closed="">
+        <summary>Теория</summary>
+        <p>
+          Значением свойства может быть другой объект. Это используется для
+          хранения вложенных и группированных данных.
+        </p>
+        <p>
+          Например, статистика пользователя социальной сети состоит из
+          количества последователей, просмотров и лайков, и хранить эти данные
+          удобнее всего в виде объекта. Тоже самое с местоположением, отдельно
+          страна и город.
+        </p>
+        <p>
+          В будущем это можно будет использовать для поиска пользователей по
+          стране, городу, минимальному или максимальному количеству
+          последователей и т. д.
+        </p>
+        <pre><code class="language-js hljs javascript"><span class="hljs-keyword">const</span> user = {
+  <span class="hljs-attr">name</span>: <span class="hljs-string">'Jacques Gluke'</span>,
+  <span class="hljs-attr">tag</span>: <span class="hljs-string">'jgluke'</span>,
+  <span class="hljs-attr">location</span>: {
+    <span class="hljs-attr">country</span>: <span class="hljs-string">'Jamaica'</span>,
+    <span class="hljs-attr">city</span>: <span class="hljs-string">'Ocho Rios'</span>,
+  },
+  <span class="hljs-attr">stats</span>: {
+    <span class="hljs-attr">followers</span>: <span class="hljs-number">5603</span>,
+    <span class="hljs-attr">views</span>: <span class="hljs-number">4827</span>,
+    <span class="hljs-attr">likes</span>: <span class="hljs-number">1308</span>,
+  },
+};
+</code></pre>
+</details>
+      </details>
+      <h3 class="task">Задание</h3>
+      <p>
+        Дополни объект квартиры свойством <code>owner</code>, значением которого
+        будет объект с информацией о владельце. Добавь ему следующие свойства:
+      </p>
+      <ul>
+        <li>
+          <code>name</code> - имя владельца, значение <code>'Генри'</code>;
+        </li>
+        <li>
+          <code>phone</code> - телефон, значение <code>'982-126-1588'</code>;
+        </li>
+        <li>
+          <code>email</code> - почта, значение
+          <code>'henry.carter@aptmail.com'</code>.
+        </li>
+      </ul>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>Объявлена переменная <code>apartment</code>.</li>
+        <li>Значение переменной <code>apartment</code> это объект.</li>
+        <li>
+          У объекта переменной <code>apartment</code> присутствуют свойства
+          <code>imgUrl</code>, <code>descr</code>, <code>rating</code>,
+          <code>price</code> и <code>tag</code> со значениями.
+        </li>
+        <li>
+          В объекте <code>apartment</code> есть свойство <code>owner</code>.
+        </li>
+        <li>Значение свойства <code>owner</code> это объект.</li>
+        <li>В объекте <code>owner</code> есть свойство <code>name</code>.</li>
+        <li>Значение свойства <code>name</code> это <code>'Генри'</code>.</li>
+        <li>В объекте <code>owner</code> есть свойство <code>phone</code>.</li>
+        <li>
+          Значение свойства <code>phone</code> это <code>'982-126-1588'</code>.
+        </li>
+        <li>В объекте <code>owner</code> есть свойствао <code>email</code>.</li>
+        <li>
+          Значение свойства <code>email</code> это
+          <code>'henry.carter@aptmail.com'</code>.
+        </li>
+      </ul>
+    </div>
+  </section>
+</section>

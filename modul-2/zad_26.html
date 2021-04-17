@@ -1,0 +1,109 @@
+<a href="/modul-2/index.html"><h1>Модуль - 02</h1></a>
+<h2>Задача - 26. Цикл for...of.</h2>
+<a href="/modul-2/zad_25.html">&lt; &lt;Предыдущая задача</a>
+<a href="/modul-2/zad_27.html">Cледующая задача&gt;&gt;</a>
+
+<details closed=""><summary style="color: teal">Решение</summary>
+<pre><code>
+  function calculateTotalPrice(order) {
+    let total = 0;
+    // Пиши код ниже этой строки
+    for (const variable of order) {
+      total += variable;
+    }
+    // Пиши код выше этой строки
+    return total;
+  }
+
+  console.log(calculateTotalPrice([12, 85, 37, 4]));
+  console.log(calculateTotalPrice([164, 48, 291]));
+  console.log(calculateTotalPrice([412, 371, 94, 63, 176]));
+  console.log(calculateTotalPrice([]));
+</code></pre>
+</details>
+<script>
+  function calculateTotalPrice(order) {
+    let total = 0;
+    // Пиши код ниже этой строки
+    for (const variable of order) {
+      total += variable;
+    }
+    // Пиши код выше этой строки
+    return total;
+  }
+
+  console.log(calculateTotalPrice([12, 85, 37, 4]));
+  console.log(calculateTotalPrice([164, 48, 291]));
+  console.log(calculateTotalPrice([412, 371, 94, 63, 176]));
+  console.log(calculateTotalPrice([]));
+</script>
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <details closed="">
+        <summary>Теория</summary>
+        <p>
+          Инструкция <code>for...of</code> объявляет цикл, перебирающий
+          итерируемые объекты, такие как массивы и строки. Тело цикла будет
+          выполняться для значения каждого элемента. Это хорошая замена циклу
+          <code>for</code>, если не нужен доступ к счётчику итерации.
+        </p>
+        <pre><code class="language-js hljs javascript"><span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> variable <span class="hljs-keyword">of</span> iterable) {
+  <span class="hljs-comment">// тело цикла</span>
+}
+</code></pre>
+</details>
+        <ul>
+          <li>
+            <code>variable</code> — переменная, которая будет хранить значение
+            элемента на каждой итерации.
+          </li>
+          <li>
+            <code>iterable</code> — коллекция, которая имеет перечислимые
+            элементы, например массив.
+          </li>
+        </ul>
+        <pre><code class="language-js hljs javascript"><span class="hljs-keyword">const</span> planets = [<span class="hljs-string">'Земля'</span>, <span class="hljs-string">'Марс'</span>, <span class="hljs-string">'Венера'</span>];
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> planet <span class="hljs-keyword">of</span> planets) {
+  <span class="hljs-built_in">console</span>.log(planet);
+}
+</code></pre>
+</details>
+      </details>
+      <h3 class="task">Задание</h3>
+      <p>
+        Выполни рефакторинг кода функции
+        <code>calculateTotalPrice(order)</code> заменив цикл <code>for</code> на
+        <code>for...of</code>.
+      </p>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>Объявлена функция <code>calculateTotalPrice(order)</code>.</li>
+        <li>
+          Вызов функции
+          <code>calculateTotalPrice([12, 85, 37, 4])</code> возвращает
+          <code>138</code>.
+        </li>
+        <li>
+          Вызов функции
+          <code>calculateTotalPrice([164, 48, 291])</code> возвращает
+          <code>503</code>.
+        </li>
+        <li>
+          Вызов функции
+          <code>calculateTotalPrice([412, 371, 94, 63, 176])</code> возвращает
+          <code>1116</code>.
+        </li>
+        <li>
+          Вызов функции <code>calculateTotalPrice([])</code> возвращает
+          <code>0</code>.
+        </li>
+        <li>
+          Вызов функции <code>calculateTotalPrice()</code> со случайным массивом
+          чисел возвращает правильную сумму.
+        </li>
+      </ul>
+    </div>
+  </section>
+</section>

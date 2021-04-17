@@ -1,0 +1,75 @@
+<a href="/modul-3/index.html"><h1>Модуль - 03</h1></a>
+<h2>Задача - 12. Задача. Подсчёт свойств.</h2>
+<a href="/modul-3/zad_11.html">&lt; &lt;Предыдущая задача</a>
+<a href="/modul-3/zad_13.html">Cледующая задача&gt;&gt;</a>
+
+<details closed="">
+  <summary style="color: teal">Решение</summary>
+  <pre><code>
+  function countProps(object) {
+    let propCount = 0;
+    // Пиши код ниже этой строки
+    for (const key in object) {
+      if (object.hasOwnProperty(key)) {
+        propCount++;
+      }
+    }
+    // Пиши код выше этой строки
+    return propCount;
+  }
+  console.log(countProps({}));
+  console.log(countProps({ name: "Mango", age: 2 }));
+  console.log(
+    countProps({ mail: "poly@mail.com", isOnline: true, score: 500 })
+  );
+</code></pre>
+</details>
+<script>
+  function countProps(object) {
+    let propCount = 0;
+    // Пиши код ниже этой строки
+    for (const key in object) {
+      if (object.hasOwnProperty(key)) {
+        propCount++;
+      }
+    }
+    // Пиши код выше этой строки
+    return propCount;
+  }
+  console.log(countProps({}));
+  console.log(countProps({ name: "Mango", age: 2 }));
+  console.log(
+    countProps({ mail: "poly@mail.com", isOnline: true, score: 500 })
+  );
+</script>
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <h3 class="task">Задание</h3>
+      <p>
+        Напиши функцию <code>countProps(object)</code>, которая считает и
+        возвращает количество собственных свойств объекта в параметре
+        <code>object</code>. Используй переменную <code>propCount</code> для
+        хранения количества свойств объекта.
+      </p>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>Объявлена функция <code>countProps(object)</code>.</li>
+        <li>Вызов <code>countProps({})</code> возвращает <code>0</code>.</li>
+        <li>
+          Вызов <code>countProps({ name: 'Mango', age: 2 })</code> возвращает
+          <code>2</code>.
+        </li>
+        <li>
+          Вызов
+          <code
+            >countProps{ mail: 'poly@mail.com', isOnline: true, score: 500
+            })</code
+          >
+          возвращает <code>3</code>.
+        </li>
+        <li>Функция подсчитывает только собственные свойства объекта.</li>
+      </ul>
+    </div>
+  </section>
+</section>

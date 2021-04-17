@@ -1,0 +1,107 @@
+<a href="/modul-1/index.html"><h1>Модуль - 01</h1></a>
+<h2>Задача - 31. Индексация элементов строки.</h2>
+<a href="/modul-1/zad_30.html">&lt; &lt;Предыдущая задача</a>
+<a href="/modul-1/zad_32.html">Cледующая задача&gt;&gt;</a>
+
+<details closed="">
+  <summary style="color: teal">Решение</summary>
+  <pre><code>
+  const courseTopic = "JavaSript для начинающих";
+  // Пиши код ниже этой строки
+
+  const courseTopicLength = courseTopic.length;
+  const firstElement = courseTopic[0];
+  const lastElement = courseTopic[courseTopic.length - 1];
+
+  console.log(courseTopicLength);
+  console.log(firstElement);
+  console.log(lastElement);
+
+  // Пиши код выше этой строки
+</code></pre>
+</details>
+
+<script>
+  const courseTopic = "JavaSript для начинающих";
+  // Пиши код ниже этой строки
+
+  const courseTopicLength = courseTopic.length;
+  const firstElement = courseTopic[0];
+  const lastElement = courseTopic[courseTopic.length - 1];
+
+  console.log(courseTopicLength);
+  console.log(firstElement);
+  console.log(lastElement);
+
+  // Пиши код выше этой строки
+</script>
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <details closed="">
+        <summary>Теория</summary>
+        <p>
+          Строка — это индексированный набор из нуля или более символов,
+          заключенных в одинарные, двойные или косые кавычки.
+        </p>
+        <p>
+          Индексация элементов строки начинается с нуля. Например, в строке
+          <code>'JavaScript'</code> буква 'J' стоит на позиции с индексом
+          <code>0</code>, а 't' идёт под индексом <code>9</code>. При этом длина
+          строки <code>'JavaScript'</code> равна <code>10</code>, то есть индекс
+          последнего элемента всегда на единицу меньше чем её длина.
+        </p>
+        <p>
+          Для доступа к значению элемента строки используется синтаксис
+          квадратных скобок <code>строка[индекс]</code>.
+        </p>
+        <pre><code class="language-js hljs javascript"><span class="hljs-keyword">const</span> productName = <span class="hljs-string">'Ремонтный дроид'</span>;
+<span class="hljs-built_in">console</span>.log(productName[<span class="hljs-number">0</span>]); <span class="hljs-comment">// 'P'</span>
+<span class="hljs-built_in">console</span>.log(productName[<span class="hljs-number">5</span>]); <span class="hljs-comment">// 'т'</span>
+<span class="hljs-built_in">console</span>.log(productName[<span class="hljs-number">14</span>]); <span class="hljs-comment">// 'д'</span>
+<span class="hljs-built_in">console</span>.log(productName[productName.length - <span class="hljs-number">1</span>]); <span class="hljs-comment">// 'д'</span>
+</code></pre>
+        <p>
+          Содержимое строки нельзя изменить, только прочитать. То есть нельзя
+          взять какой-то символ и заменить его, как только строка создана — она
+          такая навсегда. Можно лишь создать целиком новую строку и присвоить в
+          переменную вместо старой.
+        </p>
+      </details>
+      <h3 class="task">Задание</h3>
+      <p>
+        Дополни код присвоив объявленным переменным выражения обращения к
+        соответствующим элементам или свойствам строки в переменной
+        <code>course</code>.
+      </p>
+      <ul>
+        <li><code>courseTopicLength</code> - длина строки.</li>
+        <li><code>firstElement</code> - первый символ строки.</li>
+        <li><code>lastElement</code> - последний символ строки.</li>
+      </ul>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>Объявлена переменная <code>courseTopic</code>.</li>
+        <li>
+          Значение переменной <code>courseTopic</code> это строка
+          <code>'JavaSript для начинающих'</code>.
+        </li>
+        <li>Объявлена переменная <code>courseTopicLength</code>.</li>
+        <li>
+          Значение переменной <code>courseTopicLength</code> это число
+          <code>24</code>.
+        </li>
+        <li>Объявлена переменная <code>firstElement</code>.</li>
+        <li>
+          Значение переменной <code>firstElement</code> это строка
+          <code>'J'</code>.
+        </li>
+        <li>Объявлена переменная <code>lastElement</code>.</li>
+        <li>
+          Значение переменной <code>lastElement</code> это строка
+          <code>'х'</code>.
+        </li>
+      </ul>
+    </div>
+  </section>
+</section>

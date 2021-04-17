@@ -1,0 +1,85 @@
+<a href="/modul-2/index.html"><h1>Модуль - 02</h1></a>
+<h2>Задача - 08. Индекс последнего элемента.</h2>
+<a href="/modul-2/zad_07.html">&lt; &lt;Предыдущая задача</a>
+<a href="/modul-2/zad_09.html">Cледующая задача&gt;&gt;</a>
+
+<details closed=""><summary style="color: teal">Решение</summary>
+<pre><code>
+  // Стартовый код
+  const fruits = ["яблоко", "персик", "груша", "банан"];
+  // Пиши код ниже этой строки
+  const lastElementIndex = fruits.length - 1;
+  const lastElement = fruits[lastElementIndex];
+
+  console.log(lastElementIndex);
+  console.log(lastElement);
+</code></pre>
+</details>
+<script>
+  // Стартовый код
+  const fruits = ["яблоко", "персик", "груша", "банан"];
+  // Пиши код ниже этой строки
+  const lastElementIndex = fruits.length - 1;
+  const lastElement = fruits[lastElementIndex];
+
+  console.log(lastElementIndex);
+  console.log(lastElement);
+</script>
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <details closed="">
+        <summary>Теория</summary>
+        <p>
+          Чаще всего, мы заранее в коде не знаем какая будет длина массива. Для
+          того, чтобы получить значение последнего элемента применяется
+          следующий подход - длина массива всегда на единицу больше, чем индекс
+          последнего элемента. Используя формулу
+          <code>длина_массива - 1</code> можно получить значение последнего
+          элемента массива произвольной длины.
+        </p>
+        <pre><code class="language-js hljs javascript"><span class="hljs-keyword">const</span> planets = [<span class="hljs-string">'Земля'</span>, <span class="hljs-string">'Марс'</span>, <span class="hljs-string">'Венера'</span>];
+<span class="hljs-keyword">const</span> lastElementIndex = planets.length - <span class="hljs-number">1</span>;
+planets[lastElementIndex]; <span class="hljs-comment">// 'Венера'</span>
+</code></pre>
+</details>
+      </details>
+      <h3 class="task">Задание</h3>
+      <p>Объяви две перемнные:</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Имя переменной</th>
+            <th>Ожидаемое значение</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>lastElementIndex</code></td>
+            <td>
+              индекс последнего элемента масcива <code>fruits</code> через
+              <code>длина_массива - 1</code>
+            </td>
+          </tr>
+          <tr>
+            <td><code>lastElement</code></td>
+            <td>значение последнего элемента массива</td>
+          </tr>
+        </tbody>
+      </table>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>Объявлена переменная <code>lastElementIndex</code>.</li>
+        <li>
+          Значение переменной <code>lastElementIndex</code> это число
+          <code>3</code>.
+        </li>
+        <li>Объявлена переменная <code>lastElement</code>.</li>
+        <li>
+          Значение переменной <code>lastElementIndex</code> это строка
+          <code>'банан'</code>.
+        </li>
+      </ul>
+    </div>
+  </section>
+</section>

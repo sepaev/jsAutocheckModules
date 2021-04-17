@@ -1,0 +1,119 @@
+<a href="/modul-1/index.html"><h1>Модуль - 01</h1></a>
+<h2>Задача - 22. Логическое «ИЛИ» (оператор <code>||</code>).</h2>
+<a href="/modul-1/zad_21.html">&lt; &lt;Предыдущая задача</a>
+<a href="/modul-1/zad_23.html">Cледующая задача&gt;&gt;</a>
+
+<details closed=""><summary style="color: teal">Решение</summary>
+<pre><code>
+  function checkIfCanAccessContent(subType) {
+    const canAccessContent = subType == "pro" || subType == "vip"; // дополни эту строку
+    console.log(canAccessContent);
+    return canAccessContent;
+  }
+  checkIfCanAccessContent("pro");
+  checkIfCanAccessContent("starter");
+  checkIfCanAccessContent("vip");
+  checkIfCanAccessContent("free");
+</code></pre>
+</details>
+
+<script>
+  function checkIfCanAccessContent(subType) {
+    const canAccessContent = subType == "pro" || subType == "vip"; // дополни эту строку
+    console.log(canAccessContent);
+    return canAccessContent;
+  }
+  checkIfCanAccessContent("pro");
+  checkIfCanAccessContent("starter");
+  checkIfCanAccessContent("vip");
+  checkIfCanAccessContent("free");
+</script>
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <details closed="">
+        <summary>Теория</summary>
+        <p>
+          Оператор <code>||</code> приводит все операнды к булю и возвращает
+          значение одного из них. Левый операнд, если его можно привести к
+          <code>true</code>, и правый в остальных случаях.
+        </p>
+        <pre><code class="language-shell hljs">выражение || выражение
+</code></pre>
+        <p>
+          В следующем примере условие слева вернёт <code>true</code>, поэтому
+          результатом всего выражения будет <code>true</code> - вернётся
+          значение первого операнда, которое было приведено к <code>true</code>.
+        </p>
+        <pre><code class="language-js hljs javascript"><span class="hljs-keyword">const</span> age = <span class="hljs-number">5</span>;
+<span class="hljs-built_in">console</span>.log(age &lt; <span class="hljs-number">10</span> || age &gt; <span class="hljs-number">30</span>); <span class="hljs-comment">// true || false -&gt; true</span>
+</code></pre>
+        <p>
+          Тут результатом тоже будет <code>true</code>, так как хотя бы один из
+          операндов, в этом случае правый, был приведён к <code>true</code>.
+        </p>
+        <pre><code class="language-js hljs javascript"><span class="hljs-keyword">const</span> age = <span class="hljs-number">40</span>;
+<span class="hljs-built_in">console</span>.log(age &lt; <span class="hljs-number">10</span> || age &gt; <span class="hljs-number">30</span>); <span class="hljs-comment">// false || true -&gt; true</span>
+</code></pre>
+        <p>
+          А здесь ни одно из условий не выполняется, поэтому получаем
+          <code>false</code> - значение последнего операнда.
+        </p>
+        <pre><code class="language-js hljs javascript"><span class="hljs-keyword">const</span> age = <span class="hljs-number">20</span>;
+<span class="hljs-built_in">console</span>.log(age &lt; <span class="hljs-number">10</span> || age &gt; <span class="hljs-number">30</span>); <span class="hljs-comment">// false || false -&gt; false</span>
+</code></pre>
+        <p>
+          То есть логическое «ИЛИ» запинается на правде и возвращает то, на чём
+          запнулось или последний операнд.
+        </p>
+        <pre><code class="language-js hljs javascript"><span class="hljs-built_in">console</span>.log(<span class="hljs-literal">true</span> || <span class="hljs-literal">false</span>); <span class="hljs-comment">// true</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-literal">false</span> || <span class="hljs-literal">true</span>); <span class="hljs-comment">// true</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-literal">true</span> || <span class="hljs-literal">true</span>); <span class="hljs-comment">// true</span>
+
+<span class="hljs-built_in">console</span>.log(<span class="hljs-number">3</span> || <span class="hljs-literal">false</span>); <span class="hljs-comment">// 3</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-literal">false</span> || <span class="hljs-number">3</span>); <span class="hljs-comment">// 3</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-number">3</span> || <span class="hljs-literal">true</span>); <span class="hljs-comment">// 3</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-literal">true</span> || <span class="hljs-number">3</span>); <span class="hljs-comment">// true</span>
+</code></pre>
+</details>
+      </details>
+      <h3 class="task">Задание</h3>
+      <p>
+        Функция <code>checkIfCanAccessContent(subType)</code> проверяет, может
+        ли пользователь получить доступ к контенту. Проверка происходит по типу
+        подписки. Получить доступ могут только пользователи с подпиской
+        <code>pro</code> или <code>vip</code>.
+      </p>
+      <p>
+        Присвой переменной <code>canAccessContent</code> выражение проверки
+        подписки. Если значение параметра <code>subType</code> равно строкам
+        <code>'pro'</code> или <code>'vip'</code>, пользователь получит доступ.
+        Результатом выражения проверки будет буль <code>true</code> или
+        <code>false</code>.
+      </p>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>
+          Объявлена функция <code>checkIfCanAccessContent(subType)</code>.
+        </li>
+        <li>В выражении проверки использован оператор <code>||</code>.</li>
+        <li>
+          Вызов <code>checkIfCanAccessContent('pro')</code> возвращает
+          <code>true</code>.
+        </li>
+        <li>
+          Вызов <code>checkIfCanAccessContent('starter')</code> возвращает
+          false.
+        </li>
+        <li>
+          Вызов <code>checkIfCanAccessContent('vip')</code> возвращает
+          <code>true</code>.
+        </li>
+        <li>
+          Вызов <code>checkIfCanAccessContent('free')</code> возвращает
+          <code>false</code>.
+        </li>
+      </ul>
+    </div>
+  </section>
+</section>

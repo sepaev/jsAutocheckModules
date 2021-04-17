@@ -1,0 +1,90 @@
+<a href="/modul-1/index.html"><h1>Модуль - 01</h1></a>
+<h2>Задача - 26. Проверка пароля.</h2>
+<a href="/modul-1/zad_25.html">&lt; &lt;Предыдущая задача</a>
+<a href="/modul-1/zad_27.html">Cледующая задача&gt;&gt;</a>
+
+<details closed="">
+  <summary style="color: teal">Решение</summary>
+  <pre><code>
+  function checkPassword(password) {
+    const ADMIN_PASSWORD = "jqueryismyjam";
+    let message;
+    // Пиши код ниже этой строки
+    message =
+      password == ADMIN_PASSWORD
+        ? "Доступ разрешен"
+        : "Доступ запрещен, неверный пароль!";
+
+    // Пиши код выше этой строки
+    console.log(message);
+    return message;
+  }
+
+  checkPassword("jqueryismyjam");
+  checkPassword("angul4r1sl1f3");
+  checkPassword("r3actsux");
+</code></pre>
+</details>
+
+<script>
+  function checkPassword(password) {
+    const ADMIN_PASSWORD = "jqueryismyjam";
+    let message;
+    // Пиши код ниже этой строки
+    message =
+      password == ADMIN_PASSWORD
+        ? "Доступ разрешен"
+        : "Доступ запрещен, неверный пароль!";
+
+    // Пиши код выше этой строки
+    console.log(message);
+    return message;
+  }
+
+  checkPassword("jqueryismyjam");
+  checkPassword("angul4r1sl1f3");
+  checkPassword("r3actsux");
+</script>
+
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <h3 class="task">Задание</h3>
+      <p>
+        Функция <code>checkPassword(password)</code> сравнивает переданный ей
+        пароль (параметр <code>password</code>) с сохранённым паролем
+        администратора (константа <code>ADMIN_PASSWORD</code>) и возвращает
+        строку с сообщением о результате.
+      </p>
+      <p>Используя тернарный оператор дополни функцию так, что:</p>
+      <ul>
+        <li>
+          Если значения <code>password</code> и
+          <code>ADMIN_PASSWORD</code> совпадают, присвой переменной
+          <code>message</code> строку <code>'Доступ разрешен'</code>.
+        </li>
+        <li>
+          В противном случае, присвой <code>message</code> строку
+          <code>'Доступ запрещен, неверный пароль!'</code>.
+        </li>
+      </ul>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>Объявлена функция <code>checkPassword(password)</code>.</li>
+        <li>Использован тернарный оператор.</li>
+        <li>
+          Вызов <code>checkPassword('jqueryismyjam')</code> возвращает
+          <code>'Доступ разрешен'</code>.
+        </li>
+        <li>
+          Вызов <code>checkPassword('angul4r1sl1f3')</code> возвращает
+          <code>'Доступ запрещен, неверный пароль!'</code>.
+        </li>
+        <li>
+          Вызов <code>checkPassword('r3actsux')</code> возвращает
+          <code>'Доступ запрещен, неверный пароль!'</code>.
+        </li>
+      </ul>
+    </div>
+  </section>
+</section>

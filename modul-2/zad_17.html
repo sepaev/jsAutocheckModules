@@ -1,0 +1,107 @@
+<a href="/modul-2/index.html"><h1>Модуль - 02</h1></a>
+<h2>Задача - 17. Цикл for.</h2>
+<a href="/modul-2/zad_16.html">&lt; &lt;Предыдущая задача</a>
+<a href="/modul-2/zad_18.html">Cледующая задача&gt;&gt;</a>
+
+<details closed=""><summary style="color: teal">Решение</summary>
+<pre><code>
+  const start = 3;
+  const end = 7;
+
+  for (let i = start; i <= end; i += 1) {
+    // Дополни эту строку
+    console.log(i);
+  }
+</code></pre>
+</details>
+<script>
+  const start = 3;
+  const end = 7;
+
+  for (let i = start; i <= end; i += 1) {
+    // Дополни эту строку
+    console.log(i);
+  }
+</script>
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <details closed="">
+        <summary>Теория</summary>
+        <p>
+          Циклы используются для многократного повторения кода. Объявление цикла
+          <code>for</code> состоит из трёх выражений.
+        </p>
+        <pre><code class="language-js hljs javascript"><span class="hljs-keyword">for</span> (Инициализация; Условие; Пост - выражение) {
+  <span class="hljs-comment">// Тело цикла</span>
+}
+</code></pre>
+</details>
+        <ul>
+          <li>
+            <strong>Инициализация</strong> - выполняется один раз перед началом
+            цикла. Используется для создания переменной-счётчика и указания её
+            начального значения.
+          </li>
+          <li>
+            <strong>Условие</strong> - выражение, оцениваемое перед каждой
+            итерацией (повторением) цикла. Тело цикла выполняется только тогда,
+            когда выражение приводится к <code>true</code>. Цикл завершается,
+            если значение будет <code>false</code>.
+          </li>
+          <li>
+            <strong>Пост-выражение</strong> - выполняется в конце каждого
+            повторения цикла, перед проверкой условия. Используется для
+            обновления переменной-счётчика.
+          </li>
+          <li>
+            <strong>Тело</strong> - набор инструкций для выполнения на каждом
+            повторении. Выполняется, если выражение условия приводится к
+            <code>true</code>.
+          </li>
+        </ul>
+        <pre><code class="language-js hljs javascript"><span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt;= <span class="hljs-number">20</span>; i += <span class="hljs-number">5</span>) {
+  <span class="hljs-built_in">console</span>.log(i);
+}
+</code></pre>
+        <p>
+          В примере объявляется переменная <code>i</code>, инициализируется
+          значением <code>0</code> и цикл выполняется (его тело) до тех пор,
+          пока <code>i &lt;= 20</code>, то есть условие приводится к
+          <code>true</code>. После каждой итерации счётчик увеличивается на
+          <code>5</code>.
+        </p>
+      </details>
+      <h3 class="task">Задание</h3>
+      <p>
+        Дополни цикл <code>for</code> так, чтобы он логировал все целые числа в
+        диапазоне от <code>start</code> до <code>end</code> включительно.
+      </p>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>Объявлена переменная <code>start</code>.</li>
+        <li>
+          Значение переменной <code>start</code> это число <code>3</code>.
+        </li>
+        <li>Объявлена переменная <code>end</code>.</li>
+        <li>Значение переменной <code>end</code> это число <code>7</code>.</li>
+        <li>Объявлена переменная <code>i</code> - счётчик цикла.</li>
+        <li>
+          Начальное значение переменной <code>i</code> равно <code>3</code>.
+        </li>
+        <li>
+          Условие цикла приводится к <code>true</code> до тех пор, пока
+          <code>i</code> меньше либо равно <code>7</code>.
+        </li>
+        <li>
+          На каждой итерации значение переменной <code>i</code> увеличивается на
+          единицу.
+        </li>
+        <li>
+          Вывод в консоль переменной <code>i</code> покажет числа
+          <code>3, 4, 5, 6, 7</code>.
+        </li>
+      </ul>
+    </div>
+  </section>
+</section>

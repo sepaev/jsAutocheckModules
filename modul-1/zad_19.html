@@ -1,0 +1,155 @@
+<a href="/modul-1/index.html"><h1>Модуль - 01</h1></a>
+<h2>Задача - 19. Блок else...if.</h2>
+<a href="/modul-1/zad_18.html">&lt; &lt;Предыдущая задача</a>
+<a href="/modul-1/zad_20.html">Cледующая задача&gt;&gt;</a>
+
+<details closed="">
+  <summary style="color: teal">Решение</summary>
+  <pre><code>
+  function checkPassword(password) {
+    const ADMIN_PASSWORD = "jqueryismyjam";
+    let message;
+
+    if (password == null) {
+      // Дополни эту строку
+      message = "Отменено пользователем!";
+    } else if (password == "jqueryismyjam") {
+      // Дополни эту строку
+      message = "Добро пожаловать!";
+    } else {
+      message = "Доступ запрещен, неверный пароль!";
+    }
+    console.log(message);
+    return message;
+  }
+
+  checkPassword("mangohackzor");
+  checkPassword(null);
+  checkPassword("polyhax");
+  checkPassword("jqueryismyjam");
+</code></pre>
+</details>
+
+<script>
+  function checkPassword(password) {
+    const ADMIN_PASSWORD = "jqueryismyjam";
+    let message;
+
+    if (password == null) {
+      // Дополни эту строку
+      message = "Отменено пользователем!";
+    } else if (password == "jqueryismyjam") {
+      // Дополни эту строку
+      message = "Добро пожаловать!";
+    } else {
+      message = "Доступ запрещен, неверный пароль!";
+    }
+    console.log(message);
+    return message;
+  }
+
+  checkPassword("mangohackzor");
+  checkPassword(null);
+  checkPassword("polyhax");
+  checkPassword("jqueryismyjam");
+</script>
+
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <details closed="">
+        <summary>Теория</summary>
+        <p>
+          Конструкция <code>if...else</code> может проверить и среагировать на
+          выполнение или невыполнение только одного условия.
+        </p>
+        <pre><code class="language-js hljs javascript"><span class="hljs-keyword">let</span> cost;
+<span class="hljs-keyword">const</span> subscription = <span class="hljs-string">'pro'</span>;
+
+<span class="hljs-keyword">if</span> (subscription === <span class="hljs-string">'pro'</span>) {
+  cost = <span class="hljs-number">100</span>;
+} <span class="hljs-keyword">else</span> {
+  cost = <span class="hljs-number">0</span>;
+}
+
+<span class="hljs-built_in">console</span>.log(cost); <span class="hljs-comment">// 100</span>
+</code></pre>
+        <p>
+          Блок <code>else...if</code> позволяет добавить после
+          <code>else</code> еще один оператор <code>if</code> с условием. В
+          конце цепочки может быть классический блок <code>else</code>, который
+          выполнится только в случае, когда ни одно из условий не приведётся к
+          <code>true</code>.
+        </p>
+        <pre><code class="language-js hljs javascript"><span class="hljs-keyword">let</span> cost;
+<span class="hljs-keyword">const</span> subscription = <span class="hljs-string">'premium'</span>;
+
+<span class="hljs-keyword">if</span> (subscription === <span class="hljs-string">'free'</span>) {
+  cost = <span class="hljs-number">0</span>;
+} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (subscription === <span class="hljs-string">'pro'</span>) {
+  cost = <span class="hljs-number">100</span>;
+} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (subscription === <span class="hljs-string">'premium'</span>) {
+  cost = <span class="hljs-number">500</span>;
+} <span class="hljs-keyword">else</span> {
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Невалидный тип подписки <span class="hljs-subst">${subscription}</span>`</span>);
+}
+
+<span class="hljs-built_in">console</span>.log(cost); <span class="hljs-comment">// 500</span>
+</code></pre>
+        <p>
+          При первом же удовлетворяющем условии проверки прекратятся и
+          выполнится только тело соответствующего блока <code>if</code>. Поэтому
+          подобную запись следует читать как: «ищу первое выполнение условия,
+          игнорирую всё остальное».
+        </p>
+      </details>
+      <h3 class="task">Задание</h3>
+      <p>
+        Функция <code>checkPassword(password)</code> получает пароль
+        пользователя в параметр <code>password</code>, проверяет его на
+        совпадение с паролем администратора в переменной
+        <code>ADMIN_PASSWORD</code> и возвращает сообщение о результате
+        сравнения, хранящееся в переменной <code>message</code>.
+      </p>
+      <ul>
+        <li>
+          Если значение параметра <code>password</code> равно <code>null</code>,
+          значит пользователь отменил операцию и в
+          <code>message</code> записывается строка
+          <code>'Отменено пользователем!'</code>.
+        </li>
+        <li>
+          Если значение параметра <code>password</code> совпадает со значением
+          <code>ADMIN_PASSWORD</code>, в переменную
+          <code>message</code> присваивается строка
+          <code>'Добро пожаловать!'</code>.
+        </li>
+        <li>
+          Если ни одно из предыдущих условий не выполнилось, в переменную
+          <code>message</code> записывается строка
+          <code>'Доступ запрещен, неверный пароль!'</code>.
+        </li>
+      </ul>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>Объявлена функция <code>checkPassword(password)</code>.</li>
+        <li>
+          Вызов <code>checkPassword('mangohackzor')</code> возвращает
+          <code>'Доступ запрещен, неверный пароль!'</code>.
+        </li>
+        <li>
+          Вызов <code>checkPassword(null)</code> возвращает
+          <code>'Отменено пользователем!'</code>.
+        </li>
+        <li>
+          Вызов <code>checkPassword('polyhax')</code> возвращает
+          <code>'Доступ запрещен, неверный пароль!'</code>.
+        </li>
+        <li>
+          Вызов <code>checkPassword('jqueryismyjam')</code> возвращает
+          <code>'Добро пожаловать!'</code>.
+        </li>
+      </ul>
+    </div>
+  </section>
+</section>

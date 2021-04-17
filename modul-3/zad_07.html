@@ -1,0 +1,132 @@
+<a href="/modul-3/index.html"><h1>Модуль - 03</h1></a>
+<h2>Задача - 07. Добавление свойств.</h2>
+<a href="/modul-3/zad_06.html">&lt; &lt;Предыдущая задача</a>
+<a href="/modul-3/zad_08.html">Cледующая задача&gt;&gt;</a>
+
+<details closed=""><summary style="color: teal">Решение</summary>
+<pre><code>
+  const apartment = {
+    imgUrl: "https://via.placeholder.com/640x480",
+    descr: "Просторная квартира в центре",
+    rating: 4.7,
+    price: 5000,
+    tags: ["premium", "promoted", "top", "trusted"],
+    owner: {
+      name: "Генри Сибола",
+      phone: "982-126-1588",
+      email: "henry.carter@aptmail.com",
+    },
+  };
+
+  // Пиши код ниже этой строки
+  apartment.area = 60;
+  apartment.rooms = 3;
+  apartment.location = {};
+  apartment.location.country = "Ямайка";
+  apartment.location.city = "Кингстон";
+
+  console.log(apartment.area);
+  console.log(apartment.rooms);
+  console.log(apartment.location.country);
+  console.log(apartment.location.city);
+</code></pre>
+</details>
+<script>
+  const apartment = {
+    imgUrl: "https://via.placeholder.com/640x480",
+    descr: "Просторная квартира в центре",
+    rating: 4.7,
+    price: 5000,
+    tags: ["premium", "promoted", "top", "trusted"],
+    owner: {
+      name: "Генри Сибола",
+      phone: "982-126-1588",
+      email: "henry.carter@aptmail.com",
+    },
+  };
+
+  // Пиши код ниже этой строки
+  apartment.area = 60;
+  apartment.rooms = 3;
+  apartment.location = {};
+  apartment.location.country = "Ямайка";
+  apartment.location.city = "Кингстон";
+
+  console.log(apartment.area);
+  console.log(apartment.rooms);
+  console.log(apartment.location.country);
+  console.log(apartment.location.city);
+</script>
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <details closed="">
+        <summary>Теория</summary>
+        <p>
+          Операция добавления нового свойства после создания объекта ничем не
+          отличается от изменения значения уже существующего свойства. Если при
+          записи значения по имени, такого свойства в объекте нет, оно будет
+          создано.
+        </p>
+        <pre><code class="language-js hljs javascript"><span class="hljs-keyword">const</span> book = {
+  <span class="hljs-attr">title</span>: <span class="hljs-string">'Последнее королевство'</span>,
+  <span class="hljs-attr">author</span>: <span class="hljs-string">'Бернард Корнуэлл'</span>,
+  <span class="hljs-attr">genres</span>: [<span class="hljs-string">'историческая проза'</span>, <span class="hljs-string">'приключения'</span>],
+  <span class="hljs-attr">public</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">rating</span>: <span class="hljs-number">8.38</span>
+};
+
+book.pageCount = <span class="hljs-number">836</span>;
+book.originalLanguage = <span class="hljs-string">'en'</span>;
+book.translations = [<span class="hljs-string">'ua'</span>, <span class="hljs-string">'ru'</span>];
+
+<span class="hljs-built_in">console</span>.log(book.pageCount); <span class="hljs-comment">// 836</span>
+<span class="hljs-built_in">console</span>.log(book.originalLanguage); <span class="hljs-comment">// 'en'</span>
+<span class="hljs-built_in">console</span>.log(book.translations); <span class="hljs-comment">// ['ua', 'ru']</span>
+</code></pre>
+</details>
+      </details>
+      <h3 class="task">Задание</h3>
+      <p>Добавь объекту <code>apartment</code> несколько новых свойств:</p>
+      <ul>
+        <li>
+          <code>area</code> - площадь в квадратных метрах, число
+          <code>60</code>;
+        </li>
+        <li><code>rooms</code> - количество комнат, число <code>3</code>;</li>
+        <li>
+          <code>location</code> - местоположение квартиры, обьект со следующими
+          вложенными свойствами;
+          <ul>
+            <li>
+              <code>country</code> - страна, строка <code>'Ямайка'</code>;
+            </li>
+            <li><code>city</code> - город, строка <code>'Кингстон'</code>.</li>
+          </ul>
+        </li>
+      </ul>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>Объявлена переменная <code>apartment</code>.</li>
+        <li>Значение переменной <code>apartment</code> это объект.</li>
+        <li>
+          Значение вложенного свойства <code>area</code> это число
+          <code>60</code>.
+        </li>
+        <li>
+          Значение вложенного свойства <code>rooms</code> это число
+          <code>3</code>.
+        </li>
+        <li>Значение вложенного свойства <code>location</code> это объект.</li>
+        <li>
+          Значение вложенного свойства <code>location.country</code> это строка
+          <code>'Ямайка'</code>.
+        </li>
+        <li>
+          Значение вложенного свойства <code>location.city</code> это строка
+          <code>'Кингстон'</code>.
+        </li>
+      </ul>
+    </div>
+  </section>
+</section>

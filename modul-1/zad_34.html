@@ -1,0 +1,87 @@
+<a href="/modul-1/index.html"><h1>Модуль - 01</h1></a>
+<h2>Задача - 34. Методы toLowerCase() и toUpperCase().</h2>
+<a href="/modul-1/zad_33.html">&lt; &lt;Предыдущая задача</a>
+<a href="/modul-1/zad_35.html">Cледующая задача&gt;&gt;</a>
+
+<details closed=""><summary style="color: teal">Решение</summary>
+<pre><code>
+  function normalizeInput(input) {
+    const normalizedInput = input.toLowerCase(); // Дополни эту строку
+    console.log(normalizedInput);
+    return normalizedInput;
+  }
+  normalizeInput("Привет мир");
+  normalizeInput("Это НЕ СпаМ");
+  normalizeInput("Большие СКИДКИ");
+</code></pre>
+</details>
+
+<script>
+  function normalizeInput(input) {
+    const normalizedInput = input.toLowerCase(); // Дополни эту строку
+    console.log(normalizedInput);
+    return normalizedInput;
+  }
+  normalizeInput("Привет мир");
+  normalizeInput("Это НЕ СпаМ");
+  normalizeInput("Большие СКИДКИ");
+</script>
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <details closed="">
+        <summary>Теория</summary>
+        <p>
+          Бывают ситуации когда все символы в строке необходимо преобразовать в
+          один регистр, верхний или нижний. Например, при поиске по ключевому
+          слову, когда пользователь вводит строку <code>'saMsUng'</code>, а
+          сравнить её надо со строкой <code>'samsung'</code> или
+          <code>'SAMSUNG'</code>.
+        </p>
+        <pre><code class="language-js hljs javascript"><span class="hljs-built_in">console</span>.log(<span class="hljs-string">'saMsUng'</span> === <span class="hljs-string">'samsung'</span>); <span class="hljs-comment">// false</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'saMsUng'</span> === <span class="hljs-string">'SAMSUNG'</span>); <span class="hljs-comment">// false</span>
+</code></pre>
+        <p>
+          Чтобы не требовать абсолютно точный ввод можно сделать «нормализацию»
+          введённой пользователем строки, то есть преобразовать все её символы в
+          верхний или нижний регистр. Методы строки <code>toLowerCase()</code> и
+          <code>toUpperCase()</code> вернут новую строку в соответствующем
+          регистре, не изменяя оригинальную.
+        </p>
+        <pre><code class="language-js hljs javascript"><span class="hljs-keyword">const</span> BRAND_NAME = <span class="hljs-string">'SAMSUNG'</span>;
+<span class="hljs-keyword">const</span> userInput = <span class="hljs-string">'saMsUng'</span>;
+<span class="hljs-keyword">const</span> normalizedToUpperCaseInput = userInput.toUpperCase();
+
+<span class="hljs-built_in">console</span>.log(userInput); <span class="hljs-comment">// 'saMsUng'</span>
+<span class="hljs-built_in">console</span>.log(userInput === BRAND_NAME); <span class="hljs-comment">// false</span>
+<span class="hljs-built_in">console</span>.log(normalizedToUpperCaseInput); <span class="hljs-comment">// 'SAMSUNG'</span>
+<span class="hljs-built_in">console</span>.log(normalizedToUpperCaseInput === BRAND_NAME); <span class="hljs-comment">// true</span>
+</code></pre>
+</details>
+      </details>
+      <h3 class="task">Задание</h3>
+      <p>
+        Функция <code>normalizeInput(input)</code> принимает строку (параметр
+        input) и возвращает такую же строку, но в нижнем регистре. Присвой
+        переменной <code>normalizedInput</code> выражение создания строки в
+        нижнем регистре из параметра <code>input</code>.
+      </p>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>Объявлена функция <code>normalizeInput(input)</code>.</li>
+        <li>
+          Вызов функции <code>normalizeInput('Привет мир')</code> возвращает
+          <code>'привет мир'</code>.
+        </li>
+        <li>
+          Вызов функции <code>normalizeInput('Это НЕ СпаМ')</code> возвращает
+          <code>'это не спам'</code>.
+        </li>
+        <li>
+          Вызов функции <code>normalizeInput('Большие СКИДКИ')</code> возвращает
+          <code>'большие скидки'</code>.
+        </li>
+      </ul>
+    </div>
+  </section>
+</section>

@@ -1,0 +1,85 @@
+<a href="/modul-2/index.html"><h1>Модуль - 02</h1></a>
+<h2>Задача - 19. Итерация по массиву.</h2>
+<a href="/modul-2/zad_18.html">&lt; &lt;Предыдущая задача</a>
+<a href="/modul-2/zad_20.html">Cледующая задача&gt;&gt;</a>
+
+<details closed="">
+  <summary style="color: teal">Решение</summary>
+  <pre><code>
+  const fruits = ["яблоко", "слива", "груша", "апельсин"];
+
+  for (let i = 0; i < fruits.length; i += 1) {
+    // Дополни эту строку
+    const fruit = fruits[i]; // Дополни эту строку
+    console.log(fruit);
+  }
+</code></pre>
+</details>
+<script>
+  const fruits = ["яблоко", "слива", "груша", "апельсин"];
+
+  for (let i = 0; i < fruits.length; i += 1) {
+    // Дополни эту строку
+    const fruit = fruits[i]; // Дополни эту строку
+    console.log(fruit);
+  }
+</script>
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <details closed="">
+        <summary>Теория</summary>
+        <p>
+          Цикл <code>for</code> можно использовать для итерации по массиву, то
+          есть «перебрать» его поэлементно.
+        </p>
+        <pre><code class="language-js hljs javascript"><span class="hljs-keyword">const</span> planets = [<span class="hljs-string">'Земля'</span>, <span class="hljs-string">'Марс'</span>, <span class="hljs-string">'Венера'</span>];
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; planets.length; i += <span class="hljs-number">1</span>) {
+  <span class="hljs-built_in">console</span>.log(planets[i]);
+}
+</code></pre>
+        <p>
+          Для доступа к элементам используется синтаксис квадратных скобок
+          <code>массив[индекс]</code>, где индекс - это значение счётчика цикла
+          от <code>0</code> и до <code>последнего индекса массива</code>,
+          который на единицу меньше длины массива.
+        </p>
+      </details>
+      <h3 class="task">Задание</h3>
+      <p>
+        Дополни код цикла <code>for</code> так, чтобы он последовательно
+        логировал все элементы массива <code>fruits</code>.
+      </p>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>Объявлена переменная <code>fruits</code>.</li>
+        <li>
+          Значение переменной <code>fruits</code> это массив
+          <code>['яблоко', 'слива', 'груша', 'апельсин']</code>.
+        </li>
+        <li>Объявлена переменная <code>i</code> - счётчик цикла.</li>
+        <li>
+          Начальное значение переменной <code>i</code> равно <code>0</code>.
+        </li>
+        <li>
+          Условие цикла приводится к <code>true</code> до тех пор, пока
+          <code>i</code> меньше <code>4</code>.
+        </li>
+        <li>
+          На каждой итерации значение переменной <code>i</code> увеличивается на
+          единицу.
+        </li>
+        <li>
+          В теле цикла <code>for</code> объявляется переменная
+          <code>const fruit</code> и этой переменной присваивается значение -
+          элемент массива.
+        </li>
+        <li>
+          В теле цикла <code>for</code> используется вывод в консоль переменной
+          <code>fruit</code>.
+        </li>
+      </ul>
+    </div>
+  </section>
+</section>

@@ -1,0 +1,90 @@
+<a href="/modul-1/index.html"><h1>Модуль - 01</h1></a>
+<h2>
+  Задача - 17. Оператор присвоения с добавлением/вычитанием/умноженделением.
+</h2>
+<a href="/modul-1/zad_16.html">&lt; &lt;Предыдущая задача</a>
+<a href="/modul-1/zad_18.html">Cледующая задача&gt;&gt;</a>
+
+<details closed=""><summary style="color: teal">Решение</summary>
+<pre><code>
+  let a = 5;
+  let b = 10;
+  let c = 15;
+  let d = 20;
+
+  // Пиши код ниже этой строки
+  a += 2; //a = a + 2;
+  b -= 4; //b = b - 4;
+  c *= 3; //c = c * 3;
+  d /= 10; //d = d / 10;
+</code></pre>
+</details>
+
+<script>
+  let a = 5;
+  let b = 10;
+  let c = 15;
+  let d = 20;
+
+  // Пиши код ниже этой строки
+  a += 2; //a = a + 2;
+  b -= 4; //b = b - 4;
+  c *= 3; //c = c * 3;
+  d /= 10; //d = d / 10;
+</script>
+
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <details closed="">
+        <summary>Теория</summary>
+        <p>
+          Комбинированные операторы это более краткий способ присвоить
+          переменной новое значение основываясь на её предыдущем значении.
+        </p>
+        <p>
+          Будем увеличивать значение переменной <code>age</code> на единицу от
+          предыдущего, имитируя обновление возраста после дня рождения
+          пользователя.
+        </p>
+        <pre><code class="language-js hljs javascript"><span class="hljs-keyword">let</span> age = <span class="hljs-number">25</span>;
+<span class="hljs-comment">// Классическая запись</span>
+age = age + <span class="hljs-number">1</span>;
+<span class="hljs-built_in">console</span>.log(age); <span class="hljs-comment">// 26</span>
+</code></pre>
+        <p>
+          Сначала выполняется правая часть выражения. Вместо
+          <code>age</code> подставляется <code>25</code>, выполняется операция
+          сложения и в переменную <code>age</code> записывается <code>26</code>.
+        </p>
+        <p>
+          Выполним рефакторинг операции обновления возраста, используя
+          комбинированный оператор присвоения с добавлением.
+        </p>
+        <pre><code class="language-js hljs javascript"><span class="hljs-keyword">let</span> age = <span class="hljs-number">25</span>;
+<span class="hljs-comment">// Просто более краткая запись, работает также</span>
+age += <span class="hljs-number">1</span>;
+<span class="hljs-built_in">console</span>.log(age); <span class="hljs-comment">// 26</span>
+</code></pre>
+</details>
+      </details>
+      <h3 class="task">Задание</h3>
+      <p>
+        Замени выражения со стандартными математеческими операторами на
+        комбинированный оператор присвоения с добавлением, вычитанием,
+        умножением и делением.
+      </p>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>Значение переменной <code>a</code> равно <code>7</code>.</li>
+        <li>Использован оператор <code>+=</code>.</li>
+        <li>Значение переменной <code>b</code> равно <code>6</code>.</li>
+        <li>Использован оператор <code>-=</code>.</li>
+        <li>Значение переменной <code>c</code> равно <code>45</code>.</li>
+        <li>Использован оператор <code>*=</code>.</li>
+        <li>Значение переменной <code>d</code> равно <code>2</code>.</li>
+        <li>Использован оператор <code>/=</code>.</li>
+      </ul>
+    </div>
+  </section>
+</section>

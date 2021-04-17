@@ -1,0 +1,95 @@
+<a href="/modul-2/index.html"><h1>Модуль - 02</h1></a>
+<h2>Задача - 29. Чётные числа.</h2>
+<a href="/modul-2/zad_28.html">&lt; &lt;Предыдущая задача</a>
+<a href="/modul-2/zad_30.html">Cледующая задача&gt;&gt;</a>
+
+<details closed=""><summary style="color: teal">Решение</summary>
+<pre><code>
+  function getEvenNumbers(start, end) {
+    // Пиши код ниже этой строки
+    let newArray = [];
+    for (let i = start; i <= end; i += 1) {
+      if (i % 2 === 0) {
+        newArray.push(i);
+      }
+    }
+    return newArray;
+    // Пиши код выше этой строки
+  }
+
+  console.log(getEvenNumbers(2, 5));
+  console.log(getEvenNumbers(3, 11));
+  console.log(getEvenNumbers(6, 12));
+  console.log(getEvenNumbers(8, 8));
+  console.log(getEvenNumbers(7, 7));
+</code></pre>
+</details>
+<script>
+  function getEvenNumbers(start, end) {
+    // Пиши код ниже этой строки
+    let newArray = [];
+    for (let i = start; i <= end; i += 1) {
+      if (i % 2 === 0) {
+        newArray.push(i);
+      }
+    }
+    return newArray;
+    // Пиши код выше этой строки
+  }
+
+  console.log(getEvenNumbers(2, 5));
+  console.log(getEvenNumbers(3, 11));
+  console.log(getEvenNumbers(6, 12));
+  console.log(getEvenNumbers(8, 8));
+  console.log(getEvenNumbers(7, 7));
+</script>
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <details closed="">
+        <summary>Теория</summary>
+        <p>Проверка на четность</p>
+        <pre><code class="language-js hljs javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">isEven</span> (<span class="hljs-params">num</span>) </span>{
+  <span class="hljs-keyword">return</span> num % <span class="hljs-number">2</span> === <span class="hljs-number">0</span>;
+}
+</code></pre>
+</details>
+      </details>
+      <h3 class="task">Задание</h3>
+      <p>
+        Напиши функцию <code>getEvenNumbers(start, end)</code> которая
+        возвращает массив всех чётных чисел от <code>start</code> до
+        <code>end</code>. Чётным считается число которое делится на
+        <code>2</code> без остатка.
+      </p>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>Объявлена функция <code>getEvenNumbers(start, end)</code>.</li>
+        <li>
+          Вызов функции <code>getEvenNumbers(2, 5)</code> возвращает
+          <code>[2, 4]</code>.
+        </li>
+        <li>
+          Вызов функции <code>getEvenNumbers(3, 11)</code> возвращает
+          <code>[4, 6, 8, 10]</code>.
+        </li>
+        <li>
+          Вызов функции <code>getEvenNumbers(6, 12)</code> возвращает
+          <code>[6, 8, 10, 12]</code>.
+        </li>
+        <li>
+          Вызов функции <code>getEvenNumbers(8, 8)</code> возвращает
+          <code>[8]</code>.
+        </li>
+        <li>
+          Вызов функции <code>getEvenNumbers(7, 7)</code> возвращает
+          <code>[]</code>.
+        </li>
+        <li>
+          Вызов функции <code>getEvenNumbers()</code> со случайными
+          <code>start</code> и <code>end</code> возвращает правильный массив.
+        </li>
+      </ul>
+    </div>
+  </section>
+</section>

@@ -1,0 +1,137 @@
+<a href="/modul-1/index.html"><h1>Модуль - 01</h1></a>
+<h2>Задача - 18. Проверка баланса.</h2>
+<a href="/modul-1/zad_17.html">&lt; &lt;Предыдущая задача</a>
+<a href="/modul-1/zad_19.html">Cледующая задача&gt;&gt;</a>
+
+<details closed="">
+  <summary style="color: teal">Решение</summary>
+  <pre><code>
+  function makeTransaction(pricePerDroid, orderedQuantity, customerCredits) {
+    let message;
+    // Пиши код ниже этой строки
+    const totalPrice = pricePerDroid * orderedQuantity;
+    if (customerCredits >= totalPrice) {
+      message = `Вы купили ${orderedQuantity} дроидов, на счету осталось ${
+        customerCredits - totalPrice
+      } кредитов`;
+    } else {
+      message = `Недостаточно средств на счету!`;
+    }
+    console.log(message);
+    // Пиши код выше этой строки
+    return message;
+  }
+
+  makeTransaction(3000, 5, 23000);
+  makeTransaction(1000, 3, 15000);
+  makeTransaction(5000, 10, 8000);
+  makeTransaction(2000, 8, 10000);
+  makeTransaction(500, 10, 5000);
+</code></pre>
+</details>
+
+<script>
+  function makeTransaction(pricePerDroid, orderedQuantity, customerCredits) {
+    let message;
+    // Пиши код ниже этой строки
+    const totalPrice = pricePerDroid * orderedQuantity;
+    if (customerCredits >= totalPrice) {
+      message = `Вы купили ${orderedQuantity} дроидов, на счету осталось ${
+        customerCredits - totalPrice
+      } кредитов`;
+    } else {
+      message = `Недостаточно средств на счету!`;
+    }
+    console.log(message);
+    // Пиши код выше этой строки
+    return message;
+  }
+
+  makeTransaction(3000, 5, 23000);
+  makeTransaction(1000, 3, 15000);
+  makeTransaction(5000, 10, 8000);
+  makeTransaction(2000, 8, 10000);
+  makeTransaction(500, 10, 5000);
+</script>
+
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <h3 class="task">Задание</h3>
+      <p>
+        Станция по продаже ремонтных дроидов готова к запуску, осталось написать
+        программное обеспечение для отдела продаж.
+      </p>
+      <p>
+        Функция
+        <code
+          >makeTransaction(pricePerDroid, orderedQuantity,
+          customerCredits)</code
+        >
+        выполняет транзакцию по продаже дроидов и возвращает сообщение о
+        результате операции. Она объявляет три параметра, значения которых будут
+        задаваться во время её вызова:
+      </p>
+      <ul>
+        <li><code>pricePerDroid</code> - цена одного дроида;</li>
+        <li><code>orderedQuantity</code> - кол-во заказанных дроидов;</li>
+        <li><code>customerCredits</code> - сумма средств на счету клиента.</li>
+      </ul>
+      <p>Дополни её следующим функционалом:</p>
+      <ul>
+        <li>
+          Объяви переменную <code>totalPrice</code> для хранения общей суммы
+          заказа и присвой ей выражение расчёта этой суммы.
+        </li>
+        <li>
+          Добавь проверку сможет ли клиент оплатить заказ:
+          <ul>
+            <li>
+              если сумма к оплате превышает количество кредитов на счету
+              клиента, запиши в переменную <code>message</code> строку
+              <code>'Недостаточно средств на счету!'</code>;
+            </li>
+            <li>
+              в противном случае, вычти сумму покупки со счёта клиента и запиши
+              в переменную <code>message</code> сообщение:
+              <code
+                >'Вы купили &lt;число&gt; дроидов, на счету осталось
+                &lt;число&gt; кредитов'</code
+              >.
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>
+          Объявлена функция
+          <code
+            >makeTransaction(pricePerDroid, orderedQuantity,
+            customerCredits)</code
+          >.
+        </li>
+        <li>
+          Вызов <code>makeTransaction(3000, 5, 23000)</code> возвращает
+          <code>'Вы купили 5 дроидов, на счету осталось 8000 кредитов'</code>.
+        </li>
+        <li>
+          Вызов <code>makeTransaction(1000, 3, 15000)</code> возвращает
+          <code>'Вы купили 3 дроидов, на счету осталось 12000 кредитов'</code>.
+        </li>
+        <li>
+          Вызов <code>makeTransaction(5000, 10, 8000)</code> возвращает
+          <code>'Недостаточно средств на счету!'</code>.
+        </li>
+        <li>
+          Вызов <code>makeTransaction(2000, 8, 10000)</code> возвращает
+          <code>'Недостаточно средств на счету!'</code>.
+        </li>
+        <li>
+          Вызов <code>makeTransaction(500, 10, 5000)</code> возвращает
+          <code>'Вы купили 10 дроидов, на счету осталось 0 кредитов'</code>.
+        </li>
+      </ul>
+    </div>
+  </section>
+</section>

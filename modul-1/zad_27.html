@@ -1,0 +1,164 @@
+<a href="/modul-1/index.html"><h1>Модуль - 01</h1></a>
+<h2>Задача - 27. Инструкция <code>switch</code>.</h2>
+<a href="/modul-1/zad_26.html">&lt; &lt;Предыдущая задача</a>
+<a href="/modul-1/zad_28.html">Cледующая задача&gt;&gt;</a>
+
+<details closed=""><summary style="color: teal">Решение</summary>
+<pre><code>
+  function getSubscriptionPrice(type) {
+    let price;
+    // Пиши код ниже этой строки
+
+    switch (
+      type // Дополни эту строку
+    ) {
+      case "starter": // Дополни эту строку
+        price = 0; // Дополни эту строку
+        break;
+
+      case "professional": // Дополни эту строку
+        price = 20; // Дополни эту строку
+        break;
+
+      case "organization": // Дополни эту строку
+        price = 50; // Дополни эту строку
+        break;
+    }
+    console.log(price);
+    // Пиши код выше этой строки
+    return price;
+  }
+
+  getSubscriptionPrice("professional");
+  getSubscriptionPrice("organization");
+  getSubscriptionPrice("starter");
+</code></pre>
+</details>
+
+<script>
+  function getSubscriptionPrice(type) {
+    let price;
+    // Пиши код ниже этой строки
+
+    switch (
+      type // Дополни эту строку
+    ) {
+      case "starter": // Дополни эту строку
+        price = 0; // Дополни эту строку
+        break;
+
+      case "professional": // Дополни эту строку
+        price = 20; // Дополни эту строку
+        break;
+
+      case "organization": // Дополни эту строку
+        price = 50; // Дополни эту строку
+        break;
+    }
+    console.log(price);
+    // Пиши код выше этой строки
+    return price;
+  }
+
+  getSubscriptionPrice("professional");
+  getSubscriptionPrice("organization");
+  getSubscriptionPrice("starter");
+</script>
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <details closed="">
+        <summary>Теория</summary>
+        <p>
+          В некоторых случаях неудобство чтения сложных ветвлений
+          <code>if...else</code> можно избежать, используя более «плоский»
+          синтаксис инструкции ветвления <code>switch</code>.
+        </p>
+        <p>
+          Область применения <code>switch</code> ограничена задачами с одним
+          общим вопросом (что сравнивать) и множеством вариантов ответов (с чем
+          сравнивать).
+        </p>
+        <pre><code class="language-js hljs javascript"><span class="hljs-keyword">switch</span> (значение) {
+  <span class="hljs-keyword">case</span> значение:
+    инструкции;
+    <span class="hljs-keyword">break</span>;
+
+  <span class="hljs-keyword">case</span> значение:
+    инструкции;
+    <span class="hljs-keyword">break</span>;
+}
+</code></pre>
+        <p>
+          Его синтаксис состоит из блока <code>switch(значение)</code> - что
+          нужно сравнить и множества отдельных случаев
+          <code>case значение</code> - с чем нужно сравнить. Для сравнения
+          используется оператор строгого равенства <code>===</code>. То есть
+          нельзя сравнить на больше или меньше, только на равенство.
+        </p>
+        <p>
+          Значение в блоке <code>switch(значение)</code> - строка или число,
+          которое сравнивается на строгое равенство со всеми значениями в блоках
+          <code>case значение</code> по порядку, сверху вниз.
+        </p>
+        <p>
+          Оператор <code>break</code> в завершении каждого блока
+          <code>case</code> необходим, чтобы прервать дальнейшие проверки и
+          сразу перейти к коду за <code>switch</code> в том случае, когда
+          проверка на равенство вернула <code>true</code>.
+        </p>
+      </details>
+      <h3 class="task">Задание</h3>
+      <p>
+        Функция <code>getSubscriptionPrice(type)</code> получает строку с типом
+        подписки пользователя (параметр <code>type</code>), проверяет её на
+        совпадение с тремя возможными типами ежемесячной подписки и возвращает
+        цену хранящуюся в переменной <code>price</code>.
+      </p>
+      <p>Если значение параметра <code>type</code> это строка:</p>
+      <ul>
+        <li><code>'starter'</code> - цена подписки <code>0</code> кредитов.</li>
+        <li>
+          <code>'professional'</code> - цена подписки <code>20</code> кредитов.
+        </li>
+        <li>
+          <code>'organization'</code> - цена подписки <code>50</code> кредитов.
+        </li>
+      </ul>
+      <p>
+        Изначально в теле функции была инструкция <code>if...else</code>,
+        которая выглядела вот так.
+      </p>
+      <pre><code class="language-js hljs javascript"><span class="hljs-keyword">if</span> (type === <span class="hljs-string">'starter'</span>) {
+  price = <span class="hljs-number">0</span>;
+} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (type === <span class="hljs-string">'professional'</span>) {
+  price = <span class="hljs-number">20</span>;
+} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (type === <span class="hljs-string">'organization'</span>) {
+  price = <span class="hljs-number">50</span>;
+}
+</code></pre>
+</details>
+      <p>
+        После рефакторинга инструкция <code>if..else</code> была заменена на
+        <code>switch</code>. Дополни код инструкции <code>switch</code>, чтобы
+        функция работала правильно.
+      </p>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>Объявлена функция <code>getSubscriptionPrice(type)</code>.</li>
+        <li>
+          Вызов <code>getSubscriptionPrice('professional')</code> возвращает
+          число <code>20</code>.
+        </li>
+        <li>
+          Вызов <code>getSubscriptionPrice('organization')</code> возвращает
+          число <code>50</code>.
+        </li>
+        <li>
+          Вызов <code>getSubscriptionPrice('starter')</code> возвращает число
+          <code>0</code>.
+        </li>
+      </ul>
+    </div>
+  </section>
+</section>

@@ -1,0 +1,110 @@
+<a href="/modul-2/index.html"><h1>Модуль - 02</h1></a>
+<h2>Задача - 16. Композиция массивов.</h2>
+<a href="/modul-2/zad_15.html">&lt; &lt;Предыдущая задача</a>
+<a href="/modul-2/zad_17.html">Cледующая задача&gt;&gt;</a>
+
+<details closed="">
+  <summary style="color: teal">Решение</summary>
+  <pre><code>
+  function makeArray(firstArray, secondArray, maxLength) {
+    // Пиши код ниже этой строки
+    const newArray = firstArray.concat(secondArray);
+
+    return newArray.slice(0, maxLength);
+
+    // Пиши код выше этой строки
+  }
+
+  console.log(makeArray(["Манго", "Поли"], ["Аякс", "Челси"], 3));
+  console.log(makeArray(["Манго", "Поли", "Хьюстон"], ["Аякс", "Челси"], 4));
+  console.log(makeArray(["Манго"], ["Аякс", "Челси", "Поли", "Хьюстон"], 3));
+  console.log(makeArray(["Земля", "Юпитер"], ["Нептун", "Уран"], 2));
+  console.log(makeArray(["Земля", "Юпитер"], ["Нептун", "Уран"], 4));
+  console.log(makeArray(["Земля", "Юпитер"], ["Нептун", "Уран", "Венера"], 0));
+</code></pre>
+</details>
+<script>
+  function makeArray(firstArray, secondArray, maxLength) {
+    // Пиши код ниже этой строки
+    const newArray = firstArray.concat(secondArray);
+
+    return newArray.slice(0, maxLength);
+
+    // Пиши код выше этой строки
+  }
+
+  console.log(makeArray(["Манго", "Поли"], ["Аякс", "Челси"], 3));
+  console.log(makeArray(["Манго", "Поли", "Хьюстон"], ["Аякс", "Челси"], 4));
+  console.log(makeArray(["Манго"], ["Аякс", "Челси", "Поли", "Хьюстон"], 3));
+  console.log(makeArray(["Земля", "Юпитер"], ["Нептун", "Уран"], 2));
+  console.log(makeArray(["Земля", "Юпитер"], ["Нептун", "Уран"], 4));
+  console.log(makeArray(["Земля", "Юпитер"], ["Нептун", "Уран", "Венера"], 0));
+</script>
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <h3 class="task">Задание</h3>
+      <p>
+        Напиши функцию
+        <code>makeArray(firstArray, secondArray, maxLength)</code> для создания
+        нового массива со всеми элементами двух исходных
+        <code>firstArray</code> и <code>secondArray</code>. Параметр
+        <code>maxLength</code> содержит максимально допустимую длину нового
+        массива.
+      </p>
+      <p>
+        Если количество элементов нового массива больше <code>maxLength</code>,
+        функция должна вернуть копию массива длиной
+        <code>maxLength</code> элементов.
+      </p>
+      <p>В противном случае функция должна вернуть новый массив целиком.</p>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>
+          Объявлена функция
+          <code>makeArray(firstArray, secondArray, maxLength)</code>
+        </li>
+        <li>
+          Вызов
+          <code>makeArray(['Манго', 'Поли'], ['Аякс', 'Челси'], 3)</code>
+          возвращает <code>['Манго', 'Поли', 'Аякс']</code>.
+        </li>
+        <li>
+          Вызов
+          <code
+            >makeArray(['Манго', 'Поли', 'Хьюстон'], ['Аякс', 'Челси'], 4) </code
+          >возвращает <code>['Манго', 'Поли', 'Хьюстон', 'Аякс']</code>.
+        </li>
+        <li>
+          Вызов
+          <code
+            >makeArray(['Манго'], ['Аякс', 'Челси', 'Поли', 'Хьюстон'], 3)</code
+          >
+          возвращает <code>['Манго', 'Аякс', 'Челси']</code>.
+        </li>
+        <li>
+          Вызов
+          <code>makeArray(['Земля', 'Юпитер'], ['Нептун', 'Уран'], 2)</code>
+          возвращает <code>['Земля', 'Юпитер']</code>.
+        </li>
+        <li>
+          Вызов
+          <code>makeArray(['Земля', 'Юпитер'], ['Нептун', 'Уран'], 4) </code
+          >возвращает <code>['Земля', 'Юпитер', 'Нептун', 'Уран']</code>.
+        </li>
+        <li>
+          Вызов
+          <code
+            >makeArray(['Земля', 'Юпитер'], ['Нептун', 'Уран', 'Венера'],
+            0)</code
+          >
+          возвращает <code>[]</code>.
+        </li>
+        <li>
+          Вызов функции <code>makeArray()</code> со случайными массивами и
+          случайным числом возвращает правильный массив.
+        </li>
+      </ul>
+    </div>
+  </section>
+</section>

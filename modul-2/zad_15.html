@@ -1,0 +1,75 @@
+<a href="/modul-2/index.html"><h1>Модуль - 02</h1></a>
+<h2>Задача - 15. Метод concat().</h2>
+<a href="/modul-2/zad_14.html">&lt; &lt;Предыдущая задача</a>
+<a href="/modul-2/zad_16.html">Cледующая задача&gt;&gt;</a>
+
+<details closed=""><summary style="color: teal">Решение</summary>
+<pre><code>
+  const oldClients = ["Манго", "Аякс", "Поли", "Киви"];
+  const newClients = ["Персик", "Хьюстон"];
+
+  const allClients = oldClients.concat(newClients); // Дополни эту строку
+
+  console.log(allClients);
+</code></pre>
+</details>
+<script>
+  const oldClients = ["Манго", "Аякс", "Поли", "Киви"];
+  const newClients = ["Персик", "Хьюстон"];
+
+  const allClients = oldClients.concat(newClients); // Дополни эту строку
+
+  console.log(allClients);
+</script>
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <details closed="">
+        <summary>Теория</summary>
+        <p>
+          Метод <code>concat</code> используется для объединения двух или более
+          массивов. Он не изменяет массив на котором вызывается, а возвращает
+          новый. Порядок аргументов метода влияет на порядок элементов нового
+          массива.
+        </p>
+        <pre><code class="language-js hljs javascript"><span class="hljs-keyword">const</span> firstArray = [<span class="hljs-string">'Меркурий'</span>, <span class="hljs-string">'Венера'</span>, <span class="hljs-string">'Земля'</span>];
+<span class="hljs-keyword">const</span> secondArray = [<span class="hljs-string">'Марс'</span>, <span class="hljs-string">'Юпитер'</span>];
+<span class="hljs-keyword">const</span> thirdArray = [<span class="hljs-string">'Сатурн'</span>, <span class="hljs-string">'Уран'</span>, <span class="hljs-string">'Нептун'</span>];
+<span class="hljs-keyword">const</span> allPlanets = firstArray.concat(secondArray, thirdArray);
+
+<span class="hljs-built_in">console</span>.log(firstArray); <span class="hljs-comment">// ['Меркурий', 'Венера', 'Земля'];</span>
+<span class="hljs-built_in">console</span>.log(allPlanets); <span class="hljs-comment">// ['Меркурий', 'Венера', 'Земля', 'Марс', 'Юпитер', 'Сатурн', 'Уран', 'Нептун'];</span>
+</code></pre>
+</details>
+      </details>
+      <h3 class="task">Задание</h3>
+      <p>
+        Дополни код так, чтобы в переменной <code>allClients</code> получился
+        массив всех элементов массивов <code>oldClients</code> и
+        <code>newClients</code>.
+      </p>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>Объявлена переменная <code>oldClients</code>.</li>
+        <li>
+          Значение переменной <code>oldClients</code> это массив
+          <code>['Манго', 'Аякс', 'Поли', 'Киви']</code>.
+        </li>
+        <li>Объявлена переменная <code>newClients</code>.</li>
+        <li>
+          Значение переменной <code>newClients</code> это массив
+          <code>['Персик', 'Хьюстон']</code>.
+        </li>
+        <li>Объявлена переменная <code>allClients</code>.</li>
+        <li>
+          Значение переменной <code>allClients</code> это массив
+          <code>['Манго', 'Аякс', 'Поли', 'Киви', 'Персик', 'Хьюстон']</code>.
+        </li>
+        <li>
+          Переменной <code>allClients</code> присвоен массив после применения
+          метода <code>concat</code> с правильными аргументами.
+        </li>
+      </ul>
+    </div>
+  </section>
+</section>

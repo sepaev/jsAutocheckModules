@@ -1,0 +1,78 @@
+<a href="/modul-1/index.html"><h1>Модуль - 01</h1></a>
+<h2>Задача - 05. Шаблонные строки.</h2>
+<a href="/modul-1/zad_04.html">&lt; &lt;Предыдущая задача</a>
+<a href="/modul-1/zad_06.html">Cледующая задача&gt;&gt;</a>
+
+<details closed=""><summary style="color: teal">Решение</summary>
+<pre><code>
+  // Базовый код
+  const productName = "Дроид";
+  const pricePerItem = 3500;
+
+  // Пиши код ниже этой строки
+  const message = `Вы выбрали ${productName}, цена за штуку ${3500} кредитов`;
+  console.log(message);
+</code></pre>
+</details>
+
+<script>
+  // Базовый код
+  const productName = "Дроид";
+  const pricePerItem = 3500;
+
+  // Пиши код ниже этой строки
+  const message = `Вы выбрали ${productName}, цена за штуку ${3500} кредитов`;
+  console.log(message);
+</script>
+
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <details closed="">
+        <summary>Теория</summary>
+        <p>
+          Шаблонные строки это альтернатива конкатенации с более удобным
+          синтаксисом. Шаблонная строка заключена в обратные (косые) кавычки
+          вместо двойных или одинарных и может содержать местозаполнители,
+          которые обозначаются знаком доллара и фигурными скобками -
+          <code>${выражение}</code>.
+        </p>
+        <pre><code class="language-js hljs javascript"><span class="hljs-keyword">const</span> guestName = <span class="hljs-string">"Манго"</span>;
+<span class="hljs-keyword">const</span> roomNumber = <span class="hljs-number">207</span>;
+<span class="hljs-keyword">const</span> greeting = <span class="hljs-string">`Добро пожаловать <span class="hljs-subst">${guestName}</span>, вы поселены в номер <span class="hljs-subst">${roomNumber}</span>`</span>;
+</code></pre>
+</details>
+      </details>
+      <h3 class="task">Задание</h3>
+      <p>
+        Объяви перемнную <code>message</code> и запиши в неё сообщение о
+        покупке, строку в формате:
+        <code
+          >Вы выбрали &lt;имя товара&gt;, цена за штуку &lt;цена товара&gt;
+          кредитов</code
+        >. Где <code>&lt;имя товара&gt;</code> и
+        <code>&lt;цена товара&gt;</code> это значения переменных
+        <code>productName</code> и <code>pricePerItem</code>. Используй
+        синтаксис шаблонных строк.
+      </p>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>Объявлена переменная <code>productName</code>.</li>
+        <li>
+          Значение переменной <code>productName</code> это строка
+          <code>'Дроид'</code>.
+        </li>
+        <li>Объявлена переменная <code>pricePerItem</code>.</li>
+        <li>
+          Значение переменной <code>price</code> это число <code>3500</code>.
+        </li>
+        <li>Объявлена переменная <code>message</code>.</li>
+        <li>
+          Значение переменной <code>message</code> это строка
+          <code>'Вы выбрали Дроид, цена за штуку 3500 кредитов'</code> (обрати
+          внимание на отсутствие точки в конце строки).
+        </li>
+      </ul>
+    </div>
+  </section>
+</section>

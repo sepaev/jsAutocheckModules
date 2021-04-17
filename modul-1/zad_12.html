@@ -1,0 +1,103 @@
+<a href="/modul-1/index.html"><h1>Модуль - 01</h1></a>
+<h2>Задача - 12. Заказ продукта 2.0.</h2>
+<a href="/modul-1/zad_11.html">&lt; &lt;Предыдущая задача</a>
+<a href="/modul-1/zad_13.html">Cледующая задача&gt;&gt;</a>
+
+<details closed="">
+  <summary style="color: teal">Решение</summary>
+  <pre><code>
+  function makeOrderMessage(orderedQuantity, pricePerDroid, deliveryFee) {
+    // Пиши код ниже этой строки
+
+    const totalPrice = pricePerDroid * orderedQuantity + deliveryFee;
+
+    message = `Вы заказали дроидов на сумму ${totalPrice} кредитов. Доставка (${deliveryFee} кредитов) включена в сумму заказа.`;
+
+    console.log(message);
+    // Пиши код выше этой строки
+    return message;
+  }
+
+  makeOrderMessage(2, 100, 50);
+  makeOrderMessage(4, 300, 100);
+  makeOrderMessage(10, 70, 200);
+</code></pre>
+</details>
+
+<script>
+  function makeOrderMessage(orderedQuantity, pricePerDroid, deliveryFee) {
+    // Пиши код ниже этой строки
+
+    const totalPrice = pricePerDroid * orderedQuantity + deliveryFee;
+
+    message = `Вы заказали дроидов на сумму ${totalPrice} кредитов. Доставка (${deliveryFee} кредитов) включена в сумму заказа.`;
+
+    console.log(message);
+    // Пиши код выше этой строки
+    return message;
+  }
+
+  makeOrderMessage(2, 100, 50);
+  makeOrderMessage(4, 300, 100);
+  makeOrderMessage(10, 70, 200);
+</script>
+
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <h3 class="task">Задание</h3>
+      <p>
+        Функция
+        <code
+          >makeOrderMessage(orderedQuantity, pricePerDroid, deliveryFee)</code
+        >
+        составляет и возвращает сообщение о покупке ремонтных дроидов. Она
+        объявляет три параметра, значения которых будут задаваться во время её
+        вызова.
+      </p>
+      <ul>
+        <li><code>orderedQuantity</code> - количество дроидов в заказе</li>
+        <li><code>pricePerDroid</code> - цена одного дроида</li>
+        <li><code>deliveryFee</code> - стоимость доставки</li>
+      </ul>
+      <p>
+        Дополни код функции так, чтобы она возвращала сообщение о заказе в
+        формате
+        <code
+          >Вы заказали дроидов на сумму &lt;сумма заказа&gt; кредитов. Доставка
+          (&lt;цена доставки&gt; кредитов) включена в сумму заказа.</code
+        >. Не забудь о цене доставки при вычислениях общей стоимости.
+      </p>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>
+          Объявлена функция
+          <code
+            >makeOrderMessage(orderedQuantity, pricePerDroid, deliveryFee)</code
+          >.
+        </li>
+        <li>
+          Вызов <code>makeOrderMessage(2, 100, 50)</code> возвращает
+          <code
+            >'Вы заказали дроидов на сумму 250 кредитов. Доставка (50 кредитов)
+            включена в сумму заказа.'</code
+          >.
+        </li>
+        <li>
+          Вызов <code>makeOrderMessage(4, 300, 100)</code> возвращает
+          <code
+            >'Вы заказали дроидов на сумму 1300 кредитов. Доставка (100
+            кредитов) включена в сумму заказа.'</code
+          >.
+        </li>
+        <li>
+          Вызов <code>makeOrderMessage(10, 70, 200)</code> возвращает
+          <code
+            >'Вы заказали дроидов на сумму 900 кредитов. Доставка (200 кредитов)
+            включена в сумму заказа.'</code
+          >.
+        </li>
+      </ul>
+    </div>
+  </section>
+</section>

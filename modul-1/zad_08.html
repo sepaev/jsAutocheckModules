@@ -1,0 +1,97 @@
+<a href="/modul-1/index.html"><h1>Модуль - 01</h1></a>
+<h2>Задача - 08. Параметры и аргументы.</h2>
+<a href="/modul-1/zad_07.html">&lt; &lt;Предыдущая задача</a>
+<a href="/modul-1/zad_09.html">Cледующая задача&gt;&gt;</a>
+
+<details closed="">
+  <summary style="color: teal">Решение</summary>
+  <pre><code>
+  // Пиши код ниже этой строки
+  function add(a, b, c) {
+    console.log(`Результат сложения равен ${a + b + c}`);
+    // Пиши код выше этой строки
+  }
+
+  add(15, 27, 10);
+  add(10, 20, 30);
+  add(5, 10, 15);
+</code></pre>
+</details>
+
+<script>
+  // Пиши код ниже этой строки
+  function add(a, b, c) {
+    console.log(`Результат сложения равен ${a + b + c}`);
+    // Пиши код выше этой строки
+  }
+
+  add(15, 27, 10);
+  add(10, 20, 30);
+  add(5, 10, 15);
+</script>
+
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <details closed="">
+        <summary>Теория</summary>
+        <p>
+          В круглых скобках после имени функции идут параметры - перечисление
+          данных, которые функция ожидает при вызове.
+        </p>
+        <p>
+          Параметры - это локальные переменные доступные только в теле функции.
+          Они разделяются запятыми. Параметров может быть несколько или вообще
+          их может не быть, тогда записываются просто пустые круглые скобки.
+        </p>
+        <p>
+          При вызове функции, в круглых скобках можно передать аргументы -
+          значения для объявленных параметров функции.
+        </p>
+        <pre><code class="language-js hljs javascript"><span class="hljs-comment">// 1. Объявление параметров x, y, z</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">multiply</span>(<span class="hljs-params">x, y, z</span>) </span>{
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Результат умножения равен <span class="hljs-subst">${x * y * z}</span>`</span>);
+}
+
+<span class="hljs-comment">// 2. Передача аргументов</span>
+multiply(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">5</span>); <span class="hljs-comment">// Результат умножения равен 30</span>
+multiply(<span class="hljs-number">4</span>, <span class="hljs-number">8</span>, <span class="hljs-number">12</span>); <span class="hljs-comment">// Результат умножения равен 384</span>
+multiply(<span class="hljs-number">17</span>, <span class="hljs-number">6</span>, <span class="hljs-number">25</span>); <span class="hljs-comment">// Результат умножения равен 2550</span>
+</code></pre>
+        <p>
+          Порядок передачи аргументов должен соответствует порядку объявленых
+          параметров: значение первого аргумента будет присвоено первому
+          параметру, второго аргумента второму параметру и т. д.
+        </p>
+      </details>
+      <h3 class="task">Задание</h3>
+      <p>
+        Функция <code>add</code> должна уметь складывать три числа и выводить
+        результат в консоль. Добавь функции <code>add</code> три параметра
+        <code>a</code>, <code>b</code> и <code>c</code>, которые будут получать
+        значения аргументов при её вызове.
+      </p>
+      <p>
+        Дополни <code>console.log()</code> так, чтобы он логировал строку
+        <code>'Результат сложения равен &lt;результат&gt;'</code>, где
+        <code>&lt;результат&gt;</code> это сумма переданных чисел.
+      </p>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>Объявлена функция <code>add(a, b, c)</code>.</li>
+        <li>
+          Вызов <code>add(15, 27, 10)</code> выводит в консоль
+          <code>'Результат сложения равен 52'</code>.
+        </li>
+        <li>
+          Вызов <code>add(10, 20, 30)</code> выводит в консоль
+          <code>'Результат сложения равен 60'</code>.
+        </li>
+        <li>
+          Вызов <code>add(5, 10, 15)</code> выводит в консоль
+          <code>'Результат сложения равен 30'</code>.
+        </li>
+      </ul>
+    </div>
+  </section>
+</section>

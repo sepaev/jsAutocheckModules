@@ -1,0 +1,106 @@
+<a href="/modul-3/index.html"><h1>Модуль - 03</h1></a>
+<h2>Задача - 09. Вычисляемые свойства.</h2>
+<a href="/modul-3/zad_08.html">&lt; &lt;Предыдущая задача</a>
+<a href="/modul-3/zad_10.html">Cледующая задача&gt;&gt;</a>
+
+<details closed="">
+  <summary style="color: teal">Решение</summary>
+  <pre><code>
+  const emailInputName = "email";
+  const passwordInputName = "password";
+
+  const credentials = {
+    // Пиши код ниже этой строки
+    [emailInputName]: "henry.carter@aptmail.com",
+    [passwordInputName]: "jqueryismyjam",
+
+    // Пиши код выше этой строки
+  };
+  console.log(credentials);
+</code></pre>
+</details>
+<script>
+  const emailInputName = "email";
+  const passwordInputName = "password";
+
+  const credentials = {
+    // Пиши код ниже этой строки
+    [emailInputName]: "henry.carter@aptmail.com",
+    [passwordInputName]: "jqueryismyjam",
+
+    // Пиши код выше этой строки
+  };
+  console.log(credentials);
+</script>
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <details Closed="">
+        <summary>Теория</summary>
+        <p>
+          Бывают ситуации, когда при объявлении обьекта необходимо добавить
+          свойство с именем, которое мы заранее не знаем, потому что оно
+          хранится как значение переменной или как результат выполнения функции.
+        </p>
+        <p>
+          Раньше для этого необходимо было сначала создать объект, а потом
+          добавлять свойства через квадратные скобки, что не совсем удобно.
+        </p>
+        <pre><code class="language-js hljs javascript"><span class="hljs-keyword">const</span> propName = <span class="hljs-string">'name'</span>;
+<span class="hljs-keyword">const</span> user = {
+  <span class="hljs-attr">age</span>: <span class="hljs-number">25</span>
+};
+
+user[propName] = <span class="hljs-string">'Генри Сибола'</span>;
+<span class="hljs-built_in">console</span>.log(user.name); <span class="hljs-comment">// 'Генри Сибола'</span>
+</code></pre>
+        <p>
+          Синтаксис вычисляемых свойств (computed properties) помогает избежать
+          лишнего кода и в некоторых случаях упростить его. Значением
+          вычисляемого свойства может быть любое валидное выражение.
+        </p>
+        <pre><code class="language-js hljs javascript"><span class="hljs-keyword">const</span> propName = <span class="hljs-string">'name'</span>;
+<span class="hljs-keyword">const</span> user = {
+  <span class="hljs-attr">age</span>: <span class="hljs-number">25</span>,
+  <span class="hljs-comment">// Имя этого свойства будет взято из значения переменной propName</span>
+  [propName]: <span class="hljs-string">'Генри Сибола'</span>
+};
+
+<span class="hljs-built_in">console</span>.log(user.name); <span class="hljs-comment">// 'Генри Сибола'</span>
+</code></pre>
+      </details>
+      <h3 class="task">Задание</h3>
+      <p>
+        Дополни код объявления объекта <code>credentials</code> так, чтобы в
+        результате у него были два свойства: <code>email</code> и
+        <code>password</code>, имена которых хранятся в переменных
+        <code>emailInputName</code> и <code>passwordInputName</code>.
+      </p>
+      <p>
+        Значением свойства <code>email</code> должна быть строка
+        <code>'henry.carter@aptmail.com'</code>, а значением свойства
+        <code>password</code> - строка <code>'jqueryismyjam'</code>.
+      </p>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>Объявлена переменная <code>credentials</code>.</li>
+        <li>Значение переменной <code>credentials</code> это объект.</li>
+        <li>
+          В объекте <code>credentials</code> есть свойство <code>email</code>.
+        </li>
+        <li>
+          Значение вложенного свойства <code>email</code> это строка
+          <code>'henry.carter@aptmail.com'</code>.
+        </li>
+        <li>
+          В объекте <code>credentials</code> есть свойство
+          <code>password</code>.
+        </li>
+        <li>
+          Значение вложенного свойства <code>password</code> это строка
+          <code>'jqueryismyjam'</code>.
+        </li>
+      </ul>
+    </div>
+  </section>
+</section>

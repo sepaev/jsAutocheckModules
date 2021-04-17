@@ -1,0 +1,132 @@
+<a href="/modul-1/index.html"><h1>Модуль - 01</h1></a>
+<h2>Задача - 24. Расчёт скидки.</h2>
+<a href="/modul-1/zad_23.html">&lt; &lt;Предыдущая задача</a>
+<a href="/modul-1/zad_25.html">Cледующая задача&gt;&gt;</a>
+
+<details closed="">
+  <summary style="color: teal">Решение</summary>
+  <pre><code>
+  function getDiscount(totalSpent) {
+    const BASE_DISCOUNT = 0;
+    const BRONZE_DISCOUNT = 0.02;
+    const SILVER_DISCOUNT = 0.05;
+    const GOLD_DISCOUNT = 0.1;
+    let discount;
+    // Пиши код ниже этой строки
+    if (totalSpent >= 50000) {
+      discount = GOLD_DISCOUNT;
+    } else if (totalSpent >= 20000 && totalSpent < 50000) {
+      discount = SILVER_DISCOUNT;
+    } else if (totalSpent >= 5000 && totalSpent < 20000) {
+      discount = BRONZE_DISCOUNT;
+    } else {
+      discount = BASE_DISCOUNT;
+    }
+    console.log(discount);
+    // Пиши код выше этой строки
+    return discount;
+  }
+
+  getDiscount(137000);
+  getDiscount(46900);
+  getDiscount(8250);
+  getDiscount(1300);
+  getDiscount(5000);
+  getDiscount(20000);
+  getDiscount(50000);
+</code></pre>
+</details>
+
+<script>
+  function getDiscount(totalSpent) {
+    const BASE_DISCOUNT = 0;
+    const BRONZE_DISCOUNT = 0.02;
+    const SILVER_DISCOUNT = 0.05;
+    const GOLD_DISCOUNT = 0.1;
+    let discount;
+    // Пиши код ниже этой строки
+    if (totalSpent >= 50000) {
+      discount = GOLD_DISCOUNT;
+    } else if (totalSpent >= 20000 && totalSpent < 50000) {
+      discount = SILVER_DISCOUNT;
+    } else if (totalSpent >= 5000 && totalSpent < 20000) {
+      discount = BRONZE_DISCOUNT;
+    } else {
+      discount = BASE_DISCOUNT;
+    }
+    console.log(discount);
+    // Пиши код выше этой строки
+    return discount;
+  }
+
+  getDiscount(137000);
+  getDiscount(46900);
+  getDiscount(8250);
+  getDiscount(1300);
+  getDiscount(5000);
+  getDiscount(20000);
+  getDiscount(50000);
+</script>
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <h3 class="task">Задание</h3>
+      <p>
+        Функция <code>getDiscount(totalSpent)</code> определяет значение скидки
+        в зависимости от общей суммы потраченных денег (параметр
+        <code>totalSpent</code>) в магазине за всё время (партнёрская
+        программа). Скидка записывается в переменную <code>discount</code> и
+        возвращается из функции как результат её работы.
+      </p>
+      <p>Используя ветвления и логические операторы, дополни код функции.</p>
+      <ul>
+        <li>
+          Если потрачено от <code>50000</code> ( включительно ) или больше
+          кредитов - скидка <code>10%</code> (золотой партнёр)
+        </li>
+        <li>
+          Если потрачено от <code>20000</code> (включительно) до
+          <code>50000</code> кредитов - скидка <code>5%</code> (серебрянный
+          партнёр)
+        </li>
+        <li>
+          Если потрачено от <code>5000</code> (включительно) до
+          <code>20000</code> кредитов - скидка <code>2%</code> (бронзовый
+          партнёр)
+        </li>
+        <li>
+          Если потрачено меньше чем <code>5000</code> кредитов - скидка
+          <code>0</code> (базовый партнёр)
+        </li>
+      </ul>
+      <p>
+        Значения скидок каждого уровня хранятся в одноимённых константах
+        <code>BASE_DISCOUNT</code>, <code>BRONZE_DISCOUNT</code>,
+        <code>SILVER_DISCOUNT</code> и <code>GOLD_DISCOUNT</code>.
+      </p>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>Объявлена функция <code>getDiscount(totalSpent)</code>.</li>
+        <li>
+          Вызов <code>getDiscount(137000)</code> возвращает <code>0.1</code>.
+        </li>
+        <li>
+          Вызов <code>getDiscount(46900)</code> возвращает <code>0.05</code>.
+        </li>
+        <li>
+          Вызов <code>getDiscount(8250)</code> возвращает <code>0.02</code>.
+        </li>
+        <li>Вызов <code>getDiscount(1300)</code> возвращает <code>0</code>.</li>
+        <li>
+          Вызов <code>getDiscount(5000)</code> возвращает <code>0.02</code>.
+        </li>
+        <li>
+          Вызов <code>getDiscount(20000)</code> возвращает <code>0.05</code>.
+        </li>
+        <li>
+          Вызов <code>getDiscount(50000)</code> возвращает <code>0.1</code>.
+        </li>
+      </ul>
+    </div>
+  </section>
+</section>

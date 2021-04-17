@@ -1,0 +1,81 @@
+<a href="/modul-2/index.html"><h1>Модуль - 02</h1></a>
+<h2>Задача - 21. Поиск самого длинного слова.</h2>
+<a href="/modul-2/zad_20.html">&lt; &lt;Предыдущая задача</a>
+<a href="/modul-2/zad_22.html">Cледующая задача&gt;&gt;</a>
+
+<details closed="">
+  <summary style="color: teal">Решение</summary>
+  <pre><code>
+  function findLongestWord(string) {
+    // Пиши код ниже этой строки
+    let longestWord = "";
+    let array = string.split(" ");
+
+    for (let i = 0; i < array.length; i += 1) {
+      longestWord =
+        array[i].length > longestWord.length ? array[i] : longestWord;
+    }
+    return longestWord;
+    // Пиши код выше этой строки
+  }
+  console.log(findLongestWord("The quick brown fox jumped over the lazy dog"));
+  console.log(findLongestWord("Google do a roll"));
+  console.log(findLongestWord("May the force be with you"));
+</code></pre>
+</details>
+<script>
+  function findLongestWord(string) {
+    // Пиши код ниже этой строки
+    let longestWord = "";
+    let array = string.split(" ");
+
+    for (let i = 0; i < array.length; i += 1) {
+      longestWord =
+        array[i].length > longestWord.length ? array[i] : longestWord;
+    }
+    return longestWord;
+    // Пиши код выше этой строки
+  }
+  console.log(findLongestWord("The quick brown fox jumped over the lazy dog"));
+  console.log(findLongestWord("Google do a roll"));
+  console.log(findLongestWord("May the force be with you"));
+</script>
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <h3 class="task">Задание</h3>
+      <p>
+        Напиши функцию <code>findLongestWord(string)</code> которая принимает
+        произвольную строку состоящую только из слов разделённых пробелом
+        (параметр <code>string</code>) и возвращает самое длинное слово в этой
+        строке.
+      </p>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>Объявлена функция <code>findLongestWord(string)</code>.</li>
+        <li>
+          Вызов функции
+          <code
+            >findLongestWord('The quick brown fox jumped over the lazy
+            dog')</code
+          >
+          возвращает <code>jumped</code>.
+        </li>
+        <li>
+          Вызов функции
+          <code>findLongestWord('Google do a roll')</code> возвращает
+          <code>Google</code>.
+        </li>
+        <li>
+          Вызов функции
+          <code>findLongestWord('May the force be with you')</code> возвращает
+          <code>force</code>.
+        </li>
+        <li>
+          Вызов функции <code>findLongestWord()</code> со случайной строкой
+          возвращает правильное значение.
+        </li>
+      </ul>
+    </div>
+  </section>
+</section>

@@ -1,0 +1,58 @@
+<a href="/modul-2/index.html"><h1>Модуль - 02</h1></a>
+<h2>Задача - 06. Переопределение значения элемента.</h2>
+<a href="/modul-2/zad_05.html">&lt; &lt;Предыдущая задача</a>
+<a href="/modul-2/zad_07.html">Cледующая задача&gt;&gt;</a>
+
+<details closed=""><summary style="color: teal">Решение</summary>
+<pre><code>
+  // Стартовый код
+  const fruits = ["яблоко", "слива", "груша", "апельсин"];
+  // Пиши код ниже этой строки
+  fruits[1] = "персик";
+  fruits[3] = "банан";
+
+  console.log(fruits);
+</code></pre>
+</details>
+<script>
+  // Стартовый код
+  const fruits = ["яблоко", "слива", "груша", "апельсин"];
+  // Пиши код ниже этой строки
+  fruits[1] = "персик";
+  fruits[3] = "банан";
+
+  console.log(fruits);
+</script>
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <details closed="">
+        <summary>Теория</summary>
+        <p>
+          В отличии от строк, элементы массива можно изменять обратившись к ним
+          по индексу и присвоив другое значение.
+        </p>
+        <pre><code class="language-js hljs javascript"><span class="hljs-keyword">const</span> numbers = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>];
+numbers[<span class="hljs-number">0</span>] = <span class="hljs-number">7</span>;
+numbers[<span class="hljs-number">2</span>] = <span class="hljs-number">14</span>;
+<span class="hljs-built_in">console</span>.log(numbers); <span class="hljs-comment">// [7, 2, 14, 4, 5];</span>
+</code></pre>
+</details>
+      </details>
+      <h3 class="task">Задание</h3>
+      <p>
+        Переопредели значения элементов с индексами <code>1</code> и
+        <code>3</code>. Замени <code>'слива'</code> на <code>'персик'</code>, а
+        <code>'апельсин'</code> на <code>'банан'</code>.
+      </p>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>Объявлена переменная <code>fruits</code>.</li>
+        <li>
+          Значение переменной <code>fruits</code> это массив
+          <code>['яблоко', 'персик', 'груша', 'банан']</code>.
+        </li>
+      </ul>
+    </div>
+  </section>
+</section>

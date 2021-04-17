@@ -1,0 +1,87 @@
+<a href="/modul-2/index.html"><h1>Модуль - 02</h1></a>
+<h2>Задача - 23. Фильтрация массива чисел.</h2>
+<a href="/modul-2/zad_22.html">&lt; &lt;Предыдущая задача</a>
+<a href="/modul-2/zad_24.html">Cледующая задача&gt;&gt;</a>
+
+<details closed="">
+  <summary style="color: teal">Решение</summary>
+  <pre><code>
+  function filterArray(numbers, value) {
+    // Пиши код ниже этой строки
+    let newArray = [];
+
+    for (let i = 0; i < numbers.length; i += 1) {
+      if (numbers[i] > value) {
+        newArray.push(numbers[i]);
+      }
+    }
+    return newArray;
+    // Пиши код выше этой строки
+  }
+</code></pre>
+</details>
+<script>
+  function filterArray(numbers, value) {
+    // Пиши код ниже этой строки
+    let newArray = [];
+
+    for (let i = 0; i < numbers.length; i += 1) {
+      if (numbers[i] > value) {
+        newArray.push(numbers[i]);
+      }
+    }
+    return newArray;
+    // Пиши код выше этой строки
+  }
+
+  console.log(filterArray([1, 2, 3, 4, 5], 3));
+  console.log(filterArray([1, 2, 3, 4, 5], 4));
+  console.log(filterArray([1, 2, 3, 4, 5], 5));
+  console.log(filterArray([12, 24, 8, 41, 76], 38));
+  console.log(filterArray([12, 24, 8, 41, 76], 20));
+</script>
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <h3 class="task">Задание</h3>
+      <p>
+        Напиши функцию <code>filterArray(numbers, value)</code>, которая
+        принимает массив чисел (параметр <code>numbers</code>) и возвращает
+        новый массив, в котором будут только те элементы массива
+        <code>numbers</code>, которые больше чем значение параметра
+        <code>value</code> (число).
+      </p>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>Объявлена функция <code>filterArray(numbers, value)</code>.</li>
+        <li>
+          Вызов функции <code>filterArray([1, 2, 3, 4, 5], 3)</code> возвращает
+          <code>[4, 5]</code>.
+        </li>
+        <li>
+          Вызов функции <code>filterArray([1, 2, 3, 4, 5], 4)</code> возвращает
+          <code>[5]</code>.
+        </li>
+        <li>
+          Вызов функции <code>filterArray([1, 2, 3, 4, 5], 5)</code> возвращает
+          <code>[]</code>.
+        </li>
+        <li>
+          Вызов функции
+          <code>filterArray([12, 24, 8, 41, 76], 38)</code> возвращает
+          <code>[41, 76]</code>.
+        </li>
+        <li>
+          Вызов функции
+          <code>filterArray([12, 24, 8, 41, 76], 20)</code> возвращает
+          <code>[24, 41, 76]</code>.
+        </li>
+        <li>
+          Вызов функции <code>filterArray()</code> со случайным массивом и
+          числом возвращает правильный массив.
+        </li>
+        <li>В цикле <code>for</code> использовался метод <code>push</code>.</li>
+      </ul>
+    </div>
+  </section>
+</section>

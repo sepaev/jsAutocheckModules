@@ -1,0 +1,150 @@
+<a href="/modul-1/index.html"><h1>Модуль - 01</h1></a>
+<h2>
+  Задача - 28. Инструкция <code>switch</code> c блоком <code>default</code>.
+</h2>
+<a href="/modul-1/zad_27.html">&lt; &lt;Предыдущая задача</a>
+<a href="/modul-1/zad_29.html">Cледующая задача&gt;&gt;</a>
+
+<details closed="">
+  <summary style="color: teal">Решение</summary>
+  <pre><code>
+  function checkPassword(password) {
+    const ADMIN_PASSWORD = "jqueryismyjam";
+    let message;
+
+    switch (password) {
+      case null:
+        message = "Отменено пользователем!";
+        break;
+
+      case ADMIN_PASSWORD:
+        message = "Добро пожаловать!";
+        break;
+
+      default:
+        message = "Доступ запрещен, неверный пароль!";
+    }
+
+    console.log(message);
+    return message;
+  }
+
+  checkPassword("mangohackzor");
+  checkPassword(null);
+  checkPassword("polyhax");
+  checkPassword("jqueryismyjam");
+</code></pre>
+</details>
+
+<script>
+  function checkPassword(password) {
+    const ADMIN_PASSWORD = "jqueryismyjam";
+    let message;
+
+    switch (password) {
+      case null:
+        message = "Отменено пользователем!";
+        break;
+
+      case ADMIN_PASSWORD:
+        message = "Добро пожаловать!";
+        break;
+
+      default:
+        message = "Доступ запрещен, неверный пароль!";
+    }
+
+    console.log(message);
+    return message;
+  }
+
+  checkPassword("mangohackzor");
+  checkPassword(null);
+  checkPassword("polyhax");
+  checkPassword("jqueryismyjam");
+</script>
+
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <details closed="">
+        <summary>Теория</summary>
+        <p>
+          Если ни одного совпадения значений не произошло, необходимо выполнить
+          код по умолчанию, как в блоке <code>else</code> для инструкции
+          <code>if...else</code>. Для этого после всех блоков
+          <code>case</code> добавляется блок <code>default</code>.
+        </p>
+        <pre><code class="language-js hljs javascript"><span class="hljs-keyword">switch</span> (значение) {
+  <span class="hljs-keyword">case</span> значение:
+    инструкции;
+    <span class="hljs-keyword">break</span>;
+
+  <span class="hljs-keyword">case</span> значение:
+    инструкции;
+    <span class="hljs-keyword">break</span>;
+
+  <span class="hljs-keyword">default</span>:
+    инструкции;
+}
+</code></pre>
+        <p>
+          Оператор <code>break</code> после блока <code>default</code> не нужен,
+          так как это и так последнее что будет выполнено в
+          <code>switch</code> и управление будет передано коду за ним.
+        </p>
+      </details>
+      <h3 class="task">Задание</h3>
+      <p>
+        Функция <code>checkPassword(password)</code> получает пароль в параметр
+        <code>password</code>, проверяет его на совпадение с паролем
+        администратора в переменной <code>ADMIN_PASSWORD</code> и возвращает
+        сообщение о результате сравнения, хранящееся в переменной
+        <code>message</code>.
+      </p>
+      <p>Если значение параметра <code>password</code>:</p>
+      <ul>
+        <li>
+          равно <code>null</code>, значит пользователь отменил операцию и в
+          <code>message</code> записывается строка
+          <code>'Отменено пользователем!'</code>.
+        </li>
+        <li>
+          совпадает со значением <code>ADMIN_PASSWORD</code>, в переменную
+          <code>message</code> присваивается строка
+          <code>'Добро пожаловать!'</code>.
+        </li>
+        <li>
+          не удобвлетворяет ни одному из предыдущих условий, в переменную
+          <code>message</code> записывается строка
+          <code>'Доступ запрещен, неверный пароль!'</code>.
+        </li>
+      </ul>
+      <p>
+        Проведи рефакторинг кода, заменив инструкцию <code>if..else</code> на
+        <code>switch</code>, и не забудь о блоке <code>default</code> (аналог
+        else).
+      </p>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>Объявлена функция <code>checkPassword(password)</code>.</li>
+        <li>
+          Вызов <code>checkPassword('mangohackzor')</code> возвращает
+          <code>'Доступ запрещен, неверный пароль!'</code>.
+        </li>
+        <li>
+          Вызов <code>checkPassword(null) </code>возвращает
+          <code>'Отменено пользователем!'</code>.
+        </li>
+        <li>
+          Вызов <code>checkPassword('polyhax')</code> возвращает
+          <code>'Доступ запрещен, неверный пароль!'</code>.
+        </li>
+        <li>
+          Вызов <code>checkPassword('jqueryismyjam')</code> возвращает
+          <code>'Добро пожаловать!'</code>.
+        </li>
+      </ul>
+    </div>
+  </section>
+</section>

@@ -1,0 +1,89 @@
+<a href="/modul-1/index.html"><h1>Модуль - 01</h1></a>
+<h2>
+  Задача - 13. Операторы сравнения <code>&gt;</code>, <code>&gt;=</code>,
+  <code>&lt;</code> и <code>&lt;=</code>.
+</h2>
+<a href="/modul-1/zad_12.html">&lt; &lt;Предыдущая задача</a>
+<a href="/modul-1/zad_14.html">Cледующая задача&gt;&gt;</a>
+
+<details closed=""><summary style="color: teal">Решение</summary>
+<pre><code>
+  function isAdult(age) {
+    // Пиши код ниже этой строки
+    const passed = age >= 18;
+    console.log(passed);
+    // Пиши код выше этой строки
+    return passed;
+  }
+  isAdult(20);
+  isAdult(14);
+  isAdult(8);
+  isAdult(37);
+</code></pre>
+</details>
+
+<script>
+  function isAdult(age) {
+    // Пиши код ниже этой строки
+    const passed = age >= 18;
+    console.log(passed);
+    // Пиши код выше этой строки
+    return passed;
+  }
+  isAdult(20);
+  isAdult(14);
+  isAdult(8);
+  isAdult(37);
+</script>
+
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <details closed="">
+        <summary>Теория</summary>
+        <p>
+          Используются для сравнения двух значений. Результатом своего
+          выполнения возвращают буль - <code>true</code> или <code>false</code>,
+          то есть «да» или «нет».
+        </p>
+        <ul>
+          <li><code>&gt;</code> - больше</li>
+          <li><code>&lt;</code> - меньше</li>
+          <li><code>&gt;=</code> - больше или равно</li>
+          <li><code>&lt;=</code> - меньше или равно</li>
+        </ul>
+        <pre><code class="language-js hljs javascript"><span class="hljs-keyword">const</span> a = <span class="hljs-number">2</span>;
+<span class="hljs-keyword">const</span> b = <span class="hljs-number">5</span>;
+
+<span class="hljs-built_in">console</span>.log(a &gt; b); <span class="hljs-comment">// false</span>
+<span class="hljs-built_in">console</span>.log(b &gt; a); <span class="hljs-comment">// true</span>
+<span class="hljs-built_in">console</span>.log(a &gt;= b); <span class="hljs-comment">// false</span>
+<span class="hljs-built_in">console</span>.log(b &gt;= a); <span class="hljs-comment">// true</span>
+
+<span class="hljs-built_in">console</span>.log(a &lt; b); <span class="hljs-comment">// true</span>
+<span class="hljs-built_in">console</span>.log(b &lt; a); <span class="hljs-comment">// false</span>
+<span class="hljs-built_in">console</span>.log(a &lt;= b); <span class="hljs-comment">// true</span>
+<span class="hljs-built_in">console</span>.log(b &lt;= a); <span class="hljs-comment">// false</span>
+</code></pre>
+</details>
+      </details>
+      <h3 class="task">Задание</h3>
+      <p>
+        Функция <code>isAdult</code> объявляет один параметр
+        <code>age</code> (возраст), значение которого будет задаваться во время
+        её вызова. Присвой переменной <code>passed</code> выражение проверки
+        возраста пользователя на совершеннолетие. Человек считается
+        совершеннолетним в возрасте 18 лет и старше.
+      </p>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>Объявлена функция <code>isAdult(age)</code>.</li>
+        <li>В выражении проверки используется оператор <code>&gt;=</code>.</li>
+        <li>Вызов <code>isAdult(20)</code> возвращает <code>true</code>.</li>
+        <li>Вызов <code>isAdult(14)</code> возвращает <code>false</code>.</li>
+        <li>Вызов <code>isAdult(8)</code> возвращает <code>false</code>.</li>
+        <li>Вызов <code>isAdult(37)</code> возвращает <code>true</code>.</li>
+      </ul>
+    </div>
+  </section>
+</section>

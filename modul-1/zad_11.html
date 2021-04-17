@@ -1,0 +1,94 @@
+<a href="/modul-1/index.html"><h1>Модуль - 01</h1></a>
+<h2>Задача - 11. Математические операторы 2.0</h2>
+<a href="/modul-1/zad_10.html">&lt; &lt;Предыдущая задача</a>
+<a href="/modul-1/zad_12.html">Cледующая задача&gt;&gt;</a>
+
+<details closed="">
+  <summary style="color: teal">Решение</summary>
+  <pre><code>
+  function calculateTotalPrice(orderedQuantity, pricePerItem) {
+    // Пиши код ниже этой строки
+    const totalPrice = orderedQuantity * pricePerItem;
+    console.log(totalPrice);
+    // Пиши код выше этой строки
+    return totalPrice;
+  }
+
+  calculateTotalPrice(5, 100);
+  calculateTotalPrice(8, 60);
+  calculateTotalPrice(3, 400);
+  calculateTotalPrice(1, 3500);
+  calculateTotalPrice(12, 70);
+</code></pre>
+</details>
+
+<script>
+  function calculateTotalPrice(orderedQuantity, pricePerItem) {
+    // Пиши код ниже этой строки
+    const totalPrice = orderedQuantity * pricePerItem;
+    console.log(totalPrice);
+    // Пиши код выше этой строки
+    return totalPrice;
+  }
+
+  calculateTotalPrice(5, 100);
+  calculateTotalPrice(8, 60);
+  calculateTotalPrice(3, 400);
+  calculateTotalPrice(1, 3500);
+  calculateTotalPrice(12, 70);
+</script>
+
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <h3 class="task">Задание</h3>
+      <p>
+        Функция <code>calculateTotalPrice</code> считает и возвращает общую
+        сумму покупки. Она принимает два параметра, значения которых будут
+        задаваться во время её вызова.
+      </p>
+      <ul>
+        <li>
+          <code>orderedQuantity</code> - количество единиц товара в заказе;
+        </li>
+        <li><code>pricePerItem</code> - цена одной единицы товара.</li>
+      </ul>
+      <p>
+        Дополни код функции так, чтобы в переменную
+        <code>totalPrice</code> записывалась общая сумма покупки, результат
+        умножения кол-ва товаров на цену одного.
+      </p>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>
+          Объявлена функция
+          <code>calculateTotalPrice (orderedQuantity, pricePerItem)</code>.
+        </li>
+        <li>
+          Вызов <code>calculateTotalPrice(5, 100)</code> возвращает
+          <code>500</code>.
+        </li>
+        <li>
+          Вызов <code>calculateTotalPrice(8, 60)</code> возвращает
+          <code>480</code>.
+        </li>
+        <li>
+          Вызов <code>calculateTotalPrice('3, 400)</code> возвращает
+          <code>1200</code>.
+        </li>
+        <li>
+          Вызов <code>calculateTotalPrice(1, 3500)</code> возвращает
+          <code>3500</code>.
+        </li>
+        <li>
+          Вызов <code>calculateTotalPrice(12, 70)</code> возвращает
+          <code>840</code>.
+        </li>
+        <li>
+          Вызов функции со случайными, но валидными аргументами, возвращает
+          правильное значение.
+        </li>
+      </ul>
+    </div>
+  </section>
+</section>

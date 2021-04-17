@@ -1,0 +1,145 @@
+<a href="/modul-1/index.html"><h1>Модуль - 01</h1></a>
+<h2>Задача - 21. Логическое «И» (оператор <code>&amp;&amp;</code>).</h2>
+<a href="/modul-1/zad_20.html">&lt; &lt;Предыдущая задача</a>
+<a href="/modul-1/zad_22.html">Cледующая задача&gt;&gt;</a>
+
+<details closed=""><summary style="color: teal">Решение</summary>
+<pre><code>
+  function isNumberInRange(start, end, number) {
+    const isInRange = number > start && number < end; // дополни эту строку
+    console.log(isInRange);
+    return isInRange;
+  }
+
+  isNumberInRange(10, 30, 17);
+  isNumberInRange(10, 30, 5);
+  isNumberInRange(20, 50, 24);
+  isNumberInRange(20, 50, 76);
+</code></pre>
+</details>
+
+<script>
+  function isNumberInRange(start, end, number) {
+    const isInRange = number > start && number < end; // дополни эту строку
+    console.log(isInRange);
+    return isInRange;
+  }
+
+  isNumberInRange(10, 30, 17);
+  isNumberInRange(10, 30, 5);
+  isNumberInRange(20, 50, 24);
+  isNumberInRange(20, 50, 76);
+</script>
+
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <details closed="">
+        <summary>Теория</summary>
+        <p>
+          Логические операторы используются для проверки условий с
+          множественными выражениями, например в ветвлениях.
+        </p>
+        <p>
+          Оператор <code>&amp;&amp;</code> приводит все операнды к булю и
+          возвращает значение одного из них. Левый операнд, если его можно
+          привести к <code>false</code>, и правый в остальных случаях.
+        </p>
+        <pre><code class="language-shell hljs">выражение &amp;&amp; выражение
+</code></pre>
+        <p>
+          В следующем примере оба условия вернут <code>true</code>, поэтому
+          результатом всего выражения будет <code>true</code> - вернётся
+          значение правого операнда.
+        </p>
+        <pre><code class="language-js hljs javascript"><span class="hljs-keyword">const</span> age = <span class="hljs-number">20</span>;
+<span class="hljs-built_in">console</span>.log(age &gt; <span class="hljs-number">10</span> &amp;&amp; age &lt; <span class="hljs-number">30</span>); <span class="hljs-comment">// true &amp;&amp; true -&gt; true</span>
+</code></pre>
+        <p>
+          Если хотя бы один из операндов будет приведён к <code>false</code>,
+          результатом выражения будет этот операнд.
+        </p>
+        <pre><code class="language-js hljs javascript"><span class="hljs-keyword">const</span> age = <span class="hljs-number">50</span>;
+<span class="hljs-built_in">console</span>.log(age &gt; <span class="hljs-number">10</span> &amp;&amp; age &lt; <span class="hljs-number">30</span>); <span class="hljs-comment">// true &amp;&amp; false -&gt; false</span>
+<span class="hljs-built_in">console</span>.log(age &gt; <span class="hljs-number">80</span> &amp;&amp; age &lt; <span class="hljs-number">120</span>); <span class="hljs-comment">// false &amp;&amp; true -&gt; false</span>
+</code></pre>
+        <p>
+          То есть логическое «И» запинается на лжи и возвращает то, на чём
+          запнулось или последний операнд.
+        </p>
+        <pre><code class="language-js hljs javascript"><span class="hljs-built_in">console</span>.log(<span class="hljs-literal">true</span> &amp;&amp; <span class="hljs-literal">false</span>); <span class="hljs-comment">// false</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-literal">false</span> &amp;&amp; <span class="hljs-literal">true</span>); <span class="hljs-comment">// false</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-literal">true</span> &amp;&amp; <span class="hljs-literal">true</span>); <span class="hljs-comment">// true</span>
+
+<span class="hljs-built_in">console</span>.log(<span class="hljs-number">3</span> &amp;&amp; <span class="hljs-literal">false</span>); <span class="hljs-comment">// false</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-literal">false</span> &amp;&amp; <span class="hljs-number">3</span>); <span class="hljs-comment">// false</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-number">3</span> &amp;&amp; <span class="hljs-literal">true</span>); <span class="hljs-comment">// true</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-literal">true</span> &amp;&amp; <span class="hljs-number">3</span>); <span class="hljs-comment">// 3</span>
+</code></pre>
+</details>
+        <div class="useful">
+          <h5>Полезно</h5>
+          <p>
+            Запомните шесть значений, которые в булевом преобразовании
+            приводятся к `false`: `0`, `NaN`, `null`, `undefined`, пустая строка
+            `""` или `''` и само значение `false`. Абсолютно всё остальное
+            приводится к `true`.
+          </p>
+        </div>
+        <pre><code class="language-js hljs javascript"><span class="hljs-built_in">console</span>.log(<span class="hljs-number">1</span> &amp;&amp; <span class="hljs-number">5</span>); <span class="hljs-comment">// true &amp;&amp; true -&gt; 5</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-number">5</span> &amp;&amp; <span class="hljs-number">1</span>); <span class="hljs-comment">// true &amp;&amp; true -&gt; 1</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-number">0</span> &amp;&amp; <span class="hljs-number">2</span>); <span class="hljs-comment">// false &amp;&amp; true -&gt; 0</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-number">2</span> &amp;&amp; <span class="hljs-number">0</span>); <span class="hljs-comment">// true &amp;&amp; false -&gt; 0</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">''</span> &amp;&amp; <span class="hljs-string">'Манго'</span>); <span class="hljs-comment">// false &amp;&amp; true -&gt; ''</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Манго'</span> &amp;&amp; <span class="hljs-string">''</span>); <span class="hljs-comment">// true &amp;&amp; false -&gt; ''</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Манго'</span> &amp;&amp; <span class="hljs-string">'Поли'</span>); <span class="hljs-comment">// true &amp;&amp; true -&gt; 'Поли'</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Поли'</span> &amp;&amp; <span class="hljs-string">'Манго'</span>); <span class="hljs-comment">// true &amp;&amp; true -&gt; 'Манго'</span>
+</code></pre>
+</details>
+      </details>
+      <h3 class="task">Задание</h3>
+      <p>
+        Функция <code>isNumberInRange(start, end, number)</code> проверяет,
+        входит ли число в промежуток. Она объявляет три параметра, значения
+        которых будут задаваться во время её вызова:
+      </p>
+      <ul>
+        <li><code>number</code> - число, вхождение которого проверяется</li>
+        <li><code>start</code> - начало числового промежутка</li>
+        <li><code>end</code> - конец числового промежутка</li>
+      </ul>
+      <p>
+        Присвой переменной <code>isInRange</code> выражение проверки вхождения
+        <code>number</code> в числовой промеждуток от <code>srart</code> до
+        <code>end</code>. То есть число должно быть больше либо равно
+        <code>start</code> и меньше либо равно <code>end</code>. Результатом
+        выражения проверки будет буль <code>true</code> или <code>false</code>.
+      </p>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>
+          Объявлена функция <code>isNumberInRange(start, end, number)</code>.
+        </li>
+        <li>
+          В выражении проверки использован оператор <code>&amp;&amp;.</code>
+        </li>
+        <li>
+          Вызов <code>isNumberInRange(10, 30, 17)</code> возвращает
+          <code>true</code>.
+        </li>
+        <li>
+          Вызов <code>isNumberInRange(10, 30, 5)</code> возвращает
+          <code>false</code>.
+        </li>
+        <li>
+          Вызов <code>isNumberInRange(20, 50, 24)</code> возвращает
+          <code>true</code>.
+        </li>
+        <li>
+          Вызов <code>isNumberInRange(20, 50, 76)</code> возвращает
+          <code>false</code>.
+        </li>
+      </ul>
+    </div>
+  </section>
+</section>

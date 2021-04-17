@@ -1,0 +1,142 @@
+<a href="/modul-1/index.html"><h1>Модуль - 01</h1></a>
+<h2>Задача - 15. Инструкция <code>if...else</code>.</h2>
+<a href="/modul-1/zad_14.html">&lt; &lt;Предыдущая задача</a>
+<a href="/modul-1/zad_16.html">Cледующая задача&gt;&gt;</a>
+
+<details closed=""><summary style="color: teal">Решение</summary>
+<pre><code>
+  function checkAge(age) {
+    let message;
+
+    if (age >= 18) {
+      // Дополни эту строку
+      message = "Вы совершеннолетний человек";
+    } else {
+      message = "Вы не совершеннолетний человек";
+    }
+
+    console.log(message);
+    return message;
+  }
+
+  checkAge(20);
+  checkAge(8);
+  checkAge(14);
+  checkAge(38); 
+</code></pre>
+</details>
+
+<script>
+  function checkAge(age) {
+    let message;
+
+    if (age >= 18) {
+      // Дополни эту строку
+      message = "Вы совершеннолетний человек";
+    } else {
+      message = "Вы не совершеннолетний человек";
+    }
+
+    console.log(message);
+    return message;
+  }
+
+  checkAge(20);
+  checkAge(8);
+  checkAge(14);
+  checkAge(38);
+</script>
+
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <details closed="">
+        <summary>Теория</summary>
+        <p>
+          Ветвления используются для выполнения различного кода в зависимсти от
+          условия. Принцип работы простой - результат выражения в условии блока
+          <code>if</code> приводится к булю <code>true</code> или
+          <code>false</code>.
+        </p>
+        <pre><code class="language-js hljs javascript"><span class="hljs-keyword">if</span> (условие) {
+  <span class="hljs-comment">// тело if</span>
+} <span class="hljs-keyword">else</span> {
+  <span class="hljs-comment">// тело else</span>
+}
+</code></pre>
+        <p>
+          Если условие приводится к <code>true</code>, то выполняется код в
+          фигурных скобках тела <code>if</code>, а блок
+          <code>else</code> игнорируется.
+        </p>
+        <pre><code class="language-js hljs javascript"><span class="hljs-keyword">let</span> cost;
+<span class="hljs-keyword">const</span> subscription = <span class="hljs-string">'pro'</span>;
+
+<span class="hljs-keyword">if</span> (subscription === <span class="hljs-string">'pro'</span>) {
+  cost = <span class="hljs-number">100</span>;
+} <span class="hljs-keyword">else</span> {
+  cost = <span class="hljs-number">0</span>;
+}
+
+<span class="hljs-built_in">console</span>.log(cost); <span class="hljs-comment">// 100</span>
+</code></pre>
+        <p>
+          Если условие приводится к <code>false</code>, код блока
+          <code>if</code> будет пропущен, и выполнится код в фигурных скобках
+          после блока <code>else</code>.
+        </p>
+        <pre><code class="language-js hljs javascript"><span class="hljs-keyword">let</span> cost;
+<span class="hljs-keyword">const</span> subscription = <span class="hljs-string">'free'</span>;
+
+<span class="hljs-keyword">if</span> (subscription === <span class="hljs-string">'pro'</span>) {
+  cost = <span class="hljs-number">100</span>;
+} <span class="hljs-keyword">else</span> {
+  cost = <span class="hljs-number">0</span>;
+}
+
+<span class="hljs-built_in">console</span>.log(cost); <span class="hljs-comment">// 0</span>
+</code></pre>
+</details>
+      </details>
+      <h3 class="task">Задание</h3>
+      <p>
+        Добавь выражение проверки совершеннолетия пользователя, значения
+        параметра <code>age</code>, в условие для инструкции <code>if</code>.
+      </p>
+      <ul>
+        <li>
+          Если пользователь совершеннолетний, должен выполняться блок
+          <code>if</code> и в переменную <code>message</code> записывается
+          строка <code>'Вы совершеннолетний человек'</code>.
+        </li>
+        <li>
+          В противном случае должен выполняться блок <code>else</code> и
+          записывается строка <code>'Вы не совершеннолетний человек'</code>.
+        </li>
+      </ul>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>Объявлена функция <code>checkAge(age)</code>.</li>
+        <li>
+          В выражении проверки возраста использован оператор <code>&gt;=</code>.
+        </li>
+        <li>
+          Вызов <code>checkAge(20)</code> возвращает
+          <code>'Вы совершеннолетний человек'</code>.
+        </li>
+        <li>
+          Вызов <code>checkAge(8)</code> возвращает
+          <code>'Вы не совершеннолетний человек'</code>.
+        </li>
+        <li>
+          Вызов <code>checkAge(14)</code> возвращает
+          <code>'Вы не совершеннолетний человек'</code>.
+        </li>
+        <li>
+          Вызов <code>checkAge(38)</code> возвращает
+          <code>'Вы совершеннолетний человек'</code>.
+        </li>
+      </ul>
+    </div>
+  </section>
+</section>

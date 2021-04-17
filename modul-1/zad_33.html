@@ -1,0 +1,115 @@
+<a href="/modul-1/index.html"><h1>Модуль - 01</h1></a>
+<h2>Задача - 33. Форматирование сообщения.</h2>
+<a href="/modul-1/zad_32.html">&lt; &lt;Предыдущая задача</a>
+<a href="/modul-1/zad_34.html">Cледующая задача&gt;&gt;</a>
+
+<details closed="">
+  <summary style="color: teal">Решение</summary>
+  <pre><code>
+  function formatMessage(message, maxLength) {
+    let result;
+    // Пиши код ниже этой строки
+    result =
+      message.length <= maxLength
+        ? message
+        : message.slice(0, maxLength) + "...";
+    // Пиши код выше этой строки
+    console.log(result);
+    return result;
+  }
+
+  formatMessage("Curabitur ligula sapien", 16);
+  formatMessage("Curabitur ligula sapien", 23);
+  formatMessage("Vestibulum facilisis purus nec", 20);
+  formatMessage("Vestibulum facilisis purus nec", 30);
+  formatMessage("Nunc sed turpis a felis in nunc fringilla", 15);
+  formatMessage("Nunc sed turpis a felis in nunc fringilla", 41);
+</code></pre>
+</details>
+
+<script>
+  function formatMessage(message, maxLength) {
+    let result;
+    // Пиши код ниже этой строки
+    result =
+      message.length <= maxLength
+        ? message
+        : message.slice(0, maxLength) + "...";
+    // Пиши код выше этой строки
+    console.log(result);
+    return result;
+  }
+
+  formatMessage("Curabitur ligula sapien", 16);
+  formatMessage("Curabitur ligula sapien", 23);
+  formatMessage("Vestibulum facilisis purus nec", 20);
+  formatMessage("Vestibulum facilisis purus nec", 30);
+  formatMessage("Nunc sed turpis a felis in nunc fringilla", 15);
+  formatMessage("Nunc sed turpis a felis in nunc fringilla", 41);
+</script>
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <h3 class="task">Задание</h3>
+      <p>
+        Функция <code>formatMessage(message, maxLength)</code> принимает строку
+        (параметр message) и форматирует её, если длина превышает значение в
+        параметре <code>maxLength</code>.
+      </p>
+      <p>Дополни код функции так, что если длина строки:</p>
+      <ul>
+        <li>
+          не превышает <code>maxLength</code>, функция возвращает её в исходном
+          виде.
+        </li>
+        <li>
+          больше <code>maxLength</code>, то функция обрезает строку до
+          <code>maxLength</code> символов и добавляет в конец троеточие
+          <code>'...'</code>, после чего возвращает укороченную версию.
+        </li>
+      </ul>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>
+          Объявлена функция <code>formatMessage(message, maxLength)</code>.
+        </li>
+        <li>
+          Вызов функции
+          <code>formatMessage('Curabitur ligula sapien', 16)</code> возвращает
+          <code>'Curabitur ligula...'</code>.
+        </li>
+        <li>
+          Вызов функции
+          <code>formatMessage('Curabitur ligula sapien', 23)</code> возвращает
+          <code>'Curabitur ligula sapien'</code>.
+        </li>
+        <li>
+          Вызов функции
+          <code>formatMessage('Vestibulum facilisis purus nec', 20)</code>
+          возвращает <code>'Vestibulum facilisis...'</code>.
+        </li>
+        <li>
+          Вызов функции
+          <code>formatMessage('Vestibulum facilisis purus nec', 30)</code>
+          возвращает <code>'Vestibulum facilisis purus nec'</code>.
+        </li>
+        <li>
+          Вызов функции
+          <code
+            >formatMessage('Nunc sed turpis a felis in nunc fringilla',
+            15)</code
+          >
+          возвращает <code>'Nunc sed turpis...'</code>.
+        </li>
+        <li>
+          Вызов функции
+          <code
+            >formatMessage('Nunc sed turpis a felis in nunc fringilla',
+            41)</code
+          >
+          возвращает <code>'Nunc sed turpis a felis in nunc fringilla'</code>.
+        </li>
+      </ul>
+    </div>
+  </section>
+</section>

@@ -1,0 +1,78 @@
+<a href="/modul-3/index.html"><h1>Модуль - 03</h1></a>
+<h2>Задача - 16. Расходы на зарплату.</h2>
+<a href="/modul-3/zad_15.html">&lt; &lt;Предыдущая задача</a>
+<a href="/modul-3/zad_17.html">Cледующая задача&gt;&gt;</a>
+
+<details closed="">
+  <summary style="color: teal">Решение</summary>
+  <pre><code>
+  function countTotalSalary(salaries) {
+    let totalSalary = 0;
+    // Пиши код ниже этой строки
+    const propCount = Object.keys(salaries).length;
+    const values = Object.values(salaries);
+
+    for (let i = 0; i < propCount; i++) {
+      totalSalary += values[i];
+    }
+
+    // Пиши код выше этой строки
+    return totalSalary;
+  }
+
+  console.log(countTotalSalary({}));
+  console.log(countTotalSalary({ mango: 100, poly: 150, alfred: 80 }));
+  console.log(countTotalSalary({ kiwi: 200, poly: 50, ajax: 150 }));
+</code></pre>
+</details>
+<script>
+  function countTotalSalary(salaries) {
+    let totalSalary = 0;
+    // Пиши код ниже этой строки
+    const propCount = Object.keys(salaries).length;
+    const values = Object.values(salaries);
+
+    for (let i = 0; i < propCount; i++) {
+      totalSalary += values[i];
+    }
+
+    // Пиши код выше этой строки
+    return totalSalary;
+  }
+
+  console.log(countTotalSalary({}));
+  console.log(countTotalSalary({ mango: 100, poly: 150, alfred: 80 }));
+  console.log(countTotalSalary({ kiwi: 200, poly: 50, ajax: 150 }));
+</script>
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <h3 class="task">Задание</h3>
+      <p>
+        Напиши функцию <code>countTotalSalary(salaries)</code> которая принимает
+        объект зарплат, где имя свойства это имя сотрудника, а значение свойства
+        это зарплата. Функция должна рассчитать общую сумму зарплат сотрудников
+        и вернуть её. Используй переменную <code>totalSalary</code> для хранения
+        общей суммы зарплаты.
+      </p>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>Объявлена функция <code>countTotalSalary(salaries)</code>.</li>
+        <li>
+          Вызов <code>countTotalSalary({})</code> возвращает <code>0</code>.
+        </li>
+        <li>
+          Вызов
+          <code>countTotalSalary({ mango: 100, poly: 150, alfred: 80 })</code>
+          возвращает <code>330</code>.
+        </li>
+        <li>
+          Вызов
+          <code>countTotalSalary({ kiwi: 200, poly: 50, ajax: 150 })</code>
+          возвращает <code>400</code>.
+        </li>
+        <li>Функция учитывает только собственные свойства объекта.</li>
+      </ul>
+    </div>
+  </section>
+</section>

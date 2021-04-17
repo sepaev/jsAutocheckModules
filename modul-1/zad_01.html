@@ -1,0 +1,87 @@
+<a href="/modul-1/index.html"><h1>Модуль - 01</h1></a>
+<h2>Задача - 01. Объявление переменных.</h2>
+<a href="/modul-1/zad_02.html">Cледующая задача&gt;&gt;</a>
+<details closed="">
+  <summary style="color: teal">Решение</summary>
+  <pre><code>
+  const productName = "Droid";
+  const pricePerItem = 2000;
+
+  console.log(productName);
+  console.log(pricePerItem);
+</code></pre>
+</details>
+
+<script>
+  // Write your code under this line
+  const productName = "Droid";
+  const pricePerItem = 2000;
+
+  console.log(productName);
+  console.log(pricePerItem);
+</script>
+
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <details closed="">
+        <summary>Теория</summary>
+        <p>
+          Переменные используются для хранения данных и состоят из
+          идентификатора (имени) и области в памяти, где хранится их значение.
+          Переменную можно представить как коробку с надписью (именем), в
+          которой что-то лежит (значение).
+        </p>
+        <pre><code class="language-html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">ключевое</span> слово&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">имя</span> переменной&gt;</span> = <span class="hljs-tag">&lt;<span class="hljs-name">значение</span>&gt;</span>
+</code></pre>
+        <p>
+          Объявление переменной начинается с ключевого слова <code>const</code>.
+          Такая переменная должна быть сразу инициализирована значением, после
+          чего его нельзя переопределить.
+        </p>
+        <div class="attention">
+          <h5>Внимание</h5>
+          <p>
+            Создание переменной без ключевого слова <code>const</code> приведёт
+            к ошибке.
+          </p>
+        </div>
+        <pre><code class="language-js hljs javascript"><span class="hljs-keyword">const</span> age = <span class="hljs-number">20</span>;
+<span class="hljs-keyword">const</span> userName = <span class="hljs-string">'Манго'</span>;
+<span class="hljs-keyword">const</span> socialProfileTag = <span class="hljs-string">'@gluck'</span>;
+<span class="hljs-keyword">const</span> totalWorkerSalary = <span class="hljs-number">4052</span>;
+</code></pre>
+        <p>
+          В <code>JavaScript</code> имя перенной записывается в
+          <code>camelCase</code>-нотации. Первое слово пишется строчными
+          буквами, а каждое последующее начинается с заглавной. Имена
+          чувствительны к регистру, то есть переменные <code>user</code>,
+          <code>usEr</code> и <code>User</code> различны.
+        </p>
+      </details>
+      <h3 class="task">Задание</h3>
+      <p>
+        Объяви две переменные, <code>productName</code> для названия товара и
+        <code>pricePerItem</code> для хранения цены за штуку. При объявлении
+        присвой переменным следующие характеристики товара:
+      </p>
+      <ul>
+        <li>название - строка <code>'Droid'</code>;</li>
+        <li>цена за штуку - число <code>2000</code>.</li>
+      </ul>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>Объявлена переменная <code>productName</code>.</li>
+        <li>
+          Значение переменной <code>productName</code> это строка
+          <code>'Droid'</code>.
+        </li>
+        <li>Объявлена переменная <code>pricePerItem</code>.</li>
+        <li>
+          Значение переменной <code>pricePerItem</code> это число
+          <code>2000</code>.
+        </li>
+      </ul>
+    </div>
+  </section>
+</section>

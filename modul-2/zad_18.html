@@ -1,0 +1,86 @@
+<a href="/modul-2/index.html"><h1>Модуль - 02</h1></a>
+<h2>Задача - 18. Сумма чисел (цикл for).</h2>
+<a href="/modul-2/zad_17.html">&lt; &lt;Предыдущая задача</a>
+<a href="/modul-2/zad_19.html">Cледующая задача&gt;&gt;</a>
+
+<details closed="">
+  <summary style="color: teal">Решение</summary>
+  <pre><code>
+  function calculateTotal(number) {
+    // Пиши код ниже этой строки
+    let sumNumber = 0;
+    for (let i = 1; i <= number; i += 1) {
+      sumNumber += i;
+    }
+    return sumNumber;
+
+    // Пиши код выше этой строки
+  }
+
+  console.log(calculateTotal(1));
+  console.log(calculateTotal(3));
+  console.log(calculateTotal(7));
+  console.log(calculateTotal(18));
+  console.log(calculateTotal(24));
+</code></pre>
+</details>
+<script>
+  function calculateTotal(number) {
+    // Пиши код ниже этой строки
+    let sumNumber = 0;
+    for (let i = 1; i <= number; i += 1) {
+      sumNumber += i;
+    }
+    return sumNumber;
+
+    // Пиши код выше этой строки
+  }
+
+  console.log(calculateTotal(1));
+  console.log(calculateTotal(3));
+  console.log(calculateTotal(7));
+  console.log(calculateTotal(18));
+  console.log(calculateTotal(24));
+</script>
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <h3 class="task">Задание</h3>
+      <p>
+        Напиши функцию <code>calculateTotal(number)</code>, которая принимает
+        целое число (параметр <code>number</code>) и возвращает сумму всех целых
+        чисел от единицы и до этого числа. Например, если
+        <code>number</code> равно <code>3</code>, то сумма это
+        <code>1 + 2 + 3</code>, то есть <code>6</code>.
+      </p>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>Объявлена функция <code>calculateTotal(number)</code>.</li>
+        <li>
+          Вызов функции <code>calculateTotal(1)</code> возвращает
+          <code>1</code>.
+        </li>
+        <li>
+          Вызов функции <code>calculateTotal(3)</code> возвращает
+          <code>6</code>.
+        </li>
+        <li>
+          Вызов функции <code>calculateTotal(7)</code> возвращает
+          <code>28</code>.
+        </li>
+        <li>
+          Вызов функции <code>calculateTotal(18)</code> возвращает
+          <code>171</code>.
+        </li>
+        <li>
+          Вызов функции <code>calculateTotal(24)</code> возвращает
+          <code>300</code>.
+        </li>
+        <li>
+          Вызов функции <code>calculateTotal()</code> со случайным числом
+          возвращает правильное значение.
+        </li>
+      </ul>
+    </div>
+  </section>
+</section>
