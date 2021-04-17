@@ -1,12 +1,103 @@
 <a href="../modul-3/index.html"><h1>Модуль - 03</h1></a>
-<h2>Задача - 18. .</h2>
+<h2>Задача - 18. Поиск объекта по значению свойства.</h2>
 <a href="../modul-3/zad_17.html">&lt; &lt;Предыдущая задача</a>
 <a href="../modul-3/zad_19.html">Cледующая задача&gt;&gt;</a>
 
 <details closed="">
   <summary style="color: teal">Решение</summary>
   <pre><code>
+  const products = [
+    { name: "Радар", price: 1300, quantity: 4 },
+    { name: "Сканер", price: 2700, quantity: 3 },
+    { name: "Дроид", price: 400, quantity: 7 },
+    { name: "Захват", price: 1200, quantity: 9 },
+  ];
 
+  function getProductPrice(productName) {
+    // Пиши код ниже этой строки
+
+    for (const item of products) {
+      if (item.name.toLowerCase() === productName.toLowerCase()) {
+        return item.price;
+      }
+    }
+
+    // Пиши код выше этой строки
+    return null;
+
+    // Пиши код выше этой строки
+  }
+  console.log(getProductPrice("Радар"));
+  console.log(getProductPrice("Захват"));
+  console.log(getProductPrice("Сканер"));
+  console.log(getProductPrice("Дроид"));
+  console.log(getProductPrice("Двигатель"));
 </code></pre>
 </details>
-<script></script>
+<script>
+  const products = [
+    { name: "Радар", price: 1300, quantity: 4 },
+    { name: "Сканер", price: 2700, quantity: 3 },
+    { name: "Дроид", price: 400, quantity: 7 },
+    { name: "Захват", price: 1200, quantity: 9 },
+  ];
+
+  function getProductPrice(productName) {
+    // Пиши код ниже этой строки
+
+    for (const item of products) {
+      if (item.name.toLowerCase() === productName.toLowerCase()) {
+        return item.price;
+      }
+    }
+
+    // Пиши код выше этой строки
+    return null;
+
+    // Пиши код выше этой строки
+  }
+  console.log(getProductPrice("Радар"));
+  console.log(getProductPrice("Захват"));
+  console.log(getProductPrice("Сканер"));
+  console.log(getProductPrice("Дроид"));
+  console.log(getProductPrice("Двигатель"));
+</script>
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <h3 class="task">Задание</h3>
+      <p>
+        Напиши функцию <code>getProductPrice(productName)</code> которая
+        принимает один параметр <code>productName</code> - название продукта.
+        Функция ищет объект продукта с таким именем (свойство <code>name</code>)
+        в массиве <code>products</code> и возвращает его цену (свойство
+        <code>price</code>). Если продукт с таким названием не найден, функция
+        должна возвращать <code>null</code>.
+      </p>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>Объявлена функция <code>getProductPrice(productName)</code>.</li>
+        <li>
+          Вызов <code>getProductPrice('Радар')</code> возвращает
+          <code>1300</code>.
+        </li>
+        <li>
+          Вызов <code>getProductPrice('Захват')</code> возвращает
+          <code>1200</code>.
+        </li>
+        <li>
+          Вызов <code>getProductPrice('Сканер')</code> возвращает
+          <code>2700</code>.
+        </li>
+        <li>
+          Вызов <code>getProductPrice('Дроид')</code> возвращает
+          <code>400</code>.
+        </li>
+        <li>
+          Вызов <code>getProductPrice('Двигатель')</code> возвращает
+          <code>null</code>.
+        </li>
+      </ul>
+    </div>
+  </section>
+</section>
