@@ -15,20 +15,20 @@
 
   function calculateTotalPrice(productName) {
     // Пиши код ниже этой строки
-    let totalPrice = 0;
+
     for (const index of products) {
       if (index.name.toLowerCase() === productName.toLowerCase()) {
-        totalPrice = index.price * index.quantity;
+        return index.price * index.quantity;
       }
     }
 
-    return totalPrice;
+    return 0;
     // Пиши код выше этой строки
   }
   console.log(calculateTotalPrice("Бластер"));
   console.log(calculateTotalPrice("Радар"));
   console.log(calculateTotalPrice("Дроид"));
-  console.log(calculateTotalPrice("Захват"));
+  console.log(calculateTotalPrice("захват"));
   console.log(calculateTotalPrice("Сканер"));
 </code></pre>
 </details>
@@ -42,20 +42,20 @@
 
   function calculateTotalPrice(productName) {
     // Пиши код ниже этой строки
-    let totalPrice = 0;
+
     for (const index of products) {
       if (index.name.toLowerCase() === productName.toLowerCase()) {
-        totalPrice = index.price * index.quantity;
+        return index.price * index.quantity;
       }
     }
 
-    return totalPrice;
+    return 0;
     // Пиши код выше этой строки
   }
   console.log(calculateTotalPrice("Бластер"));
   console.log(calculateTotalPrice("Радар"));
   console.log(calculateTotalPrice("Дроид"));
-  console.log(calculateTotalPrice("Захват"));
+  console.log(calculateTotalPrice("захват"));
   console.log(calculateTotalPrice("Сканер"));
 </script>
 <section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
