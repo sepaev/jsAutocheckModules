@@ -1,12 +1,130 @@
 <a href="../modul-3/index.html"><h1>Модуль - 03</h1></a>
-<h2>Задача - 31. .</h2>
+<h2>
+  Задача - 31. Операция <code>rest</code> для сбора всех аргументов функции.
+</h2>
 <a href="../modul-3/zad_30.html">&lt; &lt;Предыдущая задача</a>
 <a href="../modul-3/zad_32.html">Cледующая задача&gt;&gt;</a>
 
 <details closed="">
   <summary style="color: teal">Решение</summary>
   <pre><code>
-
+  // Пиши код ниже этой строки
+  function add(...args) {
+    let sum = 0;
+    for (const arg of args) {
+      if (!isNaN(arg)) {
+        sum += arg;
+      }
+    }
+    return sum;
+    // Пиши код выше этой строки
+  }
+  console.log(add(15, 27));
+  console.log(add(12, 4, 11, 48));
+  console.log(add(32, 6, 13, 19, 8));
+  console.log(add(74, 11, 62, 46, 12, 36));
+  console.log(add(174, "число", 2, 6, 12, 76));
 </code></pre>
 </details>
-<script></script>
+<script>
+  // Пиши код ниже этой строки
+  function add(...args) {
+    let sum = 0;
+    for (const arg of args) {
+      if (!isNaN(arg)) {
+        sum += arg;
+      }
+    }
+    return sum;
+    // Пиши код выше этой строки
+  }
+  console.log(add(15, 27));
+  console.log(add(12, 4, 11, 48));
+  console.log(add(32, 6, 13, 19, 8));
+  console.log(add(74, 11, 62, 46, 12, 36));
+  console.log(add(174, "число", 2, 6, 12, 76));
+</script>
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <details closed="">
+        <summary>Теория</summary>
+        <p>
+          Операция <code>...</code> (rest) позволяет собрать группу независимых
+          элементов в новую коллекцию. Синтаксически это близнец операции
+          распыления, но отличить их просто - распыление это когда
+          <code>...</code> находится в <strong>правой</strong> части операции
+          присваивания, а сбор это когда <code>...</code> находится в её
+          <strong>левой</strong> части.
+        </p>
+        <p>
+          Вернёмся к аналогии с яблоками. Если на полу лежат яблоки и у нас есть
+          пустой ящик, то операция <code>rest</code> позволит «собрать» яблоки в
+          ящик. При этом оригинальные яблоки останутся на полу, а в ящике будет
+          копия каждого яблока.
+        </p>
+        <p>
+          Одна из областей применения операции <code>rest</code> это создание
+          функций которые могут принимать произвольное количество аргументов.
+        </p>
+        <pre><code class="language-js hljs javascript"><span class="hljs-comment">// Как объявить параметры функции так,</span>
+<span class="hljs-comment">// чтобы можно было передать любое кол-во аргументов?</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">multiply</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-comment">// ...</span>
+}
+
+multiply(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>);
+multiply(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>);
+multiply(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>);
+</code></pre>
+        <p>
+          Если убрать весь «синтаксический шум» и посмотреть на аргументы и
+          параметры функции, то аргументы находятся в правой части операции
+          присваивания, а параметры в левой, потому что значения аргументов
+          присваиваются объявленным параметрам. Значит можно «собрать» все
+          аргументы функции в один параметр используя операцию
+          <code>rest</code>.
+        </p>
+        <pre><code class="language-js hljs javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">multiply</span>(<span class="hljs-params">...args</span>) </span>{
+  <span class="hljs-built_in">console</span>.log(args); <span class="hljs-comment">// массив всех аргументов</span>
+}
+
+multiply(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>);
+multiply(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>);
+multiply(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>);
+</code></pre>
+        <p>
+          Имя параметра может быть произвольным. Чаще всего его называют
+          <code>args</code>, <code>restArgs</code> или <code>otherArgs</code>,
+          сокращённое от <code>arguments</code>.
+        </p>
+      </details>
+      <h3 class="task">Задание</h3>
+      <p>
+        Используя операцию <code>rest</code> дополни код функции
+        <code>add()</code> так, чтобы она принимала любое количество аргументов,
+        считала и возвращала их сумму.
+      </p>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>Объявлена функция <code>add</code>.</li>
+        <li>Функция <code>add</code> использует параметр <code>args</code>.</li>
+        <li>
+          Для сбора аргументов в переменную <code>args</code>, в подписи функции
+          используется синтаксис <code>...</code> (оперетор <code>rest</code>).
+        </li>
+        <li>Вызов <code>add(15, 27)</code> возвращает <code>42</code>.</li>
+        <li>
+          Вызов <code>add(12, 4, 11, 48)</code> возвращает <code>75</code>.
+        </li>
+        <li>
+          Вызов <code>add(32, 6, 13, 19, 8)</code> возвращает <code>78</code>.
+        </li>
+        <li>
+          Вызов <code>add(74, 11, 62, 46, 12, 36)</code> возвращает
+          <code>241</code>.
+        </li>
+      </ul>
+    </div>
+  </section>
+</section>
