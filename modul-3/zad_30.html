@@ -1,12 +1,139 @@
 <a href="../modul-3/index.html"><h1>Модуль - 03</h1></a>
-<h2>Задача - 30. .</h2>
+<h2>Задача - 30. Карточки задач.</h2>
 <a href="../modul-3/zad_29.html">&lt; &lt;Предыдущая задача</a>
 <a href="../modul-3/zad_31.html">Cледующая задача&gt;&gt;</a>
 
 <details closed="">
   <summary style="color: teal">Решение</summary>
   <pre><code>
-
+  function makeTask(data) {
+    const completed = false;
+    const category = "Общее";
+    const priority = "Обычный";
+    // Пиши код ниже этой строки
+    return {
+      category: category,
+      priority: priority,
+      ...data,
+      completed: completed,
+    };
+    // Пиши код выше этой строки
+  }
+  console.log(makeTask({}));
+  console.log(
+    makeTask({
+      category: "Домашнее",
+      priority: "Низкий",
+      text: "Вынести мусор",
+    })
+  );
+  console.log(makeTask({ category: "Финансы", text: "Забрать проценты" }));
+  console.log(makeTask({ priority: "Низкий", text: "Выбрать шампунь" }));
+  console.log(makeTask({ text: "Купить хлеб" }));
 </code></pre>
 </details>
-<script></script>
+<script>
+  function makeTask(data) {
+    const completed = false;
+    const category = "Общее";
+    const priority = "Обычный";
+    // Пиши код ниже этой строки
+    return {
+      category: category,
+      priority: priority,
+      ...data,
+      completed: completed,
+    };
+    // Пиши код выше этой строки
+  }
+  console.log(makeTask({}));
+  console.log(
+    makeTask({
+      category: "Домашнее",
+      priority: "Низкий",
+      text: "Вынести мусор",
+    })
+  );
+  console.log(makeTask({ category: "Финансы", text: "Забрать проценты" }));
+  console.log(makeTask({ priority: "Низкий", text: "Выбрать шампунь" }));
+  console.log(makeTask({ text: "Купить хлеб" }));
+</script>
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <h3 class="task">Задание</h3>
+      <p>
+        Напиши функцию <code>makeTask(data)</code> которая принимает один
+        параметр <code>data</code> - объект со следующими свойствами.
+      </p>
+      <ul>
+        <li><code>text</code> - текст задачи.</li>
+        <li><code>category</code> - категория задачи.</li>
+        <li><code>priority</code> - приоритет задачи.</li>
+      </ul>
+      <p>
+        Функция должна составить и вернуть новый объект задачи, не изменяя
+        напрямую параметр <code>data</code>. В новом объекте должно быть
+        свойство <code>completed</code>, значение которого хранится в
+        одноимённой локальной переменной.
+      </p>
+      <p>
+        В параметре <code>data</code> гарантированно будет только свойство
+        <code>text</code>, а остальные два, <code>category</code> и
+        <code>priority</code>, могут отсутствовать. Тогда, в новом объекте
+        задачи, в свойствах <code>category</code> и <code>priority</code> должны
+        быть значения по умолчанию, хранящиеся в одноимённых локальных
+        переменных.
+      </p>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>Объявлена функция <code>makeTask(data)</code>.</li>
+        <li>
+          Вызов <code>makeTask({})</code> возвращает
+          <code
+            >{ category: 'Общее', priority: 'Обычный', completed: false }</code
+          >.
+        </li>
+        <li>
+          Вызов
+          <code
+            >makeTask({ category: 'Домашнее', priority: 'Низкий', text: 'Вынести
+            мусор' })</code
+          >
+          возвращает
+          <code
+            >{ category: 'Домашнее', priority: 'Низкий', text: 'Вынести мусор',
+            completed: false }</code
+          >.
+        </li>
+        <li>
+          Вызов
+          <code
+            >makeTask({ category: 'Финансы', text: 'Забрать проценты' })</code
+          >
+          возвращает
+          <code
+            >{ category: 'Финансы', priority: 'Обычный', text: 'Забрать
+            проценты', completed: false }</code
+          >.
+        </li>
+        <li>
+          Вызов
+          <code>makeTask({ priority: 'Низкий', text: 'Выбрать шампунь' })</code>
+          возвращает
+          <code
+            >{ category: 'Общее', priority: 'Низкий', text: 'Выбрать шампунь',
+            completed: false }</code
+          >.
+        </li>
+        <li>
+          Вызов <code>makeTask({ text: 'Купить хлеб' })</code> возвращает
+          <code
+            >{ category: 'Общее', priority: 'Обычный', text: 'Купить хлеб',
+            completed: false }</code
+          >.
+        </li>
+      </ul>
+    </div>
+  </section>
+</section>
