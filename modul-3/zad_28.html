@@ -1,12 +1,149 @@
 <a href="../modul-3/index.html"><h1>Модуль - 03</h1></a>
-<h2>Задача - 28. .</h2>
+<h2>Задача - 28. Операция <code>spread</code> при создании нового массива.</h2>
 <a href="../modul-3/zad_27.html">&lt; &lt;Предыдущая задача</a>
 <a href="../modul-3/zad_29.html">Cледующая задача&gt;&gt;</a>
 
 <details closed="">
   <summary style="color: teal">Решение</summary>
   <pre><code>
-
+  const firstGroupScores = [64, 42, 93];
+  const secondGroupScores = [89, 14, 51, 26];
+  const thirdGroupScores = [29, 47, 18, 97, 81];
+  // Пиши код ниже этой строки
+  const allScores = [
+    ...firstGroupScores,
+    ...secondGroupScores,
+    ...thirdGroupScores,
+  ];
+  const bestScore = Math.max(...allScores);
+  const worstScore = Math.min(...allScores);
+  console.log(`firstGroupScores - ${firstGroupScores}`);
+  console.log(`secondGroupScores - ${secondGroupScores}`);
+  console.log(`thirdGroupScores - ${thirdGroupScores}`);
+  console.log(`allScores - ${allScores}`);
+  console.log(`bestScore - ${bestScore}`);
+  console.log(`worstScore - ${worstScore}`);
 </code></pre>
 </details>
-<script></script>
+<script>
+  const firstGroupScores = [64, 42, 93];
+  const secondGroupScores = [89, 14, 51, 26];
+  const thirdGroupScores = [29, 47, 18, 97, 81];
+  // Пиши код ниже этой строки
+  const allScores = [
+    ...firstGroupScores,
+    ...secondGroupScores,
+    ...thirdGroupScores,
+  ];
+  const bestScore = Math.max(...allScores);
+  const worstScore = Math.min(...allScores);
+  console.log(`firstGroupScores - ${firstGroupScores}`);
+  console.log(`secondGroupScores - ${secondGroupScores}`);
+  console.log(`thirdGroupScores - ${thirdGroupScores}`);
+  console.log(`allScores - ${allScores}`);
+  console.log(`bestScore - ${bestScore}`);
+  console.log(`worstScore - ${worstScore}`);
+</script>
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <details closed="">
+        <summary>Теория</summary>
+        <p>
+          Операция <code>spread</code> позволяет создать копию массива или
+          «склеить» произвольное количество массивов в один новый. Раньше для
+          этого использовали методы <code>slice()</code> и
+          <code>concat()</code>, но операция распыления позволяет сделать тоже
+          самое в более краткой форме.
+        </p>
+        <pre><code class="language-js hljs javascript"><span class="hljs-keyword">const</span> temps = [<span class="hljs-number">14</span>, <span class="hljs-number">-4</span>, <span class="hljs-number">25</span>, <span class="hljs-number">8</span>, <span class="hljs-number">11</span>];
+
+<span class="hljs-comment">// Это точная, но независимая копия массива temps</span>
+<span class="hljs-keyword">const</span> copyOfTemps = [...temps];
+<span class="hljs-built_in">console</span>.log(copyOfTemps); <span class="hljs-comment">// [14, -4, 25, 8, 11]</span>
+</code></pre>
+        <p>
+          В примере выше у нас есть ящик яблок <code>temps</code> и мы хотим
+          сделать его точную копию. Берём пустой ящик и пересыпаем в него яблоки
+          из исходного ящика <code>temps</code> - распыляем его в другую
+          коллекцию. При этом ящик <code>temps</code> не изменится, в нём все
+          ещё будут яблоки, а в новом ящике - их точные копии.
+        </p>
+        <p>
+          В следующем примере мы ссыпаем яблоки из двух ящиков в один новый.
+          Оригинальные ящики (массивы) не изменятся, а в новом будут копии всех
+          их яблок (элементов). Порядок распыления важен - он влияет на порядок
+          элементов в новой коллекции.
+        </p>
+        <pre><code class="language-js hljs javascript"><span class="hljs-keyword">const</span> lastWeekTemps = [<span class="hljs-number">14</span>, <span class="hljs-number">25</span>, <span class="hljs-number">11</span>];
+<span class="hljs-keyword">const</span> currentWeekTemps = [<span class="hljs-number">23</span>, <span class="hljs-number">17</span>, <span class="hljs-number">18</span>];
+<span class="hljs-keyword">const</span> allTemps = [...lastWeekTemps, ...currentWeekTemps];
+<span class="hljs-built_in">console</span>.log(allTemps); <span class="hljs-comment">// [14, 25, 11, 23, 17, 18]</span>
+</code></pre>
+      </details>
+      <h3 class="task">Задание</h3>
+      <p>
+        В переменных <code>firstGroupScores</code>,
+        <code>secondGroupScores</code> и <code>thirdGroupScores</code> хранятся
+        результаты тестирования отдельных групп. Используя распыление дополни
+        код так, чтобы:
+      </p>
+      <ul>
+        <li>
+          В переменной <code>allScores</code> хранился массив всех результатов
+          от первой до третьей группы.
+        </li>
+        <li>
+          В переменной <code>bestScore</code> был самый высокий общий балл.
+        </li>
+        <li>
+          В переменной <code>worstScore</code> был самый низкий общий балл.
+        </li>
+      </ul>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>Объявлена переменная <code>firstGroupScores</code>.</li>
+        <li>
+          Значение переменной <code>firstGroupScores</code> это массив
+          <code>[64, 42, 93]</code>.
+        </li>
+        <li>Объявлена переменная <code>secondGroupScores</code>.</li>
+        <li>
+          Значение переменной <code>secondGroupScores</code> это массив
+          <code>[89, 14, 51, 26]</code>.
+        </li>
+        <li>Объявлена переменная <code>thirdGroupScores</code>.</li>
+        <li>
+          Значение переменной <code>thirdGroupScores</code> это массив
+          <code>[29, 47, 18, 97, 81]</code>.
+        </li>
+        <li>Объявлена переменная <code>allScores</code>.</li>
+        <li>
+          Значение переменной <code>allScores</code> это массив
+          <code>[64, 42, 93, 89, 14, 51, 26, 29, 47, 18, 97, 81]</code>.
+        </li>
+        <li>Объявлена переменная <code>bestScore</code>.</li>
+        <li>
+          Значение переменной <code>bestScore</code> это число <code>97</code>.
+        </li>
+        <li>Объявлена переменная <code>worstScore</code>.</li>
+        <li>
+          Значение переменной <code>worstScore</code> это число <code>14</code>.
+        </li>
+        <li>
+          При присвоении значения переменной
+          <code>allScores</code> использовался синтаксис <code>...</code> для
+          заполнения массива.
+        </li>
+        <li>
+          Для передачи аргументов методу <code>Math.max()</code> используется
+          синтаксис <code>...</code> на массиве <code>allScores</code>.
+        </li>
+        <li>
+          Для передачи аргументов методу <code>Math.min()</code> используется
+          синтаксис <code>...</code> на массиве <code>allScores</code>.
+        </li>
+      </ul>
+    </div>
+  </section>
+</section>
