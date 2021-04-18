@@ -1,12 +1,104 @@
 <a href="../modul-3/index.html"><h1>Модуль - 03</h1></a>
-<h2>Задача - 32. .</h2>
+<h2>
+  Задача - 32. Операция <code>rest</code> для сбора части аргументов функции.
+</h2>
 <a href="../modul-3/zad_31.html">&lt; &lt;Предыдущая задача</a>
 <a href="../modul-3/zad_33.html">Cледующая задача&gt;&gt;</a>
 
 <details closed="">
   <summary style="color: teal">Решение</summary>
   <pre><code>
+  // Пиши код ниже этой строки
+  function addOverNum(firstNum, ...args) {
+    let total = 0;
 
+    for (const arg of args) {
+      if (arg > firstNum) {
+        total += arg;
+      }
+    }
+
+    return total;
+    // Пиши код выше этой строки
+  }
+  console.log(addOverNum(50, 15, 27));
+  console.log(addOverNum(10, 12, 4, 11, 48, 10, 8));
+  console.log(addOverNum(15, 32, 6, 13, 19, 8));
+  console.log(addOverNum(20, 74, 11, 62, 46, 12, 36));
 </code></pre>
 </details>
-<script></script>
+<script>
+  // Пиши код ниже этой строки
+  function addOverNum(firstNum, ...args) {
+    let total = 0;
+
+    for (const arg of args) {
+      if (arg > firstNum) {
+        total += arg;
+      }
+    }
+
+    return total;
+    // Пиши код выше этой строки
+  }
+  console.log(addOverNum(50, 15, 27));
+  console.log(addOverNum(10, 12, 4, 11, 48, 10, 8));
+  console.log(addOverNum(15, 32, 6, 13, 19, 8));
+  console.log(addOverNum(20, 74, 11, 62, 46, 12, 36));
+</script>
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <details closed="">
+        <summary>Теория</summary>
+        <p>
+          Операция <code>...</code> (rest) также позволяет собрать в массив
+          только ту часть аргументов, которая необходима, объявив параметры до
+          «сбора».
+        </p>
+        <pre><code class="language-js hljs javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">multiply</span>(<span class="hljs-params">firstNumber, secondNumber, ...otherArgs</span>) </span>{
+  <span class="hljs-built_in">console</span>.log(firstNumber); <span class="hljs-comment">// Значение первого аргумента</span>
+  <span class="hljs-built_in">console</span>.log(secondNumber); <span class="hljs-comment">// Значение второго аргумента</span>
+  <span class="hljs-built_in">console</span>.log(otherArgs); <span class="hljs-comment">// Массив остальных аргументов</span>
+}
+
+multiply(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>);
+multiply(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>);
+multiply(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>);
+</code></pre>
+        <p>
+          Все аргументы, для которых будут объявлены параметры, передадут им
+          свои значения, остальные аргументы будут помещены в массив. Операция
+          <code>rest</code> собирает все оставшиеся аргументы и поэтому должна
+          идти последней в подписи функции, иначе будет ошибка.
+        </p>
+      </details>
+      <h3 class="task">Задание</h3>
+      <p>
+        Функция <code>addOverNum()</code> считает сумму всех аргументов. Измени
+        параметры и тело функции <code>addOverNum()</code> так, чтобы она
+        считала сумму только тех аргументов, которые больше чем заданное число.
+        Это число должно быть первым параметром функции.
+      </p>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>Объявлена функция <code>addOverNum()</code>.</li>
+        <li>
+          Вызов <code>addOverNum(50, 15, 27)</code> возвращает <code>0</code>.
+        </li>
+        <li>
+          Вызов <code>addOverNum(10, 12, 4, 11, 48, 10, 8)</code> возвращает
+          <code>71</code>.
+        </li>
+        <li>
+          Вызов <code>addOverNum(15, 32, 6, 13, 19, 8)</code> возвращает
+          <code>51</code>.
+        </li>
+        <li>
+          Вызов <code>addOverNum(20, 74, 11, 62, 46, 12, 36)</code> возвращает
+          <code>218</code>.
+        </li>
+      </ul>
+    </div>
+  </section>
+</section>
