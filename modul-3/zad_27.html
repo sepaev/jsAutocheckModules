@@ -1,12 +1,110 @@
 <a href="../modul-3/index.html"><h1>Модуль - 03</h1></a>
-<h2>Задача - 27. .</h2>
+<h2>Задача - 27. Операция <code>spread</code> при передаче аргументов.</h2>
 <a href="../modul-3/zad_26.html">&lt; &lt;Предыдущая задача</a>
 <a href="../modul-3/zad_28.html">Cледующая задача&gt;&gt;</a>
 
 <details closed="">
   <summary style="color: teal">Решение</summary>
   <pre><code>
+  const scores = [89, 64, 42, 17, 93, 51, 26];
+  // Пиши код ниже этой строки
+  const bestScore = Math.max(...scores);
+  const worstScore = Math.min(...scores);
 
+  console.log(...scores);
+  console.log(bestScore);
+  console.log(worstScore);
 </code></pre>
 </details>
-<script></script>
+<script>
+  const scores = [89, 64, 42, 17, 93, 51, 26];
+  // Пиши код ниже этой строки
+  const bestScore = Math.max(...scores);
+  const worstScore = Math.min(...scores);
+
+  console.log(...scores);
+  console.log(bestScore);
+  console.log(worstScore);
+</script>
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <details Closed="">
+        <summary>Теория</summary>
+        <p>
+          Синтаксис <code>...</code> (spread) позволяет распылить коллекцию
+          элементов (массив, строку или объект) в место, где ожидается набор
+          отдельных значений. Конечно есть некоторые ограничения, например
+          нельзя распылить массив в объект и наоборот.
+        </p>
+        <p>
+          Можно привести аналогию с ящиком яблок. Поставив ящик на пол не
+          вынимая из него яблоки, получим аналог массива значений. Если высыпать
+          яблоки из ящика на пол, произойдёт распыление - набор отдельных
+          значений.
+        </p>
+        <p>
+          Отличие всего одно - в JavaScript распыление не изменяет оригинальную
+          коллекцию, то есть делается копия каждого элемента. После распыления
+          останется и ящик полный яблок, и копия каждого яблока на полу.
+        </p>
+        <p>
+          Например, метод <code>Math.max(аргументы)</code> ищет и возвращает
+          самый большой из аргументов (чисел), то есть ожидает не массив
+          значений, а произвольное количество аргументов.
+        </p>
+        <pre><code class="language-js hljs javascript"><span class="hljs-keyword">const</span> temps = [<span class="hljs-number">14</span>, <span class="hljs-number">-4</span>, <span class="hljs-number">25</span>, <span class="hljs-number">8</span>, <span class="hljs-number">11</span>];
+
+<span class="hljs-comment">// В консоли будет массив</span>
+<span class="hljs-built_in">console</span>.log(temps);
+<span class="hljs-comment">// ❌ Так не сработает, потому что передаём целый массив</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">Math</span>.max(temps)); <span class="hljs-comment">// NaN</span>
+
+<span class="hljs-comment">// В консоли будет набор отдельных чисел</span>
+<span class="hljs-built_in">console</span>.log(...temps);
+<span class="hljs-comment">// ✅ Распылим коллекцию элементов как отдельные аргументы</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">Math</span>.max(...temps)); <span class="hljs-comment">// 25</span>
+</code></pre>
+        <p>
+          То есть запись <code>Math.max(...[14, -4, 25, 8, 11])</code>, после
+          интерпретации превращается в
+          <code>Math.max(14, -4, 25, 8, 11)</code> - синтаксис
+          <code>...</code> возвращает распакованный массив, то есть распыляет
+          его элементы как отдельные аргументы.
+        </p>
+      </details>
+      <h3 class="task">Задание</h3>
+      <p>
+        В переменной <code>scores</code> хранится массив результатов
+        тестирования. Используя распыление и методы <code>Math.max()</code> и
+        <code>Math.min()</code> дополни код так, чтобы в переменной
+        <code>bestScore</code> был самый высокий балл, а в
+        <code>worstScore</code> самый низкий.
+      </p>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>Объявлена переменная <code>scores</code>.</li>
+        <li>
+          Значение переменной <code>scores</code> это массив
+          <code>[89, 64, 42, 17, 93, 51, 26]</code>.
+        </li>
+        <li>Объявлена переменная <code>bestScore</code>.</li>
+        <li>
+          Значение переменной <code>bestScore</code> это число <code>93</code>.
+        </li>
+        <li>Объявлена переменная <code>worstScore</code>.</li>
+        <li>
+          Значение переменной <code>worstScore</code> это число <code>17</code>.
+        </li>
+        <li>
+          Для передачи аргументов методу <code>Math.max()</code> используется
+          синтаксис <code>...</code> на массиве <code>scores</code>.
+        </li>
+        <li>
+          Для передачи аргументов методу <code>Math.min()</code> используется
+          синтаксис <code>...</code> на массиве <code>scores</code>.
+        </li>
+      </ul>
+    </div>
+  </section>
+</section>
