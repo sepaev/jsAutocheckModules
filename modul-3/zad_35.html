@@ -1,12 +1,147 @@
 <a href="../modul-3/index.html"><h1>Модуль - 03</h1></a>
-<h2>Задача - 35. .</h2>
+<h2>Задача - 35. Доступ к свойствам объекта в его методах.</h2>
 <a href="../modul-3/zad_34.html">&lt; &lt;Предыдущая задача</a>
 <a href="../modul-3/zad_36.html">Cледующая задача&gt;&gt;</a>
 
 <details closed="">
   <summary style="color: teal">Решение</summary>
   <pre><code>
-
+  const bookShelf = {
+    books: ["Последнее королевство", "Мгла", "Страж снов"],
+    updateBook(oldName, newName) {
+      // Пиши код ниже этой строки
+      this.books = ["Последнее королевство", "Мгла", "Страж снов"];
+      const key = this.books.indexOf(oldName);
+      if (key >= 0) {
+        this.books.splice(key, 1, newName);
+      }
+      return this.books;
+      // Пиши код выше этой строки
+    },
+  };
+  console.log(bookShelf.updateBook("Мгла", "Хроники подземелий"));
+  console.log(bookShelf.updateBook("Последнее королевство", "Дюна"));
 </code></pre>
 </details>
-<script></script>
+<script>
+  const bookShelf = {
+    books: ["Последнее королевство", "Мгла", "Страж снов"],
+    updateBook(oldName, newName) {
+      // Пиши код ниже этой строки
+      this.books = ["Последнее королевство", "Мгла", "Страж снов"];
+      const key = this.books.indexOf(oldName);
+      if (key >= 0) {
+        this.books.splice(key, 1, newName);
+      }
+      return this.books;
+      // Пиши код выше этой строки
+    },
+  };
+  console.log(bookShelf.updateBook("Мгла", "Хроники подземелий"));
+  console.log(bookShelf.updateBook("Последнее королевство", "Дюна"));
+</script>
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <details closed="">
+        <summary>Теория</summary>
+        <p>
+          Методы используются для работы со свойствами объекта, их изменения.
+          Для доступа к объекту в методе используется не имя переменной,
+          например <code>bookShelf</code>, а ключевое слово <code>this</code> -
+          контекст. Значением <code>this</code> будет объект перед «точкой», то
+          есть объект который вызвал этот метод, в нашем случае это ссылка на
+          объект <code>bookShelf</code>.
+        </p>
+        <pre><code class="language-js hljs javascript"><span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword">const</span></span></span> bookShelf = {
+  <span class="hljs-attr"><span class="hljs-attr"><span class="hljs-attr">books</span></span></span>: [<span class="hljs-string"><span class="hljs-string"><span class="hljs-string">'Последнее королевство'</span></span></span>],
+  getBooks() {
+    <span class="hljs-built_in"><span class="hljs-built_in"><span class="hljs-built_in">console</span></span></span>.log(<span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword">this</span></span></span>);
+  },
+};
+
+<span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment">// Перед точкой стоит объект bookShelf,</span></span></span>
+<span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment">// поэтому при вызове метода, this будет хранить ссылку на него.</span></span></span>
+bookShelf.getBooks(); <span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment">// {books: ['Последнее королевство'], getBooks: f}</span></span></span>
+</code></pre>
+        <p>
+          Для того, чтобы получить доступ к свойствам объекта в методах, мы
+          обращаемся к нему через <code>this</code> и дальше как обычно - «через
+          точку» к свойствам.
+        </p>
+        <pre><code class="language-js hljs javascript"><span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword">const</span></span></span> bookShelf = {
+  <span class="hljs-attr"><span class="hljs-attr"><span class="hljs-attr">books</span></span></span>: [<span class="hljs-string"><span class="hljs-string"><span class="hljs-string">'Последнее королевство'</span></span></span>],
+  getBooks() {
+    <span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword">return</span></span></span> <span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword">this</span></span></span>.books;
+  },
+  addBook(bookName) {
+    <span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword">this</span></span></span>.books.push(bookName);
+  },
+  removeBook(bookName) {
+    <span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword">const</span></span></span> bookIndex = <span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword">this</span></span></span>.books.indexOf(bookName);
+    <span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword">this</span></span></span>.books.splice(bookIndex, <span class="hljs-number"><span class="hljs-number"><span class="hljs-number">1</span></span></span>);
+  },
+};
+
+<span class="hljs-built_in"><span class="hljs-built_in"><span class="hljs-built_in">console</span></span></span>.log(bookShelf.getBooks()); <span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment">// []</span></span></span>
+bookShelf.addBook(<span class="hljs-string"><span class="hljs-string"><span class="hljs-string">'Мгла'</span></span></span>);
+bookShelf.addBook(<span class="hljs-string"><span class="hljs-string"><span class="hljs-string">'Страж снов'</span></span></span>);
+<span class="hljs-built_in"><span class="hljs-built_in"><span class="hljs-built_in">console</span></span></span>.log(bookShelf.getBooks()); <span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment">// ['Последнее королевство', 'Мгла', 'Страж снов']</span></span></span>
+bookShelf.removeBook(<span class="hljs-string"><span class="hljs-string"><span class="hljs-string">'Мгла'</span></span></span>);
+<span class="hljs-built_in"><span class="hljs-built_in"><span class="hljs-built_in">console</span></span></span>.log(bookShelf.getBooks()); <span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment">// ['Последнее королевство', 'Страж снов']</span></span></span>
+</code></pre>
+        <p>
+          Будет логично задуматься - почему бы не использовать при обращении к
+          свойствам имя объекта, ведь мы явно не собираемся его менять. Дело в
+          том, что имя объекта штука не надежная, методы одного объекта можно
+          копировать в другой (с другим именем), а в будущем узнаем, что часто,
+          при создании объекта мы заранее вовсе не знаем имени. Использование
+          <code>this</code> гарантирует, что метод работает именно с тем
+          объектом, который его вызвал.
+        </p>
+      </details>
+      <h3 class="task">Задание</h3>
+      <p>
+        Дополни метод <code>updateBook(oldName, newName)</code> так, чтобы он
+        изменял название книги с <code>oldName</code> на <code>newName</code> в
+        свойстве <code>books</code>. Используй <code>indexOf()</code> для того,
+        чтобы найти нужный элемент массива, и <code>splice()</code> для того
+        чтобы заменить этот элемент.
+      </p>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>
+          <p>Объявлена переменная <code>bookShelf</code>.</p>
+        </li>
+        <li>
+          <p>Значение переменной <code>bookShelf</code> это объект.</p>
+        </li>
+        <li>
+          <p>
+            Значение свойства <code>bookShelf.updateBook</code> это метод
+            объекта.
+          </p>
+        </li>
+        <li>
+          <p>
+            После вызова метода
+            <code>bookShelf.updateBook('Мгла', 'Хроники подземелий')</code>,
+            значение свойства <code>books</code> это массив
+            <code
+              >['Последнее королевство', 'Хроники подземелий', 'Страж
+              снов']</code
+            >.
+          </p>
+        </li>
+        <li>
+          <p>
+            После вызова метода
+            <code>bookShelf.updateBook('Последнее королевство', 'Дюна')</code>,
+            значение свойства <code>books</code> это массив
+            <code>['Дюна', 'Мгла', 'Страж снов']</code>.
+          </p>
+        </li>
+      </ul>
+    </div>
+  </section>
+</section>
