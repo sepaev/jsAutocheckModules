@@ -1,12 +1,92 @@
 <a href="../modul-3/index.html"><h1>Модуль - 03</h1></a>
-<h2>Задача - 33. .</h2>
+<h2>Задача - 33. Массив совпадений.</h2>
 <a href="../modul-3/zad_32.html">&lt; &lt;Предыдущая задача</a>
 <a href="../modul-3/zad_34.html">Cледующая задача&gt;&gt;</a>
 
 <details closed="">
   <summary style="color: teal">Решение</summary>
   <pre><code>
+  // Пиши код ниже этой строки
+  function findMatches(data, ...arr) {
+    const matches = []; // Не изменяй эту строку
+    for (const keyArr of arr) {
+      for (const keyData of data) {
+        if (keyData === keyArr) {
+          matches.push(keyData);
+        }
+      }
+    }
+    // Пиши код выше этой строки
+    return matches;
+  }
 
+  console.log(findMatches([1, 2, 3, 4, 5], 1, 8, 2, 7));
+  console.log(findMatches([4, 89, 17, 36, 2], 8, 17, 89, 27, 2));
+  console.log(findMatches([10, 24, 41, 6, 9, 19], 24, 11, 9, 23, 41));
+  console.log(findMatches([63, 11, 8, 29], 4, 7, 16));
 </code></pre>
 </details>
-<script></script>
+<script>
+  // Пиши код ниже этой строки
+  function findMatches(data, ...arr) {
+    const matches = []; // Не изменяй эту строку
+    for (const keyArr of arr) {
+      for (const keyData of data) {
+        if (keyData === keyArr) {
+          matches.push(keyData);
+        }
+      }
+    }
+    // Пиши код выше этой строки
+    return matches;
+  }
+
+  console.log(findMatches([1, 2, 3, 4, 5], 1, 8, 2, 7));
+  console.log(findMatches([4, 89, 17, 36, 2], 8, 17, 89, 27, 2));
+  console.log(findMatches([10, 24, 41, 6, 9, 19], 24, 11, 9, 23, 41));
+  console.log(findMatches([63, 11, 8, 29], 4, 7, 16));
+</script>
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <h3 class="task">Задание</h3>
+      <p>
+        Функция <code>findMatches()</code> принимает произвольное количество
+        аргументов. Первым аргументом всегда будет массив чисел, а остальные
+        аргументы будут просто числами.
+      </p>
+      <p>
+        Дополни код функции так, чтобы она возвращала новый массив
+        <code>matches</code>, в котором будут только те аргументы, начиная со
+        второго, которые есть в массиве первого аргумента.
+      </p>
+      <p>
+        Например, <code>findMatches([1, 2, 3, 4, 5], 1, 8, 2, 7)</code> должна
+        вернуть массив <code>[1, 2]</code>, потому что только они есть в массиве
+        первого аргумента.
+      </p>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>Объявлена функция <code>findMatches()</code>.</li>
+        <li>
+          Вызов <code>findMatches([1, 2, 3, 4, 5], 1, 8, 2, 7)</code> возвращает
+          <code>[1, 2]</code>.
+        </li>
+        <li>
+          Вызов
+          <code>findMatches([4, 89, 17, 36, 2], 8, 17, 89, 27, 2)</code>
+          возвращает <code>[17, 89, 2]</code>.
+        </li>
+        <li>
+          Вызов
+          <code>findMatches([10, 24, 41, 6, 9, 19], 24, 11, 9, 23, 41)</code>
+          возвращает <code>[24, 9, 41]</code>.
+        </li>
+        <li>
+          Вызов <code>findMatches([63, 11, 8, 29], 4, 7, 16)</code> возвращает
+          <code>[]</code>.
+        </li>
+      </ul>
+    </div>
+  </section>
+</section>
