@@ -1,12 +1,71 @@
 <a href="../modul-3/index.html"><h1>Модуль - 03</h1></a>
-<h2>Задача - 39. .</h2>
+<h2>Задача - 39. Удаляем зелье.</h2>
 <a href="../modul-3/zad_38.html">&lt; &lt;Предыдущая задача</a>
 <a href="../modul-3/zad_40.html">Cледующая задача&gt;&gt;</a>
 
 <details closed="">
   <summary style="color: teal">Решение</summary>
   <pre><code>
-
+  const atTheOldToad = {
+    potions: ["Зелье скорости", "Дыхание дракона", "Каменная кожа"],
+    removePotion(potionName) {
+      // Пиши код ниже этой строки
+      const key = this.potions.indexOf(potionName);
+      this.potions.splice(key, 1);
+      return this.potions;
+      // Пиши код выше этой строки
+    },
+  };
 </code></pre>
 </details>
-<script></script>
+<script>
+  const atTheOldToad = {
+    potions: ["Зелье скорости", "Дыхание дракона", "Каменная кожа"],
+    removePotion(potionName) {
+      // Пиши код ниже этой строки
+      const key = this.potions.indexOf(potionName);
+      this.potions.splice(key, 1);
+      return this.potions;
+      // Пиши код выше этой строки
+    },
+  };
+  console.log(atTheOldToad.potions);
+  console.log(atTheOldToad.removePotion("Дыхание дракона"));
+  console.log(atTheOldToad.removePotion("Зелье скорости"));
+</script>
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <h3 class="task">Задание</h3>
+      <p>
+        Дополни метод <code>removePotion(potionName)</code> так, чтобы он удалял
+        зелье <code>potionName</code> из массива зелий в свойстве
+        <code>potions</code>.
+      </p>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>Объявлена переменная <code>atTheOldToad</code>.</li>
+        <li>Значение переменной <code>atTheOldToad</code> это объект.</li>
+        <li>
+          Значение свойства <code>atTheOldToad.potions</code> это массив
+          <code>['Зелье скорости', 'Дыхание дракона', 'Каменная кожа']</code>.
+        </li>
+        <li>
+          Значение свойства <code>atTheOldToad.removePotion</code> это метод
+          объекта.
+        </li>
+        <li>
+          После первого вызова метода
+          <code>atTheOldToad.removePotion('Дыхание дракона')</code>, в свойстве
+          <code>potions</code> будет массив
+          <code>['Зелье скорости', 'Каменная кожа']</code>.
+        </li>
+        <li>
+          После вотрого вызова метода
+          <code>atTheOldToad.removePotion('Зелье скорости')</code>, в свойстве
+          <code>potions</code> будет массив <code>['Каменная кожа']</code>.
+        </li>
+      </ul>
+    </div>
+  </section>
+</section>
