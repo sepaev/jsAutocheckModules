@@ -1,12 +1,178 @@
 <a href="../modul-3/index.html"><h1>Модуль - 03</h1></a>
-<h2>Задача - 34. .</h2>
+<h2>Задача - 34. Методы объекта.</h2>
 <a href="../modul-3/zad_33.html">&lt; &lt;Предыдущая задача</a>
 <a href="../modul-3/zad_35.html">Cледующая задача&gt;&gt;</a>
 
 <details closed="">
   <summary style="color: teal">Решение</summary>
   <pre><code>
-
+  const bookShelf = {
+    // Пиши код ниже этой строки
+    books: ["Последнее королевство", "Страж снов"],
+    getBooks() {
+      return "Возвращаем все книги";
+    },
+    addBook(bookName) {
+      return `Добавляем книгу ${bookName}`;
+    },
+    removeBook(bookName) {
+      return `Удаляем книгу ${bookName}`;
+    },
+    updateBook(oldName, newName) {
+      return `Обновляем книгу ${oldName} на ${newName}`;
+    },
+    // Пиши код выше этой строки
+  };
+  console.log(bookShelf.addBook("Мгла"));
+  console.log(bookShelf.removeBook("Красный закат"));
+  console.log(bookShelf.updateBook("Пески Дюны", "Дюна"));
 </code></pre>
 </details>
-<script></script>
+<script>
+  const bookShelf = {
+    // Пиши код ниже этой строки
+    books: ["Последнее королевство", "Страж снов"],
+    getBooks() {
+      return "Возвращаем все книги";
+    },
+    addBook(bookName) {
+      return `Добавляем книгу ${bookName}`;
+    },
+    removeBook(bookName) {
+      return `Удаляем книгу ${bookName}`;
+    },
+    updateBook(oldName, newName) {
+      return `Обновляем книгу ${oldName} на ${newName}`;
+    },
+    // Пиши код выше этой строки
+  };
+  console.log(bookShelf.addBook("Мгла"));
+  console.log(bookShelf.removeBook("Красный закат"));
+  console.log(bookShelf.updateBook("Пески Дюны", "Дюна"));
+</script>
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <details closed="">
+        <summary>Теория</summary>
+        <p>
+          До сих пор мы рассматривали объекты только как хранилища
+          взаимосвязанных данных, например информация о книге и т. п.
+          Объекты-хранилища обычно находятся в массиве таких же объектов,
+          который представляет коллекцию однотипных элементов.
+        </p>
+        <p>
+          Объекты могут хранить не только данные, но и функции для работы с
+          этими данными - методы. Если значение свойства это функция, такое
+          свойство называется методом объекта.
+        </p>
+        <pre><code class="language-js hljs javascript"><span class="hljs-comment">// ✅ Логиески и синтаксически сгруппированные сущности</span>
+<span class="hljs-keyword">const</span> bookShelf = {
+  <span class="hljs-attr">books</span>: [<span class="hljs-string">'Последнее королевство'</span>, <span class="hljs-string">'Страж снов'</span>],
+  <span class="hljs-comment">// Это метод объекта</span>
+  getBooks() {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Этот метод будет возвращать все книги - свойство books'</span>);
+  },
+  <span class="hljs-comment">// Это метод объекта</span>
+  addBook(bookName) {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Этот метод будет добавлять новую книгу в свойство books'</span>);
+  },
+};
+
+<span class="hljs-comment">// Вызовы методов</span>
+bookShelf.getBooks();
+bookShelf.addBook(<span class="hljs-string">'Новая книга'</span>);
+</code></pre>
+        <p>
+          Такие объекты можно назвать «моделями». Они связывают данные и методы
+          для работы с этими данными. Например, можно было объявить переменную
+          <code>books</code> и две функции <code>getBooks()</code> и
+          <code>addBook(bookName)</code>, но тогда это были бы три независимые
+          сущности без явной синтаксической, и со слабой логической связями.
+        </p>
+        <pre><code class="language-js hljs javascript"><span class="hljs-comment">// ❌ Слабосвязанные, независмые сущности</span>
+<span class="hljs-keyword">const</span> books = [];
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getBooks</span>(<span class="hljs-params"></span>) </span>{}
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">addBook</span>(<span class="hljs-params"></span>) </span>{}
+</code></pre>
+      </details>
+      <h3 class="task">Задание</h3>
+      <p>
+        Добавь объекту <code>bookShelf</code> ещё два метода, которые пока что
+        будут возвращать просто строки по аналогии с <code>getBooks()</code> и
+        <code>addBook(bookName)</code>.
+      </p>
+      <p>
+        Метод <code>removeBook(bookName)</code> будет удалять книгу по имени.
+        Возвращает строку <code>'Удаляем книгу &lt;имя книги&gt;'</code>, где
+        <code>&lt;имя книги&gt;</code> это значение параметра
+        <code>bookName</code>.
+      </p>
+      <p>
+        Метод <code>updateBook(oldName, newName)</code> будет обновлять название
+        книги на новое. Возвращает строку
+        <code>'Обновляем книгу &lt;старое имя&gt; на &lt;новое имя&gt;'</code>,
+        где <code>&lt;старое имя&gt;</code> и <code>&lt;новое имя&gt;</code>это
+        значения параметров <code>oldName</code> и
+        <code>newName</code> соотвественно.
+      </p>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>
+          <p>Объявлена переменная <code>bookShelf</code>.</p>
+        </li>
+        <li>
+          <p>Значение переменной <code>bookShelf</code> это объект.</p>
+        </li>
+        <li>
+          <p>
+            Значение свойства <code>bookShelf.getBooks</code> это метод объекта.
+          </p>
+        </li>
+        <li>
+          <p>
+            Вызов метода <code>bookShelf.getBooks()</code> возвращает строку
+            <code>'Возвращаем все книги'</code>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Значение свойства <code>bookShelf.addBook</code> это метод объекта.
+          </p>
+        </li>
+        <li>
+          <p>
+            Вызов метода <code>bookShelf.addBook('Мгла')</code> возвращает
+            строку <code>'Добавляем книгу Мгла'</code>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Значение свойства <code>bookShelf.removeBook</code> это метод
+            объекта.
+          </p>
+        </li>
+        <li>
+          <p>
+            Вызов метода
+            <code>bookShelf.removeBook('Красный закат')</code> возвращает строку
+            <code>'Удаляем книгу Красный закат'</code>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Значение свойства <code>bookShelf.updateBook</code> это метод
+            объекта.
+          </p>
+        </li>
+        <li>
+          <p>
+            Вызов метода
+            <code>bookShelf.updateBook('Пески Дюны', 'Дюна')</code> возвращает
+            строку <code>'Обновляем книгу Пески Дюны на Дюна'</code>.
+          </p>
+        </li>
+      </ul>
+    </div>
+  </section>
+</section>
