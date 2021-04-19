@@ -1,12 +1,89 @@
 <a href="../modul-3/index.html"><h1>Модуль - 03</h1></a>
-<h2>Задача - 38. .</h2>
+<h2>Задача - 38. Добавляем новое зелье.</h2>
 <a href="../modul-3/zad_37.html">&lt; &lt;Предыдущая задача</a>
 <a href="../modul-3/zad_39.html">Cледующая задача&gt;&gt;</a>
 
 <details closed="">
   <summary style="color: teal">Решение</summary>
   <pre><code>
-
+  const atTheOldToad = {
+    potions: ["Зелье скорости", "Дыхание дракона", "Каменная кожа"],
+    addPotion(potionName) {
+      // Пиши код ниже этой строки
+      this.potions.push(potionName);
+      return this.potions;
+      // Пиши код выше этой строки
+    },
+  };
 </code></pre>
 </details>
-<script></script>
+<script>
+  const atTheOldToad = {
+    potions: ["Зелье скорости", "Дыхание дракона", "Каменная кожа"],
+    addPotion(potionName) {
+      // Пиши код ниже этой строки
+      this.potions.push(potionName);
+      return this.potions;
+      // Пиши код выше этой строки
+    },
+  };
+
+  console.log(atTheOldToad.potions);
+  console.log(atTheOldToad.addPotion("Невидимка"));
+  console.log(atTheOldToad.addPotion("Зелье силы"));
+</script>
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <h3 class="task">Задание</h3>
+      <p>
+        Дополни метод <code>addPotion(potionName)</code> так, чтобы он добавлял
+        зелье <code>potionName</code> в конец массива зелий в свойстве
+        <code>potions</code>.
+      </p>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>
+          <p>Объявлена переменная <code>atTheOldToad</code>.</p>
+        </li>
+        <li>
+          <p>Значение переменной <code>atTheOldToad</code> это объект.</p>
+        </li>
+        <li>
+          <p>
+            Значение свойства <code>atTheOldToad.potions</code> это массив
+            <code>['Зелье скорости', 'Дыхание дракона', 'Каменная кожа']</code>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Значение свойства <code>atTheOldToad.addPotion</code> это метод
+            объекта.
+          </p>
+        </li>
+        <li>
+          <p>
+            После первого вызова метода
+            <code>atTheOldToad.addPotion('Невидимка')</code>, в свойстве
+            <code>potions</code> будет массив
+            <code
+              >['Зелье скорости', 'Дыхание дракона', 'Каменная кожа',
+              'Невидимка']</code
+            >.
+          </p>
+        </li>
+        <li>
+          <p>
+            После второго вызова метода
+            <code>atTheOldToad.addPotion('Зелье силы')</code>, в свойстве
+            <code>potions</code> будет массив
+            <code
+              >['Зелье скорости', 'Дыхание дракона', 'Каменная кожа',
+              'Невидимка', 'Зелье силы']</code
+            >.
+          </p>
+        </li>
+      </ul>
+    </div>
+  </section>
+</section>
