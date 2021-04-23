@@ -1,0 +1,98 @@
+<a href="../modul-3/index.html"><h1>Модуль - 04</h1></a>
+<h2>Задача - 01. Функция как значение.</h2>
+<a href="../modul-3/zad_41.html">&lt; &lt;Предыдущая задача</a>
+<a href="../modul-4/zad_02.html">Cледующая задача&gt;&gt;</a>
+
+<details closed="">
+  <summary style="color: teal">Решение</summary>
+  <pre><code>
+  function makePizza() {
+    return "Ваша пицца готовится, ожидайте.";
+  }
+  // Пиши код ниже этой строки
+
+  const result = makePizza();
+  const pointer = makePizza;
+
+  console.log(result);
+  console.log(pointer);
+</code></pre>
+</details>
+<script>
+  function makePizza() {
+    return "Ваша пицца готовится, ожидайте.";
+  }
+  // Пиши код ниже этой строки
+
+  const result = makePizza();
+  const pointer = makePizza;
+
+  console.log(result);
+  console.log(pointer);
+</script>
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <h2></h2>
+      <details closed="">
+        <summary>Теория</summary>
+        <p>
+          Функции не отличаются от чисел, строк или массивов - это просто
+          специальный тип данных (объект высшего порядка), значение, которое
+          можно хранить в переменной или передавать, как аргумент, в другую
+          функцию.
+        </p>
+        <pre><code class="language-js hljs javascript"><span class="hljs-function"><span class="hljs-keyword"><span class="hljs-function"><span class="hljs-keyword">function</span></span></span><span class="hljs-function"> </span><span class="hljs-title"><span class="hljs-function"><span class="hljs-title">greet</span></span></span><span class="hljs-function">(</span><span class="hljs-params"><span class="hljs-function"><span class="hljs-params">name</span></span></span><span class="hljs-function">) </span></span>{
+  <span class="hljs-keyword"><span class="hljs-keyword">return</span></span> <span class="hljs-string"><span class="hljs-string">`Добро пожаловать </span><span class="hljs-subst"><span class="hljs-string"><span class="hljs-subst">${name}</span></span></span><span class="hljs-string">.`</span></span>;
+}
+
+<span class="hljs-comment"><span class="hljs-comment">/* Вызываем функцию greet 
+   и выводим результат в консоль */</span></span>
+<span class="hljs-built_in"><span class="hljs-built_in">console</span></span>.log(greet(<span class="hljs-string"><span class="hljs-string">'Манго'</span></span>));
+<span class="hljs-comment"><span class="hljs-comment">// Добро пожаловать Манго.</span></span>
+
+<span class="hljs-comment"><span class="hljs-comment">/* Выводим функцию greet 
+   в консоль не вызывая её */</span></span>
+<span class="hljs-built_in"><span class="hljs-built_in">console</span></span>.log(greet);
+<span class="hljs-comment"><span class="hljs-comment">/* 
+ƒ greet() { 
+     return `Добро пожаловать ${name}.`; 
+} 
+*/</span></span>
+</code></pre>
+        <p>
+          В первом логе мы вызываем функцию <code>greet</code> при помощи
+          круглых скобок и в консоль выводится результат её выполнения. Во
+          втором логе передаётся ссылка на функцию, а не результат её вызова
+          (отсутствуют круглые скобки), поэтому в консоль выводится тело
+          функции. Это значит, что функцию можно присвоить в переменную или
+          передать, как аругмент, другой функции.
+        </p>
+      </details>
+      <h3 class="task">Задание</h3>
+      <p>
+        Дополни код так, чтобы в переменной <code>result</code> был результат
+        выполнения функции <code>makePizza</code>, а в переменной
+        <code>pointer</code> была ссылка на функцию <code>makePizza</code>.
+      </p>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>Объявлена функция <code>makePizza</code>.</li>
+        <li>Объявлена переменная <code>result</code>.</li>
+        <li>
+          Значение переменной <code>result</code> это строка
+          <code>'Ваша пицца готовится, ожидайте.'</code>.
+        </li>
+        <li>
+          Значение переменной <code>result</code> получено с помощью вызова
+          функции.
+        </li>
+        <li>Объявлена переменная <code>pointer</code>.</li>
+        <li>
+          Значение переменной <code>pointer</code> это ссылка на функцию
+          <code>makePizza</code>.
+        </li>
+      </ul>
+    </div>
+  </section>
+</section>
