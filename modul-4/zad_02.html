@@ -1,13 +1,106 @@
-<a href="../modul-3/index.html"><h1>Модуль - 04</h1></a>
-<h2>Задача - 02. .</h2>
+<a href="../modul-4/index.html"><h1>Модуль - 04</h1></a>
+<h2>Задача - 02. Колбэк-функции.</h2>
 <a href="../modul-4/zad_01.html">&lt; &lt;Предыдущая задача</a>
 <a href="../modul-4/zad_03.html">Cледующая задача&gt;&gt;</a>
 
 <details closed="">
   <summary style="color: teal">Решение</summary>
   <pre><code>
+  function deliverPizza(pizzaName) {
+    return `Доставляем пиццу ${pizzaName}.`;
+  }
 
+  function makePizza(pizzaName) {
+    return `Пицца ${pizzaName} готовится, ожидайте...`;
+  }
+
+  // Пиши код ниже этой строки
+  function makeMessage(pizzaName, callback) {
+    return callback(pizzaName);
+  }
+  console.log(makeMessage("Роял гранд", makePizza));
+  console.log(makeMessage("Ультрасыр", deliverPizza));
 </code></pre>
 </details>
 
-<script></script>
+<script>
+  function deliverPizza(pizzaName) {
+    return `Доставляем пиццу ${pizzaName}.`;
+  }
+
+  function makePizza(pizzaName) {
+    return `Пицца ${pizzaName} готовится, ожидайте...`;
+  }
+
+  // Пиши код ниже этой строки
+  function makeMessage(pizzaName, callback) {
+    return callback(pizzaName);
+  }
+  console.log(makeMessage("Роял гранд", makePizza));
+  console.log(makeMessage("Ультрасыр", deliverPizza));
+</script>
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <details closed="">
+        <summary>Теория</summary>
+        <p>
+          <strong>Функция обратного вызова (callback, колбэк)</strong> - это
+          функция, которая передаётся другой функции в качестве аргумента и та,
+          в свою очередь, вызывает переданную функцию.
+        </p>
+        <p>
+          <strong>Функция высшего порядка(higher order function)</strong> -
+          функция, принимающая в качестве параметров другие функции или
+          возвращающая функцию как результат.
+        </p>
+        <pre><code class="language-js hljs javascript"><span class="hljs-comment">// Колбэк-функция</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">greet</span>(<span class="hljs-params">name</span>) </span>{
+  consle.log(<span class="hljs-string">`Добро пожаловать <span class="hljs-subst">${name}</span>.`</span>);
+}
+
+<span class="hljs-comment">// Функция высшего порядка</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">registerGuest</span>(<span class="hljs-params">name, callback</span>) </span>{
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Регистрируем гостя <span class="hljs-subst">${name}</span>.`</span>);
+  callback(name);
+}
+
+registerGuest(<span class="hljs-string">'Манго'</span>, greet);
+</code></pre>
+        <p>
+          Мы передали ссылку на функцию <code>greet</code> как аргумент, поэтому
+          она будет присвоена в параметр <code>callback</code> и вызвана внутри
+          функции <code>registerGuest</code> через круглые скобки. Имя параметра
+          для колбэка может быть произвольным, главное помнить, что значением
+          будет функция.
+        </p>
+      </details>
+      <h3 class="task">Задание</h3>
+      <p>
+        Дополни функцию <code>makeMessage</code> так, чтобы она ожидала вторым
+        параметром (параметр <code>callback</code>) колбэк-функцию и возвращала
+        ее вызов. Функция <code>deliverPizza</code> или
+        <code>makePizza</code> будет передаваться как колбэк и ожидать
+        аргументом имя готовой доставляемой пиццы.
+      </p>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>Объявлена функция <code>deliverPizza</code>.</li>
+        <li>Объявлена функция <code>makePizza</code>.</li>
+        <li>Объявлена функция <code>makeMessage</code>.</li>
+        <li>
+          Функция <code>makeMessage</code> принимает два параметра, названые
+          согласно задания, <code>pizzaName</code> и <code>callback</code>.
+        </li>
+        <li>
+          Вызов <code>makeMessage('Роял гранд', makePizza)</code> возвращает
+          строку <code>'Пицца Роял гранд готовится, ожидайте...'</code>.
+        </li>
+        <li>
+          Вызов <code>makeMessage('Ультрасыр', deliverPizza)</code> возвращает
+          строку <code>'Доставляем пиццу Ультрасыр.'</code>.
+        </li>
+      </ul>
+    </div>
+  </section>
+</section>
