@@ -1,13 +1,87 @@
 <a href="../modul-4/index.html"><h1>Модуль - 04</h1></a>
-<h2>Задача - 03. .</h2>
+<h2>Задача - 03. Инлайн-колбэки.</h2>
 <a href="../modul-4/zad_02.html">&lt; &lt;Предыдущая задача</a>
 <a href="../modul-4/zad_04.html">Cледующая задача&gt;&gt;</a>
 
 <details closed="">
   <summary style="color: teal">Решение</summary>
   <pre><code>
+  function makePizza(pizzaName, callback) {
+    console.log(`Пицца ${pizzaName} готовится, ожидайте...`);
+    callback(pizzaName);
+  }
 
+  makePizza("Роял гранд", function deliverPizza(pizzaName) {
+    console.log(`Доставляем пиццу ${pizzaName}.`);
+  });
+  // Пиши код ниже этой строки
+
+  makePizza("Ультрасыр", function eatPizza(pizzaName) {
+    console.log(`Едим пиццу ${pizzaName}.`);
+  });
 </code></pre>
 </details>
 
-<script></script>
+<script>
+  function makePizza(pizzaName, callback) {
+    console.log(`Пицца ${pizzaName} готовится, ожидайте...`);
+    callback(pizzaName);
+  }
+
+  makePizza("Роял гранд", function deliverPizza(pizzaName) {
+    console.log(`Доставляем пиццу ${pizzaName}.`);
+  });
+  // Пиши код ниже этой строки
+
+  makePizza("Ультрасыр", function eatPizza(pizzaName) {
+    console.log(`Едим пиццу ${pizzaName}.`);
+  });
+</script>
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <details closed="">
+        <summary>Теория</summary>
+        <p>
+          Если колбэк-функция маленькая и нужна только для передачи аргументом,
+          её можно объявить прямо при вызове функции в которую передаём колбэк.
+          Такая функция будет доступна только как значение параметра и больше
+          нигде в коде.
+        </p>
+        <pre><code class="language-js hljs javascript"><span class="hljs-function"><span class="hljs-keyword"><span class="hljs-function"><span class="hljs-keyword">function</span></span></span><span class="hljs-function"> </span><span class="hljs-title"><span class="hljs-function"><span class="hljs-title">registerGuest</span></span></span><span class="hljs-function">(</span><span class="hljs-params"><span class="hljs-function"><span class="hljs-params">name, callback</span></span></span><span class="hljs-function">) </span></span>{
+  <span class="hljs-built_in"><span class="hljs-built_in">console</span></span>.log(<span class="hljs-string"><span class="hljs-string">`Регистрируем гостя </span><span class="hljs-subst"><span class="hljs-string"><span class="hljs-subst">${name}</span></span></span><span class="hljs-string">.`</span></span>);
+  callback(name);
+}
+
+<span class="hljs-comment"><span class="hljs-comment">// Передаём инлайн функцию greet как колбэк</span></span>
+registerGuest(<span class="hljs-string"><span class="hljs-string">'Манго'</span></span>, <span class="hljs-function"><span class="hljs-keyword"><span class="hljs-function"><span class="hljs-keyword">function</span></span></span><span class="hljs-function"> </span><span class="hljs-title"><span class="hljs-function"><span class="hljs-title">greet</span></span></span><span class="hljs-function">(</span><span class="hljs-params"><span class="hljs-function"><span class="hljs-params">name</span></span></span><span class="hljs-function">) </span></span>{
+  consle.log(<span class="hljs-string"><span class="hljs-string">`Добро пожаловать </span><span class="hljs-subst"><span class="hljs-string"><span class="hljs-subst">${name}</span></span></span><span class="hljs-string">.`</span></span>);
+});
+
+<span class="hljs-comment"><span class="hljs-comment">// Передаём инлайн функцию notify как колбэк</span></span>
+registerGuest(<span class="hljs-string"><span class="hljs-string">'Поли'</span></span>, <span class="hljs-function"><span class="hljs-keyword"><span class="hljs-function"><span class="hljs-keyword">function</span></span></span><span class="hljs-function"> </span><span class="hljs-title"><span class="hljs-function"><span class="hljs-title">notify</span></span></span><span class="hljs-function">(</span><span class="hljs-params"><span class="hljs-function"><span class="hljs-params">name</span></span></span><span class="hljs-function">) </span></span>{
+  consle.log(<span class="hljs-string"><span class="hljs-string">`Уважаемый(ая) </span><span class="hljs-subst"><span class="hljs-string"><span class="hljs-subst">${name}</span></span></span><span class="hljs-string">, ваш номер будет готов через 30 минут.`</span></span>);
+});
+</code></pre>
+      </details>
+      <h3 class="task">Задание</h3>
+      <p>
+        Дополни второй вызов функции
+        <code>makePizza(pizzaName, callback)</code>, передав вторым аргументом
+        инлайн колбэк-функцию <code>eatPizza(pizzaName)</code>, которая логирует
+        строку <code>'Едим пиццу &lt;имя пиццы&gt;'</code>.
+      </p>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>Объявлена функция <code>makePizza</code>.</li>
+        <li>Функция <code>makePizza</code> принимает два параметра.</li>
+        <li>
+          Вторым аргументом при вызове
+          <code>makePizza('Ультрасыр')</code> передана функция
+          <code>eatPizza</code> с единственным параметром
+          <code>pizzaName</code>.
+        </li>
+      </ul>
+    </div>
+  </section>
+</section>
