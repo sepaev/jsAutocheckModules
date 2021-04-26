@@ -1,13 +1,203 @@
 <a href="../modul-4/index.html"><h1>Модуль - 04</h1></a>
-<h2>Задача - 04. .</h2>
+<h2>Задача - 04. Несколько колбэков.</h2>
 <a href="../modul-4/zad_03.html">&lt; &lt;Предыдущая задача</a>
 <a href="../modul-4/zad_05.html">Cледующая задача&gt;&gt;</a>
 
 <details closed="">
   <summary style="color: teal">Решение</summary>
   <pre><code>
+  const pizzaPalace = {
+    pizzas: ["Ультрасыр", "Аль Копчино", "Четыре нарезона"],
+    order(pizzaName, onSuccess, onError) {
+      if (pizzaPalace.pizzas.indexOf(pizzaName) < 0) {
+        return onError(pizzaName);
+      }
+      return onSuccess(pizzaName);
+    },
+  };
+  // Пиши код выше этой строки
+  // Колбэк для onSuccess
+  function makePizza(pizzaName) {
+    return `Ваш заказ принят. Готовим пиццу ${pizzaName}.`;
+  }
 
+  // Колбэк для onError
+  function onOrderError(error) {
+    return `Ошибка! В ассортименте нет пиццы с названием ${error}.`;
+  }
+
+  // Вызовы метода с колбэками
+  console.log(pizzaPalace.order("Аль Копчино", makePizza, onOrderError));
+  console.log(pizzaPalace.order("Четыре нарезона", makePizza, onOrderError));
+  console.log(pizzaPalace.order("Биг майк", makePizza, onOrderError));
+  console.log(pizzaPalace.order("Венская", makePizza, onOrderError));
 </code></pre>
 </details>
 
-<script></script>
+<script>
+  const pizzaPalace = {
+    pizzas: ["Ультрасыр", "Аль Копчино", "Четыре нарезона"],
+    order(pizzaName, onSuccess, onError) {
+      if (pizzaPalace.pizzas.indexOf(pizzaName) < 0) {
+        return onError(pizzaName);
+      }
+      return onSuccess(pizzaName);
+    },
+  };
+  // Пиши код выше этой строки
+  // Колбэк для onSuccess
+  function makePizza(pizzaName) {
+    return `Ваш заказ принят. Готовим пиццу ${pizzaName}.`;
+  }
+
+  // Колбэк для onError
+  function onOrderError(error) {
+    return `Ошибка! В ассортименте нет пиццы с названием ${error}.`;
+  }
+
+  // Вызовы метода с колбэками
+  console.log(pizzaPalace.order("Аль Копчино", makePizza, onOrderError));
+  console.log(pizzaPalace.order("Четыре нарезона", makePizza, onOrderError));
+  console.log(pizzaPalace.order("Биг майк", makePizza, onOrderError));
+  console.log(pizzaPalace.order("Венская", makePizza, onOrderError));
+</script>
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <details closed="">
+        <summary>Теория</summary>
+        <p>
+          Функция может принимать произвольное количество колбэков. Например,
+          представим что мы пишем логику принятия звонков для телефона.
+          Программа должна включить автоответчик если абонент недоступен, или
+          соединить звонок в противном случае. Доступность абонента будем
+          имитировать генератором случайного числа, чтобы между разными вызовами
+          функции можно было получить различные результаты.
+        </p>
+        <pre><code class="language-js hljs javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">processCall</span>(<span class="hljs-params">recipient</span>) </span>{
+  <span class="hljs-comment">// Имитируем доступность абонента случайным числом</span>
+  <span class="hljs-keyword">const</span> isRecipientAvailable = <span class="hljs-built_in">Math</span>.random() &gt; <span class="hljs-number">0.5</span>;
+
+  <span class="hljs-keyword">if</span> (!isRecipientAvailable) {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Абонент <span class="hljs-subst">${recipient}</span> недоступен, оставьте сообщение.`</span>);
+    <span class="hljs-comment">// Логика активации автоответчика</span>
+  } <span class="hljs-keyword">else</span> {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Соединяем с <span class="hljs-subst">${recipient}</span>, ожидайте...`</span>);
+    <span class="hljs-comment">// Логика принятия звонка</span>
+  }
+}
+
+processCall(<span class="hljs-string">'Манго'</span>);
+</code></pre>
+        <p>
+          Проблема такого подхода в том, что функция
+          <code>processCall</code> делает слишком много и привязывает проверку
+          доступности абонента к двум заранее определённым действиям. Что если в
+          будущем вместо автоответчика нужно будет оставлять голограмму?
+        </p>
+        <p>
+          Мы могли бы написать функцию так, чтобы она возвращала какое-то
+          значение и потом по результату её выполнения делать проверки и
+          выполнять нужный код. Но проверки не относятся к внешнему коду и будут
+          его засорять.
+        </p>
+        <p>
+          Выполним рефакторинг функции так, чтобы она принимала два колбэка
+          <code>onAvailable</code> и <code>onNotAvailable</code>, и вызывала их
+          по условию.
+        </p>
+        <pre><code class="language-js hljs javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">processCall</span>(<span class="hljs-params">recipient, onAvailable, onNotAvailable</span>) </span>{
+  <span class="hljs-comment">// Имитируем доступеность абонента случайным числом</span>
+  <span class="hljs-keyword">const</span> isRecipientAvailable = <span class="hljs-built_in">Math</span>.random() &gt; <span class="hljs-number">0.5</span>;
+
+  <span class="hljs-keyword">if</span> (!isRecipientAvailable) {
+    onNotAvailable(recipient);
+    <span class="hljs-keyword">return</span>;
+  }
+
+  onAvailable(recipient);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">takeCall</span>(<span class="hljs-params">name</span>) </span>{
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Соединяем с <span class="hljs-subst">${name}</span>, ожидайте...`</span>);
+  <span class="hljs-comment">// Логика принятия звонка</span>
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">activateAnsweringMachine</span>(<span class="hljs-params">name</span>) </span>{
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Абонент <span class="hljs-subst">${name}</span> недоступен, оставьте сообщение.`</span>);
+  <span class="hljs-comment">// Логика активации автоответчика</span>
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">leaveHoloMessage</span>(<span class="hljs-params">name</span>) </span>{
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Абонент <span class="hljs-subst">${name}</span> недоступен, записываем голограмму.`</span>);
+  <span class="hljs-comment">// Логика записи голограммы</span>
+}
+
+processCall(<span class="hljs-string">'Манго'</span>, takeCall, activateAnsweringMachine);
+processCall(<span class="hljs-string">'Поли'</span>, takeCall, leaveHoloMessage);
+</code></pre>
+        <p>
+          Колбэки применяются для обработки действий пользователя на странице,
+          при обработке запросов на сервер, выполнения заранее неизвестных
+          функций и т. п. В этом и заключается их суть - это функции
+          предназначенные для отложенного выполнения.
+        </p>
+      </details>
+      <h3 class="task">Задание</h3>
+      <p>
+        Необходимо написать логику обработки заказа пиццы. Выполни рефакторинг
+        метода <code>order</code> так, чтобы он принимал вторым и третим
+        параметрами два колбэка <code>onSuccess</code> и <code>onError</code>.
+      </p>
+      <ul>
+        <li>
+          Если в свойстве <code>pizzas</code> нет пиццы с названием из параметра
+          <code>pizzaName</code>, метод <code>order</code> должен возвращать
+          результат вызова колбэка <code>onError</code>, передавая ему
+          аргументом строку
+          <code>'В ассортименте нет пиццы с названием &lt;имя пиццы&gt;.'</code>
+        </li>
+        <li>
+          Если в свойстве <code>pizzas</code> есть пицца с названием из
+          параметра <code>pizzaName</code>, метод <code>order</code> должен
+          возвращать результат вызова колбэка <code>onSuccess</code>, передавая
+          ему аргументом имя заказанной пиццы.
+        </li>
+      </ul>
+      <p>
+        После объявления объекта <code>pizzaPalace</code> мы добавили колбэки и
+        вызовы методов. Пожалуйста ничего там не меняй.
+      </p>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>Метод <code>order</code> объявляет три параметра.</li>
+        <li>
+          Вызов
+          <code>pizzaPalace.order('Аль Копчино', makePizza, onOrderError)</code>
+          возвращает
+          <code>'Ваш заказ принят. Готовим пиццу Аль Копчино.'</code>.
+        </li>
+        <li>
+          Вызов
+          <code
+            >pizzaPalace.order('Четыре нарезона', makePizza, onOrderError)</code
+          >
+          возвращает
+          <code>'Ваш заказ принят. Готовим пиццу Четыре нарезона.'</code>.
+        </li>
+        <li>
+          Вызов
+          <code>pizzaPalace.order('Биг майк', makePizza, onOrderError)</code>
+          возвращает
+          <code>'Ошибка! В ассортименте нет пиццы с названием Биг майк.'</code>.
+        </li>
+        <li>
+          Вызов
+          <code>pizzaPalace.order('Венская', makePizza, onOrderError)</code>
+          возвращает
+          <code>'Ошибка! В ассортименте нет пиццы с названием Венская.'</code>.
+        </li>
+      </ul>
+    </div>
+  </section>
+</section>
