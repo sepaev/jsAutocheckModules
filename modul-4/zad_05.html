@@ -1,13 +1,126 @@
 <a href="../modul-4/index.html"><h1>Модуль - 04</h1></a>
-<h2>Задача - 05. .</h2>
+<h2>Задача - 05. Контекст вызова функции.</h2>
 <a href="../modul-4/zad_04.html">&lt; &lt;Предыдущая задача</a>
 <a href="../modul-4/zad_06.html">Cледующая задача&gt;&gt;</a>
 
 <details closed="">
   <summary style="color: teal">Решение</summary>
   <pre><code>
+  const pizzaPalace = {
+    pizzas: ["Ультрасыр", "Аль Копчино", "Четыре нарезона"],
+    // Пиши код ниже этой строки
+    checkPizza(pizzaName) {
+      return this.pizzas.includes(pizzaName);
+    },
+    order(pizzaName) {
+      const isPizzaAvailable = this.checkPizza(pizzaName);
+
+      if (!isPizzaAvailable) {
+        return `В ассортименте нет пиццы с названием «${pizzaName}».`;
+      }
+
+      return `Заказ принят, готовим пиццу «${pizzaName}».`;
+    },
+    // Пиши код выше этой строки
+  };
+  console.log(pizzaPalace.order("Аль Копчино")); //возвращает строку 'Заказ принят, готовим пиццу «Аль Копчино».'.
+  console.log(pizzaPalace.order("Четыре нарезона")); //возвращает строку 'Заказ принят, готовим пиццу «Четыре нарезона».'.
+  console.log(pizzaPalace.order("Биг майк")); //возвращает строку 'В ассортименте нет пиццы с названием «Биг майк».'.
+  console.log(pizzaPalace.order("Венская")); //возвращает строку 'В ассортименте нет пиццы с названием «Венская».'.
 
 </code></pre>
 </details>
 
-<script></script>
+<script>
+  const pizzaPalace = {
+    pizzas: ["Ультрасыр", "Аль Копчино", "Четыре нарезона"],
+    // Пиши код ниже этой строки
+    checkPizza(pizzaName) {
+      return this.pizzas.includes(pizzaName);
+    },
+    order(pizzaName) {
+      const isPizzaAvailable = this.checkPizza(pizzaName);
+
+      if (!isPizzaAvailable) {
+        return `В ассортименте нет пиццы с названием «${pizzaName}».`;
+      }
+
+      return `Заказ принят, готовим пиццу «${pizzaName}».`;
+    },
+    // Пиши код выше этой строки
+  };
+  console.log(pizzaPalace.order("Аль Копчино")); //возвращает строку 'Заказ принят, готовим пиццу «Аль Копчино».'.
+  console.log(pizzaPalace.order("Четыре нарезона")); //возвращает строку 'Заказ принят, готовим пиццу «Четыре нарезона».'.
+  console.log(pizzaPalace.order("Биг майк")); //возвращает строку 'В ассортименте нет пиццы с названием «Биг майк».'.
+  console.log(pizzaPalace.order("Венская")); //возвращает строку 'В ассортименте нет пиццы с названием «Венская».'.
+</script>
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <details closed="">
+        <summary>Теория</summary>
+        <p>
+          Внутри функций есть зарезервированное ключевое слово
+          <code>this</code>. Во время исполнения функции, в
+          <code>this</code> записывается ссылка на объект, в контексте которого
+          она была вызвана. Таким образом, в теле функции мы можем получить
+          доступ к свойствам и методам этого объекта.
+        </p>
+        <pre><code class="language-js hljs javascript"><span class="hljs-keyword">const</span> bookShelf = {
+  <span class="hljs-attr">authors</span>: [<span class="hljs-string">'Бернард Корнуэлл'</span>, <span class="hljs-string">'Роберт Шекли'</span>],
+  getAuthors() {
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.authors;
+  },
+  addAuthor(authorName) {
+    <span class="hljs-keyword">this</span>.authors.push(authorName);
+  },
+};
+
+<span class="hljs-built_in">console</span>.log(bookShelf.getAuthors()); <span class="hljs-comment">// ['Бернард Корнуэлл', 'Роберт Шекли']</span>
+bookShelf.addAuthor(<span class="hljs-string">'Ли Танит'</span>);
+<span class="hljs-built_in">console</span>.log(bookShelf.getAuthors()); <span class="hljs-comment">// ['Бернард Корнуэлл', 'Роберт Шекли', 'Ли Танит']</span>
+</code></pre>
+        <p>
+          Методы <code>getAuthors</code> и <code>addAuthor</code> это функции,
+          которые вызываются в контексте объекта <code>bookShelf</code>. Во
+          время их выполнения в <code>this</code> записывается ссылка на объект
+          <code>bookShelf</code> и мы можем обратиться к его свойствам и
+          методам.
+        </p>
+      </details>
+      <h3 class="task">Задание</h3>
+      <p>
+        Выполни рефакторинг методов объекта <code>pizzaPalace</code>, расставив
+        отсутствующие <code>this</code> в местах обращения к свойствам и методам
+        объекта.
+      </p>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>
+          Вызов <code>pizzaPalace.order('Аль Копчино')</code> возвращает строку
+          <code>'Заказ принят, готовим пиццу «Аль Копчино».'</code>.
+        </li>
+        <li>
+          Вызов <code>pizzaPalace.order('Четыре нарезона')</code> возвращает
+          строку <code>'Заказ принят, готовим пиццу «Четыре нарезона».'</code>.
+        </li>
+        <li>
+          Вызов <code>pizzaPalace.order('Биг майк')</code> возвращает строку
+          <code>'В ассортименте нет пиццы с названием «Биг майк».'</code>.
+        </li>
+        <li>
+          Вызов <code>pizzaPalace.order('Венская')</code> возвращает строку
+          <code>'В ассортименте нет пиццы с названием «Венская».'</code>.
+        </li>
+        <li>
+          Метод <code>checkPizza</code> объекта
+          <code>pizzaPalace</code> использует <code>this</code>.
+        </li>
+        <li>
+          Метод <code>order</code> объекта <code>pizzaPalace</code> использует
+          <code>this</code>.
+        </li>
+      </ul>
+    </div>
+  </section>
+</section>
