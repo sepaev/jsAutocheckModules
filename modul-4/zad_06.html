@@ -1,13 +1,140 @@
 <a href="../modul-4/index.html"><h1>Модуль - 04</h1></a>
-<h2>Задача - 06. .</h2>
+<h2>Задача - 06. Аккаунт пользователя.</h2>
 <a href="../modul-4/zad_05.html">&lt; &lt;Предыдущая задача</a>
 <a href="../modul-4/zad_07.html">Cледующая задача&gt;&gt;</a>
 
 <details closed="">
   <summary style="color: teal">Решение</summary>
   <pre><code>
+  const customer = {
+    username: "Mango",
+    balance: 24000,
+    discount: 0.1,
+    orders: ["Burger", "Pizza", "Salad"],
+    // Пиши код ниже этой строки
+    getBalance() {
+      return this.balance;
+    },
+    getDiscount() {
+      return this.discount;
+    },
+    setDiscount(value) {
+      this.discount = value;
+    },
+    getOrders() {
+      return this.orders;
+    },
+    addOrder(cost, order) {
+      this.balance -= cost - cost * this.discount;
+      this.orders.push(order);
+    },
+    // Пиши код выше этой строки
+  };
 
+  customer.setDiscount(0.15);
+  console.log(customer.getDiscount()); // 0.15
+  customer.addOrder(5000, "Steak");
+  console.log(customer.getBalance()); // 19750
+  console.log(customer.getOrders()); // ['Burger', 'Pizza', 'Salad', 'Steak']
 </code></pre>
 </details>
 
-<script></script>
+<script>
+  const customer = {
+    username: "Mango",
+    balance: 24000,
+    discount: 0.1,
+    orders: ["Burger", "Pizza", "Salad"],
+    // Пиши код ниже этой строки
+    getBalance() {
+      return this.balance;
+    },
+    getDiscount() {
+      return this.discount;
+    },
+    setDiscount(value) {
+      this.discount = value;
+    },
+    getOrders() {
+      return this.orders;
+    },
+    addOrder(cost, order) {
+      this.balance -= cost - cost * this.discount;
+      this.orders.push(order);
+    },
+    // Пиши код выше этой строки
+  };
+
+  customer.setDiscount(0.15);
+  console.log(customer.getDiscount()); // 0.15
+  customer.addOrder(5000, "Steak");
+  console.log(customer.getBalance()); // 19750
+  console.log(customer.getOrders()); // ['Burger', 'Pizza', 'Salad', 'Steak']
+</script>
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <h3 class="task">Задание</h3>
+      <p>
+        Перед увольнением разработчик сломал исходный код управления аккаунтами
+        пользователей нашего сервиса доставки еды. Выполни рефакторинг методов
+        объекта <code>customer</code>, расставив отсутствующие
+        <code>this</code> при обращении к свойствам объекта.
+      </p>
+      <p>
+        После объявления объекта мы добавили вызовы методов в той
+        последовательности, в которой твой код будут проверять тесты. Пожалуйста
+        ничего там не меняй.
+      </p>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>Объявлена переменная <code>customer</code>.</li>
+        <li>
+          Значение переменной <code>customer</code> это объект со свойствами и
+          методами.
+        </li>
+        <li>
+          Вызов <code>customer.getDiscount()</code> возвращает текущее значение
+          свойства <code>discount</code>.
+        </li>
+        <li>
+          Вызов <code>customer.setDiscount(0.15)</code> обновляет значение
+          свойства <code>discount</code>.
+        </li>
+        <li>
+          Вызов <code>customer.getBalance()</code> возвращает текущее значение
+          свойства <code>balance</code>.
+        </li>
+        <li>
+          Вызов <code>customer.getOrders()</code> возвращает текущее значение
+          свойства <code>orders</code>.
+        </li>
+        <li>
+          Вызов <code>customer.addOrder(5000, 'Steak')</code> добавляет
+          <code>'Steak'</code> в массив значений свойства <code>orders</code> и
+          обновляет баланс.
+        </li>
+        <li>
+          Метод <code>getBalance</code> объекта <code>customer</code> использует
+          <code>this</code>.
+        </li>
+        <li>
+          Метод <code>getDiscount</code> объекта
+          <code>customer</code> использует <code>this</code>.
+        </li>
+        <li>
+          Метод <code>setDiscount</code> объекта
+          <code>customer</code> использует <code>this</code>.
+        </li>
+        <li>
+          Метод <code>getOrders</code> объекта <code>customer</code> использует
+          <code>this</code>.
+        </li>
+        <li>
+          Метод <code>addOrder</code> объекта <code>customer</code> использует
+          <code>this</code>.
+        </li>
+      </ul>
+    </div>
+  </section>
+</section>
