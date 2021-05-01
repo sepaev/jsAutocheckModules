@@ -1,13 +1,147 @@
 <a href="../modul-4/index.html"><h1>Модуль - 04</h1></a>
-<h2>Задача - 07. .</h2>
+<h2>Задача - 07. Метод <code>call</code>.</h2>
 <a href="../modul-4/zad_06.html">&lt; &lt;Предыдущая задача</a>
 <a href="../modul-4/zad_08.html">Cледующая задача&gt;&gt;</a>
 
 <details closed="">
   <summary style="color: teal">Решение</summary>
   <pre><code>
+  const orders = [
+    { email: "solomon@topmail.ua", dish: "Burger" },
+    { email: "artemis@coldmail.net", dish: "Pizza" },
+    { email: "jacob@mail.com", dish: "Taco" },
+  ];
 
+  // Пиши код ниже этой строки
+  function composeMessage(position) {
+    return `Готовим ${this.dish} для ${
+      this.email
+    }. Ваш заказ ${++position}-й в очереди.`;
+  }
+  const messages = [];
+
+  for (let key = 0; key < Object.keys(orders).length; key++) {
+    messages.push(composeMessage.call(orders[key], key));
+  }
+  console.log(messages);
 </code></pre>
 </details>
 
-<script></script>
+<script>
+  const orders = [
+    { email: "solomon@topmail.ua", dish: "Burger" },
+    { email: "artemis@coldmail.net", dish: "Pizza" },
+    { email: "jacob@mail.com", dish: "Taco" },
+  ];
+
+  // Пиши код ниже этой строки
+  function composeMessage(position) {
+    return `Готовим ${this.dish} для ${
+      this.email
+    }. Ваш заказ ${++position}-й в очереди.`;
+  }
+  const messages = [];
+
+  for (let key = 0; key < Object.keys(orders).length; key++) {
+    messages.push(composeMessage.call(orders[key], key));
+  }
+  console.log(messages);
+</script>
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <details closed="">
+        <summary>Теория</summary>
+        <p>
+          Бывают ситуации когда функцию нужно вызвать в контексте какого-то
+          объекта, при этом функция не является его методом. Для этого у функций
+          есть методы <code>call</code> и <code>apply</code>.
+        </p>
+        <pre><code class="language-shell hljs">foo.call(obj, arg1, arg2, ...)
+</code></pre>
+        <p>
+          Метод <code>call</code> вызовет функцию <code>foo</code> так, что в
+          <code>this</code> будет ссылка на объект <code>obj</code>, а также
+          передаст аргументы <code>arg1</code>, <code>arg2</code> и т. д.
+        </p>
+        <pre><code class="language-js hljs javascript"><span class="hljs-function"><span class="hljs-keyword"><span class="hljs-function"><span class="hljs-keyword"><span class="hljs-function"><span class="hljs-keyword">function</span></span></span></span></span><span class="hljs-function"><span class="hljs-function"> </span></span><span class="hljs-title"><span class="hljs-function"><span class="hljs-title"><span class="hljs-function"><span class="hljs-title">greetGuest</span></span></span></span></span><span class="hljs-function"><span class="hljs-function">(</span></span><span class="hljs-params"><span class="hljs-function"><span class="hljs-params"><span class="hljs-function"><span class="hljs-params">greeting</span></span></span></span></span><span class="hljs-function"><span class="hljs-function">) </span></span></span>{
+  <span class="hljs-built_in"><span class="hljs-built_in"><span class="hljs-built_in">console</span></span></span>.log(<span class="hljs-string"><span class="hljs-string"><span class="hljs-string">`</span></span><span class="hljs-subst"><span class="hljs-string"><span class="hljs-subst"><span class="hljs-string"><span class="hljs-subst">${greeting}</span></span></span></span></span><span class="hljs-string"><span class="hljs-string">, </span></span><span class="hljs-subst"><span class="hljs-string"><span class="hljs-subst"><span class="hljs-string"><span class="hljs-subst">${</span></span></span></span><span class="hljs-keyword"><span class="hljs-string"><span class="hljs-subst"><span class="hljs-keyword"><span class="hljs-string"><span class="hljs-subst"><span class="hljs-keyword">this</span></span></span></span></span></span></span><span class="hljs-string"><span class="hljs-subst"><span class="hljs-string"><span class="hljs-subst">.username}</span></span></span></span></span><span class="hljs-string"><span class="hljs-string">.`</span></span></span>);
+}
+
+<span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword">const</span></span></span> mango = { <span class="hljs-attr"><span class="hljs-attr"><span class="hljs-attr">username</span></span></span>: <span class="hljs-string"><span class="hljs-string"><span class="hljs-string">"Манго"</span></span></span> };
+<span class="hljs-keyword"><span class="hljs-keyword"><span class="hljs-keyword">const</span></span></span> poly = { <span class="hljs-attr"><span class="hljs-attr"><span class="hljs-attr">username</span></span></span>: <span class="hljs-string"><span class="hljs-string"><span class="hljs-string">"Поли"</span></span></span> };
+
+greetGuest.call(mango, <span class="hljs-string"><span class="hljs-string"><span class="hljs-string">"Добро пожаловать"</span></span></span>);
+<span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment">// Добро пожаловать, Манго.</span></span></span>
+
+greetGuest.call(poly, <span class="hljs-string"><span class="hljs-string"><span class="hljs-string">"С приездом"</span></span></span>);
+<span class="hljs-comment"><span class="hljs-comment"><span class="hljs-comment">// С приездом, Поли.</span></span></span>
+</code></pre>
+      </details>
+      <h3 class="task">Задание</h3>
+      <p>
+        Сервису приготовления и доставки еды требуется функция генерации
+        сообщений о статусе заказа.
+      </p>
+      <p>
+        Дополни функцию <code>composeMessage(position)</code> так, чтобы она
+        возвращала строку в формате
+        <code
+          >'Готовим &lt;блюдо&gt; для &lt;почта&gt;. Ваш заказ &lt;позиция&gt;-й
+          в очереди.'</code
+        >
+        Позиция это значение параметра <code>position</code> - позиция элемента
+        в массиве (на единицу больше чем индекс).
+      </p>
+      <ul>
+        <li>
+          Не объявляй дополнительные параметры функции
+          <code>composeMessage(position)</code>.
+        </li>
+        <li>
+          Используй <code>call</code> для вызова функции в контексте одного
+          объекта-заказа.
+        </li>
+        <li>
+          Используй <code>this</code> в теле функции для доступа к свойствам
+          объекта-заказа в контексте которого она была вызывана.
+        </li>
+      </ul>
+      <p>
+        Дополни код так, чтобы в переменной <code>messages</code> получился
+        массив сообщений о статусе заказов из массива <code>orders</code> с
+        помощью цикла <code>for</code>.
+      </p>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>Объявлена переменная <code>orders</code>.</li>
+        <li>
+          Значение переменной <code>orders</code> это исходный массив
+          объектов-заказов.
+        </li>
+        <li>Объявлена функция <code>composeMessage(position)</code>.</li>
+        <li>
+          У функции <code>composeMessage</code> объявлен один параметр
+          <code>position</code>.
+        </li>
+        <li>
+          В теле функции <code>composeMessage</code> используется
+          <code>this</code>.
+        </li>
+        <li>
+          Функция <code>composeMessage</code> вызывается методом
+          <code>call</code> внутри цикла <code>for</code>.
+        </li>
+        <li>Объявлена переменная <code>messages</code>.</li>
+        <li>
+          Значение переменной <code>messages</code> это массив
+          <code
+            >['Готовим Burger для solomon@topmail.ua. Ваш заказ 1-й в очереди.',
+            'Готовим Pizza для artemis@coldmail.net. Ваш заказ 2-й в очереди.',
+            'Готовим Taco для jacob@mail.com. Ваш заказ 3-й в очереди.']</code
+          >.
+        </li>
+      </ul>
+    </div>
+  </section>
+</section>
