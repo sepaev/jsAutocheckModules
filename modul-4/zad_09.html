@@ -1,13 +1,156 @@
 <a href="../modul-4/index.html"><h1>Модуль - 04</h1></a>
-<h2>Задача - 09. .</h2>
+<h2>Задача - 09. Метод <code>bind</code>.</h2>
 <a href="../modul-4/zad_08.html">&lt; &lt;Предыдущая задача</a>
 <a href="../modul-4/zad_10.html">Cледующая задача&gt;&gt;</a>
 
 <details closed="">
   <summary style="color: teal">Решение</summary>
   <pre><code>
+  const pizzaPalace = {
+    company: "Pizza Palace",
+  };
 
+  const burgerShack = {
+    company: "Burger Shack",
+  };
+
+  function composeMessage(customerName) {
+    return `${customerName}, всегда рады вас видеть в «${this.company}».`;
+  }
+  // Пиши код ниже этой строки
+
+  const pizzaPalaceComposer = composeMessage.bind(pizzaPalace);
+  const pizzaPalaceMessage = pizzaPalaceComposer("Манго");
+  console.log(pizzaPalaceMessage);
+
+  const burgerShackComposer = composeMessage.bind(burgerShack);
+  const burgerShackMessage = burgerShackComposer("Поли");
+  console.log(burgerShackMessage);
 </code></pre>
 </details>
 
-<script></script>
+<script>
+  const pizzaPalace = {
+    company: "Pizza Palace",
+  };
+
+  const burgerShack = {
+    company: "Burger Shack",
+  };
+
+  function composeMessage(customerName) {
+    return `${customerName}, всегда рады вас видеть в «${this.company}».`;
+  }
+  // Пиши код ниже этой строки
+
+  const pizzaPalaceComposer = composeMessage.bind(pizzaPalace);
+  const pizzaPalaceMessage = pizzaPalaceComposer("Манго");
+  console.log(pizzaPalaceMessage);
+
+  const burgerShackComposer = composeMessage.bind(burgerShack);
+  const burgerShackMessage = burgerShackComposer("Поли");
+  console.log(burgerShackMessage);
+</script>
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <details closed="">
+        <summary>Теория</summary>
+        <p>
+          Методы <code>call</code> и <code>apply</code> вызывают функцию «на
+          месте», то есть сразу. Но в случае колбэк-функций, когда необходимо не
+          сразу вызвать функцию, а передать ссылку на неё, причём с привязанным
+          контекстом, используется метод <code>bind</code>.
+        </p>
+        <pre><code class="language-shell hljs">foo.bind(obj, arg1, arg2, ...)
+</code></pre>
+        <p>
+          Метод <code>bind</code> создаёт и возвращает копию функции
+          <code>foo</code> с привязанным контекстом <code>obj</code> и
+          аргументами <code>arg1</code>, <code>arg2</code> и т. д. Получается
+          копия функции которую можно передать куда угодно и вызвать когда
+          угодно.
+        </p>
+        <pre><code class="language-js hljs javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">greet</span>(<span class="hljs-params">clientName</span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-string">`<span class="hljs-subst">${clientName}</span>, добро пожаловать в «<span class="hljs-subst">${<span class="hljs-keyword">this</span>.service}</span>».`</span>;
+}
+
+<span class="hljs-keyword">const</span> steam = { <span class="hljs-attr">service</span>: <span class="hljs-string">'Steam'</span> };
+<span class="hljs-keyword">const</span> steamGreeter = greet.bind(steam);
+steamGreeter(<span class="hljs-string">'Манго'</span>); <span class="hljs-comment">// "Манго, добро пожаловать в «Steam»."</span>
+
+<span class="hljs-keyword">const</span> gmail = { <span class="hljs-attr">service</span>: <span class="hljs-string">'Gmail'</span> };
+<span class="hljs-keyword">const</span> gmailGreeter = greet.bind(gmail);
+gmailGreeter(<span class="hljs-string">'Поли'</span>); <span class="hljs-comment">// "Поли, добро пожаловать в «Gmail»."</span>
+</code></pre>
+      </details>
+      <h3 class="task">Задание</h3>
+      <p>
+        Функция <code>composeMessage(customerName)</code> создаёт приветственные
+        сообщения для ресторанов. Дополни код так, чтобы в переменных
+        <code>pizzaPalaceComposer</code> и <code>burgerShackComposer</code> были
+        её копии с привязанным контекстом к соответствующим объектам.
+      </p>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>
+          <p>Объявлена переменная <code>pizzaPalace</code>.</p>
+        </li>
+        <li>
+          <p>
+            Значение переменной <code>pizzaPalace</code> это исходный объект.
+          </p>
+        </li>
+        <li>
+          <p>Объявлена переменная <code>burgerShack</code>.</p>
+        </li>
+        <li>
+          <p>
+            Значение переменной <code>burgerShack</code> это исходный объект.
+          </p>
+        </li>
+        <li>
+          <p>Объявлена функция <code>composeMessage(customerName)</code>.</p>
+        </li>
+        <li>
+          <p>Объявлена переменная <code>pizzaPalaceComposer</code>.</p>
+        </li>
+        <li>
+          <p>
+            Значение переменной <code>pizzaPalaceComposer</code> это копия
+            функции <code>composeMessage</code> с контекстом привязанным к
+            объекту <code>pizzaPalace</code>.
+          </p>
+        </li>
+        <li>
+          <p>Объявлена переменная <code>pizzaPalaceMessage</code>.</p>
+        </li>
+        <li>
+          <p>
+            Значение переменной <code>pizzaPalaceMessage</code> это строка
+            <code>'Манго, всегда рады вас видеть в «Pizza Palace».'</code>.
+          </p>
+        </li>
+        <li>
+          <p>Объявлена переменная <code>burgerShackComposer</code>.</p>
+        </li>
+        <li>
+          <p>
+            Значение переменной <code>burgerShackComposer</code> это копия
+            функции <code>composeMessage</code> с контекстом привязанным к
+            объекту <code>burgerShack</code>.
+          </p>
+        </li>
+        <li>
+          <p>Объявлена переменная <code>burgerShackMessage</code>.</p>
+        </li>
+        <li>
+          <p>
+            Значение переменной <code>burgerShackMessage</code> это строка
+            <code>'Поли, всегда рады вас видеть в «Burger Shack».'</code>.
+          </p>
+        </li>
+      </ul>
+    </div>
+  </section>
+</section>
