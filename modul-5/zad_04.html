@@ -1,12 +1,82 @@
 <a href="../modul-5/index.html"><h1>Модуль - 05</h1></a>
-<h2>Задача - 04. .</h2>
+<h2>Задача - 04. Объект настроек.</h2>
 <a href="../modul-5/zad_03.html">&lt; &lt;Предыдущая задача</a>
 <a href="../modul-5/zad_05.html">Cледующая задача&gt;&gt;</a>
 
 <details closed="">
   <summary style="color: teal">Решение</summary>
   <pre><code>
-
+  function Car({ brand, model, price }) {
+    this.brand = brand;
+    this.model = model;
+    this.price = price;
+  }
+  console.log(new Car({ brand: "Audi", model: "Q3", price: 36000 }));
+  console.log(new Car({ brand: "BMW", model: "X5", price: 58900 }));
+  console.log(new Car({ brand: "Nissan", model: "Murano", price: 31700 }));
 </code></pre>
 </details>
-<script></script>
+<script>
+  function Car({ brand, model, price }) {
+    this.brand = brand;
+    this.model = model;
+    this.price = price;
+  }
+  console.log(new Car({ brand: "Audi", model: "Q3", price: 36000 }));
+  console.log(new Car({ brand: "BMW", model: "X5", price: 58900 }));
+  console.log(new Car({ brand: "Nissan", model: "Murano", price: 31700 }));
+</script>
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <details closed="">
+        <summary>Теория</summary>
+        <p>
+          Функции-конструкторы всегда принимают большое количество входных
+          данных для свойств будущего объекта. Поэтому, к ним также можно
+          применить паттерн «Объект настроек», передавая один объект с логично
+          именованными свойствами, вместо несвязанного набора аргументов.
+        </p>
+        <pre><code class="language-js hljs javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">User</span>(<span class="hljs-params">{ name, email }</span>) </span>{
+  <span class="hljs-keyword">this</span>.name = name;
+  <span class="hljs-keyword">this</span>.email = email;
+}
+
+<span class="hljs-keyword">const</span> mango = <span class="hljs-keyword">new</span> User({ <span class="hljs-attr">name</span>: <span class="hljs-string">'Манго'</span>, <span class="hljs-attr">email</span>: <span class="hljs-string">'mango@mail.com'</span> });
+<span class="hljs-keyword">const</span> poly = <span class="hljs-keyword">new</span> User({ <span class="hljs-attr">name</span>: <span class="hljs-string">'Поли'</span>, <span class="hljs-attr">email</span>: <span class="hljs-string">'poly@mail.com'</span> });
+</code></pre>
+      </details>
+      <h3 class="task">Задание</h3>
+      <p>
+        Выполни рефакторинг функции-конструктора <code>Car</code> так, чтобы она
+        принимала один параметр - объект со свойсвами <code>brand</code>,
+        <code>model</code> и <code>price</code>. Деструктуризируй объект в
+        сигнатуре (подписи) функции.
+      </p>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>Объявлена функция <code>Car({ brand, model, price })</code>.</li>
+        <li>
+          В результате вызова
+          <code>new Car({ brand: 'Audi', model: 'Q3', price: 36000 })</code>
+          получится объект
+          <code>{ brand: 'Audi', model: 'Q3', price: 36000 }</code>.
+        </li>
+        <li>
+          В результате вызова
+          <code>new Car({ brand: 'BMW', model: 'X5', price: 58900 })</code>
+          получится объект
+          <code>{ brand: 'BMW', model: 'X5', price: 58900 }</code>.
+        </li>
+        <li>
+          В результате вызова
+          <code
+            >new Car({ brand: 'Nissan', model: 'Murano', price: 31700 })</code
+          >
+          получится объект
+          <code>{ brand: 'Nissan', model: 'Murano', price: 31700 }</code>.
+        </li>
+      </ul>
+    </div>
+  </section>
+</section>
