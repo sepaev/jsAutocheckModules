@@ -1,12 +1,164 @@
 <a href="../modul-5/index.html"><h1>Модуль - 05</h1></a>
-<h2>Задача - 06. .</h2>
+<h2>Задача - 06. Хранилище.</h2>
 <a href="../modul-5/zad_05.html">&lt; &lt;Предыдущая задача</a>
 <a href="../modul-5/zad_07.html">Cледующая задача&gt;&gt;</a>
 
 <details closed="">
   <summary style="color: teal">Решение</summary>
   <pre><code>
+  function Storage(items) {
+    this.items = items;
+  }
 
+  Storage.prototype.getItems = function () {
+    return this.items;
+  };
+
+  Storage.prototype.addItem = function (newItem) {
+    const i = this.items.indexOf(newItem);
+    if (i < 0) {
+      this.items.push(newItem);
+      return `Добавлено ${newItem}`;
+    }
+    return newItem + " уже присутствует в списке";
+  };
+
+  Storage.prototype.removeItem = function (itemName) {
+    const i = this.items.indexOf(itemName);
+    if (i >= 0) {
+      this.items.splice(i, 1);
+      return `Удалено ` + itemName;
+    }
+    return itemName + ` отсутсвует в списке`;
+  };
+  // Пиши код выше этой строки
+  const storage = new Storage(["Нанитоиды", "Пролонгер", "Антигравитатор"]);
+  console.log(storage.getItems()); // ["Нанитоиды", "Пролонгер", "Антигравитатор"]
+  console.log(storage.addItem("Дроид"));
+  console.log(storage.addItem("Дроид"));
+  console.log(storage.getItems()); // ["Нанитоиды", "Пролонгер", "Антигравитатор", "Дроид"]
+  console.log(storage.removeItem("Пролонгер"));
+  console.log(storage.removeItem("Пролонгер"));
+  console.log(storage.getItems()); // ["Нанитоиды", "Антигравитатор", "Дроид"]
 </code></pre>
 </details>
-<script></script>
+<script>
+  function Storage(items) {
+    this.items = items;
+  }
+
+  Storage.prototype.getItems = function () {
+    return this.items;
+  };
+
+  Storage.prototype.addItem = function (newItem) {
+    const i = this.items.indexOf(newItem);
+    if (i < 0) {
+      this.items.push(newItem);
+      return `Добавлено ${newItem}`;
+    }
+    return newItem + " уже присутствует в списке";
+  };
+
+  Storage.prototype.removeItem = function (itemName) {
+    const i = this.items.indexOf(itemName);
+    if (i >= 0) {
+      this.items.splice(i, 1);
+      return `Удалено ` + itemName;
+    }
+    return itemName + ` отсутсвует в списке`;
+  };
+  // Пиши код выше этой строки
+  const storage = new Storage(["Нанитоиды", "Пролонгер", "Антигравитатор"]);
+  console.log(storage.getItems()); // ["Нанитоиды", "Пролонгер", "Антигравитатор"]
+  console.log(storage.addItem("Дроид"));
+  console.log(storage.addItem("Дроид"));
+  console.log(storage.getItems()); // ["Нанитоиды", "Пролонгер", "Антигравитатор", "Дроид"]
+  console.log(storage.removeItem("Пролонгер"));
+  console.log(storage.removeItem("Пролонгер"));
+  console.log(storage.getItems()); // ["Нанитоиды", "Антигравитатор", "Дроид"]
+</script>
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <h3 class="task">Задание</h3>
+      <p>
+        С помощью <code>Function Declaration</code> напиши функцию-конструктор
+        <code>Storage</code>, которая будет создавать объекты для управления
+        складом товаров. Функция ожидает только один аргумент - начальный массив
+        товаров, который записывается на создаваемый объект в свойство
+        <code>items</code>.
+      </p>
+      <p>Добавь методы на прототип:</p>
+      <ul>
+        <li>
+          <code>getItems()</code> - возвращает массив текущих товаров в свойстве
+          <code>items</code> объекта, который вызывает этот метод.
+        </li>
+        <li>
+          <code>addItem(newItem)</code> - принимает новый товар
+          <code>newItem</code> и добавляет его в массив товаров в свойстве
+          <code>items</code> объекта, который вызывает этот метод.
+        </li>
+        <li>
+          <code>removeItem(item)</code> - принимает товар <code>item</code> и
+          удаляет его из массива товаров в свойстве <code>items</code> объекта,
+          который вызывает этот метод.
+        </li>
+      </ul>
+      <p>
+        Под комментарием мы добавили инициализацию экземпляра и вызовы методов в
+        той последовательности, в которой твой код будут проверять тесты.
+        Пожалуйста ничего там не меняй.
+      </p>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>Объявлена функция <code>Storage(items)</code>.</li>
+        <li>
+          Вызов
+          <code>Storage.prototype.hasOwnProperty('getItems')</code> возвращает
+          <code>true</code>.
+        </li>
+        <li>
+          Вызов
+          <code>Storage.prototype.hasOwnProperty('addItem')</code> возвращает
+          <code>true</code>.
+        </li>
+        <li>
+          Вызов
+          <code>Storage.prototype.hasOwnProperty('removeItem')</code> возвращает
+          <code>true</code>.
+        </li>
+        <li>
+          В результате вызова
+          <code
+            >new Storage([ 'Нанитоиды', 'Пролонгер', 'Антигравитатор' ])</code
+          >
+          значение переменной <code>storage</code> это объект.
+        </li>
+        <li>
+          Вызов <code>Storage.prototype.isPrototypeOf(storage)</code> возвращает
+          <code>true</code>.
+        </li>
+        <li>
+          У объекта <code>storage</code> есть свойство <code>items</code>.
+        </li>
+        <li>
+          Первый вызов <code>storage.getItems()</code>, сразу после инциализации
+          экземпляра, возвращает массив
+          <code>["Нанитоиды", "Пролонгер", "Антигравитатор"]</code>.
+        </li>
+        <li>
+          Второй вызов, <code>storage.getItems()</code>, после вызова
+          <code>storage.addItem('Дроид')</code>, возвращает массив
+          <code>["Нанитоиды", "Пролонгер", "Антигравитатор", "Дроид"]</code>.
+        </li>
+        <li>
+          Третий вызов <code>storage.getItems()</code>, после вызова
+          <code>storage.removeItem('Пролонгер')</code>, возвращает массив
+          <code>["Нанитоиды", "Антигравитатор", "Дроид"]</code>.
+        </li>
+      </ul>
+    </div>
+  </section>
+</section>
