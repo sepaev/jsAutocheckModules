@@ -1,12 +1,155 @@
 <a href="../modul-5/index.html"><h1>Модуль - 05</h1></a>
-<h2>Задача - 05. .</h2>
+<h2>Задача - 05. Свойство <code>prototype</code>.</h2>
 <a href="../modul-5/zad_04.html">&lt; &lt;Предыдущая задача</a>
 <a href="../modul-5/zad_06.html">Cледующая задача&gt;&gt;</a>
 
 <details closed="">
   <summary style="color: teal">Решение</summary>
   <pre><code>
+  function Car({ brand, model, price }) {
+    this.brand = brand;
+    this.model = model;
+    this.price = price;
+  }
 
+  Car.prototype.getPrice = function () {
+    return this.price;
+  };
+
+  Car.prototype.changePrice = function (newPrice) {
+    let message = `У автомобиля ${this.brand} ${this.model} цена ${this.price} заменена на ${newPrice}`;
+    this.price = newPrice;
+    return message;
+  };
+
+  const newCar = new Car({ brand: "Audi", model: "Q3", price: 36000 });
+  console.log(newCar.getPrice());
+  console.log(newCar.changePrice(35000));
+  console.log(newCar.getPrice());
 </code></pre>
 </details>
-<script></script>
+<script>
+  function Car({ brand, model, price }) {
+    this.brand = brand;
+    this.model = model;
+    this.price = price;
+  }
+
+  Car.prototype.getPrice = function () {
+    return this.price;
+  };
+
+  Car.prototype.changePrice = function (newPrice) {
+    let message = `У автомобиля ${this.brand} ${this.model} цена ${this.price} заменена на ${newPrice}`;
+    this.price = newPrice;
+    return message;
+  };
+
+  const newCar = new Car({ brand: "Audi", model: "Q3", price: 36000 });
+  console.log(newCar.getPrice());
+  console.log(newCar.changePrice(35000));
+  console.log(newCar.getPrice());
+</script>
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <details closed="">
+        <summary>Теория</summary>
+        <p>
+          Мы уже знаем что такое прототип объекта, свойство
+          <code>__proto__</code> и как происходит поиск отсутствующих свойств
+          объекта по цепочке прототипов. Во время вызова функции-конструктора
+          через <code>new</code> и создания нового объекта со свойствами, ему
+          также устанавливается прототип.
+        </p>
+        <p>
+          У каждой функции, кроме стрелочных, есть свойство
+          <code>prototype</code>, значение которого это объект с единственным
+          свойством <code>constructor</code>, указывающим на саму
+          функцию-конструктор.
+        </p>
+        <pre><code class="language-js hljs javascript"><span class="hljs-function"><span class="hljs-keyword"><span class="hljs-function"><span class="hljs-keyword">function</span></span></span><span class="hljs-function"> </span><span class="hljs-title"><span class="hljs-function"><span class="hljs-title">User</span></span></span><span class="hljs-function">(</span><span class="hljs-params"></span><span class="hljs-function"><span class="hljs-params"></span>) </span></span>{}
+<span class="hljs-built_in"><span class="hljs-built_in">console</span></span>.log(User.prototype); <span class="hljs-comment"><span class="hljs-comment">// { constructor: User }</span></span>
+</code></pre>
+        <p>
+          При вызове функции-конструктора и создании объекта через
+          <code>new</code>, объект в свойстве
+          <code>prototype</code> функции-конструктора будет прототипом
+          создаваемого объекта.
+        </p>
+        <pre><code class="language-js hljs javascript"><span class="hljs-keyword"><span class="hljs-keyword">const</span></span> mango = <span class="hljs-keyword"><span class="hljs-keyword">new</span></span> User();
+<span class="hljs-built_in"><span class="hljs-built_in">console</span></span>.log(User.prototype.isPrototypeOf(mango)); <span class="hljs-comment"><span class="hljs-comment">// true</span></span>
+</code></pre>
+        <p>
+          В свойство <code>prototype</code> можно записывать свойства и методы,
+          которые будут доступны всем объектам созданным этой
+          функцией-конструктором. Методы в <code>prototype</code> будут
+          вызываться объектами созданными функцией-конструктором, поэтому для
+          доступа к свойствам вызываемого объекта в методах используется
+          ключевое слово <code>this</code>.
+        </p>
+        <pre><code class="language-js hljs javascript"><span class="hljs-function"><span class="hljs-keyword"><span class="hljs-function"><span class="hljs-keyword">function</span></span></span><span class="hljs-function"> </span><span class="hljs-title"><span class="hljs-function"><span class="hljs-title">User</span></span></span><span class="hljs-function">(</span><span class="hljs-params"><span class="hljs-function"><span class="hljs-params">{ name, email }</span></span></span><span class="hljs-function">) </span></span>{
+  <span class="hljs-keyword"><span class="hljs-keyword">this</span></span>.name = name;
+  <span class="hljs-keyword"><span class="hljs-keyword">this</span></span>.email = email;
+}
+
+User.prototype.getEmail = <span class="hljs-function"><span class="hljs-keyword"><span class="hljs-function"><span class="hljs-keyword">function</span></span></span><span class="hljs-function"> (</span><span class="hljs-params"></span><span class="hljs-function"><span class="hljs-params"></span>) </span></span>{
+  <span class="hljs-keyword"><span class="hljs-keyword">return</span></span> <span class="hljs-keyword"><span class="hljs-keyword">this</span></span>.email;
+};
+
+User.prototype.changeEmail = <span class="hljs-function"><span class="hljs-keyword"><span class="hljs-function"><span class="hljs-keyword">function</span></span></span><span class="hljs-function"> (</span><span class="hljs-params"><span class="hljs-function"><span class="hljs-params">newEmail</span></span></span><span class="hljs-function">) </span></span>{
+  <span class="hljs-keyword"><span class="hljs-keyword">this</span></span>.email = newEmail;
+};
+
+<span class="hljs-keyword"><span class="hljs-keyword">const</span></span> mango = <span class="hljs-keyword"><span class="hljs-keyword">new</span></span> User({ <span class="hljs-attr"><span class="hljs-attr">name</span></span>: <span class="hljs-string"><span class="hljs-string">'Манго'</span></span>, <span class="hljs-attr"><span class="hljs-attr">email</span></span>: <span class="hljs-string"><span class="hljs-string">'mango@mail.com'</span></span> });
+
+<span class="hljs-built_in"><span class="hljs-built_in">console</span></span>.log(mango.getEmail()); <span class="hljs-comment"><span class="hljs-comment">// mango@mail.com</span></span>
+mango.changeEmail(<span class="hljs-string"><span class="hljs-string">'mango@supermail.com'</span></span>);
+<span class="hljs-built_in"><span class="hljs-built_in">console</span></span>.log(mango.getEmail()); <span class="hljs-comment"><span class="hljs-comment">// mango@supermail.com</span></span>
+</code></pre>
+      </details>
+      <h3 class="task">Задание</h3>
+      <p>
+        Добавь в свойство <code>prototype</code> функции-конструктора
+        <code>Car</code> два метода:
+      </p>
+      <ul>
+        <li>
+          <code>getPrice()</code> - возвращает значение свойства
+          <code>price</code> из объекта который его будет вызывать.
+        </li>
+        <li>
+          <code>changePrice(newPrice)</code> - обновляет значение свойства
+          <code>price</code> у объекта который его будет вызывать на
+          <code>newPrice</code>.
+        </li>
+      </ul>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>Объявлена функция <code>Car({ brand, model, price })</code>.</li>
+        <li>
+          Вызов <code>Car.prototype.hasOwnProperty('getPrice')</code> возвращает
+          <code>true</code>.
+        </li>
+        <li>Значение <code>Car.prototype.getPrice</code> это функция.</li>
+        <li>
+          Вызов
+          <code>Car.prototype.hasOwnProperty('changePrice')</code> возвращает
+          <code>true</code>.
+        </li>
+        <li>Значение <code>Car.prototype.changePrice</code> это функция.</li>
+        <li>
+          У объекта, созданного вызовом
+          <code>new Car({ brand: 'Audi', model: 'Q3', price: 36000 })</code>,
+          вызов метода <code>getPrice()</code> вернет число <code>36000</code>.
+        </li>
+        <li>
+          У объекта, созданного вызовом
+          <code>new Car({ brand: 'Audi', model: 'Q3', price: 36000 })</code>,
+          вызов метода <code>changePrice(35000)</code> и последующем вызове
+          <code>getPrice()</code> вернет число <code>35000</code>.
+        </li>
+      </ul>
+    </div>
+  </section>
+</section>
