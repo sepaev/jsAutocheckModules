@@ -1,12 +1,126 @@
 <a href="../modul-5/index.html"><h1>Модуль - 05</h1></a>
-<h2>Задача - 02. .</h2>
+<h2>Задача - 02. Задача. Цепочка прототипов.</h2>
 <a href="../modul-5/zad_01.html">&lt; &lt;Предыдущая задача</a>
 <a href="../modul-5/zad_03.html">Cледующая задача&gt;&gt;</a>
 
 <details closed="">
   <summary style="color: teal">Решение</summary>
   <pre><code>
+  const ancestor = {
+    name: "Paul",
+    age: 83,
+    surname: "Dawson",
+    heritage: "Irish",
+  };
+  // Пиши код ниже этой строки
 
+  const parent = Object.create(ancestor);
+  parent.name = "Stacey";
+  parent.surname = "Moore";
+  parent.age = 54;
+
+  const child = Object.create(parent);
+  child.name = "Jason";
+  child.age = 27;
+
+  // Пиши код выше этой строки
 </code></pre>
 </details>
-<script></script>
+<script>
+  const ancestor = {
+    name: "Paul",
+    age: 83,
+    surname: "Dawson",
+    heritage: "Irish",
+  };
+  // Пиши код ниже этой строки
+
+  const parent = Object.create(ancestor);
+  parent.name = "Stacey";
+  parent.surname = "Moore";
+  parent.age = 54;
+
+  const child = Object.create(parent);
+  child.name = "Jason";
+  child.age = 27;
+
+  // Пиши код выше этой строки
+</script>
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <h3 class="task">Задание</h3>
+      <p>
+        Измени код, построив цепочку прототипов так, чтобы объект
+        <code>ancestor</code> был прототипом для <code>parent</code>, а тот в
+        свою очередь был прототипом для <code>child</code>.
+      </p>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>Объявлена переменная <code>ancestor</code>.</li>
+        <li>Значение переменной <code>ancestor</code> это объект.</li>
+        <li>Объявлена переменная <code>parent</code>.</li>
+        <li>Значение переменной <code>parent</code> это объект.</li>
+        <li>Объявлена переменная <code>child</code>.</li>
+        <li>Значение переменной <code>child</code> это объект.</li>
+        <li>
+          Вызов <code>parent.isPrototypeOf(child)</code> возвращает
+          <code>true</code>.
+        </li>
+        <li>
+          Обращение к <code>parent.surname</code> возвращает
+          <code>'Moore'</code>.
+        </li>
+        <li>
+          Обращение к <code>parent.heritage</code> возвращает
+          <code>'Irish'</code>.
+        </li>
+        <li>
+          Вызов <code>parent.hasOwnProperty('surname')</code> возвращает
+          <code>true</code>.
+        </li>
+        <li>
+          Вызов <code>parent.hasOwnProperty('heritage')</code> возвращает
+          <code>false</code>.
+        </li>
+        <li>
+          Вызов <code>ancestor.isPrototypeOf(parent)</code> возвращает
+          <code>true</code>.
+        </li>
+        <li>
+          Вызов <code>child.hasOwnProperty('surname')</code> возвращает
+          <code>false</code>.
+        </li>
+        <li>
+          Обращение к <code>child.surname</code> возвращает
+          <code>'Moore'</code>.
+        </li>
+        <li>
+          Обращение к <code>child.heritage</code> возвращает
+          <code>'Irish'</code>.
+        </li>
+        <li>
+          Вызов <code>child.hasOwnProperty('heritage')</code> возвращает
+          <code>false</code>.
+        </li>
+        <li>
+          Обращение к <code>ancestor.heritage</code> возвращает
+          <code>'Irish'</code>.
+        </li>
+        <li>
+          Вызов <code>ancestor.hasOwnProperty('surname')</code> возвращает
+          <code>true</code>.
+        </li>
+        <li>
+          Вызов <code>ancestor.hasOwnProperty('heritage')</code> возвращает
+          <code>true</code>.
+        </li>
+        <li>
+          Обращение к <code>ancestor.surname</code> возвращает
+          <code>'Dawson'</code>.
+        </li>
+        <li>Используется метод <code>Object.create()</code>.</li>
+      </ul>
+    </div>
+  </section>
+</section>
