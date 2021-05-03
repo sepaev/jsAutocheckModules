@@ -1,12 +1,153 @@
 <a href="../modul-5/index.html"><h1>Модуль - 05</h1></a>
-<h2>Задача - 01. .</h2>
+<h2>Задача - 01. Прототип объекта и метод <code>Object.create()</code>.</h2>
 <a href="../modul-4/zad_10.html">&lt; &lt;Предыдущая задача</a>
 <a href="../modul-5/zad_02.html">Cледующая задача&gt;&gt;</a>
 
 <details closed="">
   <summary style="color: teal">Решение</summary>
   <pre><code>
+  const parent = {
+    name: "Stacey",
+    surname: "Moore",
+    age: 54,
+    heritage: "Irish",
+  };
+  // Пиши код ниже этой строки
 
+  const child = Object.create(parent);
+
+  // Пиши код выше этой строки
+  child.name = "Jason";
+  child.age = 27;
 </code></pre>
 </details>
-<script></script>
+<script>
+  const parent = {
+    name: "Stacey",
+    surname: "Moore",
+    age: 54,
+    heritage: "Irish",
+  };
+  // Пиши код ниже этой строки
+
+  const child = Object.create(parent);
+
+  // Пиши код выше этой строки
+  child.name = "Jason";
+  child.age = 27;
+</script>
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <details closed="">
+        <summary>Теория</summary>
+        <p>
+          Объекты можно организовать в цепочки так, чтобы свойство не найденное
+          в одном объекте, автоматически искалось бы в другом. Связующим звеном
+          выступает специальное скрытое свойство <code>[[Prototype]]</code>,
+          которое в консоли браузера отображается как <code>__proto__</code>.
+        </p>
+        <pre><code class="language-js hljs javascript"><span class="hljs-keyword">const</span> animal = {
+  <span class="hljs-attr">legs</span>: <span class="hljs-number">4</span>
+};
+<span class="hljs-keyword">const</span> dog = <span class="hljs-built_in">Object</span>.create(animal);
+dog.name = <span class="hljs-string">'Манго'</span>;
+
+<span class="hljs-built_in">console</span>.log(dog); <span class="hljs-comment">// { name: 'Манго', __proto__: animal }</span>
+<span class="hljs-built_in">console</span>.log(animal.isPrototypeOf(dog)); <span class="hljs-comment">// true</span>
+</code></pre>
+        <p>
+          Метод <code>Object.create(obj)</code> создаёт и возвращает новый
+          объект, связывая его с объектом <code>obj</code>. Объект, на который
+          указывает ссылка в <code>__proto__</code>, называется прототипом. В
+          нашем примере объект <code>animal</code> это прототип для объекта
+          <code>dog</code>. Метод <code>isPrototypeOf()</code> проверяет
+          является ли объект <code>animal</code> прототипом для
+          <code>dog</code> и возвращает <code>true</code> или
+          <code>false</code>.
+        </p>
+        <pre><code class="language-js hljs javascript"><span class="hljs-built_in">console</span>.log(dog.hasOwnProperty(<span class="hljs-string">'name'</span>)); <span class="hljs-comment">// true</span>
+<span class="hljs-built_in">console</span>.log(dog.name); <span class="hljs-comment">// 'Манго'</span>
+
+<span class="hljs-built_in">console</span>.log(dog.hasOwnProperty(<span class="hljs-string">'legs'</span>)); <span class="hljs-comment">// false</span>
+<span class="hljs-built_in">console</span>.log(dog.legs); <span class="hljs-comment">// 4</span>
+</code></pre>
+        <p>
+          Обращение <code>dog.name</code> работает очевидным образом -
+          возвращает собственное свойство <code>name</code> объекта
+          <code>dog</code>. При обращении к <code>dog.legs</code> интерпретатор
+          ищет свойство <code>legs</code> в объекте <code>dog</code>, не находит
+          и продолжает поиск в объекте по ссылке из <code>dog.__proto__</code>,
+          то есть, в данном случае, в объекте <code>animal</code> - его
+          прототипе.
+        </p>
+        <p>
+          То есть прототип - это резервное хранилище свойств и методов объекта,
+          автоматически используемое при их поиске. У объекта, который выступает
+          прототипом может также быть свой прототип, у того свой, и так далее.
+        </p>
+        <p>
+          Поиск свойства выполняется до первого совпадения. Интерпретатор ищет
+          свойство по имени в объекте, если не находит, то обращается к свойству
+          <code>__proto__</code>, т. е. переходит по ссылке к объекту-прототипу,
+          а затем и прототипу прототипа. Если интерпретатор доберется до конца
+          цепочки и не найдет свойства с таким именем, то вернёт
+          <code>undefined</code>.
+        </p>
+      </details>
+      <h3 class="task">Задание</h3>
+      <p>
+        Измени код так, чтобы объект <code>parent</code> стал прототипом для
+        объекта в переменной <code>сhild</code>.
+      </p>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>Объявлена переменная <code>parent</code>.</li>
+        <li>Значение переменной <code>parent</code> это объект.</li>
+        <li>
+          Вызов <code>parent.hasOwnProperty('surname')</code> возвращает
+          <code>true</code>.
+        </li>
+        <li>
+          Вызов <code>parent.hasOwnProperty('heritage')</code> возвращает
+          <code>true</code>.
+        </li>
+        <li>Объявлена переменная <code>child</code>.</li>
+        <li>Значение переменной <code>child</code> это объект.</li>
+        <li>
+          Вызов <code>child.hasOwnProperty('name')</code> возвращает
+          <code>true</code>.
+        </li>
+        <li>
+          Обращение к <code>child.name</code> возвращает <code>'Jason'</code>.
+        </li>
+        <li>
+          Вызов <code>child.hasOwnProperty('age')</code> возвращает
+          <code>true</code>.
+        </li>
+        <li>Обращение к <code>child.age</code> возвращает <code>27</code>.</li>
+        <li>
+          Вызов <code>child.hasOwnProperty('surname')</code> возвращает
+          <code>false</code>.
+        </li>
+        <li>
+          Обращение к <code>child.surname</code> возвращает
+          <code>'Moore'</code>.
+        </li>
+        <li>
+          Вызов <code>child.hasOwnProperty('heritage')</code> возвращает
+          <code>false</code>.
+        </li>
+        <li>
+          Обращение к <code>child.heritage</code> возвращает
+          <code>'Irish'</code>.
+        </li>
+        <li>
+          Вызов <code>parent.isPrototypeOf(child)</code> возвращает
+          <code>true</code>.
+        </li>
+        <li>Используется метод <code>Object.create()</code>.</li>
+      </ul>
+    </div>
+  </section>
+</section>
