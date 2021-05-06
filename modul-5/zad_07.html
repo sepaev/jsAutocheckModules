@@ -1,12 +1,191 @@
 <a href="../modul-5/index.html"><h1>Модуль - 05</h1></a>
-<h2>Задача - 07. .</h2>
+<h2>Задача - 07. Конструктор строк.</h2>
 <a href="../modul-5/zad_06.html">&lt; &lt;Предыдущая задача</a>
 <a href="../modul-5/zad_08.html">Cледующая задача&gt;&gt;</a>
 
 <details closed="">
   <summary style="color: teal">Решение</summary>
   <pre><code>
+  "use strict";
 
+  function StringBuilder(baseValue) {
+    this.value = baseValue;
+  }
+
+  StringBuilder.prototype.getValue = function () {
+    return this.value;
+  };
+
+  StringBuilder.prototype.padStart = function (str) {
+    this.value = str + this.value;
+  };
+
+  StringBuilder.prototype.padEnd = function (str) {
+    this.value = this.value + str;
+  };
+
+  StringBuilder.prototype.padBoth = function (str) {
+    this.value = str + this.value + str;
+  };
+  // Пиши код выше этой строки
+  const builder = new StringBuilder(".");
+  console.log(builder.getValue()); // '.'
+  builder.padStart("^");
+  console.log(builder.getValue()); // '^.'
+  builder.padEnd("^");
+  console.log(builder.getValue()); // '^.^'
+  builder.padBoth("=");
+  console.log(builder.getValue()); // '=^.^='
 </code></pre>
 </details>
-<script></script>
+<script>
+  "use strict";
+
+  function StringBuilder(baseValue) {
+    this.value = baseValue;
+  }
+
+  StringBuilder.prototype.getValue = function () {
+    return this.value;
+  };
+
+  StringBuilder.prototype.padStart = function (str) {
+    this.value = str + this.value;
+  };
+
+  StringBuilder.prototype.padEnd = function (str) {
+    this.value = this.value + str;
+  };
+
+  StringBuilder.prototype.padBoth = function (str) {
+    this.value = str + this.value + str;
+  };
+  // Пиши код выше этой строки
+  const builder = new StringBuilder(".");
+  console.log(builder.getValue()); // '.'
+  builder.padStart("^");
+  console.log(builder.getValue()); // '^.'
+  builder.padEnd("^");
+  console.log(builder.getValue()); // '^.^'
+  builder.padBoth("=");
+  console.log(builder.getValue()); // '=^.^='
+</script>
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <h3 class="task">Задание</h3>
+      <p>
+        С помощью <code>Function Declaration</code> напиши функцию-конструктор
+        <code>StringBuilder</code>, которая принимает один параметр
+        <code>baseValue</code> - произвольную строку, которая записывается на
+        создаваемый объект в свойство <code>value</code>.
+      </p>
+      <p>Добавь методы на прототип:</p>
+      <ul>
+        <li>
+          <code>getValue()</code> - возвращает текущее значение свойства
+          <code>value</code>.
+        </li>
+        <li>
+          <code>padEnd(str)</code> - получает парметр <code>str</code> (строку)
+          и добавляет её в конец значения свойства <code>value</code> объекта,
+          который вызывает этот метод.
+        </li>
+        <li>
+          <code>padStart(str)</code> - получает парметр
+          <code>str</code> (строку) и добавляет её в начало значения свойства
+          <code>value</code> объекта, который вызывает этот метод.
+        </li>
+        <li>
+          <code>padBoth(str)</code> - получает парметр <code>str</code> (строку)
+          и добавляет её в начало и в конец значения свойства
+          <code>value</code> объекта, который вызывает этот метод.
+        </li>
+      </ul>
+      <p>
+        Под комментарием мы добавили инициализацию экземпляра и вызовы методов в
+        той последовательности, в которой твой код будут проверять тесты.
+        Пожалуйста ничего там не меняй.
+      </p>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>
+          <p>Объявлена функция <code>StringBuilder(baseValue)</code>.</p>
+        </li>
+        <li>
+          <p>
+            Вызов
+            <code>StringBuilder.prototype.hasOwnProperty('getValue')</code>
+            возвращает <code>true</code>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Вызов
+            <code>StringBuilder.prototype.hasOwnProperty('padEnd')</code>
+            возвращает <code>true</code>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Вызов
+            <code>StringBuilder.prototype.hasOwnProperty('padStart')</code>
+            возвращает <code>true</code>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Вызов
+            <code>StringBuilder.prototype.hasOwnProperty('padBoth')</code>
+            возвращает <code>true.</code>
+          </p>
+        </li>
+        <li>
+          <p>
+            В результате вызова <code>new StringBuilder('.')</code> значение
+            переменной <code>builder</code> это объект.
+          </p>
+        </li>
+        <li>
+          <p>
+            Вызов
+            <code>StringBuilder.prototype.isPrototypeOf(builder)</code>
+            возвращает <code>true</code>.
+          </p>
+        </li>
+        <li>
+          <p>
+            У объекта <code>builder</code> есть свойство <code>value</code>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Первый вызов <code>builder.getValue()</code>, сразу после
+            инциализации экземпляра, возвращает строку <code>'.'</code>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Второй вызов <code>builder.getValue()</code>, после вызова
+            <code>builder.padStart('^')</code>, возвращает строку
+            <code>'^.'</code>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Третий вызов <code>builder.getValue()</code>, после вызова
+            <code>builder.padEnd('^')</code>, возвращает строку
+            <code>'^.^'</code>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Четвёртый вызов <code>builder.getValue()</code>, после вызова
+            <code>builder.padBoth('=')</code>, возвращает строку
+            <code>'=^.^='</code>.
+          </p>
+        </li>
+      </ul>
+    </div>
+  </section>
+</section>
