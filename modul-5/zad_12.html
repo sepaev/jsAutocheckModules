@@ -1,5 +1,5 @@
 <a href="../modul-5/index.html"><h1>Модуль - 05</h1></a>
-<h2>Задача - 12. .</h2>
+<h2>Задача - 12. Хранилище 2.0.</h2>
 <a href="../modul-5/zad_11.html">&lt; &lt;Предыдущая задача</a>
 <a href="../modul-5/zad_13.html">Cледующая задача&gt;&gt;</a>
 
@@ -11,5 +11,96 @@
 </details>
 <script>
   "use strict";
-
+  class Storage {
+    #items;
+    constructor(items) {
+      this.#items = items;
+    }
+    getItems() {
+      return this.#items;
+    }
+    addItem(newItem) {
+      this.#items.push(newItem);
+    }
+    removeItem(item) {
+      const itemIndex = this.#items.indexOf(item);
+      this.#items.splice(itemIndex, 1);
+    }
+  }
+  // Пиши код выше этой строки
+  const storage = new Storage(["Нанитоиды", "Пролонгер", "Антигравитатор"]);
+  console.log(storage.getItems()); // ["Нанитоиды", "Пролонгер", "Антигравитатор"]
+  storage.addItem("Дроид");
+  console.log(storage.getItems()); // ["Нанитоиды", "Пролонгер", "Антигравитатор", "Дроид"]
+  storage.removeItem("Пролонгер");
+  console.log(storage.getItems()); // ["Нанитоиды", "Антигравитатор", "Дроид"]
+  console.log(Storage.prototype.hasOwnProperty("removeItem"));
 </script>
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <h3 class="task">Задание</h3>
+      <p>
+        Выполни рефакторинг заменив функцию-конструктор <code>Storage</code> на
+        класс с методами. Сделай так, чтобы свойство <code>items</code> было
+        приватным.
+      </p>
+      <p>
+        Под комментарием мы добавили инициализацию экземпляра и вызовы методов в
+        той последовательности, в которой твой код будут проверять тесты.
+        Пожалуйста ничего там не меняй.
+      </p>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>Объявлен класс <code>Storage</code>.</li>
+        <li>
+          Свойство <code>items</code> в классе <code>Storage</code> объявлено
+          приватным.
+        </li>
+        <li>Конструктор класса принимает свойство <code>items</code>.</li>
+        <li>
+          Вызов
+          <code>Storage.prototype.hasOwnProperty('getItems')</code> возвращает
+          <code>true</code>.
+        </li>
+        <li>
+          Вызов
+          <code>Storage.prototype.hasOwnProperty('addItem')</code> возвращает
+          <code>true</code>.
+        </li>
+        <li>
+          Вызов
+          <code>Storage.prototype.hasOwnProperty('removeItem')</code> возвращает
+          <code>true</code>.
+        </li>
+        <li>
+          В результате вызова
+          <code
+            >new Storage([ 'Нанитоиды', 'Пролонгер', 'Антигравитатор' ])</code
+          >
+          значение переменной <code>storage</code> это объект.
+        </li>
+        <li>
+          Вызов <code>Storage.prototype.isPrototypeOf(storage)</code> возвращает
+          <code>true</code>.
+        </li>
+        <li>У объекта <code>storage</code> нет свойства <code>items</code>.</li>
+        <li>
+          Первый вызов <code>storage.getItems()</code>, сразу после инциализации
+          экземпляра, возвращает массив
+          <code>["Нанитоиды", "Пролонгер", "Антигравитатор"]</code>.
+        </li>
+        <li>
+          Второй вызов, <code>storage.getItems()</code>, после вызова
+          <code>storage.addItem('Дроид')</code>, возвращает массив
+          <code>["Нанитоиды", "Пролонгер", "Антигравитатор", "Дроид"]</code>.
+        </li>
+        <li>
+          Третий вызов <code>storage.getItems()</code>, после вызова
+          <code>storage.removeItem('Пролонгер')</code>, возвращает массив
+          <code>["Нанитоиды", "Антигравитатор", "Дроид"]</code>.
+        </li>
+      </ul>
+    </div>
+  </section>
+</section>
