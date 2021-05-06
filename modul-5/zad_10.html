@@ -1,12 +1,148 @@
 <a href="../modul-5/index.html"><h1>Модуль - 05</h1></a>
-<h2>Задача - 10. .</h2>
+<h2>Задача - 10. Методы класса.</h2>
 <a href="../modul-5/zad_09.html">&lt; &lt;Предыдущая задача</a>
 <a href="../modul-5/zad_11.html">Cледующая задача&gt;&gt;</a>
 
 <details closed="">
   <summary style="color: teal">Решение</summary>
   <pre><code>
+  "use strict";
+  class Car {
+    constructor({ brand, model, price }) {
+      this.brand = brand;
+      this.model = model;
+      this.price = price;
+    }
 
+    getPrice() {
+      return this.price;
+    }
+
+    changePrice(newPrice) {
+      this.price = newPrice;
+      return `price was changed`;
+    }
+  }
+  const audiQ3 = new Car({ brand: "Audi", model: "Q3", price: 36000 });
+  console.log(audiQ3.getPrice());
+  console.log(audiQ3.changePrice(35000));
+  console.log(audiQ3.getPrice());
 </code></pre>
 </details>
-<script></script>
+<script>
+  "use strict";
+  class Car {
+    constructor({ brand, model, price }) {
+      this.brand = brand;
+      this.model = model;
+      this.price = price;
+    }
+
+    getPrice() {
+      return this.price;
+    }
+
+    changePrice(newPrice) {
+      this.price = newPrice;
+      return `price was changed`;
+    }
+  }
+  const audiQ3 = new Car({ brand: "Audi", model: "Q3", price: 36000 });
+  console.log(audiQ3.getPrice());
+  console.log(audiQ3.changePrice(35000));
+  console.log(audiQ3.getPrice());
+</script>
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <details closed="">
+        <summary>Теория</summary>
+        <p>
+          В функции-конструкторе объявление методов для работы со свойствами
+          экземпляра делается явно, путём обращения к свойству
+          <code>prototype</code> и добавления на него методов.
+        </p>
+        <pre><code class="language-js hljs javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">User</span>(<span class="hljs-params">{ name, email }</span>) </span>{
+  <span class="hljs-keyword">this</span>.name = name;
+  <span class="hljs-keyword">this</span>.email = email;
+}
+
+User.prototype.getEmail = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.email;
+};
+
+User.prototype.changeEmail = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">newEmail</span>) </span>{
+  <span class="hljs-keyword">this</span>.email = newEmail;
+};
+</code></pre>
+        <p>
+          В классах используется более удобный синтаксис методов класса, который
+          за ширмой делает тоже самое - добавляет методы на свойство
+          <code>User.prototype</code>. Поэтому в самом начале мы говорили что
+          классы это просто синтаксический сахар - удобная надстройка над
+          функциями-конструкторами.
+        </p>
+        <pre><code class="language-js hljs javascript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">User</span> </span>{
+  <span class="hljs-keyword">constructor</span>({ name, breed }) {
+    <span class="hljs-keyword">this</span>.name = name;
+    <span class="hljs-keyword">this</span>.breed = breed;
+  }
+
+  <span class="hljs-comment">// Аналог User.prototype.getEmail</span>
+  getEmail() {
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.email;
+  }
+
+  <span class="hljs-comment">// Аналог User.prototype.changeEmail</span>
+  changeEmail(newEmail) {
+    <span class="hljs-keyword">this</span>.email = newEmail;
+  }
+}
+</code></pre>
+      </details>
+      <h3 class="task">Задание</h3>
+      <p>Добавь классу <code>Car</code> две метода.</p>
+      <ul>
+        <li>
+          <code>getPrice()</code> - возвращает значение свойства
+          <code>price</code> из объекта который его будет вызывать.
+        </li>
+        <li>
+          <code>changePrice(newPrice)</code> - обновляет значение свойства
+          <code>price</code> у объекта который его будет вызывать на
+          <code>newPrice</code>.
+        </li>
+      </ul>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>Объявлен класс <code>Car</code>.</li>
+        <li>
+          Конструктор класса принимает объект со свойствами <code>brand</code>,
+          <code>model</code> и <code>price</code>.
+        </li>
+        <li>
+          Вызов <code>Car.prototype.hasOwnProperty('getPrice')</code> возвращает
+          <code>true</code>.
+        </li>
+        <li>Значение <code>Car.prototype.getPrice</code> это функция.</li>
+        <li>
+          Вызов
+          <code>Car.prototype.hasOwnProperty('changePrice')</code> возвращает
+          <code>true</code>.
+        </li>
+        <li>Значение <code>Car.prototype.changePrice</code> это функция.</li>
+        <li>
+          У объекта, созданного вызовом
+          <code>new Car({ brand: 'Audi', model: 'Q3', price: 36000 })</code>,
+          вызов метода <code>getPrice()</code> вернет число <code>36000</code>.
+        </li>
+        <li>
+          У объекта, созданного вызовом
+          <code>new Car({ brand: 'Audi', model: 'Q3', price: 36000 })</code>,
+          вызов метода <code>changePrice(35000)</code> и последующем вызове
+          <code>getPrice()</code> вернет число <code>35000</code>.
+        </li>
+      </ul>
+    </div>
+  </section>
+</section>

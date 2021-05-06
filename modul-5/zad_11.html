@@ -1,12 +1,167 @@
 <a href="../modul-5/index.html"><h1>Модуль - 05</h1></a>
-<h2>Задача - 11. .</h2>
+<h2>Задача - 11. Приватные свойства.</h2>
 <a href="../modul-5/zad_10.html">&lt; &lt;Предыдущая задача</a>
 <a href="../modul-5/zad_12.html">Cледующая задача&gt;&gt;</a>
 
 <details closed="">
   <summary style="color: teal">Решение</summary>
   <pre><code>
+  "use strict";
+  class Car {
+    #brand;
+    constructor({ brand, model, price }) {
+      this.#brand = brand;
+      this.model = model;
+      this.price = price;
+    }
 
+    getBrand() {
+      return this.#brand;
+    }
+
+    changeBrand(newBrand) {
+      this.#brand = newBrand;
+      return "brand was chenged";
+    }
+  }
+  const newCar = new Car({ brand: "Audi", model: "Q3", price: 36000 });
+  console.log(newCar.getBrand());
+  console.log(newCar.changeBrand("Honda"));
+  console.log(newCar.getBrand());
 </code></pre>
 </details>
-<script></script>
+<script>
+  "use strict";
+  class Car {
+    #brand;
+    constructor({ brand, model, price }) {
+      this.#brand = brand;
+      this.model = model;
+      this.price = price;
+    }
+
+    getBrand() {
+      return this.#brand;
+    }
+
+    changeBrand(newBrand) {
+      this.#brand = newBrand;
+      return "brand was chenged";
+    }
+  }
+  const newCar = new Car({ brand: "Audi", model: "Q3", price: 36000 });
+  console.log(newCar.getBrand());
+  console.log(newCar.changeBrand("Honda"));
+  console.log(newCar.getBrand());
+</script>
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <details closed="">
+        <summary>Теория</summary>
+        <p>
+          Инкапсуляция - это концепция позволяющая скрыть внутренние детали
+          класса. Пользователь класса должен получать доступ только к публичному
+          интерфейсу - набору публичных свойств и методов класса.
+        </p>
+        <p>
+          В классах инкапсуляция реализуется приватными свойствами, доступ к
+          которым можно получить только внутри класса. Это одно из отличий
+          классов и функций-конструкторов - в классах легко объявить приватные
+          свойства.
+        </p>
+        <p>
+          Допустим почта пользователя должна быть недоступна из вне, то есть
+          приватна. Добавляя к имени свойства символ <code>#</code> мы делаем
+          его приватным. Объявление приватного свойства до инциализации в
+          конструкторе - обязательно.
+        </p>
+        <pre><code class="language-js hljs javascript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">User</span> </span>{
+  <span class="hljs-comment">// Необязательное объявление публичных свойств</span>
+  name;
+  <span class="hljs-comment">// Обязательное объявление приватных свойств</span>
+  #email;
+
+  <span class="hljs-keyword">constructor</span>({ name, email }) {
+    <span class="hljs-keyword">this</span>.name = name;
+    <span class="hljs-keyword">this</span>.#email = email;
+  }
+
+  getEmail() {
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.#email;
+  }
+
+  changeEmail(newEmail) {
+    <span class="hljs-keyword">this</span>.#email = newEmail;
+  }
+}
+
+<span class="hljs-keyword">const</span> mango = <span class="hljs-keyword">new</span> User({ <span class="hljs-attr">name</span>: <span class="hljs-string">'Манго'</span>, <span class="hljs-attr">email</span>: <span class="hljs-string">'mango@mail.com'</span> });
+
+mango.changeEmail(<span class="hljs-string">'mango@supermail.com'</span>);
+<span class="hljs-built_in">console</span>.log(mango.getEmail()); <span class="hljs-comment">// mango@supermail.com</span>
+<span class="hljs-built_in">console</span>.log(mango.#email); <span class="hljs-comment">// Будет ошибка, это приватное свойство</span>
+</code></pre>
+        <p>
+          Методы класса также могут быть приватными, то есть доступны только в
+          теле класса. Для этого перед их именем необходимо поставить символ
+          <code>#</code>.
+        </p>
+      </details>
+      <h3 class="task">Задание</h3>
+      <p>
+        Выполни рефакторинг класса <code>Car</code> так, чтобы свойство
+        <code>brand</code> было приватным и добавь два метода для публичного
+        интерфейса, для чтения и изменения этого свойства.
+      </p>
+      <ul>
+        <li>
+          <code>getBrand()</code> - возвращает значение приватного свойства
+          <code>brand</code>.
+        </li>
+        <li>
+          <code>changeBrand(newBrand)</code> - изменяет значение приватного
+          свойства <code>brand</code> на <code>newBrand</code>.
+        </li>
+      </ul>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>Объявлен класс <code>Car</code>.</li>
+        <li>
+          Свойство <code>brand</code> в классе <code>Car</code> объявлено
+          приватным.
+        </li>
+        <li>
+          Конструктор класса принимает объект со свойствами <code>brand</code>,
+          <code>model</code> и <code>price</code>.
+        </li>
+        <li>
+          В результате вызова
+          <code>new Car({ brand: 'Audi', model: 'Q3', price: 36000 })</code>
+          получится объект <code>{ model: 'Q3', price: 36000 }</code>.
+        </li>
+        <li>
+          В результате вызова
+          <code>new Car({ brand: 'BMW', model: 'X5', price: 58900 })</code>
+          получится объект <code>{ model: 'X5', price: 58900 }</code>.
+        </li>
+        <li>
+          В результате вызова
+          <code
+            >new Car({ brand: 'Nissan', model: 'Murano', price: 31700 })</code
+          >
+          получится объект <code>{ model: 'Murano', price: 31700 }</code>.
+        </li>
+        <li>У экземпляра нет публичного свойства <code>brand</code>.</li>
+        <li>
+          Метод <code>getBrand()</code> возвращает значение приватного свойства
+          <code>brand</code>.
+        </li>
+        <li>
+          Метод <code>changeBrand('Honda')</code> изменяет значение приватного
+          свойства <code>brand</code> на 'Honda'.
+        </li>
+      </ul>
+    </div>
+  </section>
+</section>
