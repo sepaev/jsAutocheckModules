@@ -1,12 +1,119 @@
 <a href="../modul-5/index.html"><h1>Модуль - 05</h1></a>
-<h2>Задача - 09. .</h2>
+<h2>Задача - 09. Конструктор класса.</h2>
 <a href="../modul-5/zad_08.html">&lt; &lt;Предыдущая задача</a>
 <a href="../modul-5/zad_10.html">Cледующая задача&gt;&gt;</a>
 
 <details closed="">
   <summary style="color: teal">Решение</summary>
   <pre><code>
+  "use strict";
+  class Car {
+    constructor({ brand, model, price }) {
+      this.brand = brand;
+      this.model = model;
+      this.price = price;
+    }
+  }
 
+  console.log(new Car({ brand: "Audi", model: "Q3", price: 36000 }));
+  console.log(new Car({ brand: "BMW", model: "X5", price: 58900 }));
+  console.log(new Car({ brand: "Nissan", model: "Murano", price: 31700 }));
 </code></pre>
 </details>
-<script></script>
+<script>
+  "use strict";
+  class Car {
+    constructor({ brand, model, price }) {
+      this.brand = brand;
+      this.model = model;
+      this.price = price;
+    }
+  }
+
+  console.log(new Car({ brand: "Audi", model: "Q3", price: 36000 }));
+  console.log(new Car({ brand: "BMW", model: "X5", price: 58900 }));
+  console.log(new Car({ brand: "Nissan", model: "Murano", price: 31700 }));
+</script>
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <details closed="">
+        <summary>Теория</summary>
+        <p>
+          При вызове с опертором <code>new</code>, функция-конструктор добавляет
+          свойства на создаваемый объект.
+        </p>
+        <pre><code class="language-js hljs javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">User</span>(<span class="hljs-params">{ name, email }</span>) </span>{
+  <span class="hljs-keyword">this</span>.name = name;
+  <span class="hljs-keyword">this</span>.email = email;
+}
+</code></pre>
+        <p>
+          Для инициализации экземпляра в классе есть метод
+          <code>constructor</code>. Если он не объявлен, создаётся конструктор
+          по умолчанию - пустая функция, которая не изменяет экземпляр.
+        </p>
+        <pre><code class="language-js hljs javascript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">User</span> </span>{
+  <span class="hljs-comment">// Необязательное объявление публичных свойств</span>
+  name;
+  email;
+
+  <span class="hljs-comment">// Аналог функции-конструктора</span>
+  <span class="hljs-keyword">constructor</span>({ name, email }) {
+    <span class="hljs-comment">// Инициализация объявленных свойств</span>
+    <span class="hljs-keyword">this</span>.name = name;
+    <span class="hljs-keyword">this</span>.email = email;
+  }
+}
+
+<span class="hljs-keyword">const</span> mango = <span class="hljs-keyword">new</span> User({ <span class="hljs-attr">name</span>: <span class="hljs-string">'Манго'</span>, <span class="hljs-attr">email</span>: <span class="hljs-string">'mango@mail.com'</span> });
+</code></pre>
+        <p>
+          Свойства <code>name</code> и <code>email</code> называются
+          <strong>публичные свойства</strong>, потому что они будут собственными
+          свойствами объекта-экземпляра и к ним можно будет получить доступ
+          обратившись через точку.
+        </p>
+        <p>
+          Объявлять публичные свойства в теле класса до конструктора
+          необязательно, но это может повысить читабельность, так как код внутри
+          конструктора может быть довольно громоздким и визуально выделить набор
+          свойств класса будет затруднительно.
+        </p>
+      </details>
+      <h3 class="task">Задание</h3>
+      <p>
+        Выполни рефакторинг кода, заменив функцию-конструктор
+        <code>Car</code> на класс с методом-конструктором, принимающим объект.
+      </p>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>Объявлен класс <code>Car</code>.</li>
+        <li>
+          Конструктор класса принимает объект со свойствами <code>brand</code>,
+          <code>model</code> и <code>price</code>.
+        </li>
+        <li>
+          В результате вызова
+          <code>new Car({ brand: 'Audi', model: 'Q3', price: 36000 })</code>
+          получится объект
+          <code>{ brand: 'Audi', model: 'Q3', price: 36000 }</code>.
+        </li>
+        <li>
+          В результате вызова
+          <code>new Car({ brand: 'BMW', model: 'X5', price: 58900 })</code>
+          получится объект
+          <code>{ brand: 'BMW', model: 'X5', price: 58900 }</code>.
+        </li>
+        <li>
+          В результате вызова
+          <code
+            >new Car({ brand: 'Nissan', model: 'Murano', price: 31700 })</code
+          >
+          получится объект
+          <code>{ brand: 'Nissan', model: 'Murano', price: 31700 }</code>.
+        </li>
+      </ul>
+    </div>
+  </section>
+</section>
