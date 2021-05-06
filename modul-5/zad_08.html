@@ -1,12 +1,64 @@
 <a href="../modul-5/index.html"><h1>Модуль - 05</h1></a>
-<h2>Задача - 08. .</h2>
+<h2>Задача - 08. Объявление класса.</h2>
 <a href="../modul-5/zad_07.html">&lt; &lt;Предыдущая задача</a>
 <a href="../modul-5/zad_09.html">Cледующая задача&gt;&gt;</a>
 
 <details closed="">
   <summary style="color: teal">Решение</summary>
   <pre><code>
+  class Car {}
 
+  const auto = new Car();
 </code></pre>
 </details>
-<script></script>
+<script>
+  class Car {}
+
+  const auto = new Car();
+</script>
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <details closed="">
+        <summary>Теория</summary>
+        <p>
+          Классы это синтаксический сахар (надстройка) над
+          функциями-конструкторами - новый удобный способ для задания
+          конструктора вместе с прототипом.
+        </p>
+        <pre><code class="language-js hljs javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">User</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-comment">// Тело функции-конструктора</span>
+}
+
+<span class="hljs-keyword">const</span> mango = <span class="hljs-keyword">new</span> User();
+</code></pre>
+        <p>
+          Объявление класса начинается с ключевого слова <code>class</code>,
+          после которого идёт имя класса и фигурные скобки - его тело.
+        </p>
+        <pre><code class="language-js hljs javascript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">User</span> </span>{
+  <span class="hljs-comment">// Тело класса</span>
+}
+
+<span class="hljs-keyword">const</span> mango = <span class="hljs-keyword">new</span> User();
+</code></pre>
+        <p>
+          Результат вызова <code>new User()</code> это объект, как и в
+          функциях-конструкторах, он называется
+          <strong>экземпляр класса</strong>, потому что содержит данные и
+          поведение, описываемые классом.
+        </p>
+      </details>
+      <h3 class="task">Задание</h3>
+      <p>
+        Используя ключевое слово <code>class</code> объяви класс
+        <code>Car</code> с пустым телом.
+      </p>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>Объявлен класс <code>Car</code> с пустым телом.</li>
+        <li>Результат вызова <code>new Car()</code> это пустой объект.</li>
+      </ul>
+    </div>
+  </section>
+</section>
