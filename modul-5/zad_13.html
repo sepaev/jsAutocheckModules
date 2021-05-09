@@ -1,15 +1,143 @@
 <a href="../modul-5/index.html"><h1>Модуль - 05</h1></a>
-<h2>Задача - 13. .</h2>
+<h2>Задача - 13. Конструктор строк 2.0.</h2>
 <a href="../modul-5/zad_12.html">&lt; &lt;Предыдущая задача</a>
 <a href="../modul-5/zad_14.html">Cледующая задача&gt;&gt;</a>
 
 <details closed="">
   <summary style="color: teal">Решение</summary>
   <pre><code>
+  "use strict";
+  class StringBuilder {
+    #value;
+    constructor(baseValue) {
+      this.#value = baseValue;
+    }
+    getValue() {
+      return this.#value;
+    }
+    padEnd(str) {
+      return (this.#value += str);
+    }
+    padStart(str) {
+      return (this.#value = str + this.#value);
+    }
+    padBoth(str) {
+      this.padStart(str);
+      this.padEnd(str);
+    }
+  }
 
+  // Пиши код выше этой строки
+  const builder = new StringBuilder(".");
+  console.log(builder.getValue()); // '.'
+  builder.padStart("^");
+  console.log(builder.getValue()); // '^.'
+  builder.padEnd("^");
+  console.log(builder.getValue()); // '^.^'
+  builder.padBoth("=");
+  console.log(builder.getValue()); // '=^.^='
 </code></pre>
 </details>
 <script>
   "use strict";
+  class StringBuilder {
+    #value;
+    constructor(baseValue) {
+      this.#value = baseValue;
+    }
+    getValue() {
+      return this.#value;
+    }
+    padEnd(str) {
+      return (this.#value += str);
+    }
+    padStart(str) {
+      return (this.#value = str + this.#value);
+    }
+    padBoth(str) {
+      this.padStart(str);
+      this.padEnd(str);
+    }
+  }
 
+  // Пиши код выше этой строки
+  const builder = new StringBuilder(".");
+  console.log(builder.getValue()); // '.'
+  builder.padStart("^");
+  console.log(builder.getValue()); // '^.'
+  builder.padEnd("^");
+  console.log(builder.getValue()); // '^.^'
+  builder.padBoth("=");
+  console.log(builder.getValue()); // '=^.^='
 </script>
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <h3 class="task">Задание</h3>
+      <p>
+        Выполни рефакторинг заменив функцию-конструктор
+        <code>StringBuilder</code> на класс с методами. Сделай так, чтобы
+        свойство <code>value</code> было приватным.
+      </p>
+      <p>
+        Под комментарием мы добавили инициализацию экземпляра и вызовы методов в
+        той последовательности, в которой твой код будут проверять тесты.
+        Пожалуйста ничего там не меняй.
+      </p>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>Объявлен класс <code>StringBuilder</code>.</li>
+        <li>
+          Свойство <code>value</code> в классе
+          <code>StringBuilder</code> объявлено приватным.
+        </li>
+        <li>
+          Вызов
+          <code>StringBuilder.prototype.hasOwnProperty('getValue')</code>
+          возвращает <code>true</code>.
+        </li>
+        <li>
+          Вызов
+          <code>StringBuilder.prototype.hasOwnProperty('padEnd')</code>
+          возвращает <code>true</code>.
+        </li>
+        <li>
+          Вызов
+          <code>StringBuilder.prototype.hasOwnProperty('padStart')</code>
+          возвращает <code>true</code>.
+        </li>
+        <li>
+          Вызов
+          <code>StringBuilder.prototype.hasOwnProperty('padBoth')</code>
+          возвращает <code>true</code>.
+        </li>
+        <li>
+          В результате вызова <code>new StringBuilder('.')</code> значение
+          переменной <code>builder</code> это объект.
+        </li>
+        <li>
+          Вызов
+          <code>StringBuilder.prototype.isPrototypeOf(builder)</code> возвращает
+          <code>true</code>.
+        </li>
+        <li>У объекта <code>builder</code> нет свойства <code>value</code>.</li>
+        <li>
+          Первый вызов <code>builder.getValue()</code>, сразу после инциализации
+          экземпляра, возвращает строку '.'.
+        </li>
+        <li>
+          Второй вызов <code>builder.getValue()</code>, после вызова
+          <code>builder.padStart('^')</code>, возвращает строку '^.'.
+        </li>
+        <li>
+          Третий вызов <code>builder.getValue()</code>, после вызова
+          <code>builder.padEnd('^')</code>, возвращает строку '^.^'.
+        </li>
+        <li>
+          Четвёртый вызов <code>builder.getValue()</code>, после вызова
+          <code>builder.padBoth('=')</code>, возвращает строку '=^.^='.
+        </li>
+      </ul>
+    </div>
+  </section>
+</section>
