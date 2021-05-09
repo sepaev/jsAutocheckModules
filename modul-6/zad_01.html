@@ -1,15 +1,126 @@
 <a href="../modul-6/index.html"><h1>Модуль - 06</h1></a>
-<h2>Задача - 01. .</h2>
+<h2>Задача - 01. Метод <code>forEach(callback)</code>.</h2>
 <a href="../modul-5/zad_10.html">&lt; &lt;Предыдущая задача</a>
 <a href="../modul-6/zad_02.html">Cледующая задача&gt;&gt;</a>
 
 <details closed="">
   <summary style="color: teal">Решение</summary>
   <pre><code>
+  "use strict";
+  function calculateTotalPrice(orderedItems) {
+    let totalPrice = 0;
+    // Пиши код ниже этой строки
 
+    orderedItems.forEach((number) => {
+      totalPrice += number;
+    });
+    // Пиши код выше этой строки
+    return totalPrice;
+  }
+  console.log(calculateTotalPrice([12, 85, 37, 4]));
+  console.log(calculateTotalPrice([164, 48, 291]));
+  console.log(calculateTotalPrice([412, 371, 94, 63, 176]));
 </code></pre>
 </details>
 <script>
   "use strict";
+  function calculateTotalPrice(orderedItems) {
+    let totalPrice = 0;
+    // Пиши код ниже этой строки
 
+    orderedItems.forEach((number) => {
+      totalPrice += number;
+    });
+    // Пиши код выше этой строки
+    return totalPrice;
+  }
+  console.log(calculateTotalPrice([12, 85, 37, 4]));
+  console.log(calculateTotalPrice([164, 48, 291]));
+  console.log(calculateTotalPrice([412, 371, 94, 63, 176]));
 </script>
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <details closed="">
+        <summary>Теория</summary>
+        <p>
+          Перебирающий метод массива, который используется как замена циклов
+          <code>for</code> и <code>for...of</code> при работе с коллекцией.
+        </p>
+        <pre><code class="language-js hljs javascript">массив.forEach(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">callback</span>(<span class="hljs-params">element, index, array</span>) </span>{
+  <span class="hljs-comment">// Тело коллбек-функции</span>
+});
+</code></pre>
+        <ul>
+          <li>Поэлементно перебирает массив.</li>
+          <li>Вызывает коллбек-функцию для каждого элемента массива.</li>
+          <li>Ничего не возвращает.</li>
+        </ul>
+        <p>
+          Аргументы коллбек-функции это значение текущего элемента
+          <code>element</code>, его индекс <code>index</code> и сам исходный
+          массив <code>array</code>. Объявлять можно только те параметры которые
+          нужны, чаще всего это элемент, главное не забывать про их порядок.
+        </p>
+        <pre><code class="language-js hljs javascript"><span class="hljs-keyword">const</span> numbers = [<span class="hljs-number">5</span>, <span class="hljs-number">10</span>, <span class="hljs-number">15</span>, <span class="hljs-number">20</span>, <span class="hljs-number">25</span>];
+
+<span class="hljs-comment">// Классический for</span>
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; numbers.length; i += <span class="hljs-number">1</span>) {
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Индекс <span class="hljs-subst">${i}</span>, значение <span class="hljs-subst">${numbers[i]}</span>`</span>);
+}
+
+<span class="hljs-comment">// Перебирающий forEach</span>
+numbers.forEach(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">number, index</span>) </span>{
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Индекс <span class="hljs-subst">${index}</span>, значение <span class="hljs-subst">${number}</span>`</span>);
+});
+</code></pre>
+        <p>
+          Единственным случаем, когда стоит использовать циклы
+          <code>for</code> или <code>for...of</code> для перебора массива, это
+          задачи с прерыванием выполнения цикла. Прервать выполнение метода
+          <code>forEach</code> нельзя, он всегда перебирает массив до конца.
+        </p>
+      </details>
+      <h3 class="task">Задание</h3>
+      <p>
+        Функция <code>calculateTotalPrice(orderedItems)</code> принимает один
+        параметр <code>orderedItems</code> - массив чисел, и рассчитывает общую
+        сумму его элементов, которая сохраняется в переменной
+        <code>totalPrice</code> и возвращается как результат работы функции.
+      </p>
+      <p>
+        Выполни рефакторинг функции так, чтобы вместо цикла <code>for</code> она
+        использовала метод <code>forEach</code>.
+      </p>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>
+          Объявлена функция <code>calculateTotalPrice(orderedItems)</code>.
+        </li>
+        <li>
+          Для перебора массива <code>orderedItems</code> использован метод
+          <code>forEach</code>.
+        </li>
+        <li>
+          Вызов функции
+          <code>calculateTotalPrice([12, 85, 37, 4])</code> возвращает
+          <code>138</code>.
+        </li>
+        <li>
+          Вызов функции
+          <code>calculateTotalPrice([164, 48, 291])</code> возвращает
+          <code>503</code>.
+        </li>
+        <li>
+          Вызов функции
+          <code>calculateTotalPrice([412, 371, 94, 63, 176])</code> возвращает
+          <code>1116</code>.
+        </li>
+        <li>
+          Вызов функции со случайными, но валидными аргументами, возвращает
+          правильное значение.
+        </li>
+      </ul>
+    </div>
+  </section>
+</section>
