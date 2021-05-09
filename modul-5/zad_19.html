@@ -1,15 +1,221 @@
 <a href="../modul-5/index.html"><h1>Модуль - 05</h1></a>
-<h2>Задача - 19. .</h2>
+<h2>Задача - 19. Методы дочернего класса.</h2>
 <a href="../modul-5/zad_18.html">&lt; &lt;Предыдущая задача</a>
 <a href="../modul-6/zad_01.html">Cледующая задача&gt;&gt;</a>
 
 <details closed="">
   <summary style="color: teal">Решение</summary>
   <pre><code>
+  "use strict";
+  class User {
+    email;
 
+    constructor(email) {
+      this.email = email;
+    }
+
+    get email() {
+      return this.email;
+    }
+
+    set email(newEmail) {
+      this.email = newEmail;
+    }
+  }
+  class Admin extends User {
+    // Пиши код ниже этой строки
+    static AccessLevel = {
+      BASIC: "basic",
+      SUPERUSER: "superuser",
+    };
+
+    accessLevel;
+    blacklistedEmails;
+
+    constructor({ email, accessLevel }) {
+      super(email);
+      this.accessLevel = accessLevel;
+      this.blacklistedEmails = [];
+    }
+    blacklist(email) {
+      if (this.isBlacklisted(email)) {
+        return `Email "${email}"" alredy exists in blacklist`;
+      }
+      this.blacklistedEmails.push(email);
+      return `Email "${email}" successfully added to blacklist`;
+    }
+    blacklistedEmails() {
+      return this.blacklistedEmails;
+    }
+    isBlacklisted(email) {
+      return this.blacklistedEmails.includes(email);
+    }
+    // Пиши код выше этой строки
+  }
+
+  const mango = new Admin({
+    email: "mango@mail.com",
+    accessLevel: Admin.AccessLevel.SUPERUSER,
+  });
+
+  console.log(mango.email); // mango@mail.com
+  console.log(mango.accessLevel); // superuser
+  console.log(mango.blacklist("poly@mail.com"));
+  console.log(mango.blacklist("poly@mail.com"));
+  console.log(mango.blacklistedEmails); // 'poly@mail.com'
+  console.log(mango.isBlacklisted("mango@mail.com")); //  false
+  console.log(mango.isBlacklisted("poly@mail.com")); // true
 </code></pre>
 </details>
 <script>
   "use strict";
+  class User {
+    email;
 
+    constructor(email) {
+      this.email = email;
+    }
+
+    get email() {
+      return this.email;
+    }
+
+    set email(newEmail) {
+      this.email = newEmail;
+    }
+  }
+  class Admin extends User {
+    // Пиши код ниже этой строки
+    static AccessLevel = {
+      BASIC: "basic",
+      SUPERUSER: "superuser",
+    };
+
+    accessLevel;
+    blacklistedEmails;
+
+    constructor({ email, accessLevel }) {
+      super(email);
+      this.accessLevel = accessLevel;
+      this.blacklistedEmails = [];
+    }
+    blacklist(email) {
+      if (this.isBlacklisted(email)) {
+        return `Email "${email}"" alredy exists in blacklist`;
+      }
+      this.blacklistedEmails.push(email);
+      return `Email "${email}" successfully added to blacklist`;
+    }
+    blacklistedEmails() {
+      return this.blacklistedEmails;
+    }
+    isBlacklisted(email) {
+      return this.blacklistedEmails.includes(email);
+    }
+    // Пиши код выше этой строки
+  }
+
+  const mango = new Admin({
+    email: "mango@mail.com",
+    accessLevel: Admin.AccessLevel.SUPERUSER,
+  });
+
+  console.log(mango.email); // mango@mail.com
+  console.log(mango.accessLevel); // superuser
+  console.log(mango.blacklist("poly@mail.com"));
+  console.log(mango.blacklist("poly@mail.com"));
+  console.log(mango.blacklistedEmails); // 'poly@mail.com'
+  console.log(mango.isBlacklisted("mango@mail.com")); //  false
+  console.log(mango.isBlacklisted("poly@mail.com")); // true
 </script>
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <details closed="">
+        <summary>Теория</summary>
+        <p>
+          В дочернем классе можно объявлять методы которые будут доступны только
+          его экземплярам.
+        </p>
+        <pre><code class="language-js hljs javascript"><span class="hljs-comment">// Представим что выше есть объявление класса User</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ContentWriter</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">User</span> </span>{
+  posts;
+
+  <span class="hljs-keyword">constructor</span>({ email, posts }) {
+    <span class="hljs-keyword">super</span>(email);
+    <span class="hljs-keyword">this</span>.posts = posts;
+  }
+
+  addPost(post) {
+    <span class="hljs-keyword">this</span>.posts.push(post);
+  }
+}
+
+<span class="hljs-keyword">const</span> writer = <span class="hljs-keyword">new</span> ContentWriter({ <span class="hljs-attr">email</span>: <span class="hljs-string">'mango@mail.com'</span>, <span class="hljs-attr">posts</span>: [] });
+<span class="hljs-built_in">console</span>.log(writer); <span class="hljs-comment">// { email: 'mango@mail.com', posts: [] }</span>
+<span class="hljs-built_in">console</span>.log(writer.email); <span class="hljs-comment">// 'mango@mail.com'</span>
+writer.addPost(<span class="hljs-string">'post-1'</span>);
+<span class="hljs-built_in">console</span>.log(writer.posts); <span class="hljs-comment">// ['post-1']</span>
+</code></pre>
+      </details>
+      <h3 class="task">Задание</h3>
+      <p>Добавь классу <code>Admin</code> следующие свойства и методы.</p>
+      <ul>
+        <li>
+          Публичное свойство <code>blacklistedEmails</code> для хранения чёрного
+          списка почтовых адресов пользователей. Значение по умолчанию это
+          пустой массив.
+        </li>
+        <li>
+          Публичный метод <code>blacklist(email)</code> для добавления почты в
+          чёрный список. Метод должен добавлять значение параметра
+          <code>email</code> в массив хранящийся в свойстве
+          <code>blacklistedEmails</code>.
+        </li>
+        <li>
+          Публичный метод <code>isBlacklisted(email)</code> для проверки почты в
+          чёрном списке. Метод должен проверять наличие значения параметра
+          <code>email</code> в массиве хранящемся в свойстве
+          <code>blacklistedEmails</code> и возвращать <code>true</code> или
+          <code>false</code>.
+        </li>
+      </ul>
+      <p>
+        После объявления класса мы добавили инициализацию экземпляра и вызовы
+        методов в той последовательности, в которой твой код будут проверять
+        тесты. Пожалуйста ничего там не меняй.
+      </p>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>Объявлен класс <code>Admin</code>.</li>
+        <li>Класс <code>Admin</code> наследует от класса <code>User</code>.</li>
+        <li>
+          У класса <code>Admin</code> есть публичное свойство
+          <code>blacklistedEmails</code>.
+        </li>
+        <li>
+          У класса <code>Admin</code> есть публичный метод
+          <code>blacklist</code>.
+        </li>
+        <li>
+          У класса <code>Admin</code> есть публичный метод
+          <code>isBlacklisted</code>.
+        </li>
+        <li>
+          После вызова <code>mango.blacklist('poly@mail.com')</code> значение
+          свойства <code>blacklistedEmails</code> это массив
+          <code>[ 'poly@mail.com' ]</code>.
+        </li>
+        <li>
+          Вызов <code>mango.isBlacklisted('mango@mail.com')</code> возвращает
+          <code>false</code>.
+        </li>
+        <li>
+          Вызов <code>mango.isBlacklisted('poly@mail.com')</code> возвращает
+          <code>true</code>.
+        </li>
+      </ul>
+    </div>
+  </section>
+</section>
