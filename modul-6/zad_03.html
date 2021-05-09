@@ -1,15 +1,107 @@
 <a href="../modul-6/index.html"><h1>Модуль - 06</h1></a>
-<h2>Задача - 03. .</h2>
+<h2>Задача - 03. Задача. Общие элементы.</h2>
 <a href="../modul-6/zad_02.html">&lt; &lt;Предыдущая задача</a>
 <a href="../modul-6/zad_04.html">Cледующая задача&gt;&gt;</a>
 
 <details closed="">
   <summary style="color: teal">Решение</summary>
   <pre><code>
+  "use strict";
+  function getCommonElements(firstArray, secondArray) {
+    const commonElements = [];
+    // Пиши код ниже этой строки
 
+    firstArray.forEach((firstNumber) => {
+      if (secondArray.includes(firstNumber)) {
+        commonElements.push(firstNumber);
+      }
+    });
+
+    return commonElements;
+    // Пиши код выше этой строки
+  }
+  console.log(getCommonElements([1, 2, 3], [2, 4])); // возвращает [2].
+  console.log(getCommonElements([1, 2, 3], [2, 1, 17, 19])); // возвращает [1, 2].
+  console.log(getCommonElements([24, 12, 27, 3], [12, 8, 3, 36, 27])); // возвращает [12, 27, 3].
+  console.log(getCommonElements([10, 20, 30, 40], [4, 30, 17, 10, 40])); // возвращает [10, 30, 40].
+  console.log(getCommonElements([1, 2, 3], [10, 20, 30])); // возвращает [].
 </code></pre>
 </details>
 <script>
   "use strict";
+  function getCommonElements(firstArray, secondArray) {
+    const commonElements = [];
+    // Пиши код ниже этой строки
 
+    firstArray.forEach((firstNumber) => {
+      if (secondArray.includes(firstNumber)) {
+        commonElements.push(firstNumber);
+      }
+    });
+
+    return commonElements;
+    // Пиши код выше этой строки
+  }
+  console.log(getCommonElements([1, 2, 3], [2, 4])); // возвращает [2].
+  console.log(getCommonElements([1, 2, 3], [2, 1, 17, 19])); // возвращает [1, 2].
+  console.log(getCommonElements([24, 12, 27, 3], [12, 8, 3, 36, 27])); // возвращает [12, 27, 3].
+  console.log(getCommonElements([10, 20, 30, 40], [4, 30, 17, 10, 40])); // возвращает [10, 30, 40].
+  console.log(getCommonElements([1, 2, 3], [10, 20, 30])); // возвращает [].
 </script>
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <h3 class="task">Задание</h3>
+      <p>
+        Функция
+        <code>getCommonElements(firstArray, secondArray)</code> принимает два
+        массива произвольной длины в параметры <code>firstArray</code> и
+        <code>secondArray</code>, и возвращает новый массив их общих элементов,
+        то есть тех которые есть в обоих массивах.
+      </p>
+      <p>
+        Выполни рефакторинг функции так, чтобы вместо цикла <code>for</code> она
+        использовала метод <code>forEach</code>.
+      </p>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>
+          Объявлена функция
+          <code>getCommonElements(firstArray, secondArray)</code>.
+        </li>
+        <li>
+          Для перебора параметра (массива) использован метод
+          <code>forEach</code>.
+        </li>
+        <li>
+          Вызов <code>getCommonElements([1, 2, 3], [2, 4])</code> возвращает
+          <code>[2]</code>.
+        </li>
+        <li>
+          Вызов
+          <code>getCommonElements([1, 2, 3], [2, 1, 17, 19])</code> возвращает
+          <code>[1, 2]</code>.
+        </li>
+        <li>
+          Вызов
+          <code>getCommonElements([24, 12, 27, 3], [12, 8, 3, 36, 27])</code>
+          возвращает <code>[12, 27, 3]</code>.
+        </li>
+        <li>
+          Вызов
+          <code>getCommonElements([10, 20, 30, 40], [4, 30, 17, 10, 40])</code>
+          возвращает <code>[10, 30, 40]</code>.
+        </li>
+        <li>
+          Вызов
+          <code>getCommonElements([1, 2, 3], [10, 20, 30])</code> возвращает
+          <code>[]</code>.
+        </li>
+        <li>
+          Вызов функции со случайными, но валидными аргументами, возвращает
+          правильное значение.
+        </li>
+      </ul>
+    </div>
+  </section>
+</section>

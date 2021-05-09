@@ -1,5 +1,5 @@
 <a href="../modul-6/index.html"><h1>Модуль - 06</h1></a>
-<h2>Задача - 04. .</h2>
+<h2>Задача - 04. Стрелочные функции.</h2>
 <a href="../modul-6/zad_03.html">&lt; &lt;Предыдущая задача</a>
 <a href="../modul-6/zad_05.html">Cледующая задача&gt;&gt;</a>
 
@@ -11,5 +11,93 @@
 </details>
 <script>
   "use strict";
+  // Пиши код ниже этой строки
 
+  function calculateTotalPrice(quantity, pricePerItem) {
+    // Пиши код выше этой строки
+    return quantity * pricePerItem;
+  }
 </script>
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <details closed="">
+        <summary>Теория</summary>
+        <p>
+          Стрелочные функции имеют сокращённый, более лаконичный синтаксис, что
+          уменьшает объем кода, особенно когда функция маленькая или если она
+          используется как коллбек.
+        </p>
+        <p>
+          Все стрелки создаются как функциональное выражение, и если функция не
+          анонимна, то она должна быть присвоена переменной.
+        </p>
+        <pre><code class="language-js hljs javascript"><span class="hljs-comment">// Обычное объявление функции</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">classicAdd</span>(<span class="hljs-params">a, b, c</span>) </span>{
+  <span class="hljs-keyword">return</span> a + b + c;
+}
+
+<span class="hljs-comment">// Тоже самое как стрелочная функция</span>
+<span class="hljs-keyword">const</span> arrowAdd = <span class="hljs-function">(<span class="hljs-params">a, b, c</span>) =&gt;</span> {
+  <span class="hljs-keyword">return</span> a + b + c;
+};
+</code></pre>
+        <p>
+          Ключевое слово <code>function</code> не используется, вместо этого
+          сразу идёт объявление параметров, за которыми следует символ
+          <code>=&gt;</code> и тело функции.
+        </p>
+        <p>
+          Если параметров несколько, то они перечисляются через запятую в
+          круглых скобках, между знаками равно <code>=</code> и стрелкой
+          <code>=&gt;</code>.
+        </p>
+        <pre><code class="language-js hljs javascript"><span class="hljs-keyword">const</span> add = <span class="hljs-function">(<span class="hljs-params">a, b, c</span>) =&gt;</span> {
+  <span class="hljs-keyword">return</span> a + b + c;
+};
+</code></pre>
+        <p>Если параметр один, его объявление может быть без круглых скобок.</p>
+        <pre><code class="language-js hljs javascript"><span class="hljs-keyword">const</span> add = <span class="hljs-function"><span class="hljs-params">a</span> =&gt;</span> {
+  <span class="hljs-keyword">return</span> a + <span class="hljs-number">5</span>;
+};
+</code></pre>
+        <p>
+          Если параметров нет, то обязательно должны быть пустые круглые скобки.
+        </p>
+        <pre><code class="language-js hljs javascript"><span class="hljs-keyword">const</span> greet = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Привет!'</span>);
+};
+</code></pre>
+      </details>
+      <h3 class="task">Задание</h3>
+      <p>
+        Выполни рефакторинг функции <code>calculateTotalPrice()</code> так,
+        чтобы она была объявлена как стрелочная.
+      </p>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>Объявлена переменная <code>calculateTotalPrice</code>.</li>
+        <li>
+          Переменной <code>calculateTotalPrice</code> присвоена стрелочная
+          функция с параметрами <code>(quantity, pricePerItem)</code>.
+        </li>
+        <li>
+          Вызов <code>calculateTotalPrice(5, 100)</code> возвращает
+          <code>500</code>.
+        </li>
+        <li>
+          Вызов <code>calculateTotalPrice(8, 60)</code> возвращает
+          <code>480</code>.
+        </li>
+        <li>
+          Вызов <code>calculateTotalPrice(3, 400)</code> возвращает
+          <code>1200</code>.
+        </li>
+        <li>
+          Вызов функции со случайными, но валидными аргументами, возвращает
+          правильное значение.
+        </li>
+      </ul>
+    </div>
+  </section>
+</section>
