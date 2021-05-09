@@ -1,15 +1,176 @@
 <a href="../modul-5/index.html"><h1>Модуль - 05</h1></a>
-<h2>Задача - 15. .</h2>
+<h2>Задача - 15. Статические свойства.</h2>
 <a href="../modul-5/zad_14.html">&lt; &lt;Предыдущая задача</a>
 <a href="../modul-5/zad_16.html">Cледующая задача&gt;&gt;</a>
 
 <details closed="">
   <summary style="color: teal">Решение</summary>
   <pre><code>
+  "use strict";
+  class Car {
+    // Пиши код ниже этой строки
+    static MAX_PRICE = 50000;
+    #price;
 
+    constructor({ price }) {
+      this.#price = price;
+    }
+
+    get price() {
+      return this.#price;
+    }
+
+    set price(newPrice) {
+      this.#price = newPrice > Car.MAX_PRICE ? this.#price : newPrice;
+    }
+    // Пиши код выше этой строки
+  }
+
+  const audi = new Car({ price: 35000 });
+  console.log(audi.price); // 35000
+
+  audi.price = 49000;
+  console.log(audi.price); // 49000
+
+  audi.price = 51000;
+  console.log(audi.price); // 49000
 </code></pre>
 </details>
 <script>
   "use strict";
+  class Car {
+    // Пиши код ниже этой строки
+    static MAX_PRICE = 50000;
+    #price;
 
+    constructor({ price }) {
+      this.#price = price;
+    }
+
+    get price() {
+      return this.#price;
+    }
+
+    set price(newPrice) {
+      this.#price = newPrice > Car.MAX_PRICE ? this.#price : newPrice;
+    }
+    // Пиши код выше этой строки
+  }
+
+  const audi = new Car({ price: 35000 });
+  console.log(audi.price); // 35000
+
+  audi.price = 49000;
+  console.log(audi.price); // 49000
+
+  audi.price = 51000;
+  console.log(audi.price); // 49000
 </script>
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <details closed="">
+        <summary>Теория</summary>
+        <p>
+          Кроме публичных и приватных свойств будущего экземпляра, в классе
+          можно объявить его собственные свойства, доступные только классу, но
+          не его экземплярам - статические свойства (<code>static</code>). Они
+          полезны для хранения информации относящейся к самому классу.
+        </p>
+        <p>
+          Добавим классу пользователя приватное свойство <code>type</code> - его
+          тип, определяющий набор прав, например администратор, редактор, просто
+          пользователь и т п. Возможные типы пользователей будем хранить как
+          статическое свойство <code>TYPES</code> - объект со свойствами.
+        </p>
+        <p>
+          Статические свойства объявляются в теле класса. Перед именем свойства
+          добавляется ключевое слово <code>static</code>.
+        </p>
+        <pre><code class="language-js hljs javascript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">User</span> </span>{
+  <span class="hljs-comment">// Объявление и инициализация статического свойства</span>
+  <span class="hljs-keyword">static</span> TYPES = {
+    <span class="hljs-attr">ADMIN</span>: <span class="hljs-string">'admin'</span>,
+    <span class="hljs-attr">EDITOR</span>: <span class="hljs-string">'editor'</span>,
+  };
+  #email;
+  #type;
+
+  <span class="hljs-keyword">constructor</span>({ email, type }) {
+    <span class="hljs-keyword">this</span>.#email = email;
+    <span class="hljs-keyword">this</span>.#type = type;
+  }
+
+  get type() {
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.#type;
+  }
+
+  set type(newType) {
+    <span class="hljs-keyword">if</span> (User.TYPES[newType] === <span class="hljs-literal">undefined</span>) {
+      <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Ошибка! Такого типа пользователя не существет'</span>);
+      <span class="hljs-keyword">return</span>;
+    }
+
+    <span class="hljs-keyword">this</span>.#type = newType;
+  }
+}
+
+<span class="hljs-keyword">const</span> mango = <span class="hljs-keyword">new</span> User({
+  <span class="hljs-attr">email</span>: <span class="hljs-string">'mango@mail.com'</span>,
+  <span class="hljs-attr">type</span>: User.TYPES.ADMIN,
+});
+
+<span class="hljs-built_in">console</span>.log(mango.TYPES); <span class="hljs-comment">// undefined</span>
+<span class="hljs-built_in">console</span>.log(User.TYPES); <span class="hljs-comment">// { ADMIN: 'admin', EDITOR: 'editor' }</span>
+
+<span class="hljs-built_in">console</span>.log(mango.type); <span class="hljs-comment">// admin</span>
+mango.type = User.TYPES.EDITOR;
+<span class="hljs-built_in">console</span>.log(mango.type); <span class="hljs-comment">// editor</span>
+</code></pre>
+        <p>
+          Статические свойства также могут быть приватные, то есть доступные
+          только внутри класса. Для этого имя свойства должно начинаться с
+          символа <code>#</code>, также как приватные свойства. Обращение к
+          приватному статическому свойству вне тела класса вызовет ошибку.
+        </p>
+      </details>
+      <h3 class="task">Задание</h3>
+      <p>
+        Выполни рефакторинг класса <code>Car</code>. Добавь публичное
+        статическое свойство <code>MAX_PRICE</code> со значением
+        <code>50000</code> - максимально допустимая цена автомобиля.
+      </p>
+      <p>
+        Добавь сеттеру <code>price</code> проверку передаваемого значения
+        параметра <code>newPrice</code>. Если оно больше чем
+        <code>MAX_PRICE</code>, сеттер ничего не делает, а если меньше или
+        равно, то перезаписывает цену автомобиля.
+      </p>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>Объявлен класс <code>Car</code>.</li>
+        <li>
+          У класса <code>Car</code> есть статическое свойство
+          <code>MAX_PRICE</code>.
+        </li>
+        <li>
+          Значение статического свойства <code>MAX_PRICE</code> это число
+          <code>50000</code>.
+        </li>
+        <li>У экземпляра нет свойства <code>MAX_PRICE</code>.</li>
+        <li>В классе <code>Car</code> объявлен геттер <code>price</code>.</li>
+        <li>В классе <code>Car</code> объявлен сеттер <code>price</code>.</li>
+        <li>
+          У экземпляра класса Car вызов сеттера <code>price</code>, со значением
+          аргумента меньше чем значение <code>MAX_PRICE</code>, изменяет
+          свойство <code>#price</code>.
+        </li>
+        <li>
+          У экземпляра класса Car вызов сеттера <code>price</code>, со значением
+          аргумента больше чем значение <code>MAX_PRICE</code>, не изменяет
+          свойство <code>#price</code>.
+        </li>
+      </ul>
+    </div>
+  </section>
+</section>
