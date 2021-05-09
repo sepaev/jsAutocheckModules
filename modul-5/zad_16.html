@@ -1,15 +1,155 @@
 <a href="../modul-5/index.html"><h1>Модуль - 05</h1></a>
-<h2>Задача - 16. .</h2>
+<h2>Задача - 16. Статические методы.</h2>
 <a href="../modul-5/zad_15.html">&lt; &lt;Предыдущая задача</a>
 <a href="../modul-5/zad_17.html">Cледующая задача&gt;&gt;</a>
 
 <details closed="">
   <summary style="color: teal">Решение</summary>
   <pre><code>
+  "use strict";
+  class Car {
+    static #MAX_PRICE = 50000;
+    // Пиши код ниже этой строки
+    static checkPrice(price) {
+      return price > Car.#MAX_PRICE
+        ? "Внимание! Цена превышает допустимую."
+        : "Всё хорошо, цена в порядке.";
+    }
 
+    // Пиши код выше этой строки
+    constructor({ price }) {
+      this.price = price;
+    }
+  }
+
+  const audi = new Car({ price: 36000 });
+  const bmw = new Car({ price: 64000 });
+
+  console.log(Car.checkPrice(audi.price)); // Всё хорошо, цена в порядке.
+  console.log(Car.checkPrice(bmw.price)); // Внимание! Цена превышает допустимую.
+  console.log(Car.checkPrice(36000));
+  console.log(Car.checkPrice(18000));
+  console.log(Car.checkPrice(64000));
+  console.log(Car.checkPrice(57000));
 </code></pre>
 </details>
 <script>
   "use strict";
+  class Car {
+    static #MAX_PRICE = 50000;
+    // Пиши код ниже этой строки
+    static checkPrice(price) {
+      return price > Car.#MAX_PRICE
+        ? "Внимание! Цена превышает допустимую."
+        : "Всё хорошо, цена в порядке.";
+    }
 
+    // Пиши код выше этой строки
+    constructor({ price }) {
+      this.price = price;
+    }
+  }
+
+  const audi = new Car({ price: 36000 });
+  const bmw = new Car({ price: 64000 });
+
+  console.log(Car.checkPrice(audi.price)); // Всё хорошо, цена в порядке.
+  console.log(Car.checkPrice(bmw.price)); // Внимание! Цена превышает допустимую.
+  console.log(Car.checkPrice(36000));
+  console.log(Car.checkPrice(18000));
+  console.log(Car.checkPrice(64000));
+  console.log(Car.checkPrice(57000));
 </script>
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <details closed="">
+        <summary>Теория</summary>
+        <p>
+          В классе можно объявить не только методы будущего экземпляра, но и
+          методы доступные только классу - статические методы, которые могут
+          быть как публичные, так и приватные. Синтаксис объявления аналогичен
+          статическим свойствам, за исключением того, что значением будет метод.
+        </p>
+        <pre><code class="language-js hljs javascript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">User</span> </span>{
+  <span class="hljs-keyword">static</span> #takenEmails = [];
+
+  <span class="hljs-keyword">static</span> isEmailTaken(email) {
+    <span class="hljs-keyword">return</span> User.#takenEmails.includes(email);
+  }
+
+  #email;
+
+  <span class="hljs-keyword">constructor</span>({ email }) {
+    <span class="hljs-keyword">this</span>.#email = email;
+    User.#takenEmails.push(email);
+  }
+}
+
+<span class="hljs-keyword">const</span> mango = <span class="hljs-keyword">new</span> User({ <span class="hljs-attr">email</span>: <span class="hljs-string">'mango@mail.com'</span> });
+
+<span class="hljs-built_in">console</span>.log(
+  User.isEmailTaken(<span class="hljs-string">'poly@mail.com'</span>)
+); <span class="hljs-comment">// false</span>
+
+<span class="hljs-built_in">console</span>.log(
+  User.isEmailTaken(<span class="hljs-string">'mango@mail.com'</span>)
+); <span class="hljs-comment">// true</span>
+</code></pre>
+        <p>
+          Особенность статических методов в том, что во время их вызова ключевое
+          слово <code>this</code> ссылается на сам класс. Это значит, что
+          статический метод может получить доступ к статическим свойствам
+          класса, но не к свойствам экземпляра. Логично, потому что статические
+          методы вызывает сам класс, а не его экземпляры.
+        </p>
+      </details>
+      <h3 class="task">Задание</h3>
+      <p>
+        Добавь классу <code>Car</code> публичный статический метод
+        <code>checkPrice(price)</code>, принимающий цену автомобиля. Метод
+        должен сравнить значения параметра <code>price</code> и приватного
+        статического свойства <code>MAX_PRICE</code>.
+      </p>
+      <ul>
+        <li>
+          Если цена автомобиля превышает максимальную, метод должен вернуть
+          строку <code>'Внимание! Цена превышает допустимую.'</code>.
+        </li>
+        <li>
+          В противном случае метод должен вернуть строку
+          <code>'Всё хорошо, цена в порядке.'</code>.
+        </li>
+      </ul>
+      <p>
+        Под объявлением класса мы добавили инициализацию экземпляра и вызовы
+        методов, чтобы показать как будет использоваться метод
+        <code>checkPrice(price)</code>.
+      </p>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>Объявлен класс <code>Car</code>.</li>
+        <li>
+          У класса <code>Car</code> есть статический метод
+          <code>checkPrice(price)</code>.
+        </li>
+        <li>
+          Вызов <code>Car.checkPrice(36000)</code> возвращает строку
+          <code>'Всё хорошо, цена в порядке.'</code>.
+        </li>
+        <li>
+          Вызов <code>Car.checkPrice(18000)</code> возвращает строку
+          <code>'Всё хорошо, цена в порядке.'</code>.
+        </li>
+        <li>
+          Вызов <code>Car.checkPrice(64000)</code> возвращает строку
+          <code>'Внимание! Цена превышает допустимую.'</code>.
+        </li>
+        <li>
+          Вызов <code>Car.checkPrice(57000)</code> возвращает строку
+          <code>'Внимание! Цена превышает допустимую.'</code>.
+        </li>
+      </ul>
+    </div>
+  </section>
+</section>
