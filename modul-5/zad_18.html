@@ -1,15 +1,187 @@
 <a href="../modul-5/index.html"><h1>Модуль - 05</h1></a>
-<h2>Задача - 18. .</h2>
+<h2>Задача - 18. Конструктор дочернего класса.</h2>
 <a href="../modul-5/zad_17.html">&lt; &lt;Предыдущая задача</a>
 <a href="../modul-5/zad_19.html">Cледующая задача&gt;&gt;</a>
 
 <details closed="">
   <summary style="color: teal">Решение</summary>
   <pre><code>
+  "use strict";
+  class User {
+    email;
 
+    constructor(email) {
+      this.email = email;
+    }
+
+    get email() {
+      return this.email;
+    }
+
+    set email(newEmail) {
+      this.email = newEmail;
+    }
+  }
+
+  class Admin extends User {
+    // Пиши код ниже этой строки
+    accessLevel;
+    
+    constructor({ email, accessLevel }) {
+      super(email);
+      this.accessLevel = accessLevel;
+      Admin.accessLevel = accessLevel;
+    }
+
+    static AccessLevel = {
+      BASIC: "basic",
+      SUPERUSER: "superuser",
+    };
+
+    // Пиши код выше этой строки
+  }
+
+  const mango = new Admin({
+    email: "mango@mail.com",
+    accessLevel: Admin.AccessLevel.SUPERUSER,
+  });
+
+  console.log(mango.email); // mango@mail.com
+  console.log(mango.accessLevel); // superuser
+  console.log(Admin.accessLevel);
 </code></pre>
 </details>
 <script>
   "use strict";
+  class User {
+    email;
 
+    constructor(email) {
+      this.email = email;
+    }
+
+    get email() {
+      return this.email;
+    }
+
+    set email(newEmail) {
+      this.email = newEmail;
+    }
+  }
+
+  class Admin extends User {
+    // Пиши код ниже этой строки
+    accessLevel;
+
+    constructor({ email, accessLevel }) {
+      super(email);
+      this.accessLevel = accessLevel;
+      Admin.accessLevel = accessLevel;
+    }
+
+    static AccessLevel = {
+      BASIC: "basic",
+      SUPERUSER: "superuser",
+    };
+
+    // Пиши код выше этой строки
+  }
+
+  const mango = new Admin({
+    email: "mango@mail.com",
+    accessLevel: Admin.AccessLevel.SUPERUSER,
+  });
+
+  console.log(mango.email); // mango@mail.com
+  console.log(mango.accessLevel); // superuser
+  console.log(Admin.accessLevel);
 </script>
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <details closed="">
+        <summary>Теория</summary>
+        <p>
+          Первым делом в конструкторе дочернего класса необходимо вызвать
+          специальную функцию <code>super(аргументы)</code> - это псевдоним
+          конструктора родительского класса. В противном случае, при попытке
+          обратиться к <code>this</code> в конструкторе дочернего клаcса, будет
+          ошибка. При вызове конструктора класса родителя передаём необходимые
+          ему аргументы для инициализации свойств.
+        </p>
+        <pre><code class="language-js hljs javascript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">User</span> </span>{
+  email;
+
+  <span class="hljs-keyword">constructor</span>(email) {
+    <span class="hljs-keyword">this</span>.email = email;
+  }
+
+  get email() {
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.email;
+  }
+
+  set email(newEmail) {
+    <span class="hljs-keyword">this</span>.email = newEmail;
+  }
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ContentWriter</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">User</span> </span>{
+  posts;
+
+  <span class="hljs-keyword">constructor</span>({ email, posts }) {
+    <span class="hljs-comment">// Вызов конструктора родительского класса User</span>
+    <span class="hljs-keyword">super</span>(email);
+    <span class="hljs-keyword">this</span>.posts = posts;
+  }
+}
+
+<span class="hljs-keyword">const</span> writer = <span class="hljs-keyword">new</span> ContentWriter({ <span class="hljs-attr">email</span>: <span class="hljs-string">'mango@mail.com'</span>, <span class="hljs-attr">posts</span>: [] });
+<span class="hljs-built_in">console</span>.log(writer); <span class="hljs-comment">// { email: 'mango@mail.com', posts: [] }</span>
+<span class="hljs-built_in">console</span>.log(writer.email); <span class="hljs-comment">// 'mango@mail.com'</span>
+</code></pre>
+      </details>
+      <h3 class="task">Задание</h3>
+      <p>
+        Добавь классу <code>Admin</code> метод <code>constructor</code>, который
+        принимает один параметр - объект настроек с двумя свойствами
+        <code>email</code> и <code>accessLevel</code>. Добавь классу
+        <code>Admin</code> публичное свойсво <code>accessLevel</code>, значение
+        которого будет передаваться при вызове конструктора.
+      </p>
+      <p>
+        Чтобы показать как будет использоваться класс <code>Admin</code>, мы
+        добавили инициализацию экземпляра под объявлением класса.
+      </p>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>Объявлен класс <code>Admin</code>.</li>
+        <li>Класс <code>Admin</code> наследует от класса <code>User</code>.</li>
+        <li>
+          У класса <code>Admin</code> есть публичное статическое свойство
+          <code>AccessLevel</code>.
+        </li>
+        <li>
+          У класса <code>Admin</code> есть метод <code>constructor</code> с
+          параметром в виде объекта <code>{email, accessLevel}</code>.
+        </li>
+        <li>
+          У класса <code>Admin</code> в конструкторе для свойства
+          <code>email</code> используется обращение к конструктору родительского
+          класса.
+        </li>
+        <li>
+          Обращение к <code>Admin.AccessLevel.BASIC</code> возвращает строку
+          <code>'basic'</code>.
+        </li>
+        <li>
+          Обращение к <code>Admin.AccessLevel.SUPERUSER</code> возвращает строку
+          <code>'superuser'</code>.
+        </li>
+        <li>
+          У класса <code>Admin</code> есть публичное свойство
+          <code>accessLevel</code>.
+        </li>
+      </ul>
+    </div>
+  </section>
+</section>
