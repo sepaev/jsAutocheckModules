@@ -1,11 +1,209 @@
 <a href="../modul-5/index.html"><h1>Модуль - 05</h1></a>
-<h2>Задача - 14. .</h2>
+<h2>Задача - 14. Геттеры и сеттеры.</h2>
 <a href="../modul-5/zad_13.html">&lt; &lt;Предыдущая задача</a>
 <a href="../modul-5/zad_15.html">Cледующая задача&gt;&gt;</a>
 
 <details closed="">
   <summary style="color: teal">Решение</summary>
   <pre><code>
+  "use strict";
+  class Car {
+    #model;
+    #price;
+    #brand;
 
+    constructor({ brand, model, price }) {
+      this.#brand = brand;
+      this.#model = model;
+      this.#price = price;
+    }
+    get brand() {
+      console.log('получен доступ к закрытому свойству "#brand"');
+      return this.#brand;
+    }
+    set brand(newBrand) {
+      console.log('внесена запись в закрытое свойство "#brand"');
+      this.#brand = newBrand;
+    }
+    get model() {
+      console.log('получен доступ к закрытому свойству "#model"');
+      return this.#model;
+    }
+    set model(newModel) {
+      console.log('внесена запись в закрытое свойство "#model"');
+      this.#model = newModel;
+    }
+    get price() {
+      console.log('получен доступ к закрытому свойству "#price"');
+      return this.#price;
+    }
+    set price(newPrice) {
+      console.log('внесена запись в закрытое свойство "#price"');
+      this.#price = newPrice;
+    }
+  }
+  const newCar = new Car({ brand: "Audi", model: "Q3", price: 36000 });
+  console.log(newCar.brand);
+  console.log((newCar.brand = "opel"));
+  console.log(newCar.model);
+  console.log((newCar.model = "astra"));
+  console.log(newCar.price);
+  console.log((newCar.price = 13000));
 </code></pre>
 </details>
+<script>
+  "use strict";
+  class Car {
+    #model;
+    #price;
+    #brand;
+
+    constructor({ brand, model, price }) {
+      this.#brand = brand;
+      this.#model = model;
+      this.#price = price;
+    }
+    get brand() {
+      console.log('получен доступ к закрытому свойству "#brand"');
+      return this.#brand;
+    }
+    set brand(newBrand) {
+      console.log('внесена запись в закрытое свойство "#brand"');
+      this.#brand = newBrand;
+    }
+    get model() {
+      console.log('получен доступ к закрытому свойству "#model"');
+      return this.#model;
+    }
+    set model(newModel) {
+      console.log('внесена запись в закрытое свойство "#model"');
+      this.#model = newModel;
+    }
+    get price() {
+      console.log('получен доступ к закрытому свойству "#price"');
+      return this.#price;
+    }
+    set price(newPrice) {
+      console.log('внесена запись в закрытое свойство "#price"');
+      this.#price = newPrice;
+    }
+  }
+  const newCar = new Car({ brand: "Audi", model: "Q3", price: 36000 });
+  console.log(newCar.brand);
+  console.log((newCar.brand = "opel"));
+  console.log(newCar.model);
+  console.log((newCar.model = "astra"));
+  console.log(newCar.price);
+  console.log((newCar.price = 13000));
+</script>
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <details closed="">
+        <summary>Теория</summary>
+        <p>
+          Геттеры и сеттеры - это более краткий синтаксис объявления методов для
+          взаимодействия со свойствами. Геттер и сеттер имитируют обычное
+          публичное свойство класса, но позволяют изменять другие свойства более
+          удобным способом. Геттер выполняется при попытке получить значение
+          свойства, а сеттер - при попытке его изменить.
+        </p>
+        <p>
+          Геттеры и сеттеры хорошо использовать для простых операций чтения и
+          изменения значения свойств, особенно приватных, как их публичный
+          интерфейс. Для работы со свойством которое хранит массив или объект
+          они не подойдут.
+        </p>
+        <pre><code class="language-js hljs javascript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">User</span> </span>{
+  name;
+  #email;
+
+  <span class="hljs-keyword">constructor</span>({ name, email }) {
+    <span class="hljs-keyword">this</span>.name = name;
+    <span class="hljs-keyword">this</span>.#email = email;
+  }
+
+  <span class="hljs-comment">// Геттер email</span>
+  get email() {
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.#email;
+  }
+
+  <span class="hljs-comment">// Сеттер email</span>
+  set email(newEmail) {
+    <span class="hljs-keyword">this</span>.#email = newEmail;
+  }
+}
+</code></pre>
+        <p>
+          Мы объявили геттер и сеттер <code>email</code> поставив перед именем
+          свойства ключевые слова <code>get</code> и <code>set</code>. Внутри
+          этих методов мы или возвращаем значение приватного свойства
+          <code>#email</code> или изменяем его значение. Геттер и сеттер идут в
+          паре и должны называться одинаково.
+        </p>
+        <pre><code class="language-js hljs javascript"><span class="hljs-keyword">const</span> mango = <span class="hljs-keyword">new</span> User({ <span class="hljs-attr">name</span>: <span class="hljs-string">'Манго'</span>, <span class="hljs-attr">email</span>: <span class="hljs-string">'mango@mail.com'</span> });
+<span class="hljs-built_in">console</span>.log(mango.email); <span class="hljs-comment">// mango@mail.com</span>
+mango.email = <span class="hljs-string">'mango@supermail.com'</span>;
+<span class="hljs-built_in">console</span>.log(mango.email); <span class="hljs-comment">// mango@supermail.com</span>
+</code></pre>
+        <p>
+          При обращении к <code>mango.email</code> вызывается геттер
+          <code>get email() {...}</code> и выполняется его код. При попытке
+          записи <code>mango.email = 'mango@supermail.com'</code> вызывается
+          сеттер <code>set email(newEmail) {...}</code> и строка
+          <code>'mango@supermail.com'</code> будет значением параметра
+          <code>newEmail</code>.
+        </p>
+        <p>
+          Плюс в том, что это методы, а значит при записи можно выполнить
+          дополнительный код, например с какими-то проверками, в отличии от
+          выполнениях этой же операции напрямую со свойством.
+        </p>
+        <pre><code class="language-js hljs javascript">set email(newEmail) {
+  <span class="hljs-keyword">if</span>(newEmail === <span class="hljs-string">''</span>) {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Ошибка! Почта не может быть пустой строкой!'</span>);
+    <span class="hljs-keyword">return</span>;
+  }
+
+  <span class="hljs-keyword">this</span>.#email = newEmail;
+}
+</code></pre>
+      </details>
+      <h3 class="task">Задание</h3>
+      <p>
+        Выполни рефакторинг класса <code>Car</code>. Сделай свойства
+        <code>model</code> и <code>price</code> приватными, также как
+        <code>#brand</code>. Стандартизируй публичный интерфейс класса заменив
+        уже объявленные методы на геттеры и сеттеры <code>brand</code>,
+        <code>model</code> и <code>price</code> для взаимодействия с приватными
+        свойствами.
+      </p>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>Объявлен класс <code>Car</code>.</li>
+        <li>
+          В классе <code>Car</code> объявлено приватное свойство
+          <code>brand</code>.
+        </li>
+        <li>
+          В классе <code>Car</code> объявлено приватное свойство
+          <code>model</code>.
+        </li>
+        <li>
+          В классе <code>Car</code> объявлено приватное свойство
+          <code>price</code>.
+        </li>
+        <li>
+          Конструктор класса принимает объект со свойствами <code>brand</code>,
+          <code>model</code> и <code>price</code>.
+        </li>
+        <li>В классе <code>Car</code> объявлен геттер <code>brand</code>.</li>
+        <li>В классе <code>Car</code> объявлен сеттер <code>brand</code>.</li>
+        <li>В классе <code>Car</code> объявлен геттер <code>model</code>.</li>
+        <li>В классе <code>Car</code> объявлен сеттер <code>model</code>.</li>
+        <li>В классе <code>Car</code> объявлен геттер <code>price</code>.</li>
+        <li>В классе <code>Car</code> объявлен сеттер <code>price</code>.</li>
+      </ul>
+    </div>
+  </section>
+</section>
