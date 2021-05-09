@@ -1,15 +1,161 @@
 <a href="../modul-5/index.html"><h1>Модуль - 05</h1></a>
-<h2>Задача - 17. .</h2>
+<h2>Задача - 17. Наследование классов.</h2>
 <a href="../modul-5/zad_16.html">&lt; &lt;Предыдущая задача</a>
 <a href="../modul-5/zad_18.html">Cледующая задача&gt;&gt;</a>
 
 <details closed="">
   <summary style="color: teal">Решение</summary>
   <pre><code>
+  "use strict";
+  class User {
+    email;
 
+    constructor(email) {
+      this.email = email;
+    }
+
+    get email() {
+      return this.email;
+    }
+
+    set email(newEmail) {
+      this.email = newEmail;
+    }
+  }
+  // Пиши код ниже этой строки
+  class Admin extends User {
+    static AccessLevel = { BASIC: "basic", SUPERUSER: "superuser" };
+  }
+  console.log(Admin.AccessLevel.BASIC);
+  console.log(Admin.AccessLevel.SUPERUSER);
 </code></pre>
 </details>
 <script>
   "use strict";
+  class User {
+    email;
 
+    constructor(email) {
+      this.email = email;
+    }
+
+    get email() {
+      return this.email;
+    }
+
+    set email(newEmail) {
+      this.email = newEmail;
+    }
+  }
+  // Пиши код ниже этой строки
+  class Admin extends User {
+    static AccessLevel = { BASIC: "basic", SUPERUSER: "superuser" };
+  }
+  console.log(Admin.AccessLevel.BASIC);
+  console.log(Admin.AccessLevel.SUPERUSER);
 </script>
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <details closed="">
+        <summary>Теория</summary>
+        <p>
+          Ключевое слово <code>extends</code> позволяет реализовать наследование
+          классов, когда один класс (дочерний, производный) наследует свойства и
+          методы другого класса (родителя). В выражении
+          <code>class Child extends Parent</code> дочерний класс
+          <code>Child</code> наследует (расширяет) от родительского класса
+          <code>Parent</code>.
+        </p>
+        <p>
+          Это означает, что мы можем объявить базовый класс, который хранит
+          общие характеристики и методы для группы производных классов, которые
+          наследуют свойства и методы родителя, но также добавляют свои
+          уникальные.
+        </p>
+        <p>
+          Например, в приложении есть пользователи разных типов - администратор,
+          писатель статей, контент менеджер и т. п. У каждого типа пользователя
+          есть набор общих характеристик, например почта и пароль, но также есть
+          и уникальные.
+        </p>
+        <p>
+          Сделав независимые классы для каждого типа пользователя мы получим
+          дублирование общих свойств и методов, и при необходимости изменить,
+          например, название свойства, придётся проходить по всем классам, это
+          неудобно и трудозатратно.
+        </p>
+        <p>
+          Вместо этого можно сделать общий класс <code>User</code>, который
+          будет хранить набор общих свойств и методов, после чего сделать классы
+          для каждого типа пользователя, которые наследуют этот набор от класса
+          <code>User</code>. При необходимости изменить что-то общее, достаточно
+          будет поменять только код класса <code>User</code>.
+        </p>
+        <pre><code class="language-js hljs javascript"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">User</span> </span>{
+  email;
+
+  <span class="hljs-keyword">constructor</span>(email) {
+    <span class="hljs-keyword">this</span>.email = email;
+  }
+
+  get email() {
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.email;
+  }
+
+  set email(newEmail) {
+    <span class="hljs-keyword">this</span>.email = newEmail;
+  }
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ContentWriter</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">User</span> </span>{
+  <span class="hljs-comment">// Тело класса ContentWriter</span>
+}
+
+<span class="hljs-keyword">const</span> writer = <span class="hljs-keyword">new</span> ContentWriter(<span class="hljs-string">'mango@mail.com'</span>);
+<span class="hljs-built_in">console</span>.log(writer); <span class="hljs-comment">// { email: 'mango@mail.com' }</span>
+<span class="hljs-built_in">console</span>.log(writer.email); <span class="hljs-comment">// 'mango@mail.com'</span>
+</code></pre>
+        <p>
+          Класс <code>ContentWriter</code> наследует от класса
+          <code>User</code> его конструктор, геттер и сеттер <code>email</code>,
+          а также одноимённое публичное свойство. Важно помнить, что приватные
+          свойства и методы класса-родителя не наследуются классом-ребёнком.
+        </p>
+      </details>
+      <h3 class="task">Задание</h3>
+      <p>
+        В приложении нужен администратор с возможностью добавлять почты
+        пользователей в чёрный список.
+      </p>
+      <ul>
+        <li>
+          Объяви класс <code>Admin</code>, который наследует от класса
+          <code>User</code>.
+        </li>
+        <li>
+          Добавь классу <code>Admin</code> публичное статическое свойство
+          <code>AccessLevel</code> (уровень доступа), значение которого это
+          объект <code>{ BASIC: 'basic', SUPERUSER: 'superuser' }</code>.
+        </li>
+      </ul>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>Объявлен класс <code>Admin</code>.</li>
+        <li>Класс <code>Admin</code> наследует от класса <code>User</code>.</li>
+        <li>
+          У класса <code>Admin</code> есть публичное статическое свойство
+          <code>AccessLevel</code>.
+        </li>
+        <li>
+          Обращение к <code>Admin.AccessLevel.BASIC</code> возвращает строку
+          <code>'basic'</code>.
+        </li>
+        <li>
+          Обращение к <code>Admin.AccessLevel.SUPERUSER</code> возвращает строку
+          <code>'superuser'</code>.
+        </li>
+      </ul>
+    </div>
+  </section>
+</section>
