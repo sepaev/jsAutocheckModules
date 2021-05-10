@@ -1,15 +1,116 @@
 <a href="../modul-6/index.html"><h1>Модуль - 06</h1></a>
-<h2>Задача - 06. .</h2>
+<h2>Задача - 06. Стрелочные функции как коллбеки.</h2>
 <a href="../modul-6/zad_05.html">&lt; &lt;Предыдущая задача</a>
 <a href="../modul-6/zad_07.html">Cледующая задача&gt;&gt;</a>
 
 <details closed="">
   <summary style="color: teal">Решение</summary>
   <pre><code>
+  "use strict";
+  // Пиши код ниже этой строки
+  const calculateTotalPrice = (orderedItems) => {
+    let totalPrice = 0;
 
+    orderedItems.forEach((item) => (totalPrice += item));
+
+    return totalPrice;
+  };
+  console.log(calculateTotalPrice([12, 85, 37, 4]));
+  console.log(calculateTotalPrice([164, 48, 291]));
+  console.log(calculateTotalPrice([412, 371, 94, 63, 176]));
 </code></pre>
 </details>
 <script>
   "use strict";
+  // Пиши код ниже этой строки
+  const calculateTotalPrice = (orderedItems) => {
+    let totalPrice = 0;
 
+    orderedItems.forEach((item) => (totalPrice += item));
+
+    return totalPrice;
+  };
+  console.log(calculateTotalPrice([12, 85, 37, 4]));
+  console.log(calculateTotalPrice([164, 48, 291]));
+  console.log(calculateTotalPrice([412, 371, 94, 63, 176]));
+  // Пиши код выше этой строки
 </script>
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <h2>Стрелочные функции как коллбеки</h2>
+      <details closed="">
+        <summary>Теория</summary>
+        <p>
+          Анонимные стрелочные функции отлично подходят как коллбеки для
+          перебирающих методов массива из-за более краткого синтаксиса
+          объявления, особенно если не нужно тело функции.
+        </p>
+        <pre><code class="language-js hljs javascript"><span class="hljs-keyword">const</span> numbers = [<span class="hljs-number">5</span>, <span class="hljs-number">10</span>, <span class="hljs-number">15</span>, <span class="hljs-number">20</span>, <span class="hljs-number">25</span>];
+
+<span class="hljs-comment">// Объявление функции</span>
+numbers.forEach(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">number, index</span>) </span>{
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Индекс <span class="hljs-subst">${index}</span>, значение <span class="hljs-subst">${number}</span>`</span>);
+});
+
+<span class="hljs-comment">// Анонимная стрелочная функция</span>
+numbers.forEach(<span class="hljs-function">(<span class="hljs-params">number, index</span>) =&gt;</span> {
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Индекс <span class="hljs-subst">${index}</span>, значение <span class="hljs-subst">${number}</span>`</span>);
+});
+</code></pre>
+        <p>
+          Стрелочную коллбек-функцию также можно объявлять отдельно и передавать
+          на неё ссылку. Это стоит делать если одна функция используется в
+          нескольих местах программы или если она громоздкая.
+        </p>
+        <pre><code class="language-js hljs javascript"><span class="hljs-keyword">const</span> numbers = [<span class="hljs-number">5</span>, <span class="hljs-number">10</span>, <span class="hljs-number">15</span>, <span class="hljs-number">20</span>, <span class="hljs-number">25</span>];
+
+<span class="hljs-keyword">const</span> logMessage = <span class="hljs-function">(<span class="hljs-params">number, index</span>) =&gt;</span> {
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Индекс <span class="hljs-subst">${index}</span>, значение <span class="hljs-subst">${number}</span>`</span>);
+};
+
+numbers.forEach(logMessage);
+</code></pre>
+      </details>
+      <h3 class="task">Задание</h3>
+      <p>
+        Выполни рефакторинг функции
+        <code>calculateTotalPrice(orderedItems)</code> заменив её объявление на
+        стрелочную функцию. Замени коллбек-функцию передаваемую в метод
+        <code>forEach()</code> на стрелочную функцию.
+      </p>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>Объявлена переменная <code>calculateTotalPrice</code>.</li>
+        <li>
+          Переменной <code>calculateTotalPrice</code> присвоена стрелочная
+          функция с параметром <code>(orderedItems)</code>.
+        </li>
+        <li>
+          Для перебора массива <code>orderedItems</code> использован метод
+          <code>forEach</code>.
+        </li>
+        <li>Коллбек для метода <code>forEach</code> это стрелочная функция.</li>
+        <li>
+          Вызов функции
+          <code>calculateTotalPrice([12, 85, 37, 4])</code> возвращает
+          <code>138</code>.
+        </li>
+        <li>
+          Вызов функции
+          <code>calculateTotalPrice([164, 48, 291])</code> возвращает
+          <code>503</code>.
+        </li>
+        <li>
+          Вызов функции
+          <code>calculateTotalPrice([412, 371, 94, 63, 176])</code> возвращает
+          <code>1116</code>.
+        </li>
+        <li>
+          Вызов функции со случайными, но валидными аргументами, возвращает
+          правильное значение.
+        </li>
+      </ul>
+    </div>
+  </section>
+</section>

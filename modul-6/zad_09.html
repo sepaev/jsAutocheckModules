@@ -1,15 +1,148 @@
 <a href="../modul-6/index.html"><h1>Модуль - 06</h1></a>
-<h2>Задача - 09. .</h2>
+<h2>Задача - 09. Чистые функции.</h2>
 <a href="../modul-6/zad_08.html">&lt; &lt;Предыдущая задача</a>
 <a href="../modul-6/zad_10.html">Cледующая задача&gt;&gt;</a>
 
 <details closed="">
   <summary style="color: teal">Решение</summary>
   <pre><code>
-
+"use strict";
+function changeEven(numbers, value) {
+    // Пиши код ниже этой строки
+    let newArray = [];
+    numbers.forEach((number) => {
+      if (number % 2 === 0) {
+        newArray.push(number + value);
+      } else {
+        newArray.push(number);
+      }
+    });
+    return newArray;
+    // Пиши код выше этой строки
+  };
+  console.log(changeEven([1, 2, 3, 4, 5], 10));
+  console.log(changeEven([2, 8, 3, 7, 4, 6], 10));
+  console.log(changeEven([17, 24, 68, 31, 42], 100));
+  console.log(changeEven([44, 13, 81, 92, 36, 54], 100));
 </code></pre>
 </details>
 <script>
   "use strict";
-
+  function changeEven(numbers, value) {
+    // Пиши код ниже этой строки
+    let newArray = [];
+    numbers.forEach((number) => {
+      if (number % 2 === 0) {
+        newArray.push(number + value);
+      } else {
+        newArray.push(number);
+      }
+    });
+    return newArray;
+    // Пиши код выше этой строки
+  }
+  console.log(changeEven([1, 2, 3, 4, 5], 10));
+  console.log(changeEven([2, 8, 3, 7, 4, 6], 10));
+  console.log(changeEven([17, 24, 68, 31, 42], 100));
+  console.log(changeEven([44, 13, 81, 92, 36, 54], 100));
 </script>
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <details closed="">
+        <summary>Теория</summary>
+        <p>
+          <strong>Функция с побочными эффектами</strong> - это функция которая в
+          процессе выполнения может изменять или использовать глобальные
+          переменные, изменять значение аргументов ссылочного типа, выполнять
+          операции ввода-вывода и т. п.
+        </p>
+        <pre><code class="language-js hljs javascript"><span class="hljs-keyword">const</span> dirtyMultiply = <span class="hljs-function">(<span class="hljs-params">array, value</span>) =&gt;</span> {
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; array.length; i += <span class="hljs-number">1</span>) {
+    array[i] = array[i] * value;
+  }
+};
+
+<span class="hljs-keyword">const</span> numbers = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>];
+dirtyMultiply(numbers, <span class="hljs-number">2</span>);
+<span class="hljs-comment">// Произошла мутация исходных данных - массива numbers</span>
+<span class="hljs-built_in">console</span>.log(numbers); <span class="hljs-comment">// [2, 4, 6, 8, 10]</span>
+</code></pre>
+        <p>
+          Функция <code>dirtyMultiply(array, value)</code> умножает каждый
+          элемент массива <code>array</code> на число <code>value</code>. Она
+          изменяет (мутирует) исходный массив по ссылке.
+        </p>
+        <p>
+          <strong>Чистая функция (pure function)</strong> - это функция
+          результат которой зависит только от значений переданных аргументов.
+          При одинаковых аргументах она всегда возвращает один и тот же
+          результат и не имеет побочных эффектов, то есть не изменяет значения
+          аргументов.
+        </p>
+        <p>
+          Напишем реализацию чистой функции умножения элементов массива,
+          возвращающей новый массив, не изменяя исходный.
+        </p>
+        <pre><code class="language-js hljs javascript"><span class="hljs-keyword">const</span> pureMultiply = <span class="hljs-function">(<span class="hljs-params">array, value</span>) =&gt;</span> {
+  <span class="hljs-keyword">const</span> newArray = [];
+
+  array.forEach(<span class="hljs-function"><span class="hljs-params">element</span> =&gt;</span> {
+    newArray.push(element * value);
+  });
+
+  <span class="hljs-keyword">return</span> newArray;
+};
+
+<span class="hljs-keyword">const</span> numbers = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>];
+<span class="hljs-keyword">const</span> doubledNumbers = pureMultiply(numbers, <span class="hljs-number">2</span>);
+
+<span class="hljs-comment">// Не произошло мутации исходных данных</span>
+<span class="hljs-built_in">console</span>.log(numbers); <span class="hljs-comment">// [1, 2, 3, 4, 5]</span>
+<span class="hljs-comment">// Функция вернула новый массив с изменёнными данными</span>
+<span class="hljs-built_in">console</span>.log(doubledNumbers); <span class="hljs-comment">// [2, 4, 6, 8, 10]</span>
+</code></pre>
+      </details>
+      <h3 class="task">Задание</h3>
+      <p>
+        Функция <code>changeEven(numbers, value)</code> принимает массив чисел
+        <code>numbers</code> и обновляет каждый элемент, значение которого это
+        чётное число, добавляя к нему значение параметра <code>value</code>.
+      </p>
+      <p>
+        Выполни рефакторинг функции так, чтобы она стала чистой - не изменяла
+        массив чисел <code>numbers</code>, а создавала, наполняла и возвращала
+        новый массив с обновлёнными значениями.
+      </p>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>Объявлена функция <code>changeEven(numbers, value)</code>.</li>
+        <li>
+          Функция <code>changeEven</code> не изменяет значение параметра
+          <code>numbers</code>.
+        </li>
+        <li>
+          Вызов <code>changeEven([1, 2, 3, 4, 5], 10)</code> возвращает новый
+          массив <code>[1, 12, 3, 14, 5]</code>.
+        </li>
+        <li>
+          Вызов <code>changeEven([2, 8, 3, 7, 4, 6], 10)</code> возвращает новый
+          массив <code>[12, 18, 3, 7, 14, 16]</code>.
+        </li>
+        <li>
+          Вызов <code>changeEven([17, 24, 68, 31, 42], 100)</code> возвращает
+          новый массив <code>[17, 124, 168, 31, 142]</code>.
+        </li>
+        <li>
+          Вызов
+          <code>changeEven([44, 13, 81, 92, 36, 54], 100)</code> возвращает
+          новый массив <code>[144, 13, 81, 192, 136, 154]</code>.
+        </li>
+        <li>
+          Вызов функции со случайными, но валидными аргументами, возвращает
+          правильное значение.
+        </li>
+      </ul>
+    </div>
+  </section>
+</section>

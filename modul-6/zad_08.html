@@ -1,15 +1,102 @@
 <a href="../modul-6/index.html"><h1>Модуль - 06</h1></a>
-<h2>Задача - 08. .</h2>
+<h2>Задача - 08. Общие элементы 2.0.</h2>
 <a href="../modul-6/zad_07.html">&lt; &lt;Предыдущая задача</a>
 <a href="../modul-6/zad_09.html">Cледующая задача&gt;&gt;</a>
 
 <details closed="">
   <summary style="color: teal">Решение</summary>
   <pre><code>
+  "use strict";
+  // Пиши код ниже этой строки
+  const getCommonElements = (firstArray, secondArray) => {
+    const commonElements = [];
 
+    firstArray.forEach((element) => {
+      if (secondArray.includes(element)) {
+        commonElements.push(element);
+      }
+    });
+
+    // Пиши код выше этой строки
+    return commonElements;
+  };
+  console.log(getCommonElements([1, 2, 3], [2, 4]));
+  console.log(getCommonElements([1, 2, 3], [2, 1, 17, 19]));
+  console.log(getCommonElements([24, 12, 27, 3], [12, 8, 3, 36, 27]));
+  console.log(getCommonElements([10, 20, 30, 40], [4, 30, 17, 10, 40]));
+  console.log(getCommonElements([1, 2, 3], [10, 20, 30]));
 </code></pre>
 </details>
 <script>
   "use strict";
+  // Пиши код ниже этой строки
+  const getCommonElements = (firstArray, secondArray) => {
+    const commonElements = [];
 
+    firstArray.forEach((element) => {
+      if (secondArray.includes(element)) {
+        commonElements.push(element);
+      }
+    });
+
+    // Пиши код выше этой строки
+    return commonElements;
+  };
+  console.log(getCommonElements([1, 2, 3], [2, 4]));
+  console.log(getCommonElements([1, 2, 3], [2, 1, 17, 19]));
+  console.log(getCommonElements([24, 12, 27, 3], [12, 8, 3, 36, 27]));
+  console.log(getCommonElements([10, 20, 30, 40], [4, 30, 17, 10, 40]));
+  console.log(getCommonElements([1, 2, 3], [10, 20, 30]));
 </script>
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <h3 class="task">Задание</h3>
+      <p>
+        Замени объявление функции <code>getCommonElements()</code> и коллбек для
+        метода <code>forEach()</code> на стрелочные функции.
+      </p>
+      <h3 class="test">Тесты</h3>
+      <p>-Объявлена переменная <code>getCommonElements</code>.</p>
+      <ul>
+        <li>
+          Переменной <code>getCommonElements</code> присвоена стрелочная функция
+          с параметрами <code>(firstArray, secondArray)</code>.
+        </li>
+        <li>
+          Для перебора массива <code>firstArray</code> использован метод
+          <code>forEach</code>.
+        </li>
+        <li>Коллбек для метода <code>forEach</code> это стрелочная функция.</li>
+        <li>
+          Вызов <code>getCommonElements([1, 2, 3], [2, 4])</code> возвращает
+          <code>[2]</code>.
+        </li>
+        <li>
+          Вызов
+          <code>getCommonElements([1, 2, 3], [2, 1, 17, 19])</code> возвращает
+          <code>[1, 2]</code>.
+        </li>
+        <li>
+          Вызов
+          <code>getCommonElements([24, 12, 27, 3], [12, 8, 3, 36, 27])</code>
+          возвращает <code>[12, 27, 3]</code>.
+        </li>
+        <li>
+          Вызов
+          <code>getCommonElements([10, 20, 30, 40], [4, 30, 17, 10, 40])</code>
+          возвращает <code>[10, 30, 40]</code>.
+        </li>
+        <li>
+          Вызов
+          <code>getCommonElements([1, 2, 3], [10, 20, 30])</code> возвращает
+          <code>[]</code>.
+        </li>
+        <li>
+          Вызов функции со случайными, но валидными аргументами, возвращает
+          правильное значение.
+        </li>
+      </ul>
+    </div>
+  </section>
+</section>

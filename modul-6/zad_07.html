@@ -1,15 +1,100 @@
 <a href="../modul-6/index.html"><h1>Модуль - 06</h1></a>
-<h2>Задача - 07. .</h2>
+<h2>Задача - 07. Фильтрация массива чисел 2.0.</h2>
 <a href="../modul-6/zad_06.html">&lt; &lt;Предыдущая задача</a>
 <a href="../modul-6/zad_08.html">Cледующая задача&gt;&gt;</a>
 
 <details closed="">
   <summary style="color: teal">Решение</summary>
   <pre><code>
+  "use strict";
+  // Пиши код ниже этой строки
+  const filterArray = (numbers, value) => {
+    const filteredNumbers = [];
 
+    numbers.forEach((number) => {
+      if (number > value) {
+        filteredNumbers.push(number);
+      }
+    });
+
+    // Пиши код выше этой строки
+    return filteredNumbers;
+  };
+  console.log(filterArray([1, 2, 3, 4, 5], 3));
+  console.log(filterArray([1, 2, 3, 4, 5], 4));
+  console.log(filterArray([1, 2, 3, 4, 5], 5));
+  console.log(filterArray([12, 24, 8, 41, 76], 38));
+  console.log(filterArray([12, 24, 8, 41, 76], 20));
 </code></pre>
 </details>
 <script>
   "use strict";
+  // Пиши код ниже этой строки
+  const filterArray = (numbers, value) => {
+    const filteredNumbers = [];
 
+    numbers.forEach((number) => {
+      if (number > value) {
+        filteredNumbers.push(number);
+      }
+    });
+
+    // Пиши код выше этой строки
+    return filteredNumbers;
+  };
+  console.log(filterArray([1, 2, 3, 4, 5], 3));
+  console.log(filterArray([1, 2, 3, 4, 5], 4));
+  console.log(filterArray([1, 2, 3, 4, 5], 5));
+  console.log(filterArray([12, 24, 8, 41, 76], 38));
+  console.log(filterArray([12, 24, 8, 41, 76], 20));
 </script>
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <h3 class="task">Задание</h3>
+      <p>
+        Замени объявление функции <code>filterArray()</code> и коллбек для
+        метода <code>forEach()</code> на стрелочные функции.
+      </p>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>Объявлена переменная <code>filterArray</code>.</li>
+        <li>
+          Переменной <code>filterArray</code> присвоена стрелочная функция с
+          параметрами <code>(numbers, value)</code>.
+        </li>
+        <li>
+          Для перебора массива <code>numbers</code> использован метод
+          <code>forEach</code>.
+        </li>
+        <li>Коллбек для метода <code>forEach</code> это стрелочная функция.</li>
+        <li>
+          Вызов функции <code>filterArray([1, 2, 3, 4, 5], 3)</code> возвращает
+          <code>[4, 5]</code>.
+        </li>
+        <li>
+          Вызов функции <code>filterArray([1, 2, 3, 4, 5], 4)</code> возвращает
+          <code>[5]</code>.
+        </li>
+        <li>
+          Вызов функции <code>filterArray([1, 2, 3, 4, 5], 5)</code> возвращает
+          <code>[]</code>.
+        </li>
+        <li>
+          Вызов функции
+          <code>filterArray([12, 24, 8, 41, 76], 38)</code> возвращает
+          <code>[41, 76]</code>.
+        </li>
+        <li>
+          Вызов функции
+          <code>filterArray([12, 24, 8, 41, 76], 20)</code> возвращает
+          <code>[24, 41, 76]</code>.
+        </li>
+        <li>
+          Вызов функции со случайными, но валидными аргументами, возвращает
+          правильное значение.
+        </li>
+      </ul>
+    </div>
+  </section>
+</section>
