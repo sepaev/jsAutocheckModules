@@ -1,5 +1,5 @@
 <a href="../modul-6/index.html"><h1>Модуль - 06</h1></a>
-<h2>Задача - 05. .</h2>
+<h2>Задача - 05. Неявный возврат.</h2>
 <a href="../modul-6/zad_04.html">&lt; &lt;Предыдущая задача</a>
 <a href="../modul-6/zad_06.html">Cледующая задача&gt;&gt;</a>
 
@@ -13,3 +13,80 @@
   "use strict";
 
 </script>
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <details closed="">
+        <summary>Теория</summary>
+        <p>
+          В стрелочной функции после символа <code>=&gt;</code> идёт её тело.
+          Здесь может быть два варианта: с фигурными скобками и без них.
+        </p>
+        <pre><code class="language-js hljs javascript"><span class="hljs-keyword">const</span> add = <span class="hljs-function">(<span class="hljs-params">a, b, c</span>) =&gt;</span> {
+  <span class="hljs-built_in">console</span>.log(a, b, c);
+  <span class="hljs-keyword">return</span> a + b + c;
+};
+</code></pre>
+        <p>
+          Если фигурные скобки есть, и функция должна возвращать какое-то
+          значение, необходимо явно поставить <code>return</code>. Это
+          называется явный возврат (explicit return). Такой синтаксис
+          используется в том случае, если в теле функции нужно выполнить ещё
+          какие-то инструкции кроме возврата значения.
+        </p>
+        <pre><code class="language-js hljs javascript"><span class="hljs-keyword">const</span> add = <span class="hljs-function">(<span class="hljs-params">a, b, c</span>) =&gt;</span> a + b + c;
+</code></pre>
+        <p>
+          Если фигурных скобок нет, то возвращается результат выражения стоящего
+          после <code>=&gt;</code>. Это называется неявный возврат (implicit
+          return). В примере вернётся результат выражения сложения параметров
+          <code>a</code>, <code>b</code> и <code>c</code>.
+        </p>
+        <p>
+          Синтаксис неявного возврата сильно сокращает «шум» объявления функции
+          с телом и возвращаемым выражением, но подходит только в случае когда в
+          теле функции не нужно выполнять никаких дополнительных инструкций
+          кроме возврата значения.
+        </p>
+        <pre><code class="language-js hljs javascript"><span class="hljs-comment">// До</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">classicAdd</span>(<span class="hljs-params">a, b, c</span>) </span>{
+  <span class="hljs-keyword">return</span> a + b + c;
+}
+
+<span class="hljs-comment">// После</span>
+<span class="hljs-keyword">const</span> arrowAdd = <span class="hljs-function">(<span class="hljs-params">a, b, c</span>) =&gt;</span> a + b + c;
+</code></pre>
+      </details>
+      <h3 class="task">Задание</h3>
+      <p>
+        Выполни рефакторинг функции <code>calculateTotalPrice()</code> так,
+        чтобы она использовала неявный возврат.
+      </p>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>Объявлена переменная <code>calculateTotalPrice</code>.</li>
+        <li>
+          Переменной <code>calculateTotalPrice</code> присвоена стрелочная
+          функция с параметрами <code>(quantity, pricePerItem)</code>.
+        </li>
+        <li>В функции использован неявный возврат.</li>
+        <li>
+          Вызов <code>calculateTotalPrice(5, 100)</code> возвращает
+          <code>500</code>.
+        </li>
+        <li>
+          Вызов <code>calculateTotalPrice(8, 60)</code> возвращает
+          <code>480</code>.
+        </li>
+        <li>
+          Вызов <code>calculateTotalPrice('3, 400)</code> возвращает
+          <code>1200</code>.
+        </li>
+        <li>
+          Вызов функции со случайными, но валидными аргументами, возвращает
+          правильное значение.
+        </li>
+      </ul>
+    </div>
+  </section>
+</section>
