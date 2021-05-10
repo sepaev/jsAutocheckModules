@@ -1,15 +1,96 @@
 <a href="../modul-6/index.html"><h1>Модуль - 06</h1></a>
-<h2>Задача - 10. .</h2>
+<h2>Задача - 10. Метод <code>map()</code>.</h2>
 <a href="../modul-6/zad_09.html">&lt; &lt;Предыдущая задача</a>
 <a href="../modul-6/zad_11.html">Cледующая задача&gt;&gt;</a>
 
 <details closed="">
   <summary style="color: teal">Решение</summary>
   <pre><code>
-
+  "use strict";
+  const planets = ["Земля", "Марс", "Венера", "Юпитер"];
+  // Пиши код ниже этой строки
+  const planetsLengths = planets.map((array) => array.length);
+  console.log(planetsLengths);
 </code></pre>
 </details>
 <script>
   "use strict";
-
+  const planets = ["Земля", "Марс", "Венера", "Юпитер"];
+  // Пиши код ниже этой строки
+  const planetsLengths = planets.map((array) => array.length);
+  console.log(planetsLengths);
 </script>
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <details closed="">
+        <summary>Теория</summary>
+        <p>
+          Большинство перебирающих методов массива это чистые функции. Они
+          создают новый массив, заполняют его, применяя к значению каждого
+          элемента указанную коллбек-функцию, после чего возвращают этот новый
+          массив.
+        </p>
+        <p>
+          Метод <code>map(callback)</code> используется для трансформации
+          массива. Он вызывает коллбек-функцию для каждого элемента исходного
+          массива, а результат её работы записывает в новый массив, который и
+          будет результатом выполнения метода.
+        </p>
+        <pre><code class="language-js hljs javascript">массив.map(<span class="hljs-function">(<span class="hljs-params">element, index, array</span>) =&gt;</span> {
+  <span class="hljs-comment">// Тело коллбек-функции</span>
+});
+</code></pre>
+        <ul>
+          <li>Поэлементно перебирает оригинальный массив.</li>
+          <li>Не изменяет оригинальный массив.</li>
+          <li>Результат работа коллбек-функции записывается в новый массив.</li>
+          <li>Возвращает новый массив такой же длины.</li>
+        </ul>
+        <p>
+          Его можно использовать для того, чтобы изменить каждый элемент
+          массива. Оригинальный массив используется как эталон, на базе которого
+          можно сделать другую коллекцию.
+        </p>
+        <pre><code class="language-js hljs javascript"><span class="hljs-keyword">const</span> planets = [<span class="hljs-string">'Земля'</span>, <span class="hljs-string">'Марс'</span>, <span class="hljs-string">'Венера'</span>, <span class="hljs-string">'Юпитер'</span>];
+
+<span class="hljs-keyword">const</span> planetsInUpperCase = planets.map(<span class="hljs-function">(<span class="hljs-params">planet</span>) =&gt;</span> planet.toUpperCase());
+<span class="hljs-built_in">console</span>.log(planetsInUpperCase); <span class="hljs-comment">// ['ЗЕМЛЯ', 'МАРС', 'ВЕНЕРА', 'ЮПИТЕР']</span>
+
+<span class="hljs-keyword">const</span> planetsInLowerCase = planets.map(<span class="hljs-function">(<span class="hljs-params">planet</span>) =&gt;</span> planet.toLowerCase());
+<span class="hljs-built_in">console</span>.log(planetsInLowerCase); <span class="hljs-comment">// ['земля', 'марс', 'венера', 'юпитер']</span>
+
+<span class="hljs-comment">// Оригинальный массив не изменился</span>
+<span class="hljs-built_in">console</span>.log(planets); <span class="hljs-comment">// ['Земля', 'Марс', 'Венера', 'Юпитер']</span>
+</code></pre>
+        <p>
+          Использование анонимных стрелочных функций с неявным возвратом сильно
+          сокращает «шум» объявления коллбек-функции, делая код чище и проще для
+          восприятия.
+        </p>
+      </details>
+      <h3 class="task">Задание</h3>
+      <p>
+        Дополни код так, чтобы в переменной
+        <code>planetsLengths</code> получился массив длин названий планет.
+        Обязательно используй метод <code>map()</code>.
+      </p>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>Объявлена переменная <code>planets</code>.</li>
+        <li>
+          Значение переменной <code>planets</code> это массив
+          <code>['Земля', 'Марс', 'Венера', 'Юпитер']</code>.
+        </li>
+        <li>Объявлена переменная <code>planetsLengths</code>.</li>
+        <li>
+          Значение переменной <code>planetsLengths</code> это массив
+          <code>[5, 4, 6, 6]</code>.
+        </li>
+        <li>
+          Для перебора массива планет использован метод <code>map()</code>.
+        </li>
+      </ul>
+    </div>
+  </section>
+</section>

@@ -1,15 +1,223 @@
 <a href="../modul-6/index.html"><h1>Модуль - 06</h1></a>
-<h2>Задача - 14. .</h2>
+<h2>Задача - 14. Почты пользователей.</h2>
 <a href="../modul-6/zad_13.html">&lt; &lt;Предыдущая задача</a>
 <a href="../modul-6/zad_15.html">Cледующая задача&gt;&gt;</a>
 
 <details closed="">
   <summary style="color: teal">Решение</summary>
   <pre><code>
-
+  // Пиши код ниже этой строки
+  const getUserEmails = (users) => users.map((users) => users.email);
+  // Пиши код выше этой строки
 </code></pre>
 </details>
 <script>
   "use strict";
-
+  // Пиши код ниже этой строки
+  const users = [
+    {
+      name: "Moore Hensley",
+      email: "moorehensley@indexia.com",
+      eyeColor: "blue",
+      friends: ["Sharron Pace"],
+      isActive: false,
+      balance: 2811,
+      skills: ["ipsum", "lorem"],
+      gender: "male",
+      age: 37,
+    },
+    {
+      name: "Sharlene Bush",
+      email: "sharlenebush@tubesys.com",
+      eyeColor: "blue",
+      friends: ["Briana Decker", "Sharron Pace"],
+      isActive: true,
+      balance: 3821,
+      skills: ["tempor", "mollit", "commodo", "veniam", "laborum"],
+      gender: "female",
+      age: 34,
+    },
+    {
+      name: "Ross Vazquez",
+      email: "rossvazquez@xinware.com",
+      eyeColor: "green",
+      friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+      isActive: false,
+      balance: 3793,
+      skills: ["nulla", "anim", "proident", "ipsum", "elit"],
+      gender: "male",
+      age: 24,
+    },
+    {
+      name: "Elma Head",
+      email: "elmahead@omatom.com",
+      eyeColor: "green",
+      friends: ["Goldie Gentry", "Aisha Tran"],
+      isActive: true,
+      balance: 2278,
+      skills: ["adipisicing", "irure", "velit"],
+      gender: "female",
+      age: 21,
+    },
+    {
+      name: "Carey Barr",
+      email: "careybarr@nurali.com",
+      eyeColor: "blue",
+      friends: ["Jordan Sampson", "Eddie Strong"],
+      isActive: true,
+      balance: 3951,
+      skills: ["ex", "culpa", "nostrud"],
+      gender: "male",
+      age: 27,
+    },
+    {
+      name: "Blackburn Dotson",
+      email: "blackburndotson@furnigeer.com",
+      eyeColor: "brown",
+      friends: ["Jacklyn Lucas", "Linda Chapman"],
+      isActive: false,
+      balance: 1498,
+      skills: ["non", "amet", "ipsum"],
+      gender: "male",
+      age: 38,
+    },
+    {
+      name: "Sheree Anthony",
+      email: "shereeanthony@kog.com",
+      eyeColor: "brown",
+      friends: ["Goldie Gentry", "Briana Decker"],
+      isActive: true,
+      balance: 2764,
+      skills: ["lorem", "veniam", "culpa"],
+      gender: "female",
+      age: 39,
+    },
+  ];
+  const getUserEmails = (users) => users.map((users) => users.email);
+  // Пиши код выше этой строки
+  console.log(getUserEmails(users));
 </script>
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <details closed="">
+        <summary>Массив объектов пользователей</summary>
+        <p>
+          Этот массив объектов мы будем передавать в параметр
+          <code>users</code> при вызове функции из задания.
+        </p>
+        <pre><code class="language-js hljs javascript">[
+  {
+    <span class="hljs-attr">name</span>: <span class="hljs-string">'Moore Hensley'</span>,
+    <span class="hljs-attr">email</span>: <span class="hljs-string">'moorehensley@indexia.com'</span>,
+    <span class="hljs-attr">eyeColor</span>: <span class="hljs-string">'blue'</span>,
+    <span class="hljs-attr">friends</span>: [<span class="hljs-string">'Sharron Pace'</span>],
+    <span class="hljs-attr">isActive</span>: <span class="hljs-literal">false</span>,
+    <span class="hljs-attr">balance</span>: <span class="hljs-number">2811</span>,
+    <span class="hljs-attr">skills</span>: [<span class="hljs-string">'ipsum'</span>, <span class="hljs-string">'lorem'</span>],
+    <span class="hljs-attr">gender</span>: <span class="hljs-string">'male'</span>,
+    <span class="hljs-attr">age</span>: <span class="hljs-number">37</span>,
+  },
+  {
+    <span class="hljs-attr">name</span>: <span class="hljs-string">'Sharlene Bush'</span>,
+    <span class="hljs-attr">email</span>: <span class="hljs-string">'sharlenebush@tubesys.com'</span>,
+    <span class="hljs-attr">eyeColor</span>: <span class="hljs-string">'blue'</span>,
+    <span class="hljs-attr">friends</span>: [<span class="hljs-string">'Briana Decker'</span>, <span class="hljs-string">'Sharron Pace'</span>],
+    <span class="hljs-attr">isActive</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">balance</span>: <span class="hljs-number">3821</span>,
+    <span class="hljs-attr">skills</span>: [<span class="hljs-string">'tempor'</span>, <span class="hljs-string">'mollit'</span>, <span class="hljs-string">'commodo'</span>, <span class="hljs-string">'veniam'</span>, <span class="hljs-string">'laborum'</span>],
+    <span class="hljs-attr">gender</span>: <span class="hljs-string">'female'</span>,
+    <span class="hljs-attr">age</span>: <span class="hljs-number">34</span>,
+  },
+  {
+    <span class="hljs-attr">name</span>: <span class="hljs-string">'Ross Vazquez'</span>,
+    <span class="hljs-attr">email</span>: <span class="hljs-string">'rossvazquez@xinware.com'</span>,
+    <span class="hljs-attr">eyeColor</span>: <span class="hljs-string">'green'</span>,
+    <span class="hljs-attr">friends</span>: [<span class="hljs-string">'Marilyn Mcintosh'</span>, <span class="hljs-string">'Padilla Garrison'</span>, <span class="hljs-string">'Naomi Buckner'</span>],
+    <span class="hljs-attr">isActive</span>: <span class="hljs-literal">false</span>,
+    <span class="hljs-attr">balance</span>: <span class="hljs-number">3793</span>,
+    <span class="hljs-attr">skills</span>: [<span class="hljs-string">'nulla'</span>, <span class="hljs-string">'anim'</span>, <span class="hljs-string">'proident'</span>, <span class="hljs-string">'ipsum'</span>, <span class="hljs-string">'elit'</span>],
+    <span class="hljs-attr">gender</span>: <span class="hljs-string">'male'</span>,
+    <span class="hljs-attr">age</span>: <span class="hljs-number">24</span>,
+  },
+  {
+    <span class="hljs-attr">name</span>: <span class="hljs-string">'Elma Head'</span>,
+    <span class="hljs-attr">email</span>: <span class="hljs-string">'elmahead@omatom.com'</span>,
+    <span class="hljs-attr">eyeColor</span>: <span class="hljs-string">'green'</span>,
+    <span class="hljs-attr">friends</span>: [<span class="hljs-string">'Goldie Gentry'</span>, <span class="hljs-string">'Aisha Tran'</span>],
+    <span class="hljs-attr">isActive</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">balance</span>: <span class="hljs-number">2278</span>,
+    <span class="hljs-attr">skills</span>: [<span class="hljs-string">'adipisicing'</span>, <span class="hljs-string">'irure'</span>, <span class="hljs-string">'velit'</span>],
+    <span class="hljs-attr">gender</span>: <span class="hljs-string">'female'</span>,
+    <span class="hljs-attr">age</span>: <span class="hljs-number">21</span>,
+  },
+  {
+    <span class="hljs-attr">name</span>: <span class="hljs-string">'Carey Barr'</span>,
+    <span class="hljs-attr">email</span>: <span class="hljs-string">'careybarr@nurali.com'</span>,
+    <span class="hljs-attr">eyeColor</span>: <span class="hljs-string">'blue'</span>,
+    <span class="hljs-attr">friends</span>: [<span class="hljs-string">'Jordan Sampson'</span>, <span class="hljs-string">'Eddie Strong'</span>],
+    <span class="hljs-attr">isActive</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">balance</span>: <span class="hljs-number">3951</span>,
+    <span class="hljs-attr">skills</span>: [<span class="hljs-string">'ex'</span>, <span class="hljs-string">'culpa'</span>, <span class="hljs-string">'nostrud'</span>],
+    <span class="hljs-attr">gender</span>: <span class="hljs-string">'male'</span>,
+    <span class="hljs-attr">age</span>: <span class="hljs-number">27</span>,
+  },
+  {
+    <span class="hljs-attr">name</span>: <span class="hljs-string">'Blackburn Dotson'</span>,
+    <span class="hljs-attr">email</span>: <span class="hljs-string">'blackburndotson@furnigeer.com'</span>,
+    <span class="hljs-attr">eyeColor</span>: <span class="hljs-string">'brown'</span>,
+    <span class="hljs-attr">friends</span>: [<span class="hljs-string">'Jacklyn Lucas'</span>, <span class="hljs-string">'Linda Chapman'</span>],
+    <span class="hljs-attr">isActive</span>: <span class="hljs-literal">false</span>,
+    <span class="hljs-attr">balance</span>: <span class="hljs-number">1498</span>,
+    <span class="hljs-attr">skills</span>: [<span class="hljs-string">'non'</span>, <span class="hljs-string">'amet'</span>, <span class="hljs-string">'ipsum'</span>],
+    <span class="hljs-attr">gender</span>: <span class="hljs-string">'male'</span>,
+    <span class="hljs-attr">age</span>: <span class="hljs-number">38</span>,
+  },
+  {
+    <span class="hljs-attr">name</span>: <span class="hljs-string">'Sheree Anthony'</span>,
+    <span class="hljs-attr">email</span>: <span class="hljs-string">'shereeanthony@kog.com'</span>,
+    <span class="hljs-attr">eyeColor</span>: <span class="hljs-string">'brown'</span>,
+    <span class="hljs-attr">friends</span>: [<span class="hljs-string">'Goldie Gentry'</span>, <span class="hljs-string">'Briana Decker'</span>],
+    <span class="hljs-attr">isActive</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">balance</span>: <span class="hljs-number">2764</span>,
+    <span class="hljs-attr">skills</span>: [<span class="hljs-string">'lorem'</span>, <span class="hljs-string">'veniam'</span>, <span class="hljs-string">'culpa'</span>],
+    <span class="hljs-attr">gender</span>: <span class="hljs-string">'female'</span>,
+    <span class="hljs-attr">age</span>: <span class="hljs-number">39</span>,
+  },
+];
+</code></pre>
+      </details>
+      <h3 class="task">Задание</h3>
+      <p>
+        Дополни функцию <code>getUserEmails(users)</code> так, чтобы она
+        возвращала массив почтовых адресов пользователей (свойство
+        <code>email</code>) из массива объектов в параметре <code>users</code>.
+      </p>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>Объявлена переменная <code>getUserNames</code>.</li>
+        <li>
+          Переменной <code>getUserNames</code> присвоена стрелочная функция с
+          параметром <code>(users)</code>.
+        </li>
+        <li>
+          Для перебора параметра <code>users</code> используется метод
+          <code>map()</code>.
+        </li>
+        <li>
+          Вызов функции с указанным массивом пользователей возвращает массив
+          <code
+            >['moorehensley@indexia.com', 'sharlenebush@tubesys.com',
+            'rossvazquez@xinware.com', 'elmahead@omatom.com',
+            'careybarr@nurali.com', 'blackburndotson@furnigeer.com',
+            'shereeanthony@kog.com']</code
+          >.
+        </li>
+        <li>
+          Вызов функции со случайными, но валидными аргументами, возвращает
+          правильное значение.
+        </li>
+      </ul>
+    </div>
+  </section>
+</section>
