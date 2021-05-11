@@ -1,15 +1,142 @@
 <a href="../modul-6/index.html"><h1>Модуль - 06</h1></a>
-<h2>Задача - 15. .</h2>
+<h2>Задача - 15. Методы filter и find.</h2>
 <a href="../modul-6/zad_14.html">&lt; &lt;Предыдущая задача</a>
 <a href="../modul-6/zad_16.html">Cледующая задача&gt;&gt;</a>
 
 <details closed="">
   <summary style="color: teal">Решение</summary>
   <pre><code>
+  "use strict";
+  const numbers = [17, 24, 82, 61, 36, 18, 47, 52, 73];
+  // Пиши код ниже этой строки
 
+  const evenNumbers = numbers.filter((number) => number % 2 === 0);
+  const oddNumbers = numbers.filter((number) => number % 2 != 0);
+  console.log(evenNumbers);
+  console.log(oddNumbers);
 </code></pre>
 </details>
 <script>
   "use strict";
+  const numbers = [17, 24, 82, 61, 36, 18, 47, 52, 73];
+  // Пиши код ниже этой строки
 
+  const evenNumbers = numbers.filter((number) => number % 2 === 0);
+  const oddNumbers = numbers.filter((number) => number % 2 != 0);
+  console.log(evenNumbers);
+  console.log(oddNumbers);
 </script>
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <details closed="">
+        <summary>Теория</summary>
+        <p>
+          Метод <code>filter(callback)</code> используется для единственной
+          операции - фильтрации массива, то есть когда необходимо выбрать более
+          одного элемента из коллекции по какому-то критерию.
+        </p>
+        <pre><code class="language-js hljs javascript">массив.filter(<span class="hljs-function">(<span class="hljs-params">element, index, array</span>) =&gt;</span> {
+  <span class="hljs-comment">// Тело коллбек-функции</span><font></font>
+});<font></font>
+</code></pre>
+        <ul>
+          <li>Не изменяет оригинальный массив.</li>
+          <li>Поэлементно перебирает оригинальный массив.</li>
+          <li>Возвращает новый массив.</li>
+          <li>
+            Добавляет в возвращаемый массив элементы которые удовлетворяют
+            условию коллбек-функции.
+          </li>
+          <li>
+            Если коллбек вернул <code>true</code> элемент добавляется в
+            возвращаемый массив.
+          </li>
+          <li>
+            Если коллбек вернул <code>false</code> элемент не добавляется в
+            возвращаемый массив.
+          </li>
+          <li>
+            Если ни один элемент не удовлетворил условию, возвращает пустой
+            массив.
+          </li>
+        </ul>
+        <pre><code class="language-js hljs javascript"><span class="hljs-keyword">const</span> values = [<span class="hljs-number">51</span>, <span class="hljs-number">-3</span>, <span class="hljs-number">27</span>, <span class="hljs-number">21</span>, <span class="hljs-number">-68</span>, <span class="hljs-number">42</span>, <span class="hljs-number">-37</span>];<font></font>
+<font></font>
+<span class="hljs-keyword">const</span> positiveValues = values.filter(<span class="hljs-function"><span class="hljs-params">value</span> =&gt;</span> value &gt;= <span class="hljs-number">0</span>);
+<span class="hljs-built_in">console</span>.log(positiveValues); <span class="hljs-comment">// [51, 27, 21, 42]</span><font></font>
+<font></font>
+<span class="hljs-keyword">const</span> negativeValues = values.filter(<span class="hljs-function"><span class="hljs-params">value</span> =&gt;</span> value &lt; <span class="hljs-number">0</span>);
+<span class="hljs-built_in">console</span>.log(negativeValues); <span class="hljs-comment">// [-3, -68, -37]</span><font></font>
+<font></font>
+<span class="hljs-keyword">const</span> bigValues = values.filter(<span class="hljs-function"><span class="hljs-params">value</span> =&gt;</span> value &gt; <span class="hljs-number">1000</span>);
+<span class="hljs-built_in">console</span>.log(bigValues); <span class="hljs-comment">// []</span><font></font>
+<font></font>
+<span class="hljs-comment">// Оригинальный массив не изменился</span>
+<span class="hljs-built_in">console</span>.log(values); <span class="hljs-comment">// [51, -3, 27, 21, -68, 42, -37]</span>
+</code></pre>
+        <p>
+          То есть метод <code>filter</code> вызывает коллбек-функцию для каждого
+          элемента исходного массива и если результат её выполнения
+          <code>true</code>, текущий элемент добавляет в новый массив.
+        </p>
+      </details>
+      <h3 class="task">Задание</h3>
+      <p>
+        Дополни код так, чтобы в переменной <code>evenNumbers</code> получился
+        массив чётных чисел из массива <code>numbers</code>, а в переменной
+        <code>oddNumbers</code> массив нечётных. Обязательно используй метод
+        <code>filter()</code>.
+      </p>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>Объявлена переменная <code>numbers</code>.</li>
+        <li>
+          Значение переменной <code>numbers</code> это массив
+          <code>[17, 24, 82, 61, 36, 18, 47, 52, 73]</code>.
+        </li>
+        <li>
+          <font style="vertical-align: inherit"
+            ><font style="vertical-align: inherit"
+              >Объявлена переменная
+            </font></font
+          ><code>evenNumbers</code
+          ><font style="vertical-align: inherit"
+            ><font style="vertical-align: inherit">.</font></font
+          >
+        </li>
+        <li>
+          Значение переменной <code>evenNumbers</code> это массив
+          <code>[24, 82, 36, 18, 52]</code>.
+        </li>
+        <li>
+          <font style="vertical-align: inherit"
+            ><font style="vertical-align: inherit"
+              >Объявлена переменная
+            </font></font
+          ><code>oddNumbers</code
+          ><font style="vertical-align: inherit"
+            ><font style="vertical-align: inherit">.</font></font
+          >
+        </li>
+        <li>
+          <font style="vertical-align: inherit"
+            ><font style="vertical-align: inherit"
+              >Значение переменной
+            </font></font
+          ><code>oddNumbers</code
+          ><font style="vertical-align: inherit"
+            ><font style="vertical-align: inherit"> это массив </font></font
+          ><code>[17, 61, 47, 73]</code
+          ><font style="vertical-align: inherit"
+            ><font style="vertical-align: inherit">.</font></font
+          >
+        </li>
+        <li>
+          Для перебора массива <code>numbers</code> использован метод
+          <code>filter()</code>.
+        </li>
+      </ul>
+    </div>
+  </section>
+</section>

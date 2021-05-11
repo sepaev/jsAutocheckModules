@@ -1,15 +1,169 @@
 <a href="../modul-6/index.html"><h1>Модуль - 06</h1></a>
-<h2>Задача - 16. .</h2>
+<h2>Задача - 16. Фильтрация уникальных элементов.</h2>
 <a href="../modul-6/zad_15.html">&lt; &lt;Предыдущая задача</a>
 <a href="../modul-6/zad_17.html">Cледующая задача&gt;&gt;</a>
 
 <details closed="">
   <summary style="color: teal">Решение</summary>
   <pre><code>
-
+  "use strict";
+  const books = [
+    {
+      title: "Последнее королевство",
+      author: "Бернард Корнуэлл",
+      genres: ["приключения", "историческое"],
+    },
+    {
+      title: "На берегу спокойных вод",
+      author: "Роберт Шекли",
+      genres: ["фантастика", "мистика"],
+    },
+    {
+      title: "Красна как кровь",
+      author: "Ли Танит",
+      genres: ["ужасы", "мистика", "приключения"],
+    },
+  ];
+  // Пиши код ниже этой строки
+  const allGenres = books.flatMap((book) => book.genres);
+  const uniqueGenres = allGenres.filter((genre, index, array) => {
+    return index === array.indexOf(genre);
+  });
+  console.log(allGenres);
+  console.log(uniqueGenres);
 </code></pre>
 </details>
 <script>
   "use strict";
-
+  const books = [
+    {
+      title: "Последнее королевство",
+      author: "Бернард Корнуэлл",
+      genres: ["приключения", "историческое"],
+    },
+    {
+      title: "На берегу спокойных вод",
+      author: "Роберт Шекли",
+      genres: ["фантастика", "мистика"],
+    },
+    {
+      title: "Красна как кровь",
+      author: "Ли Танит",
+      genres: ["ужасы", "мистика", "приключения"],
+    },
+  ];
+  // Пиши код ниже этой строки
+  const allGenres = books.flatMap((book) => book.genres);
+  const uniqueGenres = allGenres.filter((genre, index, array) => {
+    return index === array.indexOf(genre);
+  });
+  console.log(allGenres);
+  console.log(uniqueGenres);
 </script>
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <details closed="">
+        <summary>Теория</summary>
+        <p>
+          Используя метод <code>filter()</code> можно выполнить фильтрацию
+          массива так, что в нём останутся только уникальные элементы. Этот
+          приём работает только с массивом примитивных значений - не объектов.
+        </p>
+        <p>
+          Вернёмся к группе студентов и массиву всех посещаемых предметов,
+          которые мы получили методом <code>flatMap()</code>.
+        </p>
+        <pre><code class="language-js hljs javascript"><span class="hljs-keyword">const</span> students = [
+  { <span class="hljs-attr">name</span>: <span class="hljs-string">'Манго'</span>, <span class="hljs-attr">courses</span>: [<span class="hljs-string">'математика'</span>, <span class="hljs-string">'физика'</span>] },
+  { <span class="hljs-attr">name</span>: <span class="hljs-string">'Поли'</span>, <span class="hljs-attr">courses</span>: [<span class="hljs-string">'информатика'</span>, <span class="hljs-string">'математика'</span>] },
+  { <span class="hljs-attr">name</span>: <span class="hljs-string">'Киви'</span>, <span class="hljs-attr">courses</span>: [<span class="hljs-string">'физика'</span>, <span class="hljs-string">'биология'</span>] }
+];
+
+<span class="hljs-keyword">const</span> allCourses = students.flatMap(<span class="hljs-function"><span class="hljs-params">student</span> =&gt;</span> student.courses);
+<span class="hljs-comment">// ['математика', 'физика', 'информатика', 'математика', 'физика', 'биология'];</span>
+</code></pre>
+        <p>
+          В переменной <code>allCourses</code> хранится массив всех посещаемых
+          предметов, которые могут повторяться. Задача заключается в том, чтобы
+          сделать новый массив, в котором будут только уникальные предметы, то
+          есть без повторений.
+        </p>
+        <pre><code class="language-js hljs javascript"><span class="hljs-keyword">const</span> uniqueCourses = allCourses.filter(
+  <span class="hljs-function">(<span class="hljs-params">course, index, array</span>) =&gt;</span> array.indexOf(course) === index
+);
+</code></pre>
+        <p>
+          Используя <code>array.indexOf(course)</code> выполняем поиск первого
+          совпадения текущего элемента <code>course</code> и получаем его индекс
+          в оригинальном массиве всех курсов. В параметре
+          <code>index</code> хранится индекс текущего элемента
+          <code>course</code> при переборе массива методом <code>filter</code>.
+        </p>
+        <p>
+          Если результат <code>indexOf()</code> и значение
+          <code>index</code> равны - это уникальный элемент, потому что это
+          первый раз когда такое значение встречается в массиве и на текущей
+          итерации фильтр обрабатывает именно его.
+        </p>
+        <pre><code class="language-bash hljs"><span class="hljs-comment"># Массив всех курсов</span>
+[<span class="hljs-string">'математика'</span>, <span class="hljs-string">'физика'</span>, <span class="hljs-string">'информатика'</span>, <span class="hljs-string">'математика'</span>, <span class="hljs-string">'физика'</span>, <span class="hljs-string">'биология'</span>];
+</code></pre>
+        <p>Для элемента <code>'математика'</code> под индексом 0:</p>
+        <ul>
+          <li>
+            <code>indexOf()</code> вернёт 0, потому что ищет первое совпадение.
+          </li>
+          <li>Значение параметра <code>index</code> будет 0.</li>
+          <li>Они равны, значит это уникальный элемент.</li>
+        </ul>
+        <p>Для элемента <code>'математика'</code> под индексом 3:</p>
+        <ul>
+          <li>
+            <code>indexOf()</code> вернёт 0, потому что ищет первое совпадение.
+          </li>
+          <li>Значение параметра <code>index</code> будет 3.</li>
+          <li>
+            Они не равны, значит это повторяющийся - не уникальный элемент.
+          </li>
+        </ul>
+      </details>
+      <h3 class="task">Задание</h3>
+      <p>
+        Дополни код так, чтобы в переменной <code>allGenres</code> был массив
+        всех жанров книг (свойство <code>genres</code>) из массива
+        <code>books</code>, а в переменной <code>uniqueGenres</code> массив
+        уникальных жанров - без повторений.
+      </p>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>Объявлена переменная <code>books</code>.</li>
+        <li>Значение переменной <code>books</code> это массив объектов.</li>
+        <li>Объявлена переменная <code>allGenres</code>.</li>
+        <li>
+          Значение переменной <code>allGenres</code> это массив
+          <code
+            >['приключения', 'историческое', 'фантастика', 'мистика', 'ужасы',
+            'мистика', 'приключения']</code
+          >.
+        </li>
+        <li>Объявлена переменная <code>uniqueGenres</code>.</li>
+        <li>
+          Значение переменной <code>uniqueGenres</code> это массив
+          <code
+            >['приключения', 'историческое', 'фантастика', 'мистика',
+            'ужасы']</code
+          >.
+        </li>
+        <li>
+          Для вычисления значения переменной <code>allGenders</code> использован
+          метод <code>flatMap()</code>.
+        </li>
+        <li>
+          Для вычисления значения переменной
+          <code>uniqueGenres</code> использован метод <code>filter()</code>.
+        </li>
+      </ul>
+    </div>
+  </section>
+</section>
