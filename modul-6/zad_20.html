@@ -1,15 +1,305 @@
 <a href="../modul-6/index.html"><h1>Модуль - 06</h1></a>
-<h2>Задача - 20. .</h2>
+<h2>Задача - 20. Пользователи с другом.</h2>
 <a href="../modul-6/zad_19.html">&lt; &lt;Предыдущая задача</a>
 <a href="../modul-6/zad_21.html">Cледующая задача&gt;&gt;</a>
 
 <details closed="">
   <summary style="color: teal">Решение</summary>
   <pre><code>
+  "use strict";
+  // Пиши код ниже этой строки
+  const allUsers = [
+    {
+      name: "Moore Hensley",
+      email: "moorehensley@indexia.com",
+      eyeColor: "blue",
+      friends: ["Sharron Pace"],
+      isActive: false,
+      balance: 2811,
+      gender: "male",
+      age: 37,
+    },
+    {
+      name: "Sharlene Bush",
+      email: "sharlenebush@tubesys.com",
+      eyeColor: "blue",
+      friends: ["Briana Decker", "Sharron Pace"],
+      isActive: true,
+      balance: 3821,
+      gender: "female",
+      age: 34,
+    },
+    {
+      name: "Ross Vazquez",
+      email: "rossvazquez@xinware.com",
+      eyeColor: "green",
+      friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+      isActive: false,
+      balance: 3793,
+      gender: "male",
+      age: 24,
+    },
+    {
+      name: "Elma Head",
+      email: "elmahead@omatom.com",
+      eyeColor: "green",
+      friends: ["Goldie Gentry", "Aisha Tran"],
+      isActive: true,
+      balance: 2278,
+      gender: "female",
+      age: 21,
+    },
+    {
+      name: "Carey Barr",
+      email: "careybarr@nurali.com",
+      eyeColor: "blue",
+      friends: ["Jordan Sampson", "Eddie Strong"],
+      isActive: true,
+      balance: 3951,
+      gender: "male",
+      age: 27,
+    },
+    {
+      name: "Blackburn Dotson",
+      email: "blackburndotson@furnigeer.com",
+      eyeColor: "brown",
+      friends: ["Jacklyn Lucas", "Linda Chapman"],
+      isActive: false,
+      balance: 1498,
+      gender: "male",
+      age: 38,
+    },
+    {
+      name: "Sheree Anthony",
+      email: "shereeanthony@kog.com",
+      eyeColor: "brown",
+      friends: ["Goldie Gentry", "Briana Decker"],
+      isActive: true,
+      balance: 2764,
+      gender: "female",
+      age: 39,
+    },
+  ];
+  const getUsersWithFriend = (users, friendName) => {
+    return users.filter(({ friends }) => friends.includes(friendName));
+  };
+  const getUsers = (friendName) => getUsersWithFriend(allUsers, friendName);
 
+  console.log(getUsers("Briana Decker"));
+  console.log(getUsers("Goldie Gentry"));
+  console.log(getUsers("Adrian Cross"));
+  console.log(getUsers("Linda Chapman"));
+  // Пиши код выше этой строки
 </code></pre>
 </details>
 <script>
   "use strict";
+  // Пиши код ниже этой строки
+  const allUsers = [
+    {
+      name: "Moore Hensley",
+      email: "moorehensley@indexia.com",
+      eyeColor: "blue",
+      friends: ["Sharron Pace"],
+      isActive: false,
+      balance: 2811,
+      gender: "male",
+      age: 37,
+    },
+    {
+      name: "Sharlene Bush",
+      email: "sharlenebush@tubesys.com",
+      eyeColor: "blue",
+      friends: ["Briana Decker", "Sharron Pace"],
+      isActive: true,
+      balance: 3821,
+      gender: "female",
+      age: 34,
+    },
+    {
+      name: "Ross Vazquez",
+      email: "rossvazquez@xinware.com",
+      eyeColor: "green",
+      friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+      isActive: false,
+      balance: 3793,
+      gender: "male",
+      age: 24,
+    },
+    {
+      name: "Elma Head",
+      email: "elmahead@omatom.com",
+      eyeColor: "green",
+      friends: ["Goldie Gentry", "Aisha Tran"],
+      isActive: true,
+      balance: 2278,
+      gender: "female",
+      age: 21,
+    },
+    {
+      name: "Carey Barr",
+      email: "careybarr@nurali.com",
+      eyeColor: "blue",
+      friends: ["Jordan Sampson", "Eddie Strong"],
+      isActive: true,
+      balance: 3951,
+      gender: "male",
+      age: 27,
+    },
+    {
+      name: "Blackburn Dotson",
+      email: "blackburndotson@furnigeer.com",
+      eyeColor: "brown",
+      friends: ["Jacklyn Lucas", "Linda Chapman"],
+      isActive: false,
+      balance: 1498,
+      gender: "male",
+      age: 38,
+    },
+    {
+      name: "Sheree Anthony",
+      email: "shereeanthony@kog.com",
+      eyeColor: "brown",
+      friends: ["Goldie Gentry", "Briana Decker"],
+      isActive: true,
+      balance: 2764,
+      gender: "female",
+      age: 39,
+    },
+  ];
+  const getUsersWithFriend = (users, friendName) => {
+    return users.filter(({ friends }) => friends.includes(friendName));
+  };
+  const getUsers = (friendName) => getUsersWithFriend(allUsers, friendName);
 
+  console.log(getUsers("Briana Decker"));
+  console.log(getUsers("Goldie Gentry"));
+  console.log(getUsers("Adrian Cross"));
+  console.log(getUsers("Linda Chapman"));
+  // Пиши код выше этой строки
 </script>
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <details closed="">
+        <summary>Массив объектов пользователей</summary>
+        <p>
+          Этот массив объектов мы будем передавать в параметр
+          <code>users</code> при вызове функции из задания.
+        </p>
+        <pre><code class="language-shell hljs">[
+  {
+    name: 'Moore Hensley',
+    email: 'moorehensley@indexia.com',
+    eyeColor: 'blue',
+    friends: ['Sharron Pace'],
+    isActive: false,
+    balance: 2811,
+    gender: 'male',
+    age: 37
+  },
+  {
+    name: 'Sharlene Bush',
+    email: 'sharlenebush@tubesys.com',
+    eyeColor: 'blue',
+    friends: ['Briana Decker', 'Sharron Pace'],
+    isActive: true,
+    balance: 3821,
+    gender: 'female',
+    age: 34
+  },
+  {
+    name: 'Ross Vazquez',
+    email: 'rossvazquez@xinware.com',
+    eyeColor: 'green',
+    friends: ['Marilyn Mcintosh', 'Padilla Garrison', 'Naomi Buckner'],
+    isActive: false,
+    balance: 3793,
+    gender: 'male',
+    age: 24
+  },
+  {
+    name: 'Elma Head',
+    email: 'elmahead@omatom.com',
+    eyeColor: 'green',
+    friends: ['Goldie Gentry', 'Aisha Tran'],
+    isActive: true,
+    balance: 2278,
+    gender: 'female',
+    age: 21
+  },
+  {
+    name: 'Carey Barr',
+    email: 'careybarr@nurali.com',
+    eyeColor: 'blue',
+    friends: ['Jordan Sampson', 'Eddie Strong'],
+    isActive: true,
+    balance: 3951,
+    gender: 'male',
+    age: 27
+  },
+  {
+    name: 'Blackburn Dotson',
+    email: 'blackburndotson@furnigeer.com',
+    eyeColor: 'brown',
+    friends: ['Jacklyn Lucas', 'Linda Chapman'],
+    isActive: false,
+    balance: 1498,
+    gender: 'male',
+    age: 38
+  },
+  {
+    name: 'Sheree Anthony',
+    email: 'shereeanthony@kog.com',
+    eyeColor: 'brown',
+    friends: ['Goldie Gentry', 'Briana Decker'],
+    isActive: true,
+    balance: 2764,
+    gender: 'female',
+    age: 39
+  }
+]
+</code></pre>
+      </details>
+      <h3 class="task">Задание</h3>
+      <p>
+        Дополни функцию <code>getUsersWithFriend(users, friendName)</code> так,
+        чтобы она возвращала массив пользователей у которых есть друг с именем в
+        параметре <code>friendName</code>. Массив друзей пользователя хранится в
+        свойстве <code>friends</code>.
+      </p>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>Объявлена переменная <code>getUsersWithFriend</code>.</li>
+        <li>
+          Переменной <code>getUsersWithFriend</code> присвоена стрелочная
+          функция с параметрами <code>(users, friendName)</code>.
+        </li>
+        <li>
+          Для перебора параметра <code>users</code> используется метод
+          <code>filter()</code>.
+        </li>
+        <li>
+          Если значение параметра <code>friendName</code> это строка
+          <code>'Briana Decker'</code>, функция возвращает массив объектов
+          пользователей с именами <code>Sharlene Bush</code> и
+          <code>Sheree Anthony</code>.
+        </li>
+        <li>
+          Если значение параметра <code>friendName</code> это строка
+          <code>'Goldie Gentry'</code>, функция возвращает массив объектов
+          пользователей с именами <code>Elma Head</code> и
+          <code>Sheree Anthony</code>.
+        </li>
+        <li>
+          Если значение параметра <code>friendName</code> это строка
+          <code>'Adrian Cross'</code>, функция возвращает пустой массив.
+        </li>
+        <li>
+          Вызов функции со случайными, но валидными аргументами, возвращает
+          правильное значение.
+        </li>
+      </ul>
+    </div>
+  </section>
+</section>

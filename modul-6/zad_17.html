@@ -1,15 +1,145 @@
 <a href="../modul-6/index.html"><h1>Модуль - 06</h1></a>
-<h2>Задача - 17. .</h2>
+<h2>Задача - 17. Метод <code>filter()</code> и массив объектов.</h2>
 <a href="../modul-6/zad_16.html">&lt; &lt;Предыдущая задача</a>
 <a href="../modul-6/zad_18.html">Cледующая задача&gt;&gt;</a>
 
 <details closed="">
   <summary style="color: teal">Решение</summary>
   <pre><code>
+  "use strict";
+  const books = [
+    {
+      title: "Последнее королевство",
+      author: "Бернард Корнуэлл",
+      rating: 8.38,
+    },
+    { title: "На берегу спокойных вод", author: "Роберт Шекли", rating: 8.51 },
+    {
+      title: "Сон смешного человека",
+      author: "Федор Достоевский",
+      rating: 7.75,
+    },
+    { title: "Красна как кровь", author: "Ли Танит", rating: 7.94 },
+    { title: "Враг Божий", author: "Бернард Корнуэлл", rating: 8.67 },
+  ];
 
+  const MIN_RATING = 8;
+  const AUTHOR = "Бернард Корнуэлл";
+  // Пиши код ниже этой строки
+
+  const topRatedBooks = books.filter(({ rating }) => rating >= MIN_RATING);
+  const booksByAuthor = books.filter((book) => book.author === AUTHOR);
+  console.log(topRatedBooks);
+  console.log(booksByAuthor);
 </code></pre>
 </details>
 <script>
   "use strict";
+  const books = [
+    {
+      title: "Последнее королевство",
+      author: "Бернард Корнуэлл",
+      rating: 8.38,
+    },
+    { title: "На берегу спокойных вод", author: "Роберт Шекли", rating: 8.51 },
+    {
+      title: "Сон смешного человека",
+      author: "Федор Достоевский",
+      rating: 7.75,
+    },
+    { title: "Красна как кровь", author: "Ли Танит", rating: 7.94 },
+    { title: "Враг Божий", author: "Бернард Корнуэлл", rating: 8.67 },
+  ];
 
+  const MIN_RATING = 8;
+  const AUTHOR = "Бернард Корнуэлл";
+  // Пиши код ниже этой строки
+
+  const topRatedBooks = books.filter(({ rating }) => rating >= MIN_RATING);
+  const booksByAuthor = books.filter((book) => book.author === AUTHOR);
+  console.log(topRatedBooks);
+  console.log(booksByAuthor);
 </script>
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <details closed="">
+        <summary>Теория</summary>
+        <p>
+          При работе с массивом объектов выполняется фильтрация по значению
+          какого-то свойства. В результате получается новый массив
+          отфильтрованных объектов.
+        </p>
+        <p>
+          Например, есть массив студентов с баллами за тест. Необходимо
+          отфильтровать лучших (балл выше 80), худших (балл ниже 50) и средних
+          студентов (балл от 50 до 80).
+        </p>
+        <pre><code class="language-js hljs javascript"><span class="hljs-keyword">const</span> LOW_SCORE = <span class="hljs-number">50</span>;
+<span class="hljs-keyword">const</span> HIGH_SCORE = <span class="hljs-number">80</span>;
+<span class="hljs-keyword">const</span> students = [
+  { <span class="hljs-attr">name</span>: <span class="hljs-string">'Манго'</span>, <span class="hljs-attr">score</span>: <span class="hljs-number">83</span> },
+  { <span class="hljs-attr">name</span>: <span class="hljs-string">'Поли'</span>, <span class="hljs-attr">score</span>: <span class="hljs-number">59</span> },
+  { <span class="hljs-attr">name</span>: <span class="hljs-string">'Аякс'</span>, <span class="hljs-attr">score</span>: <span class="hljs-number">37</span> },
+  { <span class="hljs-attr">name</span>: <span class="hljs-string">'Киви'</span>, <span class="hljs-attr">score</span>: <span class="hljs-number">94</span> },
+  { <span class="hljs-attr">name</span>: <span class="hljs-string">'Хьюстон'</span>, <span class="hljs-attr">score</span>: <span class="hljs-number">64</span> },
+];
+
+<span class="hljs-keyword">const</span> best = students.filter(<span class="hljs-function">(<span class="hljs-params">student</span>) =&gt;</span> student.score &gt;= HIGH_SCORE);
+<span class="hljs-built_in">console</span>.log(best); <span class="hljs-comment">// Массив объектов с именами Манго и Киви</span>
+
+<span class="hljs-keyword">const</span> worst = students.filter(<span class="hljs-function">(<span class="hljs-params">student</span>) =&gt;</span> student.score &lt; LOW_SCORE);
+<span class="hljs-built_in">console</span>.log(worst); <span class="hljs-comment">// Массив с одним объектом Аякс</span>
+
+<span class="hljs-comment">// В коллбек-функции удобно деструктуризировать свойства объекта</span>
+<span class="hljs-keyword">const</span> average = students.filter(
+  <span class="hljs-function">(<span class="hljs-params">{ score }</span>) =&gt;</span> score &gt;= LOW_SCORE &amp;&amp; score &lt; HIGH_SCORE
+);
+<span class="hljs-built_in">console</span>.log(average); <span class="hljs-comment">// Массив объектов с именами Поли и Хьюстон</span>
+</code></pre>
+      </details>
+      <h3 class="task">Задание</h3>
+      <p>Используя метод <code>filter()</code> дополни код так, чтобы:</p>
+      <ul>
+        <li>
+          В переменной <code>topRatedBooks</code> получился массив книг рейтинг
+          которых (свойство <code>rating</code>) больше либо равно значению
+          переменной <code>MIN_RATING</code>.
+        </li>
+        <li>
+          В переменной <code>booksByAuthor</code> получился массив книг
+          написанных автором с именем (свойство <code>author</code>) которое
+          совпадает со значением в переменной <code>AUTHOR</code>.
+        </li>
+      </ul>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>Объявлена переменная <code>books</code>.</li>
+        <li>Значение переменной <code>books</code> это массив объектов.</li>
+        <li>Объявлена переменная <code>MIN_RATING</code>.</li>
+        <li>
+          Значение переменной <code>MIN_RATING</code> это число <code>8</code>.
+        </li>
+        <li>Объявлена переменная <code>AUTHOR</code>.</li>
+        <li>
+          Значение переменной <code>AUTHOR</code> это строка
+          <code>'Бернард Корнуэлл'</code>.
+        </li>
+        <li>Объявлена переменная <code>topRatedBooks</code>.</li>
+        <li>
+          Значение переменной <code>topRatedBooks</code> это массив книг с
+          рейтингов выше <code>8</code>.
+        </li>
+        <li>Объявлена переменная <code>booksByAuthor</code>.</li>
+        <li>
+          Значение переменной <code>booksByAuthor</code> это массив книг автор
+          которых <code>'Бернард Корнуэлл'</code>.
+        </li>
+        <li>
+          Для перебора массива <code>books</code> использован метод
+          <code>filter()</code>.
+        </li>
+      </ul>
+    </div>
+  </section>
+</section>
