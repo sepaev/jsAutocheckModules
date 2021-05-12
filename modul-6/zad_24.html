@@ -1,5 +1,5 @@
 <a href="../modul-6/index.html"><h1>Модуль - 06</h1></a>
-<h2>Задача - 24. .</h2>
+<h2>Задача - 24. Метод <code>find()</code>.</h2>
 <a href="../modul-6/zad_23.html">&lt; &lt;Предыдущая задача</a>
 <a href="../modul-6/zad_25.html">Cледующая задача&gt;&gt;</a>
 
@@ -11,5 +11,117 @@
 </details>
 <script>
   "use strict";
+  const books = [
+    {
+      title: "Последнее королевство",
+      author: "Бернард Корнуэлл",
+      rating: 8.38,
+    },
+    { title: "На берегу спокойных вод", author: "Роберт Шекли", rating: 8.51 },
+    {
+      title: "Сон смешного человека",
+      author: "Федор Достоевский",
+      rating: 7.75,
+    },
+    { title: "Красна как кровь", author: "Ли Танит", rating: 7.94 },
+  ];
+  const BOOK_TITLE = "Сон смешного человека";
+  const AUTHOR = "Роберт Шекли";
+  // Пиши код ниже этой строки
 
+  const bookWithTitle = books;
+  const bookByAuthor = books;
 </script>
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <details closed="">
+        <summary>Теория</summary>
+        <p>
+          Если метод <code>filter(callack)</code> используется для поиска всех
+          элементов удовлетворяющим условию, то метод
+          <code>find(callback)</code> позволяет найти и вернуть первый
+          подходящий элемент, после чего перебор массива прекращается. То есть
+          он ищет до первого совпадения.
+        </p>
+        <pre><code class="language-js hljs javascript">массив.find(<span class="hljs-function">(<span class="hljs-params">element, index, array</span>) =&gt;</span> {
+  <span class="hljs-comment">// Тело коллбек-функции</span>
+});
+</code></pre>
+        <ul>
+          <li>Не изменяет оригинальный массив.</li>
+          <li>Поэлементно перебирает оригинальный массив.</li>
+          <li>
+            Возвращает первый элемент удовлетворяющий условию, то есть когда
+            коллбек возвращает <code>true</code>.
+          </li>
+          <li>
+            Если ни один элемент не подошёл, то есть для всех элементов коллбек
+            вернул <code>false</code>, метод возвращает <code>undefined</code>.
+          </li>
+        </ul>
+        <p>
+          Метод <code>find()</code> используется для одной задачи - поиска
+          элемента по уникальному значению свойства. Например, поиск
+          пользователя по почте, автомобиля по серийному номеру, книги по
+          названию и т. п.
+        </p>
+        <pre><code class="language-js hljs javascript"><span class="hljs-keyword">const</span> colorPickerOptions = [
+  { <span class="hljs-attr">label</span>: <span class="hljs-string">'red'</span>, <span class="hljs-attr">color</span>: <span class="hljs-string">'#F44336'</span> },
+  { <span class="hljs-attr">label</span>: <span class="hljs-string">'green'</span>, <span class="hljs-attr">color</span>: <span class="hljs-string">'#4CAF50'</span> },
+  { <span class="hljs-attr">label</span>: <span class="hljs-string">'blue'</span>, <span class="hljs-attr">color</span>: <span class="hljs-string">'#2196F3'</span> },
+  { <span class="hljs-attr">label</span>: <span class="hljs-string">'pink'</span>, <span class="hljs-attr">color</span>: <span class="hljs-string">'#E91E63'</span> },
+  { <span class="hljs-attr">label</span>: <span class="hljs-string">'indigo'</span>, <span class="hljs-attr">color</span>: <span class="hljs-string">'#3F51B5'</span> },
+];
+
+colorPickerOptions.find(<span class="hljs-function">(<span class="hljs-params">option</span>) =&gt;</span> option.label === <span class="hljs-string">'blue'</span>); <span class="hljs-comment">// { label: 'blue', color: '#2196F3' }</span>
+colorPickerOptions.find(<span class="hljs-function">(<span class="hljs-params">option</span>) =&gt;</span> option.label === <span class="hljs-string">'pink'</span>); <span class="hljs-comment">// { label: 'pink', color: '#E91E63' }</span>
+colorPickerOptions.find(<span class="hljs-function">(<span class="hljs-params">option</span>) =&gt;</span> option.label === <span class="hljs-string">'white'</span>); <span class="hljs-comment">// undefined</span>
+</code></pre>
+      </details>
+      <h3 class="task">Задание</h3>
+      <p>Используя метод <code>find()</code> дополни код так, чтобы:</p>
+      <ul>
+        <li>
+          В переменной <code>bookWithTitle</code> получился объект книги
+          название которой (свойство <code>title</code>) совпадает со значением
+          переменной <code>BOOK_TITLE</code>.
+        </li>
+        <li>
+          В переменной <code>bookByAuthor</code> получился объект книги автор
+          который (свойство <code>author</code>) совпадает со значением
+          переменной <code>AUTHOR</code>.
+        </li>
+      </ul>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>Объявлена переменная <code>books</code>.</li>
+        <li>Значение переменной <code>books</code> это массив.</li>
+        <li>Объявлена переменная <code>BOOK_TITLE</code>.</li>
+        <li>
+          Значение переменной <code>BOOK_TITLE</code> это строка
+          <code>'Сон смешного человека'</code>.
+        </li>
+        <li>Объявлена переменная <code>AUTHOR</code>.</li>
+        <li>
+          Значение переменной <code>AUTHOR</code> это строка
+          <code>'Роберт Шекли'</code>.
+        </li>
+        <li>Объявлена переменная <code>bookWithTitle</code>.</li>
+        <li>
+          Значение переменной <code>bookWithTitle</code> это объект книги с
+          названием выше <code>'Сон смешного человека'</code>.
+        </li>
+        <li>Объявлена переменная <code>bookByAuthor</code>.</li>
+        <li>
+          Значение переменной <code>bookByAuthor</code> это объект книги автора
+          <code>'Роберт Шекли'</code>.
+        </li>
+        <li>
+          Для перебора массива <code>books</code> использован метод
+          <code>find()</code>.
+        </li>
+      </ul>
+    </div>
+  </section>
+</section>
