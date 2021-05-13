@@ -1,15 +1,293 @@
 <a href="../modul-6/index.html"><h1>Модуль - 06</h1></a>
-<h2>Задача - 25. .</h2>
+<h2>Задача - 25. Пользователь с почтой.</h2>
 <a href="../modul-6/zad_24.html">&lt; &lt;Предыдущая задача</a>
 <a href="../modul-6/zad_26.html">Cледующая задача&gt;&gt;</a>
 
 <details closed="">
   <summary style="color: teal">Решение</summary>
   <pre><code>
+  "use strict";
+  // Пиши код ниже этой строки
+  const allUsers = [
+    {
+      name: "Moore Hensley",
+      email: "moorehensley@indexia.com",
+      eyeColor: "blue",
+      friends: ["Sharron Pace"],
+      isActive: false,
+      balance: 2811,
+      gender: "male",
+    },
+    {
+      name: "Sharlene Bush",
+      email: "sharlenebush@tubesys.com",
+      eyeColor: "blue",
+      friends: ["Briana Decker", "Sharron Pace"],
+      isActive: true,
+      balance: 3821,
+      gender: "female",
+    },
+    {
+      name: "Ross Vazquez",
+      email: "rossvazquez@xinware.com",
+      eyeColor: "green",
+      friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+      isActive: false,
+      balance: 3793,
+      gender: "male",
+    },
+    {
+      name: "Elma Head",
+      email: "elmahead@omatom.com",
+      eyeColor: "green",
+      friends: ["Goldie Gentry", "Aisha Tran"],
+      isActive: true,
+      balance: 2278,
+      gender: "female",
+    },
+    {
+      name: "Carey Barr",
+      email: "careybarr@nurali.com",
+      eyeColor: "blue",
+      friends: ["Jordan Sampson", "Eddie Strong"],
+      isActive: true,
+      balance: 3951,
+      gender: "male",
+    },
+    {
+      name: "Blackburn Dotson",
+      email: "blackburndotson@furnigeer.com",
+      eyeColor: "brown",
+      friends: ["Jacklyn Lucas", "Linda Chapman"],
+      isActive: false,
+      balance: 1498,
+      gender: "male",
+    },
+    {
+      name: "Sheree Anthony",
+      email: "shereeanthony@kog.com",
+      eyeColor: "brown",
+      friends: ["Goldie Gentry", "Briana Decker"],
+      isActive: true,
+      balance: 2764,
+      gender: "female",
+    },
+  ];
 
+  const getUserWithEmail = (users, email) =>
+    users.find((user) => user.email === email);
+  // Пиши код выше этой строки
+  console.log(getUserWithEmail(allUsers, "shereeanthony@kog.com"));
+  console.log(getUserWithEmail(allUsers, "elmahead@omatom.com"));
+  console.log(getUserWithEmail(allUsers, "blackburndotson@furnigeer.com"));
+  console.log(getUserWithEmail(allUsers, "shethony@kog.com"));
 </code></pre>
 </details>
 <script>
   "use strict";
+  // Пиши код ниже этой строки
+  const allUsers = [
+    {
+      name: "Moore Hensley",
+      email: "moorehensley@indexia.com",
+      eyeColor: "blue",
+      friends: ["Sharron Pace"],
+      isActive: false,
+      balance: 2811,
+      gender: "male",
+    },
+    {
+      name: "Sharlene Bush",
+      email: "sharlenebush@tubesys.com",
+      eyeColor: "blue",
+      friends: ["Briana Decker", "Sharron Pace"],
+      isActive: true,
+      balance: 3821,
+      gender: "female",
+    },
+    {
+      name: "Ross Vazquez",
+      email: "rossvazquez@xinware.com",
+      eyeColor: "green",
+      friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+      isActive: false,
+      balance: 3793,
+      gender: "male",
+    },
+    {
+      name: "Elma Head",
+      email: "elmahead@omatom.com",
+      eyeColor: "green",
+      friends: ["Goldie Gentry", "Aisha Tran"],
+      isActive: true,
+      balance: 2278,
+      gender: "female",
+    },
+    {
+      name: "Carey Barr",
+      email: "careybarr@nurali.com",
+      eyeColor: "blue",
+      friends: ["Jordan Sampson", "Eddie Strong"],
+      isActive: true,
+      balance: 3951,
+      gender: "male",
+    },
+    {
+      name: "Blackburn Dotson",
+      email: "blackburndotson@furnigeer.com",
+      eyeColor: "brown",
+      friends: ["Jacklyn Lucas", "Linda Chapman"],
+      isActive: false,
+      balance: 1498,
+      gender: "male",
+    },
+    {
+      name: "Sheree Anthony",
+      email: "shereeanthony@kog.com",
+      eyeColor: "brown",
+      friends: ["Goldie Gentry", "Briana Decker"],
+      isActive: true,
+      balance: 2764,
+      gender: "female",
+    },
+  ];
 
+  const getUserWithEmail = (users, email) =>
+    users.find((user) => user.email === email);
+  // Пиши код выше этой строки
+  console.log(getUserWithEmail(allUsers, "shereeanthony@kog.com"));
+  console.log(getUserWithEmail(allUsers, "elmahead@omatom.com"));
+  console.log(getUserWithEmail(allUsers, "blackburndotson@furnigeer.com"));
+  console.log(getUserWithEmail(allUsers, "shethony@kog.com"));
 </script>
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <details closed="">
+        <summary>Массив объектов пользователей</summary>
+        <p>
+          Этот массив объектов мы будем передавать в параметр
+          <code>users</code> при вызове функции из задания.
+        </p>
+        <pre><code class="language-shell hljs">[
+  {
+    name: 'Moore Hensley',
+    email: 'moorehensley@indexia.com',
+    eyeColor: 'blue',
+    friends: ['Sharron Pace'],
+    isActive: false,
+    balance: 2811,
+    gender: 'male'
+  },
+  {
+    name: 'Sharlene Bush',
+    email: 'sharlenebush@tubesys.com',
+    eyeColor: 'blue',
+    friends: ['Briana Decker', 'Sharron Pace'],
+    isActive: true,
+    balance: 3821,
+    gender: 'female'
+  },
+  {
+    name: 'Ross Vazquez',
+    email: 'rossvazquez@xinware.com',
+    eyeColor: 'green',
+    friends: ['Marilyn Mcintosh', 'Padilla Garrison', 'Naomi Buckner'],
+    isActive: false,
+    balance: 3793,
+    gender: 'male'
+  },
+  {
+    name: 'Elma Head',
+    email: 'elmahead@omatom.com',
+    eyeColor: 'green',
+    friends: ['Goldie Gentry', 'Aisha Tran'],
+    isActive: true,
+    balance: 2278,
+    gender: 'female'
+  },
+  {
+    name: 'Carey Barr',
+    email: 'careybarr@nurali.com',
+    eyeColor: 'blue',
+    friends: ['Jordan Sampson', 'Eddie Strong'],
+    isActive: true,
+    balance: 3951,
+    gender: 'male'
+  },
+  {
+    name: 'Blackburn Dotson',
+    email: 'blackburndotson@furnigeer.com',
+    eyeColor: 'brown',
+    friends: ['Jacklyn Lucas', 'Linda Chapman'],
+    isActive: false,
+    balance: 1498,
+    gender: 'male'
+  },
+  {
+    name: 'Sheree Anthony',
+    email: 'shereeanthony@kog.com',
+    eyeColor: 'brown',
+    friends: ['Goldie Gentry', 'Briana Decker'],
+    isActive: true,
+    balance: 2764,
+    gender: 'female'
+  }
+]
+</code></pre>
+      </details>
+      <h3 class="task">Задание</h3>
+      <p>
+        Дополни функцию <code>getUserWithEmail(users, email)</code> так, чтобы
+        она возвращала объект пользователя, почта которого (свойство
+        <code>email</code>) совпадает со значением параметра <code>email</code>.
+      </p>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>
+          <p>Объявлена функция <code>getUserWithEmail(users, email)</code>.</p>
+        </li>
+        <li>
+          <p>
+            Для перебора параметра <code>users</code> используется метод
+            <code>find()</code>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Если значение параметра <code>email</code> это
+            <code>'shereeanthony@kog.com'</code>, функция возвращает объект
+            пользователя с именем <code>Sheree Anthony</code>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Если значение параметра <code>email</code> это
+            <code>'elmahead@omatom.com'</code>, функция возвращает объект
+            пользователя с именем <code>Elma Head</code>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Если значение параметра <code>email</code> это
+            <code>'blackburndotson@furnigeer.com'</code>, функция возвращает
+            объект пользователя с именем <code>Blackburn Dotson</code>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Если в массиве <code>users</code> нет пользователя с почтой из
+            параметра <code>email</code>, функция возвращает
+            <code>undefined</code>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Вызов функции со случайными, но валидными аргументами, возвращает
+            правильное значение.
+          </p>
+        </li>
+      </ul>
+    </div>
+  </section>
+</section>

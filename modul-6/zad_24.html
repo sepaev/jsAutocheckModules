@@ -6,7 +6,30 @@
 <details closed="">
   <summary style="color: teal">Решение</summary>
   <pre><code>
-
+  "use strict";
+  const books = [
+    {
+      title: "Последнее королевство",
+      author: "Бернард Корнуэлл",
+      rating: 8.38,
+    },
+    { title: "На берегу спокойных вод", author: "Роберт Шекли", rating: 8.51 },
+    {
+      title: "Сон смешного человека",
+      author: "Федор Достоевский",
+      rating: 7.75,
+    },
+    { title: "Красна как кровь", author: "Ли Танит", rating: 7.94 },
+  ];
+  const BOOK_TITLE = "Сон смешного человека";
+  const AUTHOR = "Роберт Шекли";
+  // Пиши код ниже этой строки
+  const title = "Сон смешного человека";
+  const author = "Роберт Шекли";
+  const bookWithTitle = books.find((book) => book.title === title);
+  console.log(bookWithTitle);
+  const bookByAuthor = books.find((book) => book.author === author);
+  console.log(bookByAuthor);
 </code></pre>
 </details>
 <script>
@@ -28,9 +51,12 @@
   const BOOK_TITLE = "Сон смешного человека";
   const AUTHOR = "Роберт Шекли";
   // Пиши код ниже этой строки
-
-  const bookWithTitle = books;
-  const bookByAuthor = books;
+  const title = "Сон смешного человека";
+  const author = "Роберт Шекли";
+  const bookWithTitle = books.find((book) => book.title === title);
+  console.log(bookWithTitle);
+  const bookByAuthor = books.find((book) => book.author === author);
+  console.log(bookByAuthor);
 </script>
 <section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
   <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">

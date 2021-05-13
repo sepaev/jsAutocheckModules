@@ -36,14 +36,13 @@
 
   // Пиши код ниже этой строки
   function composeMessage(position) {
-    return `Готовим ${this.dish} для ${
-      this.email
-    }. Ваш заказ ${++position}-й в очереди.`;
+    return `Готовим ${this[position].dish} для ${
+      this[position].email
+    }.Ваш заказ ${++position}-й в очереди`;
   }
   const messages = [];
-
-  for (let key = 0; key < Object.keys(orders).length; key++) {
-    messages.push(composeMessage.call(orders[key], key));
+  for (const key of Object.keys(orders)) {
+    messages.push(composeMessage.call(orders, key));
   }
   console.log(messages);
 </script>
