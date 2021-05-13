@@ -1,15 +1,188 @@
 <a href="../modul-6/index.html"><h1>Модуль - 06</h1></a>
-<h2>Задача - 26. .</h2>
+<h2>Задача - 26. Метод <code>every()</code>.</h2>
 <a href="../modul-6/zad_25.html">&lt; &lt;Предыдущая задача</a>
 <a href="../modul-6/zad_27.html">Cледующая задача&gt;&gt;</a>
 
 <details closed="">
   <summary style="color: teal">Решение</summary>
   <pre><code>
+  "use strict";
+  const firstArray = [26, 94, 36, 18];
+  const secondArray = [17, 61, 23];
+  const thirdArray = [17, 26, 94, 61, 36, 23, 18];
+  // Пиши код ниже этой строки
+  const oddCheck = (value) => value % 2 > 0;
+  const evenCheck = (value) => value % 2 === 0;
 
+  const eachElementInFirstIsEven = firstArray.every((value) => evenCheck(value));
+  const eachElementInFirstIsOdd = firstArray.every((value) => oddCheck(value));
+
+  const eachElementInSecondIsEven = secondArray.every((value) => evenCheck(value));
+  const eachElementInSecondIsOdd = secondArray.every((value) => oddCheck(value));
+
+  const eachElementInThirdIsEven = thirdArray.every((value) => evenCheck(value));
+  const eachElementInThirdIsOdd = thirdArray.every((value) => oddCheck(value));
+
+  console.log(eachElementInFirstIsEven);
+  console.log(eachElementInFirstIsOdd);
+  console.log(eachElementInSecondIsEven);
+  console.log(eachElementInSecondIsOdd);
+  console.log(eachElementInThirdIsEven);
+  console.log(eachElementInThirdIsOdd);
 </code></pre>
 </details>
 <script>
   "use strict";
+  const firstArray = [26, 94, 36, 18];
+  const secondArray = [17, 61, 23];
+  const thirdArray = [17, 26, 94, 61, 36, 23, 18];
+  // Пиши код ниже этой строки
+  const oddCheck = (value) => value % 2 > 0;
+  const evenCheck = (value) => value % 2 === 0;
 
+  const eachElementInFirstIsEven = firstArray.every((value) =>
+    evenCheck(value)
+  );
+  const eachElementInFirstIsOdd = firstArray.every((value) => oddCheck(value));
+
+  const eachElementInSecondIsEven = secondArray.every((value) =>
+    evenCheck(value)
+  );
+  const eachElementInSecondIsOdd = secondArray.every((value) =>
+    oddCheck(value)
+  );
+
+  const eachElementInThirdIsEven = thirdArray.every((value) =>
+    evenCheck(value)
+  );
+  const eachElementInThirdIsOdd = thirdArray.every((value) => oddCheck(value));
+
+  console.log(eachElementInFirstIsEven);
+  console.log(eachElementInFirstIsOdd);
+  console.log(eachElementInSecondIsEven);
+  console.log(eachElementInSecondIsOdd);
+  console.log(eachElementInThirdIsEven);
+  console.log(eachElementInThirdIsOdd);
 </script>
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <details closed="">
+        <summary>Теория</summary>
+        <p>
+          Метод <code>every(callback)</code> проверяет проходят ли все элементы
+          массива тест предоставляемый коллбек-функцией. Возвращает
+          <code>true</code> или <code>false</code>.
+        </p>
+        <pre><code class="language-js hljs javascript">массив.every(<span class="hljs-function">(<span class="hljs-params">element, index, array</span>) =&gt;</span> {
+  <span class="hljs-comment">// Тело коллбек-функции</span>
+});
+</code></pre>
+        <ul>
+          <li>Не изменяет оригинальный массив.</li>
+          <li>Поэлементно перебирает оригинальный массив.</li>
+          <li>
+            Возвращает <code>true</code> если все элементы массива удовлетворяют
+            условию.
+          </li>
+          <li>
+            Возвращает <code>false</code> если хотя бы один элемент массива не
+            удовлетворяет условию.
+          </li>
+          <li>
+            Перебор массива прекращается если коллбек возвращает
+            <code>false</code>.
+          </li>
+        </ul>
+        <pre><code class="language-js hljs javascript"><span class="hljs-comment">// Все элементы больше либо равны нулю? - да</span>
+[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>].every(<span class="hljs-function">(<span class="hljs-params">value</span>) =&gt;</span> value &gt;= <span class="hljs-number">0</span>); <span class="hljs-comment">// true</span>
+
+<span class="hljs-comment">// Все элементы больше либо равны нулю? - нет</span>
+[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">-10</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>].every(<span class="hljs-function">(<span class="hljs-params">value</span>) =&gt;</span> value &gt;= <span class="hljs-number">0</span>); <span class="hljs-comment">// false</span>
+</code></pre>
+        <p>
+          При работе с массивом объектов проверяется значение какого-то их
+          свойства.
+        </p>
+      </details>
+      <h3 class="task">Задание</h3>
+      <p>Используя метод <code>every()</code> дополни код так, чтобы:</p>
+      <ul>
+        <li>
+          В переменной <code>eachElementInFirstIsEven</code> был результат
+          проверки всех элементов массива <code>firstArray</code> на чётность.
+        </li>
+        <li>
+          В переменной <code>eachElementInFirstIsOdd</code> был результат
+          проверки всех элементов массива <code>firstArray</code> на нечётность.
+        </li>
+        <li>
+          В переменной <code>eachElementInSecondIsEven</code> был результат
+          проверки всех элементов массива <code>secondArray</code> на чётность.
+        </li>
+        <li>
+          В переменной <code>eachElementInSecondIsOdd</code> был результат
+          проверки всех элементов массива <code>secondArray</code> на
+          нечётность.
+        </li>
+        <li>
+          В переменной <code>eachElementInThirdIsEven</code> был результат
+          проверки всех элементов массива <code>thirdArray</code> на чётность.
+        </li>
+        <li>
+          В переменной <code>eachElementInThirdIsOdd</code> был результат
+          проверки всех элементов массива <code>thirdArray</code> на нечётность.
+        </li>
+      </ul>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>Объявлена переменная <code>firstArray</code>.</li>
+        <li>
+          Значение переменной <code>firstArray</code> это массив
+          <code>[26, 94, 36, 18]</code>.
+        </li>
+        <li>Объявлена переменная <code>secondArray</code>.</li>
+        <li>
+          Значение переменной <code>secondArray</code> это массив
+          <code>[17, 61, 23]</code>.
+        </li>
+        <li>Объявлена переменная <code>thirdArray</code>.</li>
+        <li>
+          Значение переменной <code>thirdArray</code> это массив
+          <code>[17, 26, 94, 61, 36, 23, 18]</code>.
+        </li>
+        <li>Объявлена переменная <code>eachElementInFirstIsEven</code>.</li>
+        <li>
+          Значение переменной <code>eachElementInFirstIsEven</code> это буль
+          <code>true</code>.
+        </li>
+        <li>Объявлена переменная <code>eachElementInFirstIsOdd</code>.</li>
+        <li>
+          Значение переменной <code>eachElementInFirstIsOdd</code> это буль
+          <code>false</code>.
+        </li>
+        <li>Объявлена переменная <code>eachElementInSecondIsEven</code>.</li>
+        <li>
+          Значение переменной <code>eachElementInSecondIsEven</code> это буль
+          <code>false</code>.
+        </li>
+        <li>Объявлена переменная <code>eachElementInSecondIsOdd</code>.</li>
+        <li>
+          Значение переменной <code>eachElementInSecondIsOdd</code> это буль
+          <code>true</code>.
+        </li>
+        <li>Объявлена переменная <code>eachElementInThirdIsEven</code>.</li>
+        <li>
+          Значение переменной <code>eachElementInThirdIsEven</code> это буль
+          <code>false</code>.
+        </li>
+        <li>Объявлена переменная <code>eachElementInThirdIsOdd</code>.</li>
+        <li>
+          Значение переменной <code>eachElementInThirdIsOdd</code> это буль
+          <code>false</code>.
+        </li>
+        <li>Для перебора массивов использован метод <code>every()</code>.</li>
+      </ul>
+    </div>
+  </section>
+</section>
