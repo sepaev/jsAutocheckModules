@@ -1,15 +1,106 @@
 <a href="../modul-6/index.html"><h1>Модуль - 06</h1></a>
-<h2>Задача - 35. .</h2>
+<h2>Задача - 35. Свой порядок сортировки чисел.</h2>
 <a href="../modul-6/zad_34.html">&lt; &lt;Предыдущая задача</a>
 <a href="../modul-6/zad_36.html">Cледующая задача&gt;&gt;</a>
 
 <details closed="">
   <summary style="color: teal">Решение</summary>
   <pre><code>
+  "use strict";
+  const releaseDates = [2016, 1967, 2008, 1984, 1973, 2012, 1997];
+  // Пиши код ниже этой строки
 
+  const ascendingReleaseDates = [...releaseDates].sort((a, b) => a - b);
+  console.log(ascendingReleaseDates);
+  const descendingReleaseDates = [...releaseDates].sort((a, b) => b - a);
+  console.log(descendingReleaseDates);
 </code></pre>
 </details>
 <script>
   "use strict";
+  const releaseDates = [2016, 1967, 2008, 1984, 1973, 2012, 1997];
+  // Пиши код ниже этой строки
 
+  const ascendingReleaseDates = [...releaseDates].sort((a, b) => a - b);
+  console.log(ascendingReleaseDates);
+  const descendingReleaseDates = [...releaseDates].sort((a, b) => b - a);
+  console.log(descendingReleaseDates);
 </script>
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <details closed="">
+        <summary>Теория</summary>
+        <p>
+          Для указания своего порядка сортировки методу
+          <code>sort(callback)</code> нужно передать коллбек-функцию с двумя
+          параметрами. Это функция сравнения (compare function), порядок
+          сортировки зависит от её результата. Метод <code>sort()</code> будет
+          вызывать её для произвольных двух элементов.
+        </p>
+        <pre><code class="language-js hljs javascript">массив.sort(<span class="hljs-function">(<span class="hljs-params">firstEl, secondEl</span>) =&gt;</span> {
+  <span class="hljs-comment">// Тело коллбек-функции</span>
+});
+</code></pre>
+        <ul>
+          <li><code>firstEl</code> - первый элемент для сравнения.</li>
+          <li><code>secondEl</code> - второй элемент для сравнения.</li>
+        </ul>
+        <p>
+          Если вызов <code>compareFunction(firstEl, secondEl)</code> возвращает
+          любое отрицательное значение, сортировка поставит
+          <code>firstEl</code> перед <code>secondEl</code>. Это сортировка по
+          возрастанию.
+        </p>
+        <pre><code class="language-js hljs javascript"><span class="hljs-keyword">const</span> scores = [<span class="hljs-number">61</span>, <span class="hljs-number">19</span>, <span class="hljs-number">74</span>, <span class="hljs-number">35</span>, <span class="hljs-number">92</span>, <span class="hljs-number">56</span>];
+<span class="hljs-keyword">const</span> ascendingScores = [...scores].sort(<span class="hljs-function">(<span class="hljs-params">a, b</span>) =&gt;</span> a - b);
+<span class="hljs-built_in">console</span>.log(ascendingScores); <span class="hljs-comment">// [19, 35, 56, 61, 74, 92]</span>
+</code></pre>
+        <p>
+          Если вызов <code>compareFunction(firstEl, secondEl)</code> возвращает
+          любое положительное значение больше нуля, сортировка поставит
+          <code>secondEl</code> перед <code>firstEl</code>. Это сортировка по
+          убыванию.
+        </p>
+        <pre><code class="language-js hljs javascript"><span class="hljs-keyword">const</span> scores = [<span class="hljs-number">61</span>, <span class="hljs-number">19</span>, <span class="hljs-number">74</span>, <span class="hljs-number">35</span>, <span class="hljs-number">92</span>, <span class="hljs-number">56</span>];
+<span class="hljs-keyword">const</span> descendingScores = [...scores].sort(<span class="hljs-function">(<span class="hljs-params">a, b</span>) =&gt;</span> b - a);
+<span class="hljs-built_in">console</span>.log(descendingScores); <span class="hljs-comment">// [92, 74, 61, 56, 35, 19]</span>
+</code></pre>
+        <p>
+          Eсли вызов <code>compareFunction(firstEl, secondEl)</code> вернёт 0,
+          сортировка оставит <code>firstEl</code> и
+          <code>secondEl</code> неизменными по отношению друг к другу, но
+          отсортирует их по отношению ко всем другим элементам. Но вообще не
+          важно, что возвращать, если их взаимный порядок не имеет значения.
+        </p>
+      </details>
+      <h3 class="task">Задание</h3>
+      <p>
+        Онлайн бибилиотеке необходимо отображать книги сортированные по дате
+        издания, по её возрастанию или убыванию. Дополни код так, чтобы в
+        переменной <code>ascendingReleaseDates</code> получилась отсортированная
+        по возрастанию копия массива <code>releaseDates</code>, а в переменной
+        <code>descendingReleaseDates</code> копия отсортированная по убыванию.
+      </p>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>Объявлена переменная <code>releaseDates</code>.</li>
+        <li>
+          Значение переменной <code>releaseDates</code> это массив
+          <code>[2016, 1967, 2008, 1984, 1973, 2012, 1997]</code>.
+        </li>
+        <li>Объявлена переменная <code>ascendingReleaseDates</code>.</li>
+        <li>
+          Значение переменной <code>ascendingReleaseDates</code> это массив
+          <code>[1967, 1973, 1984, 1997, 2008, 2012, 2016]</code>.
+        </li>
+        <li>Объявлена переменная <code>descendingReleaseDates</code>.</li>
+        <li>
+          Значение переменной <code>descendingReleaseDates</code> это массив
+          <code>[2016, 2012, 2008, 1997, 1984, 1973, 1967]</code>.
+        </li>
+        <li>Использован метод <code>sort()</code>.</li>
+      </ul>
+    </div>
+  </section>
+</section>

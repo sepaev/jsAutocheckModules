@@ -1,15 +1,132 @@
 <a href="../modul-6/index.html"><h1>Модуль - 06</h1></a>
-<h2>Задача - 34. .</h2>
+<h2>Задача - 34. Метод <code>sort()</code>.</h2>
 <a href="../modul-6/zad_33.html">&lt; &lt;Предыдущая задача</a>
 <a href="../modul-6/zad_35.html">Cледующая задача&gt;&gt;</a>
 
 <details closed="">
   <summary style="color: teal">Решение</summary>
   <pre><code>
+  "use strict";
+  const releaseDates = [2016, 1967, 2008, 1984, 1973, 2012, 1997];
+  const authors = [
+    "Ли Танит",
+    "Бернард Корнуэлл",
+    "Роберт Шекли",
+    "Федор Достоевский",
+  ];
+  // Пиши код ниже этой строки
 
+  const ascendingReleaseDates = [...releaseDates].sort();
+  console.log(ascendingReleaseDates);
+  const alphabeticalAuthors = [...authors].sort();
+  console.log(alphabeticalAuthors);
 </code></pre>
 </details>
 <script>
   "use strict";
+  const releaseDates = [2016, 1967, 2008, 1984, 1973, 2012, 1997];
+  const authors = [
+    "Ли Танит",
+    "Бернард Корнуэлл",
+    "Роберт Шекли",
+    "Федор Достоевский",
+  ];
+  // Пиши код ниже этой строки
 
+  const ascendingReleaseDates = [...releaseDates].sort();
+  console.log(ascendingReleaseDates);
+  const alphabeticalAuthors = [...authors].sort();
+  console.log(alphabeticalAuthors);
 </script>
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <details closed="">
+        <summary>Теория</summary>
+        <p>
+          Метод <code>sort()</code> сортирует элементы массива, но в отличии от
+          остальных перебирающих методов, он сортирует исходный массив.
+        </p>
+        <ul>
+          <li>Сортирует и изменяет исходный массив.</li>
+          <li>
+            Возвращает изменённый массив, то есть ссылку на отсортированный
+            исходный.
+          </li>
+          <li>По умолчанию сортирует по возрастанию.</li>
+          <li>Сравнение чисел выполняется по их значению.</li>
+          <li>
+            Сравнение всего остального происходит путём приведения их к строке и
+            сравнения порядковых номеров в таблице Unicode.
+          </li>
+        </ul>
+        <pre><code class="language-js hljs javascript"><span class="hljs-comment">// Массив чисел будет отсортирован по возврастанию</span>
+<span class="hljs-keyword">const</span> scores = [<span class="hljs-number">61</span>, <span class="hljs-number">19</span>, <span class="hljs-number">74</span>, <span class="hljs-number">35</span>, <span class="hljs-number">92</span>, <span class="hljs-number">56</span>];
+scores.sort();
+<span class="hljs-built_in">console</span>.log(scores); <span class="hljs-comment">// [19, 35, 56, 61, 74, 92]</span>
+
+<span class="hljs-comment">// Массив строк сортируется по алфавиту</span>
+<span class="hljs-keyword">const</span> students = [<span class="hljs-string">'Вика'</span>, <span class="hljs-string">'Андрей'</span>, <span class="hljs-string">'Олег'</span>, <span class="hljs-string">'Юля'</span>, <span class="hljs-string">'Борис'</span>, <span class="hljs-string">'Катя'</span>];
+students.sort();
+<span class="hljs-built_in">console</span>.log(students); <span class="hljs-comment">// [ 'Андрей', 'Борис', 'Вика', 'Катя', 'Олег', 'Юля' ]</span>
+
+<span class="hljs-comment">// При этом порядковый номер заглавных букв меньше чем у прописных</span>
+<span class="hljs-keyword">const</span> letters = [<span class="hljs-string">'b'</span>, <span class="hljs-string">'B'</span>, <span class="hljs-string">'a'</span>, <span class="hljs-string">'A'</span>, <span class="hljs-string">'c'</span>, <span class="hljs-string">'C'</span>];
+letters.sort();
+<span class="hljs-built_in">console</span>.log(letters); <span class="hljs-comment">// ['A', 'B', 'C', 'a', 'b', 'c']</span>
+</code></pre>
+        <p>
+          Из-за того, что сортируется исходный массив, нарушается принцип
+          чистоты функций и нельзя удобно сделать несколько производных
+          коллекций на базе исходной. Например, сделать коллекцию
+          отсортированную по возрастанию, а другую по убыванию. Поэтому перед
+          сортировкой делают полную копию исходного массива и сортируют уже её.
+        </p>
+        <pre><code class="language-js hljs javascript"><span class="hljs-keyword">const</span> scores = [<span class="hljs-number">61</span>, <span class="hljs-number">19</span>, <span class="hljs-number">74</span>, <span class="hljs-number">35</span>, <span class="hljs-number">92</span>, <span class="hljs-number">56</span>];
+<span class="hljs-keyword">const</span> ascendingScores = [...scores].sort();
+
+<span class="hljs-built_in">console</span>.log(scores); <span class="hljs-comment">// [61, 19, 74, 35, 92, 56]</span>
+<span class="hljs-built_in">console</span>.log(ascendingScores); <span class="hljs-comment">// [19, 35, 56, 61, 74, 92]</span>
+</code></pre>
+      </details>
+      <h3 class="task">Задание</h3>
+      <p>
+        Дополни код так, чтобы в переменной
+        <code>ascendingReleaseDates</code> получилась отсортированная по
+        возрастанию копия массива <code>releaseDates</code>, а в переменной
+        <code>alphabeticalAuthors</code> копия массива имён авторов
+        <code>authors</code> отсортированная в по алфавиту.
+      </p>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>Объявлена переменная <code>releaseDates</code>.</li>
+        <li>
+          Значение переменной <code>releaseDates</code> это массив
+          <code>[2016, 1967, 2008, 1984, 1973, 2012, 1997]</code>.
+        </li>
+        <li>Объявлена переменная <code>authors</code>.</li>
+        <li>
+          Значение переменной <code>authors</code> это массив
+          <code
+            >['Ли Танит', 'Бернард Корнуэлл', 'Роберт Шекли', 'Федор
+            Достоевский']</code
+          >.
+        </li>
+        <li>Объявлена переменная <code>ascendingReleaseDates</code>.</li>
+        <li>
+          Значение переменной <code>ascendingReleaseDates</code> это массив
+          <code>[1967, 1973, 1984, 1997, 2008, 2012, 2016]</code>.
+        </li>
+        <li>Объявлена переменная <code>alphabeticalAuthors</code>.</li>
+        <li>
+          Значение переменной <code>alphabeticalAuthors</code> это массив
+          <code
+            >['Бернард Корнуэлл', 'Ли Танит', 'Роберт Шекли', 'Федор
+            Достоевский']</code
+          >.
+        </li>
+        <li>Использован метод <code>sort()</code>.</li>
+      </ul>
+    </div>
+  </section>
+</section>
