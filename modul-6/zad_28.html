@@ -1,15 +1,208 @@
 <a href="../modul-6/index.html"><h1>Модуль - 06</h1></a>
-<h2>Задача - 28. .</h2>
+<h2>Задача - 28. Метод <code>some()</code>.</h2>
 <a href="../modul-6/zad_27.html">&lt; &lt;Предыдущая задача</a>
 <a href="../modul-6/zad_29.html">Cледующая задача&gt;&gt;</a>
 
 <details closed="">
   <summary style="color: teal">Решение</summary>
   <pre><code>
+  "use strict";
+  const firstArray = [26, 94, 36, 18];
+  const secondArray = [17, 61, 23];
+  const thirdArray = [17, 26, 94, 61, 36, 23, 18];
+  // Пиши код ниже этой строки
 
+  const anyElementInFirstIsEven = firstArray.some(
+    (element) => element % 2 === 0
+  );
+
+  const anyElementInFirstIsOdd = firstArray.some(
+    (element) => element % 2 !== 0
+  );
+
+  const anyElementInSecondIsEven = secondArray.some(
+    (element) => element % 2 === 0
+  );
+
+  const anyElementInSecondIsOdd = secondArray.some(
+    (element) => element % 2 !== 0
+  );
+
+  const anyElementInThirdIsEven = thirdArray.some(
+    (element) => element % 2 === 0
+  );
+
+  const anyElementInThirdIsOdd = thirdArray.some(
+    (element) => element % 2 !== 0
+  );
+
+  console.log(anyElementInFirstIsEven);
+  console.log(anyElementInFirstIsOdd);
+  console.log(anyElementInSecondIsEven);
+  console.log(anyElementInSecondIsOdd);
+  console.log(anyElementInThirdIsEven);
+  console.log(anyElementInThirdIsOdd);
 </code></pre>
 </details>
 <script>
   "use strict";
+  const firstArray = [26, 94, 36, 18];
+  const secondArray = [17, 61, 23];
+  const thirdArray = [17, 26, 94, 61, 36, 23, 18];
+  // Пиши код ниже этой строки
 
+  const anyElementInFirstIsEven = firstArray.some(
+    (element) => element % 2 === 0
+  );
+
+  const anyElementInFirstIsOdd = firstArray.some(
+    (element) => element % 2 !== 0
+  );
+
+  const anyElementInSecondIsEven = secondArray.some(
+    (element) => element % 2 === 0
+  );
+
+  const anyElementInSecondIsOdd = secondArray.some(
+    (element) => element % 2 !== 0
+  );
+
+  const anyElementInThirdIsEven = thirdArray.some(
+    (element) => element % 2 === 0
+  );
+
+  const anyElementInThirdIsOdd = thirdArray.some(
+    (element) => element % 2 !== 0
+  );
+
+  console.log(anyElementInFirstIsEven);
+  console.log(anyElementInFirstIsOdd);
+  console.log(anyElementInSecondIsEven);
+  console.log(anyElementInSecondIsOdd);
+  console.log(anyElementInThirdIsEven);
+  console.log(anyElementInThirdIsOdd);
 </script>
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <details closed="">
+        <summary>Теория</summary>
+        <p>
+          Метод <code>some(callback)</code> проверяет проходит ли хотя бы один
+          элемент массива тест предоставляемый коллбек-функцией. Возвращает
+          <code>true</code> или <code>false</code>.
+        </p>
+        <pre><code class="language-js hljs javascript">массив.some(<span class="hljs-function">(<span class="hljs-params">element, index, array</span>) =&gt;</span> {
+  <span class="hljs-comment">// Тело коллбек-функции</span>
+});
+</code></pre>
+        <ul>
+          <li>Не изменяет оригинальный массив.</li>
+          <li>Поэлементно перебирает оригинальный массив.</li>
+          <li>
+            Возвращает <code>true</code> если хотя бы один элемент массива
+            удовлетворяет условию.
+          </li>
+          <li>
+            Возвращает <code>false</code> если ни один элемент массив не
+            удовлетворяет условию.
+          </li>
+          <li>
+            Перебор массива прекращается если коллбек возвращает
+            <code>true</code>.
+          </li>
+        </ul>
+        <pre><code class="language-js hljs javascript"><span class="hljs-comment">// Есть хотя бы один элемент больше либо равный нулю? - да</span>
+[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>].some(<span class="hljs-function"><span class="hljs-params">value</span> =&gt;</span> value &gt;= <span class="hljs-number">0</span>); <span class="hljs-comment">// true</span>
+
+<span class="hljs-comment">// Есть хотя бы один элемент больше либо равный нулю? - да</span>
+[<span class="hljs-number">-7</span>, <span class="hljs-number">-20</span>, <span class="hljs-number">3</span>, <span class="hljs-number">-10</span>, <span class="hljs-number">-14</span>].some(<span class="hljs-function"><span class="hljs-params">value</span> =&gt;</span> value &gt;= <span class="hljs-number">0</span>); <span class="hljs-comment">// true</span>
+
+<span class="hljs-comment">// Есть хотя бы один элемент меньше нуля? - нет</span>
+[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>].some(<span class="hljs-function"><span class="hljs-params">value</span> =&gt;</span> value &lt; <span class="hljs-number">0</span>); <span class="hljs-comment">// false</span>
+
+<span class="hljs-comment">// Есть хотя бы один элемент меньше нуля? - да</span>
+[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">-10</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>].some(<span class="hljs-function"><span class="hljs-params">value</span> =&gt;</span> value &lt; <span class="hljs-number">0</span>); <span class="hljs-comment">// true</span>
+</code></pre>
+      </details>
+      <h3 class="task">Задание</h3>
+      <p>Используя метод <code>some()</code> дополни код так, чтобы:</p>
+      <ul>
+        <li>
+          В переменной <code>anyElementInFirstIsEven</code> был результат
+          проверки наличия чётных элементов в массиве <code>firstArray</code>.
+        </li>
+        <li>
+          В переменной <code>anyElementInFirstIsOdd</code> был результат
+          проверки наличия нечётных элементов в массиве <code>firstArray</code>.
+        </li>
+        <li>
+          В переменной <code>anyElementInSecondIsEven</code> был результат
+          проверки наличия чётных элементов в массиве <code>secondArray</code>.
+        </li>
+        <li>
+          В переменной <code>anyElementInSecondIsOdd</code> был результат
+          проверки наличия нечётных элементов в массиве
+          <code>secondArray</code>.
+        </li>
+        <li>
+          В переменной <code>anyElementInThirdIsEven</code> был результат
+          проверки наличия чётных элементов в массиве <code>thirdArray</code>.
+        </li>
+        <li>
+          В переменной <code>anyElementInThirdIsOdd</code> был результат
+          проверки наличия нечётных элементов в массиве <code>thirdArray</code>.
+        </li>
+      </ul>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>Объявлена переменная <code>firstArray</code>.</li>
+        <li>
+          Значение переменной <code>firstArray</code> это массив
+          <code>[26, 94, 36, 18]</code>.
+        </li>
+        <li>Объявлена переменная <code>secondArray</code>.</li>
+        <li>
+          Значение переменной <code>secondArray</code> это массив
+          <code>[17, 61, 23]</code>.
+        </li>
+        <li>Объявлена переменная <code>thirdArray</code>.</li>
+        <li>
+          Значение переменной <code>thirdArray</code> это массив
+          <code>[17, 26, 94, 61, 36, 23, 18]</code>.
+        </li>
+        <li>Объявлена переменная <code>anyElementInFirstIsEven</code>.</li>
+        <li>
+          Значение переменной <code>anyElementInFirstIsEven</code> это буль
+          <code>true</code>.
+        </li>
+        <li>Объявлена переменная <code>anyElementInFirstIsOdd</code>.</li>
+        <li>
+          Значение переменной <code>anyElementInFirstIsOdd</code> это буль
+          <code>false</code>.
+        </li>
+        <li>Объявлена переменная <code>anyElementInSecondIsEven</code>.</li>
+        <li>
+          Значение переменной <code>anyElementInSecondIsEven</code> это буль
+          <code>false</code>.
+        </li>
+        <li>Объявлена переменная <code>anyElementInSecondIsOdd</code>.</li>
+        <li>
+          Значение переменной <code>anyElementInSecondIsOdd</code> это буль
+          <code>true</code>.
+        </li>
+        <li>Объявлена переменная <code>anyElementInThirdIsEven</code>.</li>
+        <li>
+          Значение переменной <code>anyElementInThirdIsEven</code> это буль
+          <code>true</code>.
+        </li>
+        <li>Объявлена переменная <code>anyElementInThirdIsOdd</code>.</li>
+        <li>
+          Значение переменной <code>anyElementInThirdIsOdd</code> это буль
+          <code>true</code>.
+        </li>
+        <li>Для перебора массивов использован метод <code>some()</code>.</li>
+      </ul>
+    </div>
+  </section>
+</section>

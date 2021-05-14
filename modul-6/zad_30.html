@@ -1,15 +1,155 @@
 <a href="../modul-6/index.html"><h1>Модуль - 06</h1></a>
-<h2>Задача - 30. .</h2>
+<h2>Задача - 30. Метод <code>reduce()</code>.</h2>
 <a href="../modul-6/zad_29.html">&lt; &lt;Предыдущая задача</a>
 <a href="../modul-6/zad_31.html">Cледующая задача&gt;&gt;</a>
 
 <details closed="">
   <summary style="color: teal">Решение</summary>
   <pre><code>
+  "use strict";
+  const players = {
+    mango: 1270,
+    poly: 468,
+    ajax: 710,
+    kiwi: 244,
+  };
+  const playtimes = Object.values(players); // [1270, 468, 710, 244]
+  // Пиши код ниже этой строки
 
+  const totalPlayTime = playtimes.reduce(
+    (previousValue, value) => (previousValue += value),
+    0
+  );
+
+  // Пиши код выше этой строки
+  const averagePlayTime = totalPlayTime / playtimes.length;
+
+  console.log(`Всего времени проиграно ${totalPlayTime} мин.`);
+  console.log(`Среднее время игы для одного игрока ${averagePlayTime} мин.`);
+  console.log(`До встречи`);
 </code></pre>
 </details>
 <script>
   "use strict";
+  const players = {
+    mango: 1270,
+    poly: 468,
+    ajax: 710,
+    kiwi: 244,
+  };
+  const playtimes = Object.values(players); // [1270, 468, 710, 244]
+  // Пиши код ниже этой строки
 
+  const totalPlayTime = playtimes.reduce(
+    (previousValue, value) => (previousValue += value),
+    0
+  );
+
+  // Пиши код выше этой строки
+  const averagePlayTime = totalPlayTime / playtimes.length;
+
+  console.log(`Всего времени проиграно ${totalPlayTime} мин.`);
+  console.log(`Среднее время игы для одного игрока ${averagePlayTime} мин.`);
+  console.log(`До встречи`);
 </script>
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <details closed="">
+        <summary>Теория</summary>
+        <p>
+          Метод <code>reduce(callback, initialValue)</code> используется для
+          последовательной обработки каждого элемента массива с сохранением
+          промежуточного результата, как аккумулятор. Немного сложнее других в
+          усвоении, но результат стоит того.
+        </p>
+        <pre><code class="language-js hljs javascript">массив.reduce(<span class="hljs-function">(<span class="hljs-params">previousValue, element, index, array</span>) =&gt;</span> {
+  <span class="hljs-comment">// Тело коллбек-функции</span>
+}, initialValue);
+</code></pre>
+        <ul>
+          <li>Не изменяет оригинальный массив.</li>
+          <li>Поэлементно перебирает оригинальный массив.</li>
+          <li>Возвращает что угодно.</li>
+          <li>Делает что угодно.</li>
+        </ul>
+        <p>
+          Легче всего представить его работу на примере подсчёта суммы элементов
+          массива.
+        </p>
+        <pre><code class="language-js hljs javascript"><span class="hljs-keyword">const</span> total = [<span class="hljs-number">2</span>, <span class="hljs-number">7</span>, <span class="hljs-number">3</span>, <span class="hljs-number">14</span>, <span class="hljs-number">6</span>].reduce(<span class="hljs-function">(<span class="hljs-params">previousValue, number</span>) =&gt;</span> {
+  <span class="hljs-keyword">return</span> previousValue + number;
+}, <span class="hljs-number">0</span>);
+
+<span class="hljs-built_in">console</span>.log(total); <span class="hljs-comment">// 32</span>
+</code></pre>
+        <p>
+          Первый параметр коллбек-функции (<code>previousValue</code>) это
+          аккумулятор, то есть промежуточный результат. Значение которое вернёт
+          коллбек-функция на текущей итерации, будет значением этого параметра
+          на следующей.
+        </p>
+        <p>
+          Вторым аргументом для <code>reduce()</code> можно передать
+          необязательное начальное значение аккумулятора - параметр
+          <code>initialValue</code>.
+        </p>
+        <pre><code class="language-shell hljs"><span class="hljs-meta">#</span><span class="bash"> Вначале метод reduce() создаёт внутреннюю переменную-аккумулятор и</span>
+<span class="hljs-meta">#</span><span class="bash"> присваивает ей значение параметра initialValue или первого элемента</span>
+<span class="hljs-meta">#</span><span class="bash"> перебираемого массива, если initialValue не задан.</span>
+previousValue = 0
+<span class="hljs-meta">
+#</span><span class="bash"> Далее коллбек-функция вызывается для каждого элемента массива. Текущее значение</span>
+<span class="hljs-meta">#</span><span class="bash"> параметра previousValue это то, что вернула коллбек-функция на прошлой итерации.</span>
+Итерация 1 -&gt; previousValue = 0 -&gt; number = 2 -&gt; return 0 + 2 -&gt; return 2
+Итерация 2 -&gt; previousValue = 2 -&gt; number = 7 -&gt; return 2 + 7 -&gt; return 9
+Итерация 3 -&gt; previousValue = 9 -&gt; number = 3 -&gt; return 9 + 3 -&gt; return 12
+Итерация 4 -&gt; previousValue = 12 -&gt; number = 14 -&gt; return 12 + 14 -&gt; return 26
+Итерация 5 -&gt; previousValue = 26 -&gt; number = 6 -&gt; return 26 + 6 -&gt; return 32
+<span class="hljs-meta">
+#</span><span class="bash"> После того как весь массив перебран, метод reduce() возвращает значение аккумулятора.</span>
+Результат - 32
+</code></pre>
+        <p>
+          То есть метод <code>reduce()</code> используется когда необходимо
+          взять «много» и привести к «одному». В повседневных задачах его
+          применение сводится к работе с числами.
+        </p>
+      </details>
+      <h3 class="task">Задание</h3>
+      <p>
+        Игровому сервису необходим функционал подсчёта среднего времени
+        проведённого в играх. Дополни код так, чтобы в переменной
+        <code>totalPlayTime</code> получилось общее игровое время из массива
+        <code>playtimes</code>.
+      </p>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>Объявлена переменная <code>players</code>.</li>
+        <li>
+          Значение переменной <code>players</code> это объект игроков с игровым
+          временем каждого.
+        </li>
+        <li>Объявлена переменная <code>playtimes</code>.</li>
+        <li>
+          Значение переменной <code>playtimes</code> это массив
+          <code>[1270, 468, 710, 244]</code>.
+        </li>
+        <li>Объявлена переменная <code>totalPlayTime</code>.</li>
+        <li>
+          Значение переменной <code>totalPlayTime</code> это число
+          <code>2692</code>.
+        </li>
+        <li>
+          Для перебора массива <code>playtimes</code> используется метод
+          <code>reduce()</code>.
+        </li>
+        <li>Объявлена переменная <code>averagePlayTime</code>.</li>
+        <li>
+          Значение переменной <code>averagePlayTime</code> это число
+          <code>673</code>.
+        </li>
+      </ul>
+    </div>
+  </section>
+</section>
