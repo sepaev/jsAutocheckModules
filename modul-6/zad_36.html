@@ -1,15 +1,135 @@
 <a href="../modul-6/index.html"><h1>Модуль - 06</h1></a>
-<h2>Задача - 36. .</h2>
+<h2>Задача - 36. Свой порядок сортировки строк.</h2>
 <a href="../modul-6/zad_35.html">&lt; &lt;Предыдущая задача</a>
 <a href="../modul-6/zad_37.html">Cледующая задача&gt;&gt;</a>
 
 <details closed="">
   <summary style="color: teal">Решение</summary>
   <pre><code>
+  "use strict";
+  const authors = [
+    "Ли Танит",
+    "Бернард Корнуэлл",
+    "Роберт Шекли",
+    "Федор Достоевский",
+    "Говард Лавкрафт",
+  ];
+  // Пиши код ниже этой строки
 
+  const authorsInAlphabetOrder = [...authors].sort((a, b) =>
+    a.localeCompare(b)
+  );
+  console.log(authorsInAlphabetOrder);
+  const authorsInReversedOrder = [...authors].sort((a, b) =>
+    b.localeCompare(a)
+  );
+  console.log(authorsInReversedOrder);
 </code></pre>
 </details>
 <script>
   "use strict";
+  const authors = [
+    "Ли Танит",
+    "Бернард Корнуэлл",
+    "Роберт Шекли",
+    "Федор Достоевский",
+    "Говард Лавкрафт",
+  ];
+  // Пиши код ниже этой строки
 
+  const authorsInAlphabetOrder = [...authors].sort((a, b) =>
+    a.localeCompare(b)
+  );
+  console.log(authorsInAlphabetOrder);
+  const authorsInReversedOrder = [...authors].sort((a, b) =>
+    b.localeCompare(a)
+  );
+  console.log(authorsInReversedOrder);
 </script>
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <details closed="">
+        <summary>Теория</summary>
+        <p>
+          Для сортировки строк в алфавитном порядке, по возрастанию или
+          убыванию, используется метод строк <code>localeCompare()</code>.
+        </p>
+        <pre><code class="language-bash hljs">firstString.localeCompare(secondString)
+</code></pre>
+        <p>
+          Он вызывается на строке которую нужно сравнить
+          (<code>firstString</code>) с той, что передана ему как аргумент
+          (secondString).
+        </p>
+        <pre><code class="language-js hljs javascript"><span class="hljs-string">'a'</span>.localeCompare(<span class="hljs-string">'b'</span>); <span class="hljs-comment">// -1</span>
+<span class="hljs-string">'b'</span>.localeCompare(<span class="hljs-string">'a'</span>); <span class="hljs-comment">// 1</span>
+<span class="hljs-string">'a'</span>.localeCompare(<span class="hljs-string">'a'</span>); <span class="hljs-comment">// 0</span>
+<span class="hljs-string">'b'</span>.localeCompare(<span class="hljs-string">'b'</span>); <span class="hljs-comment">// 0</span>
+</code></pre>
+        <ul>
+          <li>
+            Возвращает отрицательное значение если
+            <code>firstString</code> должна быть перед
+            <code>secondString</code>.
+          </li>
+          <li>
+            Возвращает положительное значение больше нуля если
+            <code>firstString</code> должна быть после
+            <code>secondString</code>.
+          </li>
+          <li>Если строки одинаковы, возвращается ноль.</li>
+        </ul>
+        <p>
+          Это удобно использовать при сортировке строк, так как метод
+          <code>sort()</code> ожидает такие же значения от коллбек-функции.
+        </p>
+        <pre><code class="language-js hljs javascript"><span class="hljs-keyword">const</span> students = [<span class="hljs-string">'Вика'</span>, <span class="hljs-string">'Андрей'</span>, <span class="hljs-string">'Олег'</span>, <span class="hljs-string">'Юля'</span>, <span class="hljs-string">'Борис'</span>, <span class="hljs-string">'Катя'</span>];
+
+<span class="hljs-keyword">const</span> inAlphabetOrder = [...students].sort(<span class="hljs-function">(<span class="hljs-params">a, b</span>) =&gt;</span> a.localeCompare(b));
+<span class="hljs-built_in">console</span>.log(inAlphabetOrder); <span class="hljs-comment">// ['Андрей', 'Борис', 'Вика', 'Катя', 'Олег', 'Юля']</span>
+
+<span class="hljs-keyword">const</span> inReversedOrder = [...students].sort(<span class="hljs-function">(<span class="hljs-params">a, b</span>) =&gt;</span> b.localeCompare(a));
+<span class="hljs-built_in">console</span>.log(inReversedOrder); <span class="hljs-comment">// ['Юля', 'Олег', 'Катя', 'Вика', 'Борис', 'Андрей']</span>
+</code></pre>
+      </details>
+      <h3 class="task">Задание</h3>
+      <p>
+        Онлайн бибилиотеке необходимо отображать книги отсортированные по
+        автору, в алфавитном и обратном алфавитном порядке. Дополни код так,
+        чтобы в переменной <code>authorsInAlphabetOrder</code> получилась
+        отсортированная по алфавиту копия массива <code>authors</code>, а в
+        переменной <code>authorsInReversedOrder</code> копия отсортированная в
+        обратном алфавитном порядке.
+      </p>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>Объявлена переменная <code>authors</code>.</li>
+        <li>
+          Значение переменной <code>authors</code> это массив
+          <code
+            >['Ли Танит', 'Бернард Корнуэлл', 'Роберт Шекли', 'Федор
+            Достоевский', 'Говард Лавкрафт']</code
+          >.
+        </li>
+        <li>Объявлена переменная <code>authorsInAlphabetOrder</code>.</li>
+        <li>
+          Значение переменной <code>authorsInAlphabetOrder</code> это массив
+          <code
+            >['Бернард Корнуэлл', 'Говард Лавкрафт', 'Ли Танит', 'Роберт Шекли',
+            'Федор Достоевский']</code
+          >.
+        </li>
+        <li>Объявлена переменная <code>authorsInReversedOrder</code>.</li>
+        <li>
+          Значение переменной <code>authorsInReversedOrder</code> это массив
+          <code
+            >['Федор Достоевский', 'Роберт Шекли', 'Ли Танит', 'Говард
+            Лавкрафт', 'Бернард Корнуэлл']</code
+          >.
+        </li>
+        <li>Использован метод <code>sort()</code>.</li>
+      </ul>
+    </div>
+  </section>
+</section>
