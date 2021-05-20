@@ -1,15 +1,194 @@
 <a href="../modul-6/index.html"><h1>Модуль - 06</h1></a>
-<h2>Задача - 41. .</h2>
+<h2>Задача - 41. Цепочки методов (чейнинг, chaining).</h2>
 <a href="../modul-6/zad_40.html">&lt; &lt;Предыдущая задача</a>
 <a href="../modul-6/zad_42.html">Cледующая задача&gt;&gt;</a>
 
 <details closed="">
   <summary style="color: teal">Решение</summary>
   <pre><code>
+  "use strict";
+  const books = [
+    {
+      title: "Последнее королевство",
+      author: "Бернард Корнуэлл",
+      rating: 8.38,
+    },
+    { title: "На берегу спокойных вод", author: "Роберт Шекли", rating: 8.51 },
+    {
+      title: "Сон смешного человека",
+      author: "Федор Достоевский",
+      rating: 7.75,
+    },
+    { title: "Красна как кровь", author: "Ли Танит", rating: 8.14 },
+    { title: "Сны В Ведьмином Доме", author: "Говард Лавкрафт", rating: 8.67 },
+  ];
+  const MIN_BOOK_RATING = 8;
+  // Пиши код ниже этой строки
 
+  const names = [...books]
+    .sort((firstBook, secondBook) =>
+      firstBook.author.localeCompare(secondBook.author)
+    )
+    .filter((book) => book.rating >= MIN_BOOK_RATING)
+    .map((book) => book.author);
+  console.log(names);
 </code></pre>
 </details>
 <script>
   "use strict";
+  const books = [
+    {
+      title: "Последнее королевство",
+      author: "Бернард Корнуэлл",
+      rating: 8.38,
+    },
+    { title: "На берегу спокойных вод", author: "Роберт Шекли", rating: 8.51 },
+    {
+      title: "Сон смешного человека",
+      author: "Федор Достоевский",
+      rating: 7.75,
+    },
+    { title: "Красна как кровь", author: "Ли Танит", rating: 8.14 },
+    { title: "Сны В Ведьмином Доме", author: "Говард Лавкрафт", rating: 8.67 },
+  ];
+  const MIN_BOOK_RATING = 8;
+  // Пиши код ниже этой строки
 
+  const names = [...books]
+    .sort((firstBook, secondBook) =>
+      firstBook.author.localeCompare(secondBook.author)
+    )
+    .filter((book) => book.rating >= MIN_BOOK_RATING)
+    .map((book) => book.author);
+  console.log(names);
 </script>
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <details closed="">
+        <summary>Теория</summary>
+        <p>
+          Есть массив объектов с именами, баллами и посещаемыми предметами
+          каждого студента.
+        </p>
+        <pre><code class="language-js hljs javascript"><span class="hljs-keyword">const</span> students = [
+  { <span class="hljs-attr">name</span>: <span class="hljs-string">'Манго'</span>, <span class="hljs-attr">score</span>: <span class="hljs-number">83</span>, <span class="hljs-attr">courses</span>: [<span class="hljs-string">'математика'</span>, <span class="hljs-string">'физика'</span>] },
+  { <span class="hljs-attr">name</span>: <span class="hljs-string">'Поли'</span>, <span class="hljs-attr">score</span>: <span class="hljs-number">59</span>, <span class="hljs-attr">courses</span>: [<span class="hljs-string">'информатика'</span>, <span class="hljs-string">'математика'</span>] },
+  { <span class="hljs-attr">name</span>: <span class="hljs-string">'Аякс'</span>, <span class="hljs-attr">score</span>: <span class="hljs-number">37</span>, <span class="hljs-attr">courses</span>: [<span class="hljs-string">'физика'</span>, <span class="hljs-string">'биология'</span>] },
+  { <span class="hljs-attr">name</span>: <span class="hljs-string">'Киви'</span>, <span class="hljs-attr">score</span>: <span class="hljs-number">94</span>, <span class="hljs-attr">courses</span>: [<span class="hljs-string">'литература'</span>, <span class="hljs-string">'информатика'</span>] },
+];
+</code></pre>
+        <p>
+          Необходимо получить массив их имён отсортированный по возрастанию
+          баллов за тест. Для этого мы отсортируем копию массива методом
+          <code>sort()</code>, после чего методом <code>map()</code> составим
+          массив значений свойства <code>name</code> из сортированного массива.
+        </p>
+        <pre><code class="language-js hljs javascript"><span class="hljs-keyword">const</span> sortedByAscendingScore = [...students].sort(<span class="hljs-function">(<span class="hljs-params">a, b</span>) =&gt;</span> a.score - b.score);
+<span class="hljs-keyword">const</span> names = sortedByAscendingScore.map(<span class="hljs-function">(<span class="hljs-params">student</span>) =&gt;</span> student.name);
+
+<span class="hljs-built_in">console</span>.log(names); <span class="hljs-comment">// ['Аякс', 'Поли', 'Манго', 'Киви']</span>
+</code></pre>
+        <p>
+          Проблема в том, что у нас появляются промежуточные переменные после
+          каждой операции кроме финальной. Переменная
+          <code>sortedByAscendingScore</code> лишняя и необходима только для
+          хранения промежуточного результата.
+        </p>
+        <p>
+          Избавиться от таких «мёртвых» переменных можно группируя вызовы
+          методов в цепочки. Каждый следующий метод будет выполняться на
+          результате работы предыдущего.
+        </p>
+        <pre><code class="language-js hljs javascript"><span class="hljs-keyword">const</span> names = [...students]
+  .sort(<span class="hljs-function">(<span class="hljs-params">a, b</span>) =&gt;</span> a.score - b.score)
+  .map(<span class="hljs-function">(<span class="hljs-params">student</span>) =&gt;</span> student.name);
+
+<span class="hljs-built_in">console</span>.log(names); <span class="hljs-comment">// ['Аякс', 'Поли', 'Манго', 'Киви']</span>
+</code></pre>
+        <ol>
+          <li>Делаем копию исходного массива перед сортировкой.</li>
+          <li>На копии вызываем метод <code>sort()</code>.</li>
+          <li>
+            К результату работы метода <code>sort()</code> применяем метод
+            <code>map()</code>.
+          </li>
+          <li>
+            Переменной <code>names</code> присваивается результат работы метода
+            <code>map()</code>.
+          </li>
+        </ol>
+        <p>
+          Получим сортированный по алфавиту массив уникальных посещаемых
+          предметов.
+        </p>
+        <pre><code class="language-js hljs javascript"><span class="hljs-keyword">const</span> uniqueSortedCourses = students
+  .flatMap(<span class="hljs-function">(<span class="hljs-params">student</span>) =&gt;</span> student.courses)
+  .filter(<span class="hljs-function">(<span class="hljs-params">course, index, array</span>) =&gt;</span> array.indexOf(course) === index)
+  .sort(<span class="hljs-function">(<span class="hljs-params">a, b</span>) =&gt;</span> a.localeCompare(b));
+
+<span class="hljs-built_in">console</span>.log(uniqueSortedCourses); <span class="hljs-comment">// ['биология', 'информатика', 'литература', 'математика', 'физика']</span>
+</code></pre>
+        <ol>
+          <li>
+            На исходном массиве вызываем <code>flatMap()</code> и делаем
+            разглаженный массив всех курсов.
+          </li>
+          <li>
+            К результату метода <code>flatMap()</code> применяем метод
+            <code>filter()</code> для фильтрации уникальных элементов.
+          </li>
+          <li>
+            На результате метода <code>filter()</code> вызываем
+            <code>sort()</code>.
+          </li>
+          <li>
+            Переменной <code>uniqueSortedCourses</code> присваивается результат
+            работы метода <code>sort()</code>.
+          </li>
+        </ol>
+        <p>
+          Цепочка методов может быть произвольной длины, но обычно не более 2-3
+          операций. Во-первых, перебирающие методы используются для сравнительно
+          простых операций над коллекцией. Во-вторых, вызов каждого последующего
+          метода, это дополнительный перебор массива, что при достаточном
+          количестве, может сказаться на производительности.
+        </p>
+      </details>
+      <h3 class="task">Задание</h3>
+      <p>
+        Дополни код так, чтобы в переменной <code>names</code> получился массив
+        имён авторов в алфавитном порядке, рейтинг книг которых больше значения
+        переменной <code>MIN_BOOK_RATING</code>.
+      </p>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>Объявлена переменная <code>books</code>.</li>
+        <li>
+          Значение переменной <code>books</code> это исходный массив объектов.
+        </li>
+        <li>Объявлена переменная <code>MIN_BOOK_RATING</code>.</li>
+        <li>
+          Значение переменной <code>MIN_BOOK_RATING</code> это число
+          <code>8</code>.
+        </li>
+        <li>Объявлена переменная <code>names</code>.</li>
+        <li>
+          Значение переменной <code>names</code> это массив
+          <code
+            >['Бернард Корнуэлл', 'Говард Лавкрафт', 'Ли Танит', 'Роберт
+            Шекли']</code
+          >.
+        </li>
+        <li>
+          Нет объявленых переменных кроме <code>books</code>,
+          <code>MIN_BOOK_RATING</code> и <code>names</code>.
+        </li>
+        <li>
+          Используется цепочка методов <code>filter</code>, <code>map</code>,
+          <code>sort</code>.
+        </li>
+      </ul>
+    </div>
+  </section>
+</section>

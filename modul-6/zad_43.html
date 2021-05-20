@@ -1,5 +1,5 @@
 <a href="../modul-6/index.html"><h1>Модуль - 06</h1></a>
-<h2>Задача - 43. .</h2>
+<h2>Задача - 43. Имена друзей.</h2>
 <a href="../modul-6/zad_42.html">&lt; &lt;Предыдущая задача</a>
 <a href="../modul-6/zad_44.html">Cледующая задача&gt;&gt;</a>
 
@@ -11,5 +11,196 @@
 </details>
 <script>
   "use strict";
+  // Пиши код ниже этой строки
+  const allUsers = [
+    {
+      name: "Moore Hensley",
+      email: "moorehensley@indexia.com",
+      eyeColor: "blue",
+      friends: ["Sharron Pace"],
+      isActive: false,
+      balance: 2811,
+      gender: "male",
+    },
+    {
+      name: "Sharlene Bush",
+      email: "sharlenebush@tubesys.com",
+      eyeColor: "blue",
+      friends: ["Briana Decker", "Sharron Pace"],
+      isActive: true,
+      balance: 3821,
+      gender: "female",
+    },
+    {
+      name: "Ross Vazquez",
+      email: "rossvazquez@xinware.com",
+      eyeColor: "green",
+      friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+      isActive: false,
+      balance: 3793,
+      gender: "male",
+    },
+    {
+      name: "Elma Head",
+      email: "elmahead@omatom.com",
+      eyeColor: "green",
+      friends: ["Goldie Gentry", "Aisha Tran"],
+      isActive: true,
+      balance: 2278,
+      gender: "female",
+    },
+    {
+      name: "Carey Barr",
+      email: "careybarr@nurali.com",
+      eyeColor: "blue",
+      friends: ["Jordan Sampson", "Eddie Strong", "Adrian Cross"],
+      isActive: true,
+      balance: 3951,
+      gender: "male",
+    },
+    {
+      name: "Blackburn Dotson",
+      email: "blackburndotson@furnigeer.com",
+      eyeColor: "brown",
+      friends: [
+        "Jacklyn Lucas",
+        "Linda Chapman",
+        "Adrian Cross",
+        "Solomon Fokes",
+      ],
+      isActive: false,
+      balance: 1498,
+      gender: "male",
+    },
+    {
+      name: "Sheree Anthony",
+      email: "shereeanthony@kog.com",
+      eyeColor: "brown",
+      friends: ["Goldie Gentry", "Briana Decker"],
+      isActive: true,
+      balance: 2764,
+      gender: "female",
+    },
+  ];
 
+  const getSortedFriends = (users) => {
+    return [...users]
+      .flatMap(({ friends }) => friends)
+      .filter((friend, index, friends) => friends.indexOf(friend) === index)
+      .sort((firstFriend, secondFriend) =>
+        firstFriend.localeCompare(secondFriend)
+      );
+  };
+  // Пиши код выше этой строки
+  console.log(getSortedFriends(allUsers));
 </script>
+<section class="MainPage_wrapper_TheoryAndTaskOrLayout__1p_NY">
+  <section class="TheoryAndTaskOrLayout_wrapper__V3M7H">
+    <div class="TheoryAndTaskOrLayout_theoryAndTask_container__rT5dX">
+      <details closed="">
+        <summary>Массив объектов пользователей</summary>
+        <p>
+          Этот массив объектов мы будем передавать в параметр
+          <code>users</code> при вызове функции из задания.
+        </p>
+        <pre><code class="language-shell hljs">[
+  {
+    name: 'Moore Hensley',
+    email: 'moorehensley@indexia.com',
+    eyeColor: 'blue',
+    friends: ['Sharron Pace'],
+    isActive: false,
+    balance: 2811,
+    gender: 'male'
+  },
+  {
+    name: 'Sharlene Bush',
+    email: 'sharlenebush@tubesys.com',
+    eyeColor: 'blue',
+    friends: ['Briana Decker', 'Sharron Pace'],
+    isActive: true,
+    balance: 3821,
+    gender: 'female'
+  },
+  {
+    name: 'Ross Vazquez',
+    email: 'rossvazquez@xinware.com',
+    eyeColor: 'green',
+    friends: ['Marilyn Mcintosh', 'Padilla Garrison', 'Naomi Buckner'],
+    isActive: false,
+    balance: 3793,
+    gender: 'male'
+  },
+  {
+    name: 'Elma Head',
+    email: 'elmahead@omatom.com',
+    eyeColor: 'green',
+    friends: ['Goldie Gentry', 'Aisha Tran'],
+    isActive: true,
+    balance: 2278,
+    gender: 'female'
+  },
+  {
+    name: 'Carey Barr',
+    email: 'careybarr@nurali.com',
+    eyeColor: 'blue',
+    friends: ['Jordan Sampson', 'Eddie Strong', 'Adrian Cross'],
+    isActive: true,
+    balance: 3951,
+    gender: 'male'
+  },
+  {
+    name: 'Blackburn Dotson',
+    email: 'blackburndotson@furnigeer.com',
+    eyeColor: 'brown',
+    friends: ['Jacklyn Lucas', 'Linda Chapman', 'Adrian Cross', 'Solomon Fokes'],
+    isActive: false,
+    balance: 1498,
+    gender: 'male'
+  },
+  {
+    name: 'Sheree Anthony',
+    email: 'shereeanthony@kog.com',
+    eyeColor: 'brown',
+    friends: ['Goldie Gentry', 'Briana Decker'],
+    isActive: true,
+    balance: 2764,
+    gender: 'female'
+  }
+]
+</code></pre>
+      </details>
+      <h3 class="task">Задание</h3>
+      <p>
+        Дополни функцию <code>getSortedFriends(users)</code> так, чтобы она
+        возвращала массив уникальных имён друзей (свойство <code>friends</code>)
+        отсортированный по алфавиту .
+      </p>
+      <h3 class="test">Тесты</h3>
+      <ul>
+        <li>Объявлена переменная <code>getSortedFriends</code>.</li>
+        <li>
+          Переменной <code>getSortedFriends</code> присвоена стрелочная функция
+          с параметром <code>(users)</code>.
+        </li>
+        <li>
+          В теле функции используется цепочка методов в правильном порядке.
+        </li>
+        <li>Значение параметра <code>users</code> не изменяется.</li>
+        <li>
+          Вызов функции с указанным массивом пользователей возвращает массив
+          <code
+            >['Adrian Cross', 'Aisha Tran', 'Briana Decker', 'Eddie Strong',
+            'Goldie Gentry', 'Jacklyn Lucas', 'Jordan Sampson', 'Linda Chapman',
+            'Marilyn Mcintosh', 'Naomi Buckner', 'Padilla Garrison', 'Sharron
+            Pace', 'Solomon Fokes']</code
+          >.
+        </li>
+        <li>
+          Вызов функции со случайными, но валидными аргументами, возвращает
+          правильное значение.
+        </li>
+      </ul>
+    </div>
+  </section>
+</section>
