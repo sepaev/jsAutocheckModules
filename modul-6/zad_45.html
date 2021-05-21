@@ -1,0 +1,32 @@
+<h1>Задача - 45. Свободная зона.</h1>
+<a href="../modul-6/zad_44.html">&lt; &lt;Предыдущая задача</a>
+<a href="../modul-6/zad_45.html">Текущая задача...</a>
+
+<details closed="">
+  <summary style="color: teal">Решение</summary>
+  <pre><code>
+
+</code></pre>
+</details>
+<script>
+  const products = [
+    { name: "Radar", price: 1300, quantity: 4 },
+    { name: "Scanner", price: 2700, quantity: 3 },
+    { name: "Droid", price: 400, quantity: 7 },
+    { name: "Grip", price: 1200, quantity: 9 },
+  ];
+
+  function calculateTotalPrice(productName) {
+    // Пиши код ниже этой строки
+    const product = products.find((product) => product.name === productName);
+    if (!product) return 0;
+    return product.price * product.quantity;
+  }
+
+  // Пиши код выше этой строки
+
+  console.log(calculateTotalPrice("Blaster"));
+  console.log(calculateTotalPrice("Radar"));
+  console.log(calculateTotalPrice("Droid"));
+  console.log(calculateTotalPrice("Scanner"));
+</script>
