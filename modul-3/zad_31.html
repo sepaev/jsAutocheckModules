@@ -24,6 +24,16 @@
   console.log(add(32, 6, 13, 19, 8));
   console.log(add(74, 11, 62, 46, 12, 36));
   console.log(add(174, "число", 2, 6, 12, 76));
+
+  или
+  // Change code below this line
+  function add(...args) {
+  let sum = 0;
+  args.forEach((number) => sum += number );
+  return sum;
+  // Change code above this line
+}
+console.log(add(15, 27));
 </code></pre>
 </details>
 <script>
